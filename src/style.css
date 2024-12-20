@@ -3,3 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  margin: 0; /* Убираем отступы */
+  height: 100vh; /* Устанавливаем высоту на весь экран */
+  background: linear-gradient(to bottom, #F7F8FA 15%, #CEDEFE 15%);
+}
