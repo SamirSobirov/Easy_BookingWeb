@@ -15,25 +15,40 @@
         </button>
 
         <button class="header__nav-button header__nav-button--language">
-          <img src="/src/assets/russFlag_icon.svg" alt="Russian Flag" class="flag-icon" />
+          <img
+            src="/src/assets/russFlag_icon.svg"
+            alt="Russian Flag"
+            class="flag-icon"
+          />
           <span>RUS</span>
           <i class="fas fa-chevron-down"></i>
         </button>
+
+        <button class="header__nav-button header__nav-button--notification">
+    <i class="header__nav-button--notification__icon fas fa-bell"></i>
+    <span class="header__nav-button--notification__badge" v-if="hasNotifications">
+      {{ notificationCount }}
+    </span>
+  </button>
       </nav>
     </div>
   </header>
 </template>
-
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 export default defineComponent({
-  name: "LanguageButton",
+  name: "NotificationButton",
+  data() {
+    return {
+      hasNotifications: true,
+      notificationCount: 5,
+    };
+  },
 });
 </script>
-
 <style lang="scss" scoped>
 .header {
   width: 90%;
@@ -103,6 +118,7 @@ export default defineComponent({
       }
 
       &--language {
+        gap: 6px;
         display: flex;
         align-items: center;
         padding: 8px 12px;
@@ -119,6 +135,43 @@ export default defineComponent({
 
         i {
           font-size: 1.2em;
+        }
+      }
+
+      &--notification {
+        position: relative;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50%;
+        background-color: #e7f2fc;
+        color: #6d7586;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #d4e9f9;
+        }
+
+        i {
+          font-size: 1.2em;
+        }
+
+        &__badge {
+          position: absolute;
+          top: -2px;
+          right: 0;
+          background-color: #ff4d4d;
+          color: white;
+          font-size: 12px;
+          font-weight: bold;
+          padding: 2px 6px;
+          border-radius: 12px;
         }
       }
     }
