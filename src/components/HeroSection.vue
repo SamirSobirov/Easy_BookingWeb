@@ -44,7 +44,7 @@ export default defineComponent({
   data() {
     return {
       hasNotifications: true,
-      notificationCount: 5,
+      notificationCount: 32,
     };
   },
 });
@@ -143,7 +143,6 @@ export default defineComponent({
 
       &--notification {
         position: relative;
-    
         display: flex;
         align-items: center;
         justify-content: center;
@@ -168,7 +167,7 @@ export default defineComponent({
         &__badge {
           position: absolute;
           top: -2px;
-          right: 0;
+          right: -3px;
           background-color: #ff4d4d;
           color: white;
           font-size: 12px;
