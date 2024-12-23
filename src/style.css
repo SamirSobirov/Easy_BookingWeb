@@ -5,7 +5,7 @@
 }
 
 body {
-  margin: 0; /* Убираем отступы */
-  height: 100vh; /* Устанавливаем высоту на весь экран */
+  margin: 0; 
+  height: 100vh;
   background: linear-gradient(to bottom, #F7F8FA 15%, #CEDEFE 15%);
 }
