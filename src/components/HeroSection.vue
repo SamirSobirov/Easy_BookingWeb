@@ -61,7 +61,7 @@ export default defineComponent({
 .header {
   width: 90%;
   margin: 24px auto;
-  padding: 10px;
+  padding: 10px ;
   background-color: #ffffff;
   border-radius: 30px;
   display: flex;
@@ -69,6 +69,7 @@ export default defineComponent({
   align-items: center;
 
   &__container {
+    padding: 0 5px;
     width: 100%;
     height: 52px;
     display: flex;
