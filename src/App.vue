@@ -1,10 +1,13 @@
-<script setup lang="ts">
-</script>
-
 <template>
-
+     <HeroSection msg="Welcome to EasyBooking!" />
 </template>
 
-<style scoped>
+<script setup lang="ts">
+import HeroSection from './components/HeroSection.vue';
 
+
+
+</script>
+<style lang="scss" scoped>
+     
 </style>
