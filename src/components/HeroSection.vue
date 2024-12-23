@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header__container">
       <div class="header__logo">
-        <img src="/src/assets/EasyBooking_logo.svg" alt="EasyBooking Logo" />
+        <img src="/src/assets/images/EasyBooking_logo.svg" alt="EasyBooking Logo" />
       </div>
       <nav class="header__nav">
         <a href="#" class="header__nav-link">Агентствам</a>
@@ -16,7 +16,7 @@
 
         <button class="header__nav-button header__nav-button--language">
           <img
-            src="/src/assets/russFlag_icon.svg"
+            src="/src/assets/images/russFlag_icon.svg"
             alt="Russian Flag"
             class="flag-icon"
           />
@@ -35,7 +35,7 @@
         </button>
 
         <button class="accountButton">
-          <img src="/src/assets/notification_icon.svg" alt="" />
+          <img src="/src/assets/images/notification_icon.svg" alt="" />
         </button>
       </nav>
     </div>
