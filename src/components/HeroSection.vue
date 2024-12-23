@@ -15,7 +15,6 @@
         </button>
 
         <button class="btn_lang">
-
           <span>RUS</span>
         </button>
       </nav>
@@ -45,7 +44,6 @@ header {
 }
 
 .Header {
-  
   width: 100%;
   height: 52px;
   display: flex;
@@ -70,7 +68,7 @@ header {
     padding: 8px 8px;
     border-radius: 8px;
     background-color: #e7f2fc;
-    color: #6D7586;
+    color: #6d7586;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -80,6 +78,10 @@ header {
     .fas {
       rotate: 90deg;
     }
+  }
+
+  :hover {
+    color: #007bff;
   }
 }
 
