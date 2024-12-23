@@ -5,12 +5,14 @@
          :images="imageList" 
          @button-click="handleButtonClick" 
        />
+       <HeaderMainSearch />
      </div>
    </template>
    
    <script setup lang="ts">
    import HeroSection from './components/HeroSection.vue';
    import HeaderMainButtons from './components/HeaderMainButtons.vue';
+   import HeaderMainSearch from './components/HeaderMainSearch.vue';
    
    const imageList = [
         { url: new URL('./assets/images/DubaiCountry.svg', import.meta.url).href },
