@@ -94,3 +94,19 @@ body {
     transform: translateY(-20px);
   }
 }
+
+
+
+
+#app {
+  text-align: center;
+  margin-top: 20px;
+
+  .hero-section {
+    margin-bottom: 30px;
+  }
+
+  .header-main-buttons {
+    margin-top: 10px;
+  }
+}
