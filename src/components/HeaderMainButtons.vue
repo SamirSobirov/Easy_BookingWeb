@@ -34,9 +34,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .image-buttons {
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 
   .image-button {
     width: 80px;
@@ -44,13 +46,30 @@ export default defineComponent({
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    border: 3px solid #00aaff;
-    cursor: pointer;
+    border: none; 
     position: relative;
-    transition: transform 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.1); 
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border: none; 
+      border-radius: 50%;
+      z-index: -1; 
+    }
+
+    &:not(:first-child) {
+      margin-left: -40px;
     }
 
     .overlay {
@@ -60,7 +79,6 @@ export default defineComponent({
       right: 0;
       bottom: 0;
       border-radius: 50%;
-
     }
   }
 }
