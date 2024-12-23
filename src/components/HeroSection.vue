@@ -34,9 +34,8 @@
           </span>
         </button>
 
-
         <button class="accountButton">
-          <img src="/src/assets/notification_icon.svg" alt="">
+          <img src="/src/assets/notification_icon.svg" alt="" />
         </button>
       </nav>
     </div>
@@ -61,7 +60,7 @@ export default defineComponent({
 .header {
   width: 90%;
   margin: 24px auto;
-  padding: 10px ;
+  padding: 10px;
   background-color: #ffffff;
   border-radius: 30px;
   display: flex;
@@ -140,6 +139,8 @@ export default defineComponent({
         color: #6d7586;
         cursor: pointer;
 
+        border-radius: 12px;
+
         .flag-icon {
           width: 18px;
           height: auto;
@@ -147,6 +148,11 @@ export default defineComponent({
 
         i {
           font-size: 1.2em;
+        }
+
+        &:hover {
+          background-color: #d4e9f9;
+          color: #007bff;
         }
       }
 
@@ -167,6 +173,7 @@ export default defineComponent({
 
         &:hover {
           background-color: #d4e9f9;
+          color: #007bff;
         }
 
         i {
@@ -188,16 +195,14 @@ export default defineComponent({
     }
 
     .accountButton {
-
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        img{
-
-          height: 50px;
-          width: 50px;
-        }
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      img {
+        height: 50px;
+        width: 50px;
       }
     }
+  }
 }
 </style>
