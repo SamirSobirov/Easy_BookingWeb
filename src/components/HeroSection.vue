@@ -77,12 +77,14 @@ export default defineComponent({
   }
 
   &__nav {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     display: flex;
     gap: 30px;
     white-space: nowrap;
 
     &-link {
-      padding-top: 5px;
       font-size: 16px;
       text-decoration: none;
       color: #9399a8;
@@ -114,6 +116,7 @@ export default defineComponent({
 
         &:hover {
           background-color: #d4e9f9;
+          color: #007bff;
         }
       }
 
