@@ -13,13 +13,12 @@
    import HeaderMainButtons from './components/HeaderMainButtons.vue';
    
    const imageList = [
-     { url: "https://example.com/image1.jpg" },
-     { url: "https://example.com/image2.jpg" },
-     { url: "https://example.com/image3.jpg" },
-     { url: "https://example.com/image4.jpg" },
-     { url: "https://example.com/image5.jpg" },
+        { url: new URL('./assets/images/DubaiCountry.svg', import.meta.url).href },
+        { url: new URL('./assets/images/BaliCountry.svg', import.meta.url).href },
+        { url: new URL('./assets/images/SochiCountry.svg', import.meta.url).href },
+     { url: new URL('./assets/images/SaintPetersburgCountry.svg', import.meta.url).href },
+     { url: new URL('./assets/images/AstanaCountry.svg', import.meta.url).href },
    ];
-   
    const handleButtonClick = (index: number) => {
      console.log("Button clicked at index:", index);
    };

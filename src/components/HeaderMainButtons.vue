@@ -35,13 +35,12 @@ export default defineComponent({
 <style lang="scss" scoped>
 .image-buttons {
   display: flex;
-  gap: 10px;
   justify-content: center;
   align-items: center;
 
   .image-button {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -61,7 +60,7 @@ export default defineComponent({
       right: 0;
       bottom: 0;
       border-radius: 50%;
-      background-color: rgba(0, 0, 0, 0.2);
+
     }
   }
 }
