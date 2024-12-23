@@ -25,11 +25,19 @@
         </button>
 
         <button class="header__nav-button header__nav-button--notification">
-    <i class="header__nav-button--notification__icon fas fa-bell"></i>
-    <span class="header__nav-button--notification__badge" v-if="hasNotifications">
-      {{ notificationCount }}
-    </span>
-  </button>
+          <i class="header__nav-button--notification__icon fas fa-bell"></i>
+          <span
+            class="header__nav-button--notification__badge"
+            v-if="hasNotifications"
+          >
+            {{ notificationCount }}
+          </span>
+        </button>
+
+
+        <button class="accountButton">
+          <img src="/src/assets/notification_icon.svg" alt="">
+        </button>
       </nav>
     </div>
   </header>
@@ -177,6 +185,18 @@ export default defineComponent({
         }
       }
     }
-  }
+
+    .accountButton {
+
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        img{
+
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
 }
 </style>
