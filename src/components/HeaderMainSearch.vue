@@ -233,7 +233,7 @@ const isSwitched = ref(false);
       border: 1px solid #ddd;
       border-radius: 0.5rem;
       font-size: 1rem;
-      color: #333;
+      color: #9399A8;
     }
 
     .search-button {
