@@ -14,16 +14,30 @@
 
     <div class="search-box">
       <nav class="tabs">
-        <button class="tab active">Перелеты</button>
-        <button class="tab">Отели</button>
-        <button class="tab">Ж/Д</button>
-        <button class="tab">Трансферы</button>
-        <button class="tab">Туры</button>
-        <button class="tab">Страхование</button>
+        <button class="tab active">
+          <img src="/src/assets/icons/plane_icon.svg" alt="plane">
+          Перелеты
+        </button>
+        <button class="tab">
+          <img src="/src/assets/icons/hotel_icon.svg" alt="hotels">
+          Отели</button>
+        <button class="tab">
+          <img src="/src/assets/icons/train_icon.svg" alt="train">
+          Ж/Д</button>
+        <button class="tab">
+          <img src="/src/assets/icons/transport.svg" alt="transport">
+          Трансферы</button>
+        <button class="tab">
+          <img src="/src/assets/icons/tours_icon.svg" alt="tours">
+          Туры</button>
+        <button class="tab">
+          <img src="/src/assets/icons/insurance_icon.svg" alt="insurance">
+          Страхование</button>
       </nav>
 
       <form class="search-form">
         <input type="text" placeholder="Откуда" class="input" />
+        
         <input type="text" placeholder="Куда" class="input" />
         <input type="date" class="input" />
         <input type="date" class="input" />
@@ -53,13 +67,23 @@
     .tabs {
       margin-top: 20px;
       border-radius: 12px;
-      height: 55px;
+      height: 65px;
       background-color: #fff;
       display: flex;
       justify-content: space-between;
       margin-bottom: 1rem;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
 
       .tab {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        gap: 10px;
+        height: 50px;
+        margin: 0px 5px;
         flex: 1;
         text-align: center;
         padding: 0.5rem;
@@ -68,11 +92,17 @@
         font-size: 1rem;
         color: #B5BBC9;
         cursor: pointer;
+        // &.active {
+        //   font-weight: bold;
+        //   border: 2px solid #80DBEB;
+        //   border-radius: 8px;
+        // }
 
-        &.active {
-          font-weight: bold;
+        &:hover {
+          color: #80DBEB;
           border: 2px solid #80DBEB;
           border-radius: 8px;
+          font-weight: bold;
         }
       }
     }
@@ -95,7 +125,7 @@
 
       .search-button {
         padding: 0.8rem 1.5rem;
-        background: #0077ff;
+        background: #00B8D7;
         color: #fff;
         border: none;
         border-radius: 0.5rem;
