@@ -64,14 +64,12 @@
         </button>
 
         <div class="switch-container">
-    <label class="switch">
-      <input type="checkbox" v-model="isSwitched" />
-      <span class="slider"></span>
-    </label>
-    <button class="switch-btn">
-      ± 1 день
-    </button>
-  </div>
+          <label class="switch">
+            <input type="checkbox" v-model="isSwitched" />
+            <span class="slider"></span>
+          </label>
+          <button class="switch-btn">± 1 день</button>
+        </div>
       </div>
     </div>
   </section>
@@ -80,7 +78,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 
-// Состояние переключателя
 const isSwitched = ref(false);
 </script>
 
@@ -95,6 +92,7 @@ const isSwitched = ref(false);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border: 2px solid #ffffff;
 
+  
   .searchFooter {
     display: flex;
     margin-top: 25px;
@@ -103,70 +101,67 @@ const isSwitched = ref(false);
     justify-content: start;
     gap: 25px;
 
-
-    ////dsdfs
     .switch-container {
-  display: flex;
-  align-items: center;
+      display: flex;
+      align-items: center;
 
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 34px;
+        height: 20px;
 
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 34px;
-    height: 20px;
+        input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
 
-    input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          transition: 0.4s;
+          border-radius: 34px;
+          width: 34px;
 
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: 0.4s;
-      border-radius: 34px;
-      width: 34px;
+          &::before {
+            position: absolute;
+            content: "";
+            height: 24px;
+            width: 24px;
+            left: -2px;
+            bottom: -2px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+          }
+        }
 
-      &::before {
-        position: absolute;
-        content: "";
-        height: 24px;
-        width: 24px;
-        left: -2px;
-        bottom: -2px;
-        background-color: white;
-        transition: 0.4s;
-        border-radius: 50%;
+        input:checked + .slider {
+          background-color: #0077ff;
+        }
+
+        input:checked + .slider::before {
+          transform: translateX(14px);
+        }
+      }
+
+      .switch-btn {
+        background: none;
+        border: none;
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        cursor: pointer;
+        color: #6d7586;
+        transition: background 0.3s;
       }
     }
-
-    input:checked + .slider {
-      background-color: #0077ff;
-    }
-
-    input:checked + .slider::before {
-      transform: translateX(14px);
-    }
-  }
-
-  .switch-btn {
-    background: none;
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    font-size: 14px;
-    cursor: pointer;
-    color: #6D7586;
-    transition: background 0.3s;
-  }
-}
 
     .accommodation_button {
       display: flex;
@@ -232,6 +227,7 @@ const isSwitched = ref(false);
     gap: 1rem;
     flex-wrap: wrap;
 
+    
     .input {
       flex: 1;
       min-width: 150px;
@@ -240,6 +236,8 @@ const isSwitched = ref(false);
       border-radius: 0.5rem;
       font-size: 1rem;
       color: #333;
+
+      
     }
 
     .search-button {
