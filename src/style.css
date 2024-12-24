@@ -8,21 +8,25 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(180deg, #f0f9ff, #e6f7ff);
-  overflow-x: hidden; 
+  overflow: hidden; 
+  height: 100vh; 
+  position: relative;
 }
 
 .background-elements {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
+  z-index: -1;
 }
 
 .circle {
   position: absolute;
   border-radius: 50%;
-  background: rgba(0, 119, 255, 0.1); 
-  filter: blur(5px); 
+  background: rgba(0, 119, 255, 0.1);
+  filter: blur(5px);
   animation: float 8s ease-in-out infinite;
 }
 
@@ -31,7 +35,6 @@ body {
   height: 300px;
   top: 10%;
   left: 20%;
-  background: rgba(0, 119, 255, 0.1); 
 }
 
 .circle:nth-child(2) {
@@ -53,37 +56,38 @@ body {
   height: 250px;
   top: 20%;
   left: 80%;
-  background: rgba(255, 150, 0, 0.1); 
+  background: rgba(255, 150, 0, 0.1);
 }
+
 .circle:nth-child(5) {
   width: 300px;
   height: 300px;
-  top: 10%;
-  left: 20%;
-  background: rgba(255, 234, 141, 0.1); 
+  top: 5%;
+  left: 10%;
+  background: rgba(255, 234, 141, 0.1);
 }
 
 .circle:nth-child(6) {
   width: 400px;
   height: 400px;
-  top: 50%;
-  left: 70%;
+  top: 60%;
+  left: 50%;
 }
 
 .circle:nth-child(7) {
   width: 200px;
-  background-color: #a500b829;
   height: 200px;
-  top: 80%;
-  left: 30%;
+  top: 75%;
+  left: 25%;
+  background-color: #a500b829;
 }
 
 .circle:nth-child(8) {
   width: 250px;
   height: 250px;
-  top: 20%;
-  left: 80%;
-  background: rgba(255, 150, 0, 0.1); 
+  top: 25%;
+  left: 85%;
+  background: rgba(255, 150, 0, 0.1);
 }
 
 @keyframes float {
@@ -94,6 +98,7 @@ body {
     transform: translateY(-20px);
   }
 }
+
 
 
 
