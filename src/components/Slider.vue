@@ -13,7 +13,7 @@
           <i class="fa fa-arrow-left"></i>
         </button>
         <button @click="nextSlide" class="slider__button next">
-            <i class="fa fa-arrow-right"></i>
+          <i class="fa fa-arrow-right"></i>
         </button>
       </div>
     </div>
@@ -72,6 +72,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .box {
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
