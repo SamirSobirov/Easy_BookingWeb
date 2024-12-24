@@ -35,7 +35,7 @@ export default defineComponent({
       items: [
         {
           image:
-            "https://www.atorus.ru/sites/default/files/styles/head_carousel/public/2022-02/533e52.jpg.webp?itok=raXt4I0y",
+            "/src/assets/images/ads.svg",
         },
         { image: "https://via.placeholder.com/600x300?text=Slide+2" },
         { image: "https://via.placeholder.com/600x300?text=Slide+3" },
