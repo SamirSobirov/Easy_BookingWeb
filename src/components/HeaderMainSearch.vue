@@ -176,49 +176,60 @@ const isSwitched = ref(false);
       transition: background 0.3s;
     }
   }
-
   .tabs {
-    margin-top: 20px;
-    border-radius: 12px;
-    height: 65px;
+  margin-top: 20px;
+  border-radius: 12px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.886);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  align-items: center;
+  white-space: nowrap;
+
+  .tab {
     background-color: #fff;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
     align-items: center;
+    text-align: center;
     justify-content: center;
-    white-space: nowrap;
+    gap: 10px;
+    height: 50px;
+    margin: 0px 5px;
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    color: #b5bbc9;
+    cursor: pointer;
 
-    .tab {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      gap: 10px;
-      height: 50px;
-      margin: 0px 5px;
-      flex: 1;
-      text-align: center;
-      padding: 0.5rem;
-      border: none;
-      background: transparent;
-      font-size: 1rem;
-      color: #b5bbc9;
-      cursor: pointer;
-      // &.active {
-      //   font-weight: bold;
-      //   border: 2px solid #80DBEB;
-      //   border-radius: 8px;
-      // }
 
-      &:hover {
-        color: #80dbeb;
-        border: 2px solid #80dbeb;
-        border-radius: 8px;
-        font-weight: bold;
-      }
+    img {
+      transition: filter 0.3s ease; 
+      filter: brightness(0) saturate(100%) invert(56%) sepia(7%) saturate(358%) hue-rotate(160deg) brightness(103%) contrast(98%);
     }
+
+    &:hover {
+      color: #80dbeb; 
+      font-weight: bold;
+      border: 2px solid #80dbeb;
+      border-radius: 8px;
+    }
+
+    &:hover img {
+      filter: invert(33%) sepia(100%) saturate(500%) hue-rotate(190deg) brightness(94%) contrast(92%);
+    }
+
+    // &.active {
+    //   font-weight: bold;
+    //   border: 2px solid #80dbeb;
+    //   border-radius: 8px;
+    // }
   }
+}
+
+
 
   .search-form {
     margin-top: 15px;
