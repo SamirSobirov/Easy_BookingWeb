@@ -46,7 +46,9 @@
           <option>2 пассажира</option>
           <option>3 пассажира</option>
         </select>
-        <button type="submit" class="search-button">Поиск</button>
+        <button type="submit" class="search-button">
+          <img src="/src/assets/icons/search_icon.svg" alt="">
+          Поиск</button>
       </form>
     </div>
   </section>
@@ -124,6 +126,11 @@
       }
 
       .search-button {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        gap: 10px;
         padding: 0.8rem 1.5rem;
         background: #00B8D7;
         color: #fff;
