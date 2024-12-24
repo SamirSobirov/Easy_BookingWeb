@@ -72,11 +72,7 @@
         </div>
       </div>
     </div>
-    
   </section>
-
-
-  
 </template>
 
 <script lang="ts" setup>
@@ -85,6 +81,4 @@ import { ref } from "vue";
 const isSwitched = ref(false);
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
