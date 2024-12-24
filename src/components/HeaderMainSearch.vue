@@ -72,7 +72,11 @@
         </div>
       </div>
     </div>
+    
   </section>
+
+
+  
 </template>
 
 <script lang="ts" setup>
@@ -83,7 +87,6 @@ const isSwitched = ref(false);
 
 <style lang="scss" scoped>
 .search-box {
-  margin-top: 2rem;
   width: 1128px;
   max-width: 1200px;
   background: rgba(255, 255, 255, 0.555);
