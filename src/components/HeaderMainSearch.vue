@@ -92,7 +92,6 @@ const isSwitched = ref(false);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border: 2px solid #ffffff;
 
-  
   .searchFooter {
     display: flex;
     margin-top: 25px;
@@ -227,7 +226,6 @@ const isSwitched = ref(false);
     gap: 1rem;
     flex-wrap: wrap;
 
-    
     .input {
       flex: 1;
       min-width: 150px;
@@ -236,8 +234,6 @@ const isSwitched = ref(false);
       border-radius: 0.5rem;
       font-size: 1rem;
       color: #333;
-
-      
     }
 
     .search-button {
