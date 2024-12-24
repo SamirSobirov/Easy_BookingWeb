@@ -9,7 +9,7 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(180deg, #f0f9ff, #e6f7ff);
-  height: 100vh;
+  height: 100%;
   position: relative;
 }
 
