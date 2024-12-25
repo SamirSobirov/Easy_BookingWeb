@@ -32,11 +32,11 @@
             </p>
 
             <button>
-              <img src="/src/assets/icons/apple.svg" alt="" />
+              <img src="/src/assets/icons/GooglePlay.svg" alt="" />
 
               <div>
                 <span>Доступно в</span>
-                <span class="App">App store</span>
+                <span class="App">Google Play</span>
               </div>
             </button>
           </div>
@@ -48,11 +48,11 @@
             </p>
 
             <button>
-              <img src="/src/assets/icons/apple.svg" alt="" />
+              <img src="/src/assets/icons/huawei.svg" alt="" />
 
               <div>
                 <span>Доступно в</span>
-                <span class="App">App store</span>
+                <span class="App">AppGallery</span>
               </div>
             </button>
           </div>
@@ -147,6 +147,11 @@
             border-radius: 8px;
             cursor: pointer;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+            img {
+              width: 24px;
+              height: 24px;
+            }
 
             div {
               display: flex;
