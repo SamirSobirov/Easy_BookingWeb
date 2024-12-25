@@ -34,7 +34,6 @@
           <span class="price">7 844 000 UZS </span>
         </div>
       </div>
-
       <!-- 2 -->
       <div class="card">
         <img src="/src/assets/images/Georgia.svg" alt="" />
@@ -49,7 +48,6 @@
           <span class="price">7 844 000 UZS </span>
         </div>
       </div>
-
       <!-- 3 -->
       <div class="card">
         <img src="/src/assets/images/Georgia2.svg" alt="" />
@@ -70,15 +68,12 @@
       <button>
         <img src="/src/assets/icons/ToKnow.svg" alt="" />
         <span>Узнать больще</span>
-        
       </button>
     </div>
-</div>
+  </div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
 
 <script lang="ts">
 import { defineComponent } from "vue";
