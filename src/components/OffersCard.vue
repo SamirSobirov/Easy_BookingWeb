@@ -37,7 +37,7 @@
 
       <!-- 2 -->
       <div class="card">
-        <img src="/src/assets/images/SharmELSheyx.svg" alt="" />
+        <img src="/src/assets/images/Georgia.svg" alt="" />
 
         <div class="container">
           <p>Отдых в Шарм-эль-Шейхе</p>
@@ -52,7 +52,7 @@
       
       <!-- 3 -->
       <div class="card">
-        <img src="/src/assets/images/SharmELSheyx.svg" alt="" />
+        <img src="/src/assets/images/Georgia2.svg" alt="" />
 
         <div class="container">
           <p>Отдых в Шарм-эль-Шейхе</p>
