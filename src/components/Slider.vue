@@ -121,7 +121,9 @@ export default defineComponent({
   }
 
   .slider__button {
-    background: rgba(0, 0, 0, 0.5);
+    width: 36px;
+    height: 36px;
+    background: none;
     color: white;
     border: 0.5px solid white;
     border-radius: 50%;
