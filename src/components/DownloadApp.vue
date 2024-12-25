@@ -15,16 +15,30 @@
               <span>Скачать в App Store</span>
             </p>
 
-            <button>App store</button>
+            <button>
+              <img src="/src/assets/icons/apple.svg" alt="" />
+
+              <div>
+                <span>Доступно в</span>
+                <span class="App">App store</span>
+              </div>
+            </button>
           </div>
 
           <div class="item1">
             <p>
               +170K
-              <span>Скачать в Google Play</span>
+              <span> Скачать в Google Play</span>
             </p>
 
-            <button>App store</button>
+            <button>
+              <img src="/src/assets/icons/apple.svg" alt="" />
+
+              <div>
+                <span>Доступно в</span>
+                <span class="App">App store</span>
+              </div>
+            </button>
           </div>
 
           <div class="item1">
@@ -33,7 +47,14 @@
               <span>Скачать в AppGallery</span>
             </p>
 
-            <button>App store</button>
+            <button>
+              <img src="/src/assets/icons/apple.svg" alt="" />
+
+              <div>
+                <span>Доступно в</span>
+                <span class="App">App store</span>
+              </div>
+            </button>
           </div>
         </div>
       </div>
@@ -49,8 +70,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   max-width: 1128px;
   margin: 60px auto 0;
   background: #ffffffaf;
@@ -60,25 +81,25 @@
   .box {
     display: flex;
     gap: 75px;
-    align-items: center; 
-    justify-content: center; 
+    align-items: center;
+    justify-content: center;
     text-align: center;
 
     .box1 {
-        padding-left: 30px;
+      padding-left: 30px;
       width: 562px;
       height: 260px;
       display: flex;
       flex-direction: column;
-      justify-content: center; 
+      justify-content: center;
       align-items: center;
       text-align: center;
       gap: 20px;
 
       .elem {
         display: flex;
-        align-items: center; 
-        justify-content: center; 
+        align-items: center;
+        justify-content: center;
         gap: 15px;
 
         .item1 {
@@ -89,7 +110,7 @@
           border: 2px solid #ffffffbf;
           display: flex;
           flex-direction: column;
-          align-items: center; 
+          align-items: center;
           justify-content: center;
           gap: 18px;
 
@@ -100,7 +121,7 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            align-items: center; 
+            align-items: center;
             text-align: center;
             gap: 10px;
 
@@ -114,6 +135,11 @@
           }
 
           button {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            gap: 10px;
             width: 160px;
             height: 48px;
             background: white;
@@ -121,6 +147,30 @@
             border-radius: 8px;
             cursor: pointer;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+            div {
+              display: flex;
+              flex-direction: column;
+              align-items: start;
+              justify-content: left;
+              // gap: 5px;
+
+              span {
+                font-size: 12px;
+                color: #9399a8;
+                line-height: 16px;
+                font-weight: 500;
+                margin: 0;
+              }
+
+              .App {
+                font-size: 12px;
+                color: black;
+                line-height: 16px;
+                font-weight: 500;
+                margin: 0;
+              }
+            }
           }
         }
       }
@@ -129,7 +179,7 @@
         font-size: 28px;
         font-weight: bold;
         margin: 0;
-        text-align: center; 
+        text-align: center;
       }
 
       p {
@@ -137,12 +187,11 @@
         font-size: 14px;
         color: #9399a8;
         margin: 0;
-        text-align: center; 
+        text-align: center;
       }
     }
   }
 }
-
 </style>
 
 <script lang="ts">
