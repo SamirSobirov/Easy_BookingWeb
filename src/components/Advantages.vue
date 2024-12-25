@@ -4,11 +4,35 @@
       <h1>Преимущества компаний</h1>
 
       <div class="cards">
-        <div>1</div>
-        <div>2</div>
+        <div>
+          <img src="/src/assets/images/bag.svg" alt="" />
+          <p>Определились с направлением?</p>
+          <span
+            >Поиск и бронирование авиабилетов без лишних хлопот и ожиданий</span
+          >
+        </div>
+        <div>
+          <img src="/src/assets/images/bag.svg" alt="" />
+          <p>Определились с направлением?</p>
+          <span
+            >Поиск и бронирование авиабилетов без лишних хлопот и ожиданий</span
+          >
+        </div>
         <div class="person_img">3</div>
-        <div>4</div>
-        <div>5</div>
+        <div>
+          <img src="/src/assets/images/bag.svg" alt="" />
+          <p>Определились с направлением?</p>
+          <span
+            >Поиск и бронирование авиабилетов без лишних хлопот и ожиданий</span
+          >
+        </div>
+        <div>
+          <img src="/src/assets/images/bag.svg" alt="" />
+          <p>Определились с направлением?</p>
+          <span
+            >Поиск и бронирование авиабилетов без лишних хлопот и ожиданий</span
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -39,15 +63,32 @@
       gap: 10px;
 
       div {
-        background: #f0f0f0;
-        text-align: center;
-        padding: 10px;
-        border-radius: 8px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 18px;
-        font-weight: bold;
+        flex-direction: column;
+        background: #ffffffdd;
+        text-align: left;
+        padding: 10px 28px;
+        border-radius: 8px;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 360px;
+        height: 194px;
+        gap: 10px;
+        img {
+          width: 80px;
+          height: 80px;
+        }
+
+        p {
+          text-align: left;
+          font-size: 18px;
+          font-family: Mulish, sans-serif;
+        }
+        span {
+          text-align: left;
+          color: #9399a8;
+          font-size: 14px;
+        }
       }
 
       .person_img {
