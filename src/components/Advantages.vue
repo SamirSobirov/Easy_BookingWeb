@@ -18,7 +18,9 @@
             >Поиск и бронирование авиабилетов без лишних хлопот и ожиданий</span
           >
         </div>
-        <div class="person_img">3</div>
+        <div class="person_img">
+          <img class="like_img" src="/src/assets/images/like.svg" alt="">
+          <img src="/src/assets/images/person (2).svg" alt=""></div>
         <div>
           <img src="/src/assets/images/baloon.svg" alt="" />
           <p>Легко и беззаботно</p>
@@ -40,6 +42,7 @@
 
 <style lang="scss" scoped>
 .advantages {
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -74,6 +77,8 @@
         width: 360px;
         height: 194px;
         gap: 10px;
+
+
         img {
           width: 80px;
           height: 80px;
@@ -92,16 +97,31 @@
       }
 
       .person_img {
-        grid-row: span 2;
-        height: 410px;
-        width: 360px;
-        background: #cceeff;
-      }
+  grid-row: span 2; 
+  height: 408px;
+  width: 360px;
+  
+  border-radius: 8px; 
+  overflow: hidden; 
 
-      div:not(.person_img) {
-        height: 195px;
-        width: 360px;
-      }
+  .like_img {
+          width: 100px;
+          height: 100px;
+          margin: 21px 0 0 21px;
+        }
+
+  img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+  }
+}
+
+div:not(.person_img) {
+  height: 195px;
+  width: 360px;
+}
+
     }
   }
 }
