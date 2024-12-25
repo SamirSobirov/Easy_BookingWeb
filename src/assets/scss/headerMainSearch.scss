@@ -191,7 +191,7 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-  
+
     .input {
       width: 180px;
       height: 50px;
@@ -205,16 +205,16 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
     }
-  
+
     .input:hover {
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-  
+
     .input:focus {
       outline: none;
       border: 1px solid #80dbeb;
     }
-  
+
     .input_date {
       height: 50px;
       width: 183px;
@@ -230,16 +230,16 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
     }
-  
+
     .input_date:hover {
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-  
+
     .input_date:focus {
       outline: none;
       border: 1px solid #80dbeb;
     }
-  
+
     .input_select {
       border-radius: 20px;
       appearance: none;
@@ -258,16 +258,16 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
     }
-  
+
     .input_select:hover {
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-  
+
     .input_select:focus {
       outline: none;
       border: 1px solid #80dbeb;
     }
-  
+
     .search-button {
       display: flex;
       align-items: center;
@@ -283,11 +283,11 @@
       cursor: pointer;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-  
+
     .search-button:hover {
       background: #005bb5;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
   }
-  
+
 }
