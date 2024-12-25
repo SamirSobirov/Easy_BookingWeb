@@ -22,13 +22,14 @@
         gap: 10px;
   
         div {
+            
           border: 2px solid white;
           display: flex;
           flex-direction: column;
           background: #ffffffdd;
           text-align: left;
           padding: 10px 28px;
-          border-radius: 8px;
+          border-radius: 24px;
           justify-content: flex-start;
           align-items: flex-start;
           width: 360px;
@@ -54,10 +55,9 @@
   
         .person_img {
           grid-row: span 2;
-          height: 408px;
-          width: 360px;
-  
-          border-radius: 8px;
+          height: 400px;
+          width: 380px;
+            border-radius: 24px;
           overflow: hidden;
   
           .like_img {

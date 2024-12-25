@@ -1,5 +1,148 @@
 <template>
-    <div class="">
-     
+  <div class="container">
+    <div class="box">
+      <div class="box1">
+        <h1>Скачайте приложение EASYBOOKING</h1>
+        <p>
+          Уведомления о лучших ценах, данные пассажиров и информация по заказам
+          у вас под рукой
+        </p>
+
+        <div class="elem">
+          <div class="item1">
+            <p>
+              +120K
+              <span>Скачать в App Store</span>
+            </p>
+
+            <button>App store</button>
+          </div>
+
+          <div class="item1">
+            <p>
+              +170K
+              <span>Скачать в Google Play</span>
+            </p>
+
+            <button>App store</button>
+          </div>
+
+          <div class="item1">
+            <p>
+              +34K
+              <span>Скачать в AppGallery</span>
+            </p>
+
+            <button>App store</button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <img src="/src/assets/images/telephone.svg" alt="" />
+      </div>
     </div>
-  </template>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1128px;
+  margin: 60px auto 0;
+  background: #ffffffdd;
+  height: 344px;
+  border-radius: 24px;
+
+  .box {
+    display: flex;
+    gap: 75px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 30px;
+
+    .box1 {
+      width: 562px;
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      gap: 10px;
+
+      .elem {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 11px;
+
+        .item1 {
+          margin-top: 50px;
+          background-color: #ffffffa6;
+          border: 2px solid #ffffffbf;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 18px;
+
+          p {
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+
+            span {
+              font-size: 12px;
+              color: #9399a8;
+              line-height: 16px;
+              font-weight: 500;
+              margin: 0;
+            }
+          }
+
+          button {
+            width: 160px;
+            height: 48px;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      p {
+        line-height: 20px;
+        font-size: 14px;
+        color: #9399a8;
+        margin: 0;
+      }
+    }
+  }
+}
+</style>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "DownloadApp",
+});
+</script>
