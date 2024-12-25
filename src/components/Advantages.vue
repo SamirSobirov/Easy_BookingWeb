@@ -12,25 +12,25 @@
           >
         </div>
         <div>
-          <img src="/src/assets/images/bag.svg" alt="" />
-          <p>Определились с направлением?</p>
+          <img src="/src/assets/images/EasyandPrivate.svg" alt="" />
+          <p>Легко и беззаботно</p>
           <span
             >Поиск и бронирование авиабилетов без лишних хлопот и ожиданий</span
           >
         </div>
         <div class="person_img">3</div>
         <div>
-          <img src="/src/assets/images/bag.svg" alt="" />
-          <p>Определились с направлением?</p>
+          <img src="/src/assets/images/baloon.svg" alt="" />
+          <p>Легко и беззаботно</p>
           <span
-            >Поиск и бронирование авиабилетов без лишних хлопот и ожиданий</span
+            >Вы платите ту цену, которую видите на экране. Можно спокойно готовиться к поездке</span
           >
         </div>
         <div>
-          <img src="/src/assets/images/bag.svg" alt="" />
-          <p>Определились с направлением?</p>
+          <img src="/src/assets/images/crown.svg" alt="" />
+          <p>Планируйте уверенно</p>
           <span
-            >Поиск и бронирование авиабилетов без лишних хлопот и ожиданий</span
+            >Выгодные предложения, онлайн-страхованние, календарь и карта низких цен</span
           >
         </div>
       </div>
