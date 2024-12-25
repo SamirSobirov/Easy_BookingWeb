@@ -77,58 +77,7 @@
 </template>
 
 <style lang="scss" scoped>
-.Cards {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
 
-  .card {
-    width: 365px;
-    height: 375px;
-    background-color: #ffffffbd;
-    border-radius: 20px;
-    border: 1px solid white;
-    margin: 10px;
-    border-radius: 10px;
-    padding: 10px;
-
-    .container {
-      padding: 12px 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      gap: 5px;
-
-      p {
-        color: #23282d;
-        font-family: Mulish;
-        font-weight: 600;
-        font-size: 18px;
-      }
-
-      span {
-        color: #9399a8;
-        font-size: 14px;
-        font-family: Mulish;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        display: flex;
-        white-space: nowrap;
-        gap: 10px;
-      }
-
-      .price {
-        padding-top: 15px;
-        color: #23282d;
-        font-family: Mulish;
-        font-weight: 700;
-        font-size: 18px;
-      }
-    }
-  }
-}
 </style>
 
 <script lang="ts">
