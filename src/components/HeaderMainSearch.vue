@@ -46,11 +46,13 @@
         <input type="text" placeholder="Куда" class="input" />
         <input type="date" class="input" />
         <input type="date" class="input" />
-        <select class="input">
+
+        <select class="input_select">
           <option>1 пассажир</option>
           <option>2 пассажира</option>
           <option>3 пассажира</option>
         </select>
+
         <button type="submit" class="search-button">
           <img src="/src/assets/icons/search_icon.svg" alt="" />
           Поиск

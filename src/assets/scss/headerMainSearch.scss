@@ -200,6 +200,28 @@
       color: #9399A8;
     }
 
+    .input_select {
+      appearance: none; 
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      flex: 1;
+      width: 100%;
+      min-width: 150px;
+      padding: 0.8rem 2.5rem 0.8rem 0.8rem; 
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      color: #9399A8;
+      background: #fff url('/src/assets/icons/arrow_down.svg') no-repeat right 0.8rem center;
+      background-size: 1rem; /* Размер иконки */
+      cursor: pointer;
+    }
+    
+    .input_select:focus {
+      outline: none;
+      border-color: #aaa; 
+    }
+
     .search-button {
       display: flex;
       align-items: center;
