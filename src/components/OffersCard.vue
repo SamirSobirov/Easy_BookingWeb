@@ -40,7 +40,7 @@
         <img src="/src/assets/images/Georgia.svg" alt="" />
 
         <div class="container">
-          <p>Отдых в Шарм-эль-Шейхе</p>
+          <p>Чудеса Грузи</p>
 
           <span
             ><img src="/src/assets/icons/Calendar.svg" alt="" /> 12.01.2024 -
@@ -49,13 +49,13 @@
           <span class="price">7 844 000 UZS </span>
         </div>
       </div>
-      
+
       <!-- 3 -->
       <div class="card">
         <img src="/src/assets/images/Georgia2.svg" alt="" />
 
         <div class="container">
-          <p>Отдых в Шарм-эль-Шейхе</p>
+          <p>Чудеса Грузи</p>
 
           <span
             ><img src="/src/assets/icons/Calendar.svg" alt="" /> 12.01.2024 -
@@ -65,7 +65,15 @@
         </div>
       </div>
     </div>
-  </div>
+
+    <div class="cardFooter">
+      <button>
+        <img src="/src/assets/icons/ToKnow.svg" alt="" />
+        <span>Узнать больще</span>
+        
+      </button>
+    </div>
+</div>
 </template>
 
 <style lang="scss" scoped>
