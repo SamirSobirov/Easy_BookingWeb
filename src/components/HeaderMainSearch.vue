@@ -42,10 +42,10 @@
 
       <form class="search-form">
         <input type="text" placeholder="Откуда" class="input" />
-
+        <img src="/src/assets/icons/Swap_inputs.svg" alt="">
         <input type="text" placeholder="Куда" class="input" />
-        <input type="date" class="input" />
-        <input type="date" class="input" />
+        <input type="text" class="input_date" placeholder="Когда" onfocus="(this.type='date')" onblur="(this.type='text')"/>
+        <input type="text" class="input_date" placeholder="Обратно" onfocus="(this.type='date')" onblur="(this.type='text')"/>
 
         <select class="input_select">
           <option>1 пассажир</option>
