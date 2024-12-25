@@ -19,67 +19,104 @@
         </button>
       </div>
     </div>
+
+    <div class="Cards">
+      <div class="card">
+        <img src="/src/assets/images/SharmELSheyx.svg" alt="" />
+
+        <div class="container">
+          <p>Отдых в Шарм-эль-Шейхе</p>
+
+          <span
+            ><img src="/src/assets/icons/Calendar.svg" alt="" /> 12.01.2024 -
+            18.02.2024</span
+          >
+          <span class="price">7 844 000 UZS </span>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="card">
+        <img src="/src/assets/images/SharmELSheyx.svg" alt="" />
+
+        <div class="container">
+          <p>Отдых в Шарм-эль-Шейхе</p>
+
+          <span
+            ><img src="/src/assets/icons/Calendar.svg" alt="" /> 12.01.2024 -
+            18.02.2024</span
+          >
+          <span class="price">7 844 000 UZS </span>
+        </div>
+      </div>
+      
+      <!-- 3 -->
+      <div class="card">
+        <img src="/src/assets/images/SharmELSheyx.svg" alt="" />
+
+        <div class="container">
+          <p>Отдых в Шарм-эль-Шейхе</p>
+
+          <span
+            ><img src="/src/assets/icons/Calendar.svg" alt="" /> 12.01.2024 -
+            18.02.2024</span
+          >
+          <span class="price">7 844 000 UZS </span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.offers-card {
-  margin-top: 60px;
+.Cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
 
-  .offers-card__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1128px;
-    margin: 0 auto;
+  .card {
+    width: 365px;
+    height: 375px;
+    background-color: #ffffffbd;
+    border-radius: 20px;
+    border: 1px solid white;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
 
-    h1 {
-      margin: 0;
-    }
-
-    .offers-card__header-buttons {
+    .container {
+      padding: 12px 15px;
       display: flex;
-      justify-content: center;
-      gap: 12px;
-      align-items: center;
-      width: 367px;
-      height: 48px;
-      background: #ffffff59;
-      border: 1px solid white;
-      border-radius: 12px;
+      flex-direction: column;
+      align-items: start;
+      gap: 5px;
 
-      button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        width: 97px;
-        height: 40px;
-        border-radius: 8px;
-        background: none;
-        border: none;
-        cursor: pointer;
+      p {
+        color: #23282d;
+        font-family: Mulish;
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      span {
+        color: #9399a8;
         font-size: 14px;
-        font-weight: 500;
-        color: #000;
-        transition: background 0.3s;
-        color: #abb1bf;
+        font-family: Mulish;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        white-space: nowrap;
+        gap: 10px;
+      }
 
-        img {
-          width: 15px;
-          height: 15px;
-        }
-        &:hover img {
-          filter: brightness(0) saturate(100%) invert(50%) sepia(100%)
-            saturate(1000%) hue-rotate(190deg) brightness(100%) contrast(95%);
-        }
-
-        &:hover {
-          background: white;
-          border: 1px solid #80dbeb;
-          color: #80dbeb;
-        }
+      .price {
+        padding-top: 15px;
+        color: #23282d;
+        font-family: Mulish;
+        font-weight: 700;
+        font-size: 18px;
       }
     }
   }
