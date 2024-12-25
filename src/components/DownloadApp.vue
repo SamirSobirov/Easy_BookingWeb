@@ -49,44 +49,47 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; /* Выравнивание по центру горизонтально */
+  justify-content: center; /* Выравнивание по центру вертикально */
   max-width: 1128px;
   margin: 60px auto 0;
-  background: #ffffffdd;
-  height: 344px;
+  background: #ffffffaf;
+  height: 380px;
   border-radius: 24px;
 
   .box {
     display: flex;
     gap: 75px;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
     text-align: center;
-    padding-left: 30px;
 
     .box1 {
+        padding-left: 30px;
       width: 562px;
       height: 260px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      text-align: left;
-      gap: 10px;
+      justify-content: center; /* Центрирование по вертикали */
+      align-items: center; /* Центрирование по горизонтали */
+      text-align: center;
+      gap: 20px;
 
       .elem {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 11px;
+        align-items: center; /* Центрирование содержимого */
+        justify-content: center; /* Центрирование по горизонтали */
+        gap: 15px;
 
         .item1 {
-          margin-top: 50px;
+          padding: 30px 16px;
+          border-radius: 16px;
+          width: 180px;
           background-color: #ffffffa6;
           border: 2px solid #ffffffbf;
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: center; /* Центрирование текста */
           justify-content: center;
           gap: 18px;
 
@@ -97,7 +100,7 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: center; /* Центрирование текста */
             text-align: center;
             gap: 10px;
 
@@ -126,6 +129,7 @@
         font-size: 28px;
         font-weight: bold;
         margin: 0;
+        text-align: center; /* Центрирование заголовка */
       }
 
       p {
@@ -133,10 +137,12 @@
         font-size: 14px;
         color: #9399a8;
         margin: 0;
+        text-align: center; /* Центрирование текста */
       }
     }
   }
 }
+
 </style>
 
 <script lang="ts">
