@@ -5,6 +5,7 @@
     <HeaderMainSearch />
     <Slider />
     <mainCards />
+    <Advantages />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import HeaderMainButtons from "./components/HeaderMainButtons.vue";
 import HeaderMainSearch from "./components/HeaderMainSearch.vue";
 import Slider from "./components/Slider.vue";
 import mainCards from "./components/OffersCard.vue";
+import Advantages from "./components/Advantages.vue";
 
 const imageNames = [
   "DubaiCountry.svg",
