@@ -7,6 +7,7 @@
     <mainCards />
     <Advantages />
     <DownloadApp />
+    <Shop />
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import Slider from "./components/Slider.vue";
 import mainCards from "./components/OffersCard.vue";
 import Advantages from "./components/Advantages.vue";
 import DownloadApp from "./components/DownloadApp.vue";
+import Shop from "./components/Shop.vue";
 
 const imageNames = [
   "DubaiCountry.svg",
