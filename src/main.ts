@@ -5,6 +5,7 @@ import './assets/scss/headerMainButton.scss'
 import './assets/scss/headerMainSearch.scss'
 import './assets/scss/offersCard.scss'
 import './assets/scss/adventages.scss'
+import './assets/scss/Shop.scss'
 import App from './App.vue'
 
 createApp(App).mount('#app')
