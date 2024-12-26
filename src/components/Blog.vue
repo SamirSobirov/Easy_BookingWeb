@@ -11,7 +11,7 @@
 
     <div class="Cards">
       <div class="card">
-        <img src="/src/assets/images/SharmELSheyx.svg" alt="" />
+        <img src="/src/assets/images/Hills.svg" alt="" />
 
         <div class="container">
           <p>Город на холмах</p>
@@ -28,7 +28,7 @@
       </div>
       <!-- 2 -->
       <div class="card">
-        <img src="/src/assets/images/SharmELSheyx.svg" alt="" />
+        <img src="/src/assets/images/mountain.svg" alt="" />
 
         <div class="container">
           <p>Тайны наскальных рисунков</p>
@@ -44,7 +44,7 @@
       </div>
       <!-- 3 -->
       <div class="card">
-        <img src="/src/assets/images/SharmELSheyx.svg" alt="" />
+        <img src="/src/assets/images/meeting.svg" alt="" />
 
         <div class="container">
           <p>Город на холмах</p>
@@ -108,7 +108,7 @@
 
     .card {
       width: 365px;
-      height: 410px;
+      height: 338px;
       background-color: #ffffffbd;
       border-radius: 20px;
       border: 1px solid white;
