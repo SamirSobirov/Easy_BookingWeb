@@ -7,6 +7,7 @@ import './assets/scss/offersCard.scss'
 import './assets/scss/adventages.scss'
 import './assets/scss/Shop.scss'
 import './assets/scss/slider.scss'
+import './assets/scss/ProfitableOffers.scss'
 import App from './App.vue'
 
 createApp(App).mount('#app')
