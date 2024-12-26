@@ -13,6 +13,7 @@
       <DownloadApp />
       <Shop />
       <ProfitableOffers />
+      <Blog />
     </main>
   </div>
 </template>
@@ -27,6 +28,7 @@ import Advantages from "./components/Advantages.vue";
 import DownloadApp from "./components/DownloadApp.vue";
 import Shop from "./components/Shop.vue";
 import ProfitableOffers from "./components/ProfitableOffers.vue";
+import Blog from "./components/Blog.vue";
 
 const imageNames = [
   "DubaiCountry.svg",
