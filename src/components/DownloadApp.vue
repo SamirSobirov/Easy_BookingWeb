@@ -75,7 +75,7 @@
   max-width: 1128px;
   margin: 60px auto 0;
   background: #ffffffaf;
-  height: 380px;
+  height: 360px;
   border-radius: 24px;
 
   .box {
@@ -84,6 +84,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-top: 30px;
+    padding: 43px 40px;
 
     .box1 {
       padding-left: 30px;
