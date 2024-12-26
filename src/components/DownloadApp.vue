@@ -88,7 +88,7 @@
     .box1 {
       padding-left: 30px;
       width: 562px;
-      height: 260px;
+      // height: 260px;
       display: flex;
       flex-direction: column;
       justify-content: center;

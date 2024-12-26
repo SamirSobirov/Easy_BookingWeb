@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <HeroSection msg="Welcome to EasyBooking!" />
-    <HeaderMainButtons :images="imageList"/>
-    <HeaderMainSearch />
-    <Slider />
-    <mainCards />
-    <Advantages />
-    <DownloadApp />
-    <Shop />
+    <header>
+      <HeroSection msg="Welcome to EasyBooking!" />
+      <HeaderMainButtons :images="imageList" />
+      <HeaderMainSearch />
+    </header>
+
+    <main>
+      <Slider />
+      <mainCards />
+      <Advantages />
+      <DownloadApp />
+      <Shop />
+    </main>
   </div>
 </template>
 
