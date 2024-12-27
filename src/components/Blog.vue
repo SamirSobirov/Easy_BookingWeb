@@ -34,7 +34,8 @@
           <p>Тайны наскальных рисунков</p>
 
           <span class="span"
-            >За несколько последних лет ОАЭ превратились из пустыни в место, где хочется проводить свой долгожданный отпуск вновь и вновь...</span
+            >За несколько последних лет ОАЭ превратились из пустыни в место, где
+            хочется проводить свой долгожданный отпуск вновь и вновь...</span
           >
           <div class="date_box">
             <span class="date">24.07.2023</span>
@@ -63,9 +64,7 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
 
 <script lang="ts">
 import { defineComponent } from "vue";
