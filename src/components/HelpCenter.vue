@@ -5,18 +5,46 @@
 
       <div class="container">
         <div class="box">
+          <div class="box_main">
+            <img
+              class="img"
+              src="/src/assets/images/personImg_help.svg"
+              alt=""
+            />
 
-            <div class="box_main">
-            
-                <img class="img" src="/src/assets/images/personImg_help.svg" alt="">
+            <div class="Options">
+              <h3>
+                Можно ли взять чемодан в самолет?
+                <img src="/src/assets/icons/add.svg" alt="" />
+              </h3>
 
-                <div class="inputs_box">
-                    <p>Lorem, ipsum dolor.</p>
+              <h3>
+                Есть ли скидки на билеты для детей?
+                <img src="/src/assets/icons/add.svg" alt="" />
+              </h3>
 
-                </div>
+              <h3>
+                Какие аэропорты России закрыты сейчас?
+                <img src="/src/assets/icons/add.svg" alt="" />
+              </h3>
+
+              <h3>
+                Как купить билет для багажа на кресле?
+                <img src="/src/assets/icons/add.svg" alt="" />
+              </h3>
+
+              <h3>
+                Как я могу оплатить билет на сайте?
+                <img src="/src/assets/icons/add.svg" alt="" />
+              </h3>
+
+              <h3>
+                Можно ли взять чемодан в самолет?
+                <img src="/src/assets/icons/add.svg" alt="" />
+              </h3>
+            </div>
+          </div>
         </div>
-        </div>
-        
       </div>
     </div>
   </div>
@@ -47,49 +75,67 @@
     }
 
     .container {
-  margin-top: 40px;
-  width: 1128px;
-  padding: 16px;
-  height: 475px;
-  background-color: #FFFFFF59;
-  border: 2px solid #FFFFFFA6;
-  border-radius: 24px;
-  display: flex; 
-  align-items: center;
-  justify-content: center; 
-
-  .box {
-    padding: 16px;
-    text-align: left; // Текст и элементы внутри будут начинаться с левого края
-    width: 1090px;
-    height: 446px;
-    border: 1px solid black;
-    display: flex; // Используем Flexbox для правильного размещения
-    align-items: center; // Центрируем по вертикали
-    gap: 20px; // Расстояние между изображением и другими элементами
-
-    .box_main {
+      margin-top: 40px;
+      width: 1128px;
+      padding: 16px;
+      height: 475px;
+      background-color: #ffffff59;
+      border: 2px solid #ffffffa6;
+      border-radius: 24px;
       display: flex;
-      align-items: center; 
-      justify-content: flex-start; 
-      gap: 15px;
-      .img {
-        width: auto; // Отключаем ширину 400%
-        max-width: 400px; // Устанавливаем разумный лимит ширины
-        height: auto; // Автоматическая пропорциональная высота
-      }
+      align-items: center;
+      justify-content: center;
 
-      .inputs_box {
+      .box {
+        padding: 16px;
+        padding-bottom: 80px;
+        padding-right: 17px;
+        text-align: left;
+        width: 1100px;
+        height: 446px;
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        .box_main {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 15px;
+          margin-top: 5px;
+          .img {
+            width: auto;
+            max-width: 400px;
+            height: auto;
+          }
+          .Options {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+
+            h3 {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              text-align: left;
+              font-size: 18px;
+              font-weight: 500;
+              padding: 18px 16px;
+              background-color: #ffffffa6;
+              border-radius: 12px;
+              width: 684px;
+
+              img {
+                width: 20px; 
+                height: 20px;
+              }
+            }
+          }
+        }
       }
     }
   }
 }
-
-  }
-}
-
 </style>
 
 <script lang="ts">
