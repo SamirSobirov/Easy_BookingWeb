@@ -5,8 +5,18 @@
 
       <div class="container">
         <div class="box">
+
+            <div class="box_main">
             
+                <img class="img" src="/src/assets/images/personImg_help.svg" alt="">
+
+                <div class="inputs_box">
+                    <p>Lorem, ipsum dolor.</p>
+
+                </div>
         </div>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -37,25 +47,46 @@
     }
 
     .container {
-      margin-top: 40px;
-      width: 1128px;
-      height: 478px;
-      background-color: #FFFFFF59;
-      border: 2px solid #FFFFFFA6;
-      border-radius: 24px;
-      display: flex; // Используем Flexbox для центрирования содержимого
-      align-items: center; // Центрирование по вертикали
-      justify-content: center; // Центрирование по горизонтали
+  margin-top: 40px;
+  width: 1128px;
+  padding: 16px;
+  height: 475px;
+  background-color: #FFFFFF59;
+  border: 2px solid #FFFFFFA6;
+  border-radius: 24px;
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
 
-      .box {
-        padding: 16px 16px;
-        text-align: center;
-        width: 1090px;
-        height: 446px;
-        border: 1px solid black;
-        margin-bottom: 60px;
+  .box {
+    padding: 16px;
+    text-align: left; // Текст и элементы внутри будут начинаться с левого края
+    width: 1090px;
+    height: 446px;
+    border: 1px solid black;
+    display: flex; // Используем Flexbox для правильного размещения
+    align-items: center; // Центрируем по вертикали
+    gap: 20px; // Расстояние между изображением и другими элементами
+
+    .box_main {
+      display: flex;
+      align-items: center; 
+      justify-content: flex-start; 
+      gap: 15px;
+      .img {
+        width: auto; // Отключаем ширину 400%
+        max-width: 400px; // Устанавливаем разумный лимит ширины
+        height: auto; // Автоматическая пропорциональная высота
+      }
+
+      .inputs_box {
+        display: flex;
+        flex-direction: column;
       }
     }
+  }
+}
+
   }
 }
 
