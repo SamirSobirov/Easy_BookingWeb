@@ -14,6 +14,7 @@
       <Shop />
       <ProfitableOffers />
       <Blog />
+      <GroundHandling />
     </main>
   </div>
 </template>
@@ -29,6 +30,7 @@ import DownloadApp from "./components/DownloadApp.vue";
 import Shop from "./components/Shop.vue";
 import ProfitableOffers from "./components/ProfitableOffers.vue";
 import Blog from "./components/Blog.vue";
+import GroundHandling from "./components/GroundHandling.vue";
 
 const imageNames = [
   "DubaiCountry.svg",
