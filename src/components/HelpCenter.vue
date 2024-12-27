@@ -3,7 +3,11 @@
     <div class="HelpCenter__header">
       <h1>Найти ответ в справочном центре</h1>
 
-      <div class="container"></div>
+      <div class="container">
+        <div class="box">
+            
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -30,18 +34,31 @@
       font-weight: 700;
       margin-left: 10px;
       color: #333;
-
     }
+
     .container {
-        margin-top: 40px;
+      margin-top: 40px;
       width: 1128px;
       height: 478px;
       background-color: #FFFFFF59;
       border: 2px solid #FFFFFFA6;
       border-radius: 24px;
+      display: flex; // Используем Flexbox для центрирования содержимого
+      align-items: center; // Центрирование по вертикали
+      justify-content: center; // Центрирование по горизонтали
+
+      .box {
+        padding: 16px 16px;
+        text-align: center;
+        width: 1090px;
+        height: 446px;
+        border: 1px solid black;
+        margin-bottom: 60px;
+      }
     }
   }
 }
+
 </style>
 
 <script lang="ts">
