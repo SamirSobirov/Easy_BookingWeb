@@ -43,9 +43,9 @@
   align-items: flex-start;
   padding: 20px;
   max-width: 1135px;
-  margin: 230px auto 0px ; 
+  margin: 0 auto 0px ; 
   position: relative; 
-  top: 50px; 
+  top: 310px; 
   transform: translateY(-50%); 
   .GroundHandling__header {
   text-align: left;
