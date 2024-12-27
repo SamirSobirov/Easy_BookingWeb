@@ -10,6 +10,7 @@ import './assets/scss/slider.scss'
 import './assets/scss/ProfitableOffers.scss'
 import './assets/scss/blog.scss'
 import './assets/scss/GroundHandling.scss'
+import './assets/scss/helperCenter.scss'
 import App from './App.vue'
 
 createApp(App).mount('#app')
