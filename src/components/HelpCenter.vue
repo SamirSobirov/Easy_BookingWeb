@@ -2,7 +2,6 @@
   <div class="HelpCenter_box">
     <div class="HelpCenter__header">
       <h1>Найти ответ в справочном центре</h1>
-
       <div class="container">
         <div class="box">
           <div class="box_main">
