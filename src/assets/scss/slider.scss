@@ -1,66 +1,66 @@
 .box {
-    margin-top: 60px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .slider__box {
+    border-radius: 32px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    width: 1128px;
+    overflow: hidden;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .slider__content {
+    display: flex;
+  }
+
+  .slider__item {
+    min-width: 100%;
+    height: 300px;
+    background-color: #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
-  
-    .slider__box {
-      border-radius: 32px;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      width: 1128px;
-      overflow: hidden;
-    }
-  
-    .slider {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-  
-    .slider__content {
-      display: flex;
-    }
-  
-    .slider__item {
-      min-width: 100%;
-      height: 300px;
-      background-color: #ccc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .slider__item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  
-    .slider__controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-    }
-  
-    .slider__button {
-      width: 36px;
-      height: 36px;
-      background: none;
-      color: white;
-      border: 0.5px solid white;
-      border-radius: 50%;
-      margin: 0px 20px;
-      padding: 10px;
-  
-      cursor: pointer;
-    }
-  
-    .slider__button:hover {
-      background: rgba(0, 0, 0, 0.8);
-    }
   }
+
+  .slider__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slider__controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+
+  .slider__button {
+    width: 36px;
+    height: 36px;
+    background: none;
+    color: white;
+    border: 0.5px solid white;
+    border-radius: 50%;
+    margin: 0px 20px;
+    padding: 10px;
+
+    cursor: pointer;
+  }
+
+  .slider__button:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}

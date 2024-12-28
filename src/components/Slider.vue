@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent} from "vue";
+import { defineComponent } from "vue";
 
 interface SliderItem {
   image: string;
@@ -34,8 +34,7 @@ export default defineComponent({
       currentIndex: 0,
       items: [
         {
-          image:
-            "/src/assets/images/ads.svg",
+          image: "/src/assets/images/ads.svg",
         },
         { image: "https://via.placeholder.com/600x300?text=Slide+2" },
         { image: "https://via.placeholder.com/600x300?text=Slide+3" },

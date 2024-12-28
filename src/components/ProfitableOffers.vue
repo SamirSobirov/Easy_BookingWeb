@@ -46,9 +46,7 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
