@@ -33,7 +33,7 @@
         <div class="agreements">
           <input type="checkbox" id="agreement-checkbox" />
           <label for="agreement-checkbox">
-            Я принимаю <a href="#">условия</a> пользовательского соглашения и
+            Я принимаю <a class="href" href="#">условия</a> пользовательского соглашения и
             обработку персональных данных
           </label>
         </div>
@@ -46,7 +46,11 @@
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+// #agreement-checkbox {
+//   background-color: #fff;
+// }
+</style>    
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
