@@ -271,11 +271,12 @@
       font-size: 1rem;
       cursor: pointer;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s;
     }
 
     .search-button:hover {
       border: outline #005bb5;
-      background: #005bb5;
+      background: #008fb3;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
   }
