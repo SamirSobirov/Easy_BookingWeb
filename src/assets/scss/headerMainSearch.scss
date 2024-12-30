@@ -255,7 +255,7 @@
 
     .input_select:focus {
       outline: none;
-      border: 1px solid #80dbeb;
+      // border: 1px solid #80dbeb;
     }
 
     .search-button {
@@ -276,7 +276,7 @@
 
     .search-button:hover {
       border: outline #005bb5;
-      // background: #005bb5;
+      background: #005bb5;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
   }
