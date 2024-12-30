@@ -158,38 +158,23 @@
       cursor: pointer;
 
       img {
-          filter: brightness(0) invert(56%) ;
-          // transition: filter 0.3s ease;
+        filter: brightness(0) invert(56%);
+        // transition: filter 0.3s ease;
       }
 
       &:hover {
         color: #80dbeb;
-        // font-weight: bold;
         border: 1px solid #80dbeb;
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
 
       &:hover img {
-        
+
         filter: brightness(0) saturate(100%) invert(90%) sepia(17%) saturate(1411%) hue-rotate(162deg) brightness(98%) contrast(89%);
       }
-
-      // &:hover img {
-      //   fill: #80dbeb; 
-      //   filter: none;  
-      // }
-
-      // &.active {
-      //   font-weight: bold;
-      //   border: 1px solid #80dbeb;
-      //   border-radius: 8px;
-      // }
     }
   }
-
-
-
 
   .search-form {
     margin-top: 15px;
@@ -294,5 +279,4 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
   }
-
 }
