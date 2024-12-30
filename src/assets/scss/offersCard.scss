@@ -85,11 +85,12 @@
                 p {
                     color: #23282d;
                     font-family: Mulish;
-                    font-weight: 600;
+                    font-style: bold;
                     font-size: 18px;
                 }
 
                 span {
+                    padding-top: 5px;
                     color: #9399a8;
                     font-size: 14px;
                     font-family: Mulish;
@@ -131,6 +132,7 @@
             margin-top: 20px;
             width: 1128px;
             height: 48px;
+            cursor: pointer;
 
             span {
                 padding-left: 10px;
