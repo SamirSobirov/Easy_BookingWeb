@@ -202,7 +202,7 @@
 
     .input:focus {
       outline: none;
-      border: 1px solid #80dbeb;
+      // border: 1px solid #80dbeb;
     }
 
     .input_date {
@@ -227,7 +227,7 @@
 
     .input_date:focus {
       outline: none;
-      border: 1px solid #80dbeb;
+      // border: 1px solid #80dbeb;
     }
 
     .input_select {
@@ -275,7 +275,8 @@
     }
 
     .search-button:hover {
-      background: #005bb5;
+      border: outline #005bb5;
+      // background: #005bb5;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
   }
