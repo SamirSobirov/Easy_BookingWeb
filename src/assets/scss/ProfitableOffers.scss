@@ -126,6 +126,12 @@
           height: 16px;
           cursor: pointer;
           background-color: #80dbeb;
+
+
+          &:checked {
+            background-color: #00b8d7;
+            border-color: #00b8d7;
+          } 
         }
         
         label {

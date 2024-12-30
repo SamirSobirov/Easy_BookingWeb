@@ -33,7 +33,7 @@
         <div class="agreements">
           <input type="checkbox" id="agreement-checkbox" />
           <label for="agreement-checkbox">
-            Я принимаю <a class="href" href="#">условия</a> пользовательского соглашения и
+            Я принимаю <a href="#">условия</a> пользовательского соглашения и
             обработку персональных данных
           </label>
         </div>
