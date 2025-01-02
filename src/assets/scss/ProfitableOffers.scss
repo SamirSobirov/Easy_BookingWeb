@@ -119,14 +119,11 @@
         margin-top: 10px;
 
         input[type="checkbox"] {
-          /* Устанавливаем цвет акцента при выборе чекбокса */
           accent-color: #00B8D7;
-          /* Опционально: изменяем размер чекбокса */
           width: 18px;
           height: 18px;
           cursor: pointer;
         }
-      
 
         label {
           font-size: 14px;
