@@ -9,7 +9,7 @@
             <img
               class="img"
               src="/src/assets/images/personImg_help.svg"
-              alt=""
+              alt="Помощь"
             />
 
             <div class="help-center">
@@ -47,7 +47,7 @@
                 </div>
               </div>
               <button class="accordion-button" @click="learnMore">
-                <img src="/src/assets/icons/ToKnow.svg" alt="" />
+                <img src="/src/assets/icons/ToKnow.svg" alt="Узнать больше" />
                 Узнать больше
               </button>
             </div>
@@ -89,22 +89,13 @@ export default defineComponent({
         answer:
           "Для покупки билета на дополнительный багаж перейдите в раздел 'Багаж' на нашем сайте и следуйте инструкциям.",
       },
-      {
-        question: "Как я могу оплатить билет на сайте?",
-        answer:
-          "Вы можете оплатить билет с помощью кредитной карты, электронных кошельков или банковского перевода.",
-      },
-      {
-        question: "Можно ли взять чемодан в самолет?",
-        answer:
-          "Да, обычно пассажиры могут взять чемодан в салон самолета как ручную кладь. Однако существуют ограничения по размерам и весу ручной клади, которые зависят от авиакомпании и класса обслуживания.",
-      },
+
     ]);
 
-    const activeIndex = ref<number | null>(null);
+    const activeIndex = ref<number>(0);
 
     const toggle = (index: number) => {
-      activeIndex.value = activeIndex.value === index ? null : index;
+      activeIndex.value = activeIndex.value === index ? -1 : index;
     };
 
     const isActive = (index: number) => activeIndex.value === index;
@@ -123,7 +114,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-
-</style>
