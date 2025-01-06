@@ -9,12 +9,30 @@
           class="footer__logo"
         />
         <p class="footer__description">
-          Ваш проводник в мир ярких путешествий и комфортных поездок
+          Ваш проводник в мир ярких путешествий <br> и комфортных поездок
         </p>
         <div class="footer__apps">
-          <img src="" alt="App Store" />
-          <img src="" alt="Google Play" />
-          <img src="" alt="AppGallery" />
+          <button class="download">
+            <img src="/src/assets/icons/apple.svg" alt="" />
+            <div>
+              <span style="color: #9399A8;">Доступно в</span>
+              <span style="font-size: 13px;">App store</span>
+            </div>
+          </button>
+          <button class="download">
+            <img src="/src/assets/icons/GooglePlay.svg" alt="" />
+            <div>
+              <span style="color: #9399A8;">Доступно в</span>
+              <span style="font-size: 13px;">Google Play</span>
+            </div>
+          </button>
+          <button class="download">
+            <img src="/src/assets/icons/huawei.svg" alt="" />
+            <div>
+              <span style="color: #9399A8;">Доступно в</span>
+              <span style="font-size: 13px;">App Gallery</span>
+            </div>
+          </button>
         </div>
       </div>
 
@@ -83,12 +101,11 @@ export default defineComponent({
   font-family: Mulish, sans-serif;
   width: 1128px;
   margin: 0 auto;
+  border-radius: 24px;
 
   &__container {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 45px;
     max-width: 1128px;
     margin: 0 auto;
   }
@@ -100,6 +117,8 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding: 20px 20px 25px;
+    
 
     & .footer__logo {
       width: 150px;
@@ -108,15 +127,64 @@ export default defineComponent({
 
     & .footer__description {
       font-size: 14px;
+      display: flex;
+      white-space: nowrap;
       margin-bottom: 15px;
     }
 
-    & .footer__apps img {
-      width: 100px;
-      margin-right: 10px;
+    & .footer__apps {
+      display: flex;
+      justify-content: space-between; 
+      width: 335px; 
+      gap: 10px;
+
+      
+
+      .download {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 110px;
+        height: auto;
+        border: none;
+        background-color: #ffffff;
+        padding: 7px 15px;
+        border-radius: 4px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.2s;
+        img {
+            width: 20px;
+          height: 25px;
+          margin-right: 10px;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          align-items: start;
+          text-align: left;
+
+          span {
+            font-size: 10px;
+            color: #9399a8;
+            white-space: nowrap;
+          }
+
+          span:last-child {
+            font-size: 13px;
+            color: black;
+          }
+        }
+      }
     }
   }
-
   &__title {
     font-size: 16px;
     font-weight: bold;
@@ -130,7 +198,7 @@ export default defineComponent({
 
     & .footer__link {
       display: block;
-      color: #0066cc;
+      color: #00b8d7;
       text-decoration: none;
       font-size: 14px;
       margin-bottom: 8px;
@@ -145,6 +213,7 @@ export default defineComponent({
     font-size: 14px;
     margin-bottom: 8px;
   }
+
   &__socials {
     display: flex;
     gap: 10px;
@@ -175,5 +244,14 @@ export default defineComponent({
       margin-right: 10px;
     }
   }
+
 }
+.footer__section {
+&:nth-child(2) { 
+  margin-left: 270px;
+
+}
+}
+
+
 </style>
