@@ -88,13 +88,13 @@ export default defineComponent({
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 45px;
     max-width: 1128px;
     margin: 0 auto;
   }
 
   &__section {
-    flex: 1;
+    flex: 0;
     min-width: 200px;
     text-align: left;
     display: flex;
