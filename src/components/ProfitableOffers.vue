@@ -50,7 +50,7 @@
 // #agreement-checkbox {
 //   background-color: #fff;
 // }
-</style>    
+</style>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";

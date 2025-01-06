@@ -160,8 +160,7 @@
               flex-direction: column;
               align-items: start;
               justify-content: left;
-              // gap: 5px;
-
+              
               span {
                 font-size: 12px;
                 color: #9399a8;
