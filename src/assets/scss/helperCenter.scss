@@ -63,14 +63,14 @@
             gap: 8px;
             width: 700px;
             margin: 40px auto;
-          
+
             .accordion-item {
               border-radius: 12px;
               background-color: #ffffffa6;
               overflow: hidden;
               box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
               transition: background-color 0.3s ease;
-          
+
               .accordion-header {
                 display: flex;
                 align-items: center;
@@ -83,55 +83,59 @@
                 width: 100%;
                 border: none;
                 background: none;
-          
+
                 &:hover {
                   background-color: #ffffff;
                 }
-          
+
                 .accordion-icon {
                   width: 20px;
                   height: 20px;
                   transition: transform 0.3s ease;
                 }
               }
-          
+
               .accordion-content {
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease, padding 0.3s ease;
                 padding: 0 16px;
                 background-color: #fff;
-          
+
                 p {
                   margin: 16px 0;
                   font-size: 16px;
                   line-height: 1.5;
                   color: #333;
                 }
-          
+
                 &.active {
                   max-height: 500px;
                   padding: 16px;
                 }
               }
             }
-          
-            // .accordion-button {
-            //   padding: 12px 20px;
-            //   font-size: 16px;
-            //   font-weight: 500;
-            //   color: #fff;
-            //   background-color: #007bff;
-            //   border: none;
-            //   border-radius: 8px;
-            //   cursor: pointer;
-            //   transition: background-color 0.3s ease;
-            //   align-self: center;
-          
-            //   &:hover {
-            //     background-color: #0056b3;
-            //   }
-            // }
+
+            .accordion-button {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 14px 20px;
+              font-size: 16px;
+              font-weight: 500;
+              border: none;
+              border-radius: 8px;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+              gap: 10px;
+              background-color: #ffffff;
+              color: #80dbeb;
+              margin: 0 auto;
+              width: 100%;
+              
+              
+            }
+            
           }
         }
       }

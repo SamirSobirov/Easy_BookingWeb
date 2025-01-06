@@ -47,6 +47,7 @@
                 </div>
               </div>
               <button class="accordion-button" @click="learnMore">
+                <img src="/src/assets/icons/ToKnow.svg" alt="" />
                 Узнать больше
               </button>
             </div>
