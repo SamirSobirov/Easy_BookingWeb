@@ -109,7 +109,7 @@ body {
 .circle:nth-child(10) {
   width: 250px;
   height: 250px;
-  top: 95%;
+  top: 90%;
   left: 15%;
   background: #a500b829;
 }
