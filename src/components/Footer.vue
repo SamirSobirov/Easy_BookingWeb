@@ -197,13 +197,14 @@ export default defineComponent({
 
     & .footer__link {
       display: block;
-      color: #00b8d7;
+      color: #6D7586;
       text-decoration: none;
       font-size: 14px;
       margin-bottom: 8px;
 
       &:hover {
         text-decoration: underline;
+        color: #00b8d7;
       }
     }
   }
