@@ -1,7 +1,6 @@
 <template>
   <footer class="footer" style="margin-top: 60px; margin-bottom: 43px">
     <div class="footer__container">
-      <!-- Логотип и описание -->
       <div class="footer__section">
         <img
           src="/src/assets/images/EasyBooking_logo.svg"
@@ -9,34 +8,34 @@
           class="footer__logo"
         />
         <p class="footer__description">
-          Ваш проводник в мир ярких путешествий <br> и комфортных поездок
+          Ваш проводник в мир ярких путешествий <br />
+          и комфортных поездок
         </p>
         <div class="footer__apps">
           <button class="download">
             <img src="/src/assets/icons/apple.svg" alt="" />
             <div>
-              <span style="color: #9399A8;">Доступно в</span>
-              <span style="font-size: 13px;">App store</span>
+              <span style="color: #9399a8">Доступно в</span>
+              <span style="font-size: 13px">App store</span>
             </div>
           </button>
           <button class="download">
             <img src="/src/assets/icons/GooglePlay.svg" alt="" />
             <div>
-              <span style="color: #9399A8;">Доступно в</span>
-              <span style="font-size: 13px;">Google Play</span>
+              <span style="color: #9399a8">Доступно в</span>
+              <span style="font-size: 13px">Google Play</span>
             </div>
           </button>
           <button class="download">
             <img src="/src/assets/icons/huawei.svg" alt="" />
             <div>
-              <span style="color: #9399A8;">Доступно в</span>
-              <span style="font-size: 13px;">App Gallery</span>
+              <span style="color: #9399a8">Доступно в</span>
+              <span style="font-size: 13px">App Gallery</span>
             </div>
           </button>
         </div>
       </div>
 
-      <!-- Ссылки на компании -->
       <div class="footer__section">
         <h3 class="footer__title">Компания</h3>
         <ul class="footer__list">
@@ -46,7 +45,6 @@
         </ul>
       </div>
 
-      <!-- Ссылки на информацию -->
       <div class="footer__section">
         <h3 class="footer__title">Информация</h3>
         <ul class="footer__list">
@@ -55,7 +53,6 @@
         </ul>
       </div>
 
-      <!-- Контактные данные -->
       <div class="footer__section">
         <h3 class="footer__title">Контакты</h3>
         <p class="footer__contact">support@easybooking.uz</p>
@@ -93,7 +90,4 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
-
-
-</style>
+<style lang="scss" scoped></style>
