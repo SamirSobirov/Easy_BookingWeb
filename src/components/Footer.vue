@@ -77,9 +77,9 @@
     <div class="footer__bottom">
       <p>© Easybooking.uz | All rights reserved</p>
       <div class="footer__logos">
-        <img src="" alt="IATA" />
-        <img src="" alt="KP" />
-        <img src="" alt="TURSAB" />
+        <img src="/src/assets/icons/Iata.svg" alt="IATA" />
+        <img src="/src/assets/icons/kp.svg" alt="KP" />
+        <img src="/src/assets/icons/kp.svg" alt="TURSAB" />
       </div>
     </div>
   </footer>
@@ -235,16 +235,26 @@ export default defineComponent({
   }
 
   &__bottom {
+    margin-top: 40px;
     border-top: 1px solid #e0e0e0;
-    margin-top: 20px;
-    padding-top: 10px;
+    width: 1080px;
+    padding: 30px 10px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    &__logos  {
+        width: 50px;
+        margin-right: 10px;
+    }
+    
+    .footer__logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 18px;
 
-    &__logos img {
-      width: 50px;
-      margin-right: 10px;
     }
   }
 
