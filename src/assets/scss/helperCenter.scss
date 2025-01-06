@@ -97,20 +97,21 @@
                 transition: max-height 0.3s ease, padding 0.3s ease;
                 padding: 0 16px;
                 background-color: #fff;
-              
+
                 p {
                   margin: 16px 0;
                   font-size: 16px;
                   line-height: 1.5;
                   color: #9399A8;
+                  font-family: Mulish;
                 }
-              
+
                 &.active {
                   max-height: 500px;
                   padding: 16px;
                 }
               }
-              
+
             }
 
             .accordion-button {
@@ -128,7 +129,7 @@
               background-color: #ffffff;
               color: #80dbeb;
               margin: 0 auto;
-              width: 100%; 
+              width: 100%;
             }
           }
         }
