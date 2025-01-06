@@ -16,6 +16,7 @@
       <Blog />
       <GroundHandling />
       <HelpCenter />
+      <Reviews />
     </main>
   </div>
 </template>
@@ -33,6 +34,7 @@ import ProfitableOffers from "./components/ProfitableOffers.vue";
 import Blog from "./components/Blog.vue";
 import GroundHandling from "./components/GroundHandling.vue";
 import HelpCenter from "./components/HelpCenter.vue";
+import Reviews from "./components/Reviews.vue";
 
 const imageNames = [
   "DubaiCountry.svg",

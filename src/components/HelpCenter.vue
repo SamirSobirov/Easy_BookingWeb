@@ -89,7 +89,6 @@ export default defineComponent({
         answer:
           "Для покупки билета на дополнительный багаж перейдите в раздел 'Багаж' на нашем сайте и следуйте инструкциям.",
       },
-
     ]);
 
     const activeIndex = ref<number>(0);
