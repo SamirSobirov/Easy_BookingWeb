@@ -57,30 +57,82 @@
             height: auto;
           }
 
-          // .Options {
-          //   display: flex;
-          //   flex-direction: column;
-          //   gap: 18px;
-
-          //   h3 {
-          //     display: flex;
-          //     align-items: center;
-          //     justify-content: space-between;
-          //     text-align: left;
-          //     font-size: 17px;
-          //     font-weight: 500;
-          //     padding: 18px 16px;
-          //     background-color: #ffffffa6;
-          //     border-radius: 12px;
-          //     width: 684px;
-
-          //     img {
-          //       width: 20px;
-          //       height: 20px;
-          //     }
-          //   }
-          // }
+          .help-center {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 700px;
+            margin: 40px auto;
           
+            .accordion-item {
+              border-radius: 12px;
+              background-color: #ffffffa6;
+              overflow: hidden;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+              transition: background-color 0.3s ease;
+          
+              .accordion-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 17px;
+                font-weight: 500;
+                padding: 18px 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                width: 100%;
+                border: none;
+                background: none;
+          
+                &:hover {
+                  background-color: #ffffff;
+                }
+          
+                .accordion-icon {
+                  width: 20px;
+                  height: 20px;
+                  transition: transform 0.3s ease;
+                }
+              }
+          
+              .accordion-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease, padding 0.3s ease;
+                padding: 0 16px;
+                background-color: #fff;
+          
+                p {
+                  margin: 16px 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  color: #333;
+                }
+          
+                &.active {
+                  max-height: 500px;
+                  padding: 16px;
+                }
+              }
+            }
+          
+            // .accordion-button {
+            //   padding: 12px 20px;
+            //   font-size: 16px;
+            //   font-weight: 500;
+            //   color: #fff;
+            //   background-color: #007bff;
+            //   border: none;
+            //   border-radius: 8px;
+            //   cursor: pointer;
+            //   transition: background-color 0.3s ease;
+            //   align-self: center;
+          
+            //   &:hover {
+            //     background-color: #0056b3;
+            //   }
+            // }
+          }
         }
       }
     }
