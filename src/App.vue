@@ -17,7 +17,11 @@
       <GroundHandling />
       <HelpCenter />
       <Reviews />
+    <Footer />
     </main>
+    
+    
+    
   </div>
 </template>
 
@@ -35,6 +39,7 @@ import Blog from "./components/Blog.vue";
 import GroundHandling from "./components/GroundHandling.vue";
 import HelpCenter from "./components/HelpCenter.vue";
 import Reviews from "./components/Reviews.vue";
+import Footer from "./components/Footer.vue";
 
 const imageNames = [
   "DubaiCountry.svg",
