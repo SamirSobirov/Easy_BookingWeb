@@ -40,9 +40,9 @@
           <p class="footer__contact">+998 66 230 44 00</p>
           <p class="footer__contact">+998 71 203 00 11</p>
           <div class="footer__socials">
-            <a href="#" class="footer__social-link">Telegram</a>
-            <a href="#" class="footer__social-link">Instagram</a>
-            <a href="#" class="footer__social-link">Facebook</a>
+            <a href="#" class="footer__social-link"><img src="/src/assets/icons/telegram_icon.svg" alt=""></a>
+            <a href="#" class="footer__social-link"><img src="/src/assets/icons/instagram_icon.svg" alt=""></a>
+            <a href="#" class="footer__social-link"><img src="/src/assets/icons/facebook_icon.svg" alt=""></a>
           </div>
         </div>
       </div>
@@ -130,11 +130,21 @@
       font-size: 14px;
       margin-bottom: 8px;
     }
-  
     &__socials {
       display: flex;
       gap: 10px;
-  
+      margin-top: 15px; 
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      order: 3;
+
+      & .footer__social-link img {
+        width: 24px; /* Размер иконок */
+        height: 24px;
+        
+      }
+    
       & .footer__social-link {
         color: #0066cc;
         font-size: 14px;
