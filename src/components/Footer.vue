@@ -159,11 +159,7 @@ export default defineComponent({
           margin-right: 10px;
         }
 
-        &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
-        }
-
+        
         div {
           display: flex;
           flex-direction: column;
