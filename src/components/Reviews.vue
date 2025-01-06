@@ -54,7 +54,7 @@
             <div class="card-footer">
               <div class="author">
                 <img
-                  src="/src/assets/images/person_dev.svg"
+                  src="/src/assets/images/per_dev2.svg"
                   alt="Сарвар Тулаганов"
                   class="author-image"
                 />
