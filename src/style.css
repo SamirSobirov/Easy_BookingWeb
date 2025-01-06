@@ -99,6 +99,20 @@ body {
   left: 85%;
   background: rgba(255, 150, 0, 0.1);
 }
+.circle:nth-child(9) {
+  width: 250px;
+  height: 250px;
+  top: 90%;
+  left: 85%;
+  background: rgba(255, 150, 0, 0.1);
+}
+.circle:nth-child(10) {
+  width: 250px;
+  height: 250px;
+  top: 95%;
+  left: 15%;
+  background: #a500b829;
+}
 
 @keyframes float {
 
