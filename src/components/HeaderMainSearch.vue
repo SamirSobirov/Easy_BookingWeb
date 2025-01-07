@@ -60,7 +60,7 @@
         />
 
         <select class="input_select">
-          <option>1 пассажир</option>
+          <option style="height: 130px">1 пассажир</option>
           <option>2 пассажира</option>
           <option>3 пассажира</option>
         </select>
