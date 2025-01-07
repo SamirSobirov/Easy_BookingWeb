@@ -12,10 +12,19 @@
         <a href="#" class="header__nav-link">Корпоративным клиентам</a>
         <a href="#" class="header__nav-link">О нас</a>
 
-        <button class="header__nav-button header__nav-button--phone">
+        <button @click="toggleModal" class="header__nav-phone">
           <i class="fas fa-phone-alt"></i>
           <span>1240</span>
         </button>
+
+        <div v-if="isModalVisible" class="modal">
+          <div class="modal-content">
+            <p>
+              Для связи с нами позвоните по <br />
+              короткому номеру <strong>1240</strong>
+            </p>
+          </div>
+        </div>
 
         <button class="header__nav-button header__nav-button--language">
           <img
@@ -46,18 +55,113 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref, onMounted, onUnmounted } from "vue";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 export default defineComponent({
-  name: "NotificationButton",
-  data() {
+  name: "HeroSection",
+  setup() {
+    const hasNotifications = ref(true);
+    const notificationCount = ref(32);
+
+    const isModalVisible = ref(false);
+
+    const toggleModal = () => {
+      isModalVisible.value = !isModalVisible.value;
+    };
+
+    const closeModal = () => {
+      isModalVisible.value = false;
+    };
+
+    const handleWindowClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+
+      if (!target.closest(".modal") && !target.closest(".header__nav-phone")) {
+        closeModal();
+      }
+    };
+
+    onMounted(() => {
+      window.addEventListener("click", handleWindowClick);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener("click", handleWindowClick);
+    });
+
     return {
-      hasNotifications: true,
-      notificationCount: 32,
+      hasNotifications,
+      notificationCount,
+      isModalVisible,
+      toggleModal,
+      closeModal,
     };
   },
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header__nav-phone {
+  display: flex;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #6d7586;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+
+  i {
+    transform: rotate(90deg);
+  }
+
+  &:hover {
+    background-color: #e4e4e457;
+    color: #00b8d7;
+  }
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.modal {
+  position: fixed;
+  bottom: 80%;
+  left: 69%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
+  animation: slide-up 0.3s ease-in-out;
+
+  &-content {
+    font-weight: thin;
+    font-size: 16px;
+    text-align: left;
+    word-spacing: 2px;
+    font-family: Mulish;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateX(-50%) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+</style>
