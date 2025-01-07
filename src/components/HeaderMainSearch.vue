@@ -111,39 +111,27 @@
               </div>
             </div>
 
-            <hr style="margin-top: 10px; height: 0.2px ">
+            <hr style="margin-top: 10px; height: 0.2px" />
 
             <div class="dropdown-item class-selection">
-        <div class="radio-group">
-          <label>
-            <input
-              type="radio"
-              value="economy"
-              v-model="travelClass"
-            />
-            Эконом-класс
-          </label>
-          <label>
-            <input
-              type="radio"
-              value="first"
-              v-model="travelClass"
-            />
-            Первый класс
-          </label>
-          <label>
-            <input
-              type="radio"
-              value="business"
-              v-model="travelClass"
-            />
-            Бизнес-класс
-          </label>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" value="economy" v-model="travelClass" />
+                  Эконом-класс
+                </label>
+                <label>
+                  <input type="radio" value="first" v-model="travelClass" />
+                  Первый класс
+                </label>
+                <label>
+                  <input type="radio" value="business" v-model="travelClass" />
+                  Бизнес-класс
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  
+
         <button type="submit" class="search-button">
           <img src="/src/assets/icons/search_icon.svg" alt="" />
           Поиск
@@ -261,7 +249,7 @@ const selectedText = computed(() => {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 10px;
-    
+
         .radio-group {
           display: flex;
           flex-direction: column;
@@ -276,14 +264,35 @@ const selectedText = computed(() => {
             color: black;
             font-family: sans-serif;
 
-            input {
-              margin-right: 10px;
-              cursor: pointer;
-            }
-
             &:hover {
               color: #80dbeb;
             }
+
+            input[type="radio"] {
+              margin-right: 10px;
+              cursor: pointer;
+              width: 20px;
+              height: 20px;
+              appearance: none;
+              border: 2px solid #ccc;
+              border-radius: 50%;
+              outline: none;
+              background-color: white;
+              transition: background-color 0.2s, border-color 0.2s;
+
+              &:hover {
+                color: #80dbeb;
+                border-color: #80dbeb;
+                background-color: #80dbeb;
+              }
+              &:checked {
+                background-color: #00bcd4;
+                border-color: #00bcd4;
+              }
+
+            }
+
+            
           }
         }
       }
