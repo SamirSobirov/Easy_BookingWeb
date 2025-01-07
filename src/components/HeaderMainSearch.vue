@@ -204,12 +204,12 @@ const decrement = (type: "adults" | "children" | "infants") => {
 };
 
 const selectedText = computed(() => {
-  const adultsText = `${passengerCount.adults + passengerCount.children + passengerCount.infants} пассажир${passengerCount.adults > 1 ? "а" : ""}`;
- 
+  const adultsText = `${
+    passengerCount.adults + passengerCount.children + passengerCount.infants
+  } пассажир${passengerCount.adults > 1 ? "а" : ""}`;
+
   return `${adultsText}`;
 });
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
