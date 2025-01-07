@@ -131,7 +131,8 @@ export default defineComponent({
 
 .modal {
   position: fixed;
-  bottom: 80%;
+  top: 100px;
+  // bottom: 80%;
   left: 70%;
   transform: translateX(-50%);
   background-color: #ffffff85;
