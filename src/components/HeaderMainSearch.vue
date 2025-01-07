@@ -285,6 +285,7 @@ const selectedText = computed(() => {
             font-size: 15px;
             color: black;
             font-family: sans-serif;
+            gap: 10px;
 
             &:hover {
               color: #80dbeb;
