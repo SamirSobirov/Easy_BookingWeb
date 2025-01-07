@@ -65,7 +65,6 @@
           </button>
 
           <div v-if="isDropdownOpen" class="dropdown-menu">
-            <!-- Adults -->
             <div class="dropdown-item">
               <span>Взрослые</span>
               <div class="controls">
@@ -124,10 +123,7 @@
                   />
                   Эконом-класс
                 </label>
-                <!-- <label>
-                  <input type="radio" value="first" v-model="travelClass" />
-                  Первый класс
-                </label> -->
+
                 <label>
                   <input type="radio" value="business" v-model="travelClass" />
                   Бизнес-класс
