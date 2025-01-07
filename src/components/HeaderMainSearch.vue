@@ -116,7 +116,12 @@
             <div class="dropdown-item class-selection">
               <div class="radio-group">
                 <label>
-                  <input type="radio" value="economy" v-model="travelClass" />
+                  <input
+                    type="radio"
+                    value="economy"
+                    v-model="travelClass"
+                    style="color: #80dbeb"
+                  />
                   Эконом-класс
                 </label>
                 <!-- <label>
@@ -285,14 +290,7 @@ const selectedText = computed(() => {
                 border-color: #80dbeb;
                 background-color: #80dbeb;
               }
-              &:checked {
-                background-color: #00bcd4;
-                border-color: #00bcd4;
-              }
-
             }
-
-            
           }
         }
       }
