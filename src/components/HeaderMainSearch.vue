@@ -119,10 +119,10 @@
                   <input type="radio" value="economy" v-model="travelClass" />
                   Эконом-класс
                 </label>
-                <label>
+                <!-- <label>
                   <input type="radio" value="first" v-model="travelClass" />
                   Первый класс
-                </label>
+                </label> -->
                 <label>
                   <input type="radio" value="business" v-model="travelClass" />
                   Бизнес-класс
@@ -273,7 +273,7 @@ const selectedText = computed(() => {
               cursor: pointer;
               width: 20px;
               height: 20px;
-              appearance: none;
+              // appearance: none;
               border: 2px solid #ccc;
               border-radius: 50%;
               outline: none;
