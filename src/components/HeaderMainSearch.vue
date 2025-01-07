@@ -114,14 +114,36 @@
             <hr style="margin-top: 10px; height: 0.2px ">
 
             <div class="dropdown-item class-selection">
-              <select v-model="travelClass" @click.stop>
-                <option value="economy">Эконом</option>
-                <option value="business">Бизнес</option>
-              </select>
-            </div>
-          </div>
+        <div class="radio-group">
+          <label>
+            <input
+              type="radio"
+              value="economy"
+              v-model="travelClass"
+            />
+            Эконом-класс
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="first"
+              v-model="travelClass"
+            />
+            Первый класс
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="business"
+              v-model="travelClass"
+            />
+            Бизнес-класс
+          </label>
         </div>
-
+      </div>
+    </div>
+  </div>
+  
         <button type="submit" class="search-button">
           <img src="/src/assets/icons/search_icon.svg" alt="" />
           Поиск
@@ -178,12 +200,12 @@ const selectedText = computed(() => {
   }`;
 });
 </script>
-
 <style lang="scss" scoped>
 .dropdown {
   position: relative;
   display: inline-block;
 
+  // Button Styles
   .dropdown-button {
     background-color: #ffffff;
     color: #666;
@@ -192,51 +214,90 @@ const selectedText = computed(() => {
     height: 50px;
     border: none;
     font-size: 15px;
+    font-weight: 500;
+    text-align: left;
     border-radius: 12px;
     cursor: pointer;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     &:hover {
       box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     }
+
+    &:after {
+      content: "▼";
+      font-size: 12px;
+      color: #aaa;
+    }
   }
 
+  // Dropdown Menu
   .dropdown-menu {
     position: absolute;
     top: 110%;
-    z-index: 1;
+    z-index: 10;
     left: 0;
     background: white;
     border: 1px solid #ccc;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    width: 200px;
-    padding: 10px;
+    border-radius: 12px;
+    width: 250px;
+    padding: 10px 40px;
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    gap: 15px;
 
-    height: 200px;
-
+    // Dropdown Items
     .dropdown-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
       color: #666;
+      font-size: 14px;
       gap: 10px;
 
-
       &.class-selection {
-        margin-top: 15px;
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    
+        .radio-group {
+          display: flex;
+          flex-direction: column;
+          gap: 13px;
+
+          label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: #555;
+            font-size: 15px;
+            color: black;
+            font-family: sans-serif;
+
+            input {
+              margin-right: 10px;
+              cursor: pointer;
+            }
+
+            &:hover {
+              color: #80dbeb;
+            }
+          }
+        }
       }
 
+      // Controls for passenger adjustment
       .controls {
         display: flex;
         align-items: center;
 
         button {
-          background: #f0f0f0;
+          background: rgba(0, 255, 255, 0.126);
           border: none;
           border-radius: 50%;
           width: 25px;
@@ -244,28 +305,27 @@ const selectedText = computed(() => {
           text-align: center;
           cursor: pointer;
           margin: 0 5px;
-          background-color: rgba(0, 255, 255, 0.126);
+          font-weight: bold;
 
           &:disabled {
             background-color: #cccccc72;
             opacity: 0.5;
             cursor: not-allowed;
           }
+
+          &:hover:not(:disabled) {
+            background-color: #00bcd4;
+            color: white;
+          }
         }
 
         span {
           min-width: 20px;
           text-align: center;
+          font-weight: bold;
+          font-size: 14px;
+          color: #333;
         }
-      }
-
-      select {
-        width: 100%;
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background: #f9f9f9;
-        font-size: 14px;
       }
     }
   }
