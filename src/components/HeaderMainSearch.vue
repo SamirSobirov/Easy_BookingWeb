@@ -205,7 +205,6 @@ const selectedText = computed(() => {
   position: relative;
   display: inline-block;
 
-  // Button Styles
   .dropdown-button {
     background-color: #ffffff;
     color: #666;
@@ -234,7 +233,6 @@ const selectedText = computed(() => {
     }
   }
 
-  // Dropdown Menu
   .dropdown-menu {
     position: absolute;
     top: 110%;
@@ -245,12 +243,11 @@ const selectedText = computed(() => {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     width: 250px;
-    padding: 10px 40px;
+    padding: 10px 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
 
-    // Dropdown Items
     .dropdown-item {
       display: flex;
       justify-content: space-between;
@@ -291,7 +288,6 @@ const selectedText = computed(() => {
         }
       }
 
-      // Controls for passenger adjustment
       .controls {
         display: flex;
         align-items: center;
