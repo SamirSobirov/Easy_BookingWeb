@@ -185,11 +185,15 @@ const selectedText = computed(() => {
   .dropdown-button {
     background-color: #ffffff;
     color: #666;
-    padding: 18px 35px;
+    padding: 5px 10px;
+    width: 182px;
+    height: 50px;
     border: none;
     font-size: 15px;
     border-radius: 12px;
     cursor: pointer;
+    
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
 
   .dropdown-menu {
