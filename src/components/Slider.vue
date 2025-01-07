@@ -34,7 +34,7 @@ export default defineComponent({
       currentIndex: 0,
       items: [
         {
-          image: "/src/assets/images/ads.svg",
+          image: "/src/assets/images/ads.png",
         },
         { image: "https://via.placeholder.com/600x300?text=Slide+2" },
         { image: "https://via.placeholder.com/600x300?text=Slide+3" },

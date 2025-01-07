@@ -290,24 +290,26 @@ const selectedText = computed(() => {
               color: #80dbeb;
             }
 
-            input[type="radio"] {
-              margin-right: 10px;
-              cursor: pointer;
-              width: 20px;
-              height: 20px;
-              // appearance: none;
-              border: 2px solid #ccc;
-              border-radius: 50%;
-              outline: none;
-              background-color: white;
-              transition: background-color 0.2s, border-color 0.2s;
+            // // input[type="radio"] {
+            // //   margin-right: 10px;
+            // //   cursor: pointer;
+            // //   width: 20px;
+            // //   height: 20px;
+            // //   // appearance: none;
+            // //   border: 2px solid #ccc;
+            // //   border-radius: 50%;
+            // //   outline: none;
+            // //   background-color: white;
+            // //   transition: background-color 0.2s, border-color 0.2s;
 
-              &:hover {
-                color: #80dbeb;
-                border-color: #80dbeb;
-                background-color: #80dbeb;
-              }
-            }
+            // //   &:hover {
+            // //     color: #80dbeb;
+            // //     border-color: #80dbeb;
+            // //     background-color: #80dbeb;
+            // //   }
+
+              
+            // }
           }
         }
       }
