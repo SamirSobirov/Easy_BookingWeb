@@ -162,7 +162,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, computed, onBeforeUnmount } from "vue";
 
 const isDropdownOpen = ref(false);
 const isSwitched = ref(false);
@@ -177,7 +177,23 @@ const travelClass = ref("economy");
 
 const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
+
+  if (isDropdownOpen.value) {
+    window.addEventListener("click", handleOutsideClick);
+  }
 };
+
+const handleOutsideClick = (event: MouseEvent) => {
+  const dropdown = document.querySelector(".dropdown");
+  if (!dropdown || !dropdown.contains(event.target as Node)) {
+    isDropdownOpen.value = false;
+    window.removeEventListener("click", handleOutsideClick);
+  }
+};
+
+onBeforeUnmount(() => {
+  window.removeEventListener("click", handleOutsideClick);
+});
 
 const increment = (type: "adults" | "children" | "infants") => {
   passengerCount[type]++;
@@ -188,9 +204,11 @@ const decrement = (type: "adults" | "children" | "infants") => {
 };
 
 const selectedText = computed(() => {
-  return `${passengerCount.adults} пассажир`;
+  return `${passengerCount.adults} пассажир${passengerCount.adults > 1 ? "а" : ""}`;
 });
+
 </script>
+
 <style lang="scss" scoped>
 .dropdown {
   position: relative;
