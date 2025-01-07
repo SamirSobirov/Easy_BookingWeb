@@ -21,7 +21,7 @@
           <div class="modal-content">
             <p>
               Для связи с нами позвоните по <br />
-              короткому номеру <strong>1240</strong>
+              короткому номеру <a href="">1240</a>
             </p>
           </div>
         </div>
@@ -156,8 +156,10 @@ export default defineComponent({
     word-spacing: 2px;
     font-family: Mulish;
 
-    strong {
-      font-weight: 500;
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
     }
   }
 }
