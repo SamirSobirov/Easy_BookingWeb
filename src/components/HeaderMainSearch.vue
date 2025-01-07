@@ -188,9 +188,7 @@ const decrement = (type: "adults" | "children" | "infants") => {
 };
 
 const selectedText = computed(() => {
-  return `${passengerCount.adults} человек. ${
-    travelClass.value === "economy" ? "Эконом" : "Бизнес"
-  }`;
+  return `${passengerCount.adults} пассажир`;
 });
 </script>
 <style lang="scss" scoped>
