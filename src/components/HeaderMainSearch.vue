@@ -59,11 +59,66 @@
           onblur="(this.type='text')"
         />
 
-        <select class="input_select">
-          <option style="height: 130px">1 пассажир</option>
-          <option>2 пассажира</option>
-          <option>3 пассажира</option>
-        </select>
+        <div class="dropdown">
+          <button class="dropdown-button" @click="toggleDropdown" type="button">
+            {{ selectedText }}
+          </button>
+
+          <div v-if="isDropdownOpen" class="dropdown-menu">
+            <!-- Adults -->
+            <div class="dropdown-item">
+              <span>Взрослые</span>
+              <div class="controls">
+                <button
+                  @click="decrement('adults')"
+                  :disabled="passengerCount.adults <= 1"
+                  type="button"
+                >
+                  -
+                </button>
+                <span>{{ passengerCount.adults }}</span>
+                <button @click="increment('adults')" type="button">+</button>
+              </div>
+            </div>
+
+            <div class="dropdown-item">
+              <span>Дети</span>
+              <div class="controls">
+                <button
+                  @click="decrement('children')"
+                  :disabled="passengerCount.children <= 0"
+                  type="button"
+                >
+                  -
+                </button>
+                <span>{{ passengerCount.children }}</span>
+                <button @click="increment('children')" type="button">+</button>
+              </div>
+            </div>
+
+            <div class="dropdown-item">
+              <span>Младенцы</span>
+              <div class="controls">
+                <button
+                  @click="decrement('infants')"
+                  :disabled="passengerCount.infants <= 0"
+                  type="button"
+                >
+                  -
+                </button>
+                <span>{{ passengerCount.infants }}</span>
+                <button @click="increment('infants')" type="button">+</button>
+              </div>
+            </div>
+
+            <div class="dropdown-item class-selection">
+              <select v-model="travelClass" @click.stop>
+                <option value="economy">Эконом</option>
+                <option value="business">Бизнес</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
         <button type="submit" class="search-button">
           <img src="/src/assets/icons/search_icon.svg" alt="" />
@@ -90,9 +145,110 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, reactive, computed } from "vue";
 
+const isDropdownOpen = ref(false);
 const isSwitched = ref(false);
+
+const passengerCount = reactive({
+  adults: 1,
+  children: 0,
+  infants: 0,
+});
+
+const travelClass = ref("economy");
+
+const toggleDropdown = () => {
+  isDropdownOpen.value = !isDropdownOpen.value;
+};
+
+const increment = (type: "adults" | "children" | "infants") => {
+  passengerCount[type]++;
+};
+
+const decrement = (type: "adults" | "children" | "infants") => {
+  if (passengerCount[type] > 0) passengerCount[type]--;
+};
+
+const selectedText = computed(() => {
+  return `${passengerCount.adults} человек. ${
+    travelClass.value === "economy" ? "Эконом" : "Бизнес"
+  }`;
+});
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  .dropdown-button {
+    background-color: #ffffff;
+    color: #666;
+    padding: 18px 35px;
+    border: none;
+    font-size: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 110%;
+    z-index: 1;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 200px;
+    padding: 10px;
+
+    .dropdown-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+      &.class-selection {
+        margin-top: 10px;
+      }
+
+      .controls {
+        display: flex;
+        align-items: center;
+
+        button {
+          background: #f0f0f0;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          width: 25px;
+          height: 25px;
+          text-align: center;
+          cursor: pointer;
+          margin: 0 5px;
+
+          &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+          }
+        }
+
+        span {
+          min-width: 20px;
+          text-align: center;
+        }
+      }
+
+      select {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: #f9f9f9;
+        font-size: 14px;
+      }
+    }
+  }
+}
+</style>
