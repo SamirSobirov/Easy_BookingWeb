@@ -111,6 +111,8 @@
               </div>
             </div>
 
+            <hr style="margin-top: 10px; height: 0.2px ">
+
             <div class="dropdown-item class-selection">
               <select v-model="travelClass" @click.stop>
                 <option value="economy">Эконом</option>
@@ -192,8 +194,11 @@ const selectedText = computed(() => {
     font-size: 15px;
     border-radius: 12px;
     cursor: pointer;
-    
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    }
   }
 
   .dropdown-menu {
@@ -207,15 +212,23 @@ const selectedText = computed(() => {
     border-radius: 5px;
     width: 200px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+
+    height: 200px;
 
     .dropdown-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
+      color: #666;
+      gap: 10px;
+
 
       &.class-selection {
-        margin-top: 10px;
+        margin-top: 15px;
       }
 
       .controls {
@@ -224,15 +237,17 @@ const selectedText = computed(() => {
 
         button {
           background: #f0f0f0;
-          border: 1px solid #ccc;
-          border-radius: 5px;
+          border: none;
+          border-radius: 50%;
           width: 25px;
           height: 25px;
           text-align: center;
           cursor: pointer;
           margin: 0 5px;
+          background-color: rgba(0, 255, 255, 0.126);
 
           &:disabled {
+            background-color: #cccccc72;
             opacity: 0.5;
             cursor: not-allowed;
           }
