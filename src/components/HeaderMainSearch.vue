@@ -325,6 +325,7 @@ const selectedText = computed(() => {
           cursor: pointer;
           margin: 0 5px;
           font-weight: bold;
+          color: black;
 
           &:disabled {
             background-color: #cccccc72;
