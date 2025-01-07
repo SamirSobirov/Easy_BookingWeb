@@ -114,17 +114,12 @@
 
             <div class="dropdown-item class-selection">
               <div class="radio-group">
-                <label>
-                  <input
-                    type="radio"
-                    value="economy"
-                    v-model="travelClass"
-                    style="color: #80dbeb"
-                  />
+                <label class="radio-wrapper">
+                  <input type="radio" value="economy" v-model="travelClass" />
                   Эконом-класс
                 </label>
 
-                <label>
+                <label class="radio-wrapper">
                   <input type="radio" value="business" v-model="travelClass" />
                   Бизнес-класс
                 </label>
