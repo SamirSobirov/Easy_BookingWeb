@@ -134,14 +134,22 @@ export default defineComponent({
   bottom: 80%;
   left: 69%;
   transform: translateX(-50%);
-  background-color: white;
-  border-radius: 10px;
+  background-color: #ffffff85;
+  border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 10px;
   z-index: 1000;
   animation: slide-up 0.3s ease-in-out;
 
   &-content {
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 60px;
+    border-radius: 15px;
+    border: 2px solid white;
+    background-color: #ffff;
+    padding: 10px 15px;
     font-weight: thin;
     font-size: 16px;
     text-align: left;
