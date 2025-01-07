@@ -204,7 +204,17 @@ const decrement = (type: "adults" | "children" | "infants") => {
 };
 
 const selectedText = computed(() => {
-  return `${passengerCount.adults} пассажир${passengerCount.adults > 1 ? "а" : ""}`;
+  const adultsText = `${passengerCount.adults} пассажир${passengerCount.adults > 1 ? "а" : ""}`;
+  const childrenText =
+    passengerCount.children > 0
+      ? `, ${passengerCount.children} ребенок${passengerCount.children > 1 ? "а" : ""}`
+      : "";
+  const infantsText =
+    passengerCount.infants > 0
+      ? `, ${passengerCount.infants} младен${passengerCount.infants > 1 ? "ца" : "ец"}`
+      : "";
+
+  return `${adultsText}${childrenText}${infantsText}`;
 });
 </script>
 
