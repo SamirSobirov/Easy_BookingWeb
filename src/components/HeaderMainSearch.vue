@@ -206,7 +206,6 @@ const decrement = (type: "adults" | "children" | "infants") => {
 const selectedText = computed(() => {
   return `${passengerCount.adults} пассажир${passengerCount.adults > 1 ? "а" : ""}`;
 });
-
 </script>
 
 <style lang="scss" scoped>
