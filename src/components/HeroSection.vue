@@ -13,20 +13,22 @@
         <a href="#" class="header__nav-link">О нас</a>
 
         <button @click="toggleModal" class="header__nav-phone">
-          <i class="fas fa-phone-alt"></i>
-          <span>1240</span>
-        </button>
+      <i class="fas fa-phone-alt"></i>
+      <span>1240</span>
+    </button>
 
-        <div class="tel_modal-container">
-          <div :class="['modal', { visible: isModalVisible }]">
-            <div class="modal-content">
-              <p>
-                Для связи с нами позвоните по <br />
-                короткому номеру <a href="">1240</a>
-              </p>
-            </div>
-          </div>
+    <!-- Модальное окно -->
+    <div class="tel_modal-container">
+      <div :class="['modal', { visible: isModalVisible }]">
+        <div class="modal-content">
+          <p>
+            Для связи с нами позвоните по <br />
+            короткому номеру <a href="">1240</a>
+          </p>
         </div>
+      </div>
+    </div>
+
 
         <div class="language-selector">
           <button
@@ -128,11 +130,12 @@ export default defineComponent({
   setup() {
     const hasNotifications = ref(true);
     const notificationCount = ref(32);
-
     const isModalVisible = ref(false);
+
     const toggleModal = () => {
       isModalVisible.value = !isModalVisible.value;
     };
+
     const closeModal = () => {
       isModalVisible.value = false;
     };
@@ -158,12 +161,12 @@ export default defineComponent({
       {
         code: "UZB",
         name: "O'zbekcha",
-        flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG5SURBVHgBnVQxSyNBFP7ezF7wGokc1xwIue6623R3zZG0VyXHlQenpYWdjb/CQsRS/QOuFtaJhRCwSEpBxEUE2wgGJTszz/c2iZggqPvBsDNv5vvmmzf7hvASNpMaCP8RWL+VcbQHoh7YH2L178EshaZG20kFjndgqAZjZdZIGy9hlhYA5yXGKSzVsdJMJ1Qz6fw+OolFpFv9vFBDVMJI6Nk+2tdYKZ+TDdHFVhJPOxIn82S7dzDlkjV4CIxXoQ6zrI8IVXWWO/rI1Pr15VPZyq7xwjzeBHVoTTlPhQ7j9Y3G3P0woShCEbB3iC/P63R7cbETMS9Za1EEzjl4Y3YxGAy63nsuihACi8al5ig2xqAoaHSzleIKM1ChVOyhKMbcXjS8uTmWo1aigrcm+YWT0qG1f3Ht7JttmQ/FTumzgIc528wztbj/o0WR1Jeld4mwZ5Dj9OpP52tuQ/jLcKGP96RKKoSEYwh1HeZCabOTGgp1ZL4P/3qdqRMMfV85yn0SGomd9gxRVWon5aFY08Vh2oHGOJOO47auVc5k+sWkLCY/G1LdDQJ9F+rkqUjl32uL9t51s9Oe5TwC9JXxyFex1b4AAAAASUVORK5CYII=",
+        flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG5SURBVHgBnVQxSyNBFP7ezF7wGokc1xwIue6623R3zZG0VyXHlQenpYWdjb/CQsRS/QOuFtaJhRCwSEpBxEUE2wgGJTszz/c2iZggqPvBsDNv5vvmmzf7hvASNpMaCP8RWL+VcbQHoh7YH2L178EshaZG20kFjndgqAZjZdZIGy9hlhYA5yXGKSzVsdJMJ1Qz6fw+OolFpFv9vFBDVMJI6Nk+2tdYKZ+TDdHFVhJPOxIn82S7dzDlkjV4CIxXoQ6zrI8IVXWWO/rI1Pr15VPZyq7xwjzeBHVoTTlPhQ7j9Y3G3P0woShCEbB3iC/P63R7cbETMS9Za1EEzjl4Y3YxGAy63nsuihACi8al5ig2xqAoaHSzleIKM1ChVOyhKMbcXjS8uTmWo1aigrcm+YWT0qG1f3Ht7JttmQ/FTumzgIc528wztbj/o0WR1Jeld4mwZ5Dj9OpP52tuQ/jLcKGP96RKKoSEYwh1HeZCabOTGgp1ZL4P/3qdqRMMfV85yn0SGomd9gxRVWon5aFY08Vh2oHGOJOO47auVc5k+sWkLCY/G1LdDQJ9F+rkqUjl32uL9t51s9Oe5TwC9JXxyFex1b4AAAAASUVORK5CYII=", 
       },
       {
         code: "ENG",
         name: "English",
-        flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALbSURBVHgBpVRLSFRRGP7uuefeGSWvUouctBkNLSksI2xMDBGsTRa1UUoraCGku9wJbVoIQW2CDFok9jCyIovahFRm5qiIQgniCx2hhYmPsWbua87t3BuOjg618IMD53999/yP+wMJsLv4euHE6OS93iPlgU/b84zPO/KifSWnP4x/H7+9/2STP1EMjZN8jR6I+sOwKpZLUjLSUhSoRHRMbkkqcyWllM3Na9eQ3RBAMq3CyM3gaihZvaQdaCyAaHwFkcsFIkOiEgRBwJqjAJFyUuIGRFcRIqzbiVlPtLCw4O1ur+2oqy7JSktJxv8gUxn1NSXenpe1HcFgcFcsNcbYs705Ht/dGz5cOHMId1p6ExKIREBRfgYa60tRWJAJFjV9Kysrrdx0QpidnfUrihLgJxagqiZEZmKqogaRb6OOLjk/D1lvH4MRCrd7rbScCLquH6WSZVUlUQpL12NGF0/YMs241zAWBeXkAiVxvjIhiOj6FSHA25pKpTKyrrA2LB6oTQXBItrfYrpdcOdmb0rXsiwshkJ9Qtf2fVGFUIItIMSLxQkEhi1CgEWonJU56FYUvz0nG6FOTIOpqnMnSS64sn0QSPzjGSxoptFF97x7NJSaovhlSYpzsAs6VnER6siYI7tzspHzphWCLMf5GaaBpcXFIcLzajEsxh2k2NGYgCj/NTZ+3dbZtvW+Ku+uRWk78Xg8/ZqmdfJZQDTK0DsYRGXdUz7t4U2p/pz/hUsNL9AzMOPIdoxhGIH09PQ+Z7LC4fDlufnfPc1PhrPuPx+Csk3mc2MhET72T+N97ySqT+Xj6vmDMxme1Cpb7xB5vd4faQWN55ZCxmsIkpePGf6F5VAYzW1fZtpe9Z1dGmlyNkCsCEvDTcNcPA6mBSymw7Rzt6y47tg6brc70QkjUsxJhlft8ftoytkvx3bmNvm1yEplyDQOq8wstWdNXQ4NSlp4iIrkAaZuDWx85R+OLTKc21+ZcgAAAABJRU5ErkJggg==",
+        flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALbSURBVHgBpVRLSFRRGP7uuefeGSWvUouctBkNLSksI2xMDBGsTRa1UUoraCGku9wJbVoIQW2CDFok9jCyIovahFRm5qiIQgniCx2hhYmPsWbua87t3BuOjg618IMD53999/yP+wMJsLv4euHE6OS93iPlgU/b84zPO/KifSWnP4x/H7+9/2STP1EMjZN8jR6I+sOwKpZLUjLSUhSoRHRMbkkqcyWllM3Na9eQ3RBAMq3CyM3gaihZvaQdaCyAaHwFkcsFIkOiEgRBwJqjAJFyUuIGRFcRIqzbiVlPtLCw4O1ur+2oqy7JSktJxv8gUxn1NSXenpe1HcFgcFcsNcbYs705Ht/dGz5cOHMId1p6ExKIREBRfgYa60tRWJAJFjV9Kysrrdx0QpidnfUrihLgJxagqiZEZmKqogaRb6OOLjk/D1lvH4MRCrd7rbScCLquH6WSZVUlUQpL12NGF0/YMs241zAWBeXkAiVxvjIhiOj6FSHA25pKpTKyrrA2LB6oTQXBItrfYrpdcOdmb0rXsiwshkJ9Qtf2fVGFUIItIMSLxQkEhi1CgEWonJU56FYUvz0nG6FOTIOpqnMnSS64sn0QSPzjGSxoptFF97x7NJSaovhlSYpzsAs6VnER6siYI7tzspHzphWCLMf5GaaBpcXFIcLzajEsxh2k2NGYgCj/NTZ+3dbZtvW+Ku+uRWk78Xg8/ZqmdfJZQDTK0DsYRGXdUz7t4U2p/pz/hUsNL9AzMOPIdoxhGIH09PQ+Z7LC4fDlufnfPc1PhrPuPx+Csk3mc2MhET72T+N97ySqT+Xj6vmDMxme1Cpb7xB5vd4faQWN55ZCxmsIkpePGf6F5VAYzW1fZtpe9Z1dGmlyNkCsCEvDTcNcPA6mBSymw7Rzt6y47tg6brc70QkjUsxJhlft8ftoytkvx3bmNvm1yEplyDQOq8wstWdNXQ4NSlp4iIrkAaZuDWx85R+OLTKc21+ZcgAAAABJRU5ErkJggg==", 
       },
     ]);
 
@@ -202,14 +205,25 @@ export default defineComponent({
 
     const handleWindowClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
+
+      if (
+        !target.closest(".tel_modal-container") &&
+        !target.closest(".header__nav-phone") &&
+        isModalVisible.value
+      ) {
+        closeModal();
+      }
+
       if (
         !target.closest(".dropdown-menu") &&
-        !target.closest(".header__nav-button--language")
+        !target.closest(".header__nav-button--language") &&
+        isDropdownOpen.value
       ) {
         closeDropdown();
       }
     };
 
+    // Подписка на события клика
     onMounted(() => {
       window.addEventListener("click", handleWindowClick);
     });
@@ -238,6 +252,7 @@ export default defineComponent({
   },
 });
 </script>
+
 
 <style lang="scss" scoped>
 .language-selector {
