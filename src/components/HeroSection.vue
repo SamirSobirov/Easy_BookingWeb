@@ -17,14 +17,17 @@
           <span>1240</span>
         </button>
 
-        <div v-if="isModalVisible" class="modal">
-          <div class="modal-content">
-            <p>
-              Для связи с нами позвоните по <br />
-              короткому номеру <a href="">1240</a>
-            </p>
-          </div>
-        </div>
+        <div class="modal-container">
+  <div :class="['modal', { visible: isModalVisible }]">
+    <div class="modal-content">
+      <p>
+        Для связи с нами позвоните по <br />
+        короткому номеру <a href="">1240</a>
+      </p>
+    </div>
+  </div>
+</div>
+
 
         <button class="header__nav-button header__nav-button--language">
           <img
@@ -128,42 +131,51 @@ export default defineComponent({
     margin-right: 5px;
   }
 }
+.modal-container {
+  margin-top: 150px;
 
-.modal {
-  position: fixed;
-  top: 100px;
-  // bottom: 80%;
-  left: 70%;
-  transform: translateX(-50%);
-  background-color: #ffffff85;
-  border-radius: 15px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  z-index: 1000;
-  animation: slide-up 0.3s ease-in-out;
-
-  &-content {
-    align-items: center;
-    justify-content: center;
-    width: 260px;
-    height: 60px;
+  .modal {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff85;
     border-radius: 15px;
-    border: 2px solid white;
-    background-color: #ffff;
-    padding: 10px 15px;
-    font-weight: thin;
-    font-size: 16px;
-    text-align: left;
-    word-spacing: 2px;
-    font-family: Mulish;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    opacity: 0; /* Начальное состояние */
+    transform: translate(-50%, -60%); /* Начальное смещение */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Плавное появление и движение */
 
-    a {
-      text-decoration: none;
-      color: black;
-      font-weight: 600;
+    &.visible {
+      opacity: 1; /* Финальное состояние */
+      transform: translate(-50%, -50%); /* Финальное положение */
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 260px;
+      height: 60px;
+      border-radius: 15px;
+      border: 2px solid white;
+      background-color: #ffff;
+      padding: 10px 15px;
+      font-weight: thin;
+      font-size: 16px;
+      text-align: left;
+      word-spacing: 2px;
+      font-family: Mulish;
+
+      a {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+      }
     }
   }
 }
+
 
 @keyframes slide-up {
   from {
