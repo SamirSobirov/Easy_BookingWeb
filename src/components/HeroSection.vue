@@ -138,7 +138,7 @@ export default defineComponent({
     };
 
     const isDropdownOpen = ref(false);
-    const currentSection = ref("language"); // Активный раздел ('language' или 'currency')
+    const currentSection = ref("language"); 
     const selectedLanguage = ref({
       code: "RUS",
       name: "Русский",
