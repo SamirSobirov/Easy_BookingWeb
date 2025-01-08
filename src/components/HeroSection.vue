@@ -195,7 +195,6 @@ export default defineComponent({
   position: relative;
 
   .header__nav-button {
-
     .flag-icon {
       width: 25px;
       height: 20px;
