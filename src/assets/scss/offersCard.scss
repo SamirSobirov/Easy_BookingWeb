@@ -46,17 +46,18 @@
                     height: 15px;
                 }
 
-                &:hover img {
-                    filter: brightness(0) saturate(100%) invert(90%) sepia(17%) saturate(1411%) hue-rotate(162deg) brightness(98%) contrast(89%);
-                }
-
-                &:hover {
-                    background: white;
-                    border: 1px solid #80dbeb;
-                    color: #80dbeb;
-                }
+                
             }
         }
+        .offers-card__header-buttons .button.active {
+            background: white;
+            border: 1px solid #80dbeb;
+            color: #80dbeb;
+          }
+          
+          .offers-card__header-buttons .button.active img {
+            filter: brightness(0) saturate(100%) invert(90%) sepia(17%) saturate(1411%) hue-rotate(162deg) brightness(98%) contrast(89%);
+          }
     }
 
     .Cards {
