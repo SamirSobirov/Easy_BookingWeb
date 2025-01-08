@@ -241,6 +241,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .language-selector {
+  margin-right: 30px;
   position: relative;
 
   .header__nav-button {
