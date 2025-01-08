@@ -60,7 +60,6 @@
               </button>
             </div>
 
-            <!-- Секция языков -->
             <div v-if="currentSection === 'language'">
               <div
                 v-for="language in languages"
@@ -138,7 +137,7 @@ export default defineComponent({
     };
 
     const isDropdownOpen = ref(false);
-    const currentSection = ref("language"); 
+    const currentSection = ref("language");
     const selectedLanguage = ref({
       code: "RUS",
       name: "Русский",
@@ -279,6 +278,12 @@ export default defineComponent({
         // color: #80dbeb;
         // background-color:#80dbeb1d;
         border: none;
+        &.active {
+    background-color: #80dbeb1d;
+    color: #80dbeb;
+    border: none;
+    border-radius: 8px;
+  }
       }
     }
     span {
@@ -348,14 +353,6 @@ export default defineComponent({
         }
       }
     }
-  }
-
-  .toogle_btn.active {
-    background-color: #80dbeb1d;
-    color: #80dbeb;
-    font-weight: bold;
-    border: 1px solid #80dbeb;
-    border-radius: 8px;
   }
 }
 </style>
