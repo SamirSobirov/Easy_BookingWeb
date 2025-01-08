@@ -223,7 +223,6 @@ export default defineComponent({
       }
     };
 
-    // Подписка на события клика
     onMounted(() => {
       window.addEventListener("click", handleWindowClick);
     });
