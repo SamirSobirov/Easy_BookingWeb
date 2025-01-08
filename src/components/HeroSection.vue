@@ -44,26 +44,59 @@
 
           <div v-if="isDropdownOpen" class="dropdown-menu">
             <div class="toogle_box" style="margin-bottom: 10px">
-              <button class="toogle_btn">Язык</button>
-              <button class="toogle_btn">Валюта</button>
+              <button
+                class="toogle_btn"
+                @click="currentSection = 'language'"
+                :class="{ active: currentSection === 'language' }"
+              >
+                Язык
+              </button>
+              <button
+                class="toogle_btn"
+                @click="currentSection = 'currency'"
+                :class="{ active: currentSection === 'currency' }"
+              >
+                Валюта
+              </button>
             </div>
-            <div
-              v-for="language in languages"
-              :key="language.code"
-              class="dropdown-item"
-              @click="selectLanguage(language)"
-            >
-              <img
-                :src="language.flag"
-                :alt="`${language.name} Flag`"
-                class="flag-icon"
-              />
-              <span>{{ language.name }}</span>
-              <input
-                type="radio"
-                :checked="selectedLanguage.code === language.code"
-                :name="'language'"
-              />
+
+            <!-- Секция языков -->
+            <div v-if="currentSection === 'language'">
+              <div
+                v-for="language in languages"
+                :key="language.code"
+                class="dropdown-item"
+                @click="selectLanguage(language)"
+              >
+                <img
+                  :src="language.flag"
+                  :alt="`${language.name} Flag`"
+                  class="flag-icon"
+                />
+                <span>{{ language.name }}</span>
+                <input
+                  type="radio"
+                  :checked="selectedLanguage.code === language.code"
+                  :name="'language'"
+                />
+              </div>
+            </div>
+
+            <!-- Секция валют -->
+            <div v-if="currentSection === 'currency'">
+              <div
+                v-for="currency in currencies"
+                :key="currency.code"
+                class="dropdown-item"
+                @click="selectCurrency(currency)"
+              >
+                <span>{{ currency.name }}</span>
+                <input
+                  type="radio"
+                  :checked="selectedCurrency.code === currency.code"
+                  :name="'currency'"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -93,24 +126,30 @@ import "@fortawesome/fontawesome-free/css/all.css";
 export default defineComponent({
   name: "HeroSection",
   setup() {
+    // Уведомления
     const hasNotifications = ref(true);
     const notificationCount = ref(32);
 
+    // Модалка
     const isModalVisible = ref(false);
-
     const toggleModal = () => {
       isModalVisible.value = !isModalVisible.value;
     };
-
     const closeModal = () => {
       isModalVisible.value = false;
     };
 
+    // Dropdown
     const isDropdownOpen = ref(false);
+    const currentSection = ref("language"); // Активный раздел ('language' или 'currency')
     const selectedLanguage = ref({
       code: "RUS",
       name: "Русский",
       flag: "/src/assets/images/russFlag_icon.svg",
+    });
+    const selectedCurrency = ref({
+      code: "UZS",
+      name: "UZS",
     });
 
     const languages = ref([
@@ -131,6 +170,17 @@ export default defineComponent({
       },
     ]);
 
+    const currencies = ref([
+      { code: "UZS", name: "UZS" },
+      { code: "USD", name: "USD" },
+      { code: "RUB", name: "RUB" },
+      { code: "EUR", name: "EUR" },
+      { code: "KZT", name: "KZT" },
+      { code: "KGS", name: "KGS" },
+      { code: "TRY", name: "TRY" },
+      { code: "AZN", name: "AZN" },
+    ]);
+
     const toggleDropdown = () => {
       isDropdownOpen.value = !isDropdownOpen.value;
     };
@@ -148,13 +198,13 @@ export default defineComponent({
       closeDropdown();
     };
 
+    const selectCurrency = (currency: { code: string; name: string }) => {
+      selectedCurrency.value = currency;
+      closeDropdown();
+    };
+
     const handleWindowClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-
-      if (!target.closest(".modal") && !target.closest(".header__nav-phone")) {
-        closeModal();
-      }
-
       if (
         !target.closest(".dropdown-menu") &&
         !target.closest(".header__nav-button--language")
@@ -174,17 +224,19 @@ export default defineComponent({
     return {
       hasNotifications,
       notificationCount,
-
       isModalVisible,
       toggleModal,
       closeModal,
-
       isDropdownOpen,
+      currentSection,
       selectedLanguage,
+      selectedCurrency,
       languages,
+      currencies,
       toggleDropdown,
       closeDropdown,
       selectLanguage,
+      selectCurrency,
     };
   },
 });
@@ -299,6 +351,14 @@ export default defineComponent({
         }
       }
     }
+  }
+
+  .toogle_btn.active {
+    background-color: #80dbeb1d;
+    color: #80dbeb;
+    font-weight: bold;
+    border: 1px solid #80dbeb;
+    border-radius: 8px;
   }
 }
 </style>
