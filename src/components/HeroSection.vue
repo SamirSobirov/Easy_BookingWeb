@@ -17,27 +17,50 @@
           <span>1240</span>
         </button>
 
-        <div class="modal-container">
-  <div :class="['modal', { visible: isModalVisible }]">
-    <div class="modal-content">
-      <p>
-        Для связи с нами позвоните по <br />
-        короткому номеру <a href="">1240</a>
-      </p>
+        <div class="tel_modal-container">
+          <div :class="['modal', { visible: isModalVisible }]">
+            <div class="modal-content">
+              <p>
+                Для связи с нами позвоните по <br />
+                короткому номеру <a href="">1240</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="language-selector">
+    <!-- Кнопка для открытия окна -->
+    <button
+      class="header__nav-button header__nav-button--language"
+      @click="toggleDropdown"
+    >
+      <img
+        src="/src/assets/images/russFlag_icon.svg"
+        alt="Russian Flag"
+        class="flag-icon"
+      />
+      <span>{{ selectedLanguage.code }}</span>
+      <i class="fas fa-chevron-down"></i>
+    </button>
+
+    <!-- Выпадающее окно -->
+    <div v-if="isDropdownOpen" class="dropdown-menu">
+      <div
+        v-for="language in languages"
+        :key="language.code"
+        class="dropdown-item"
+        @click="selectLanguage(language)"
+      >
+        <img :src="language.flag" :alt="`${language.name} Flag`" class="flag-icon" />
+        <span>{{ language.name }}</span>
+        <input
+          type="radio"
+          :checked="selectedLanguage.code === language.code"
+          :name="'language'"
+        />
+      </div>
     </div>
   </div>
-</div>
-
-
-        <button class="header__nav-button header__nav-button--language">
-          <img
-            src="/src/assets/images/russFlag_icon.svg"
-            alt="Russian Flag"
-            class="flag-icon"
-          />
-          <span>RUS</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
 
         <button class="header__nav-button header__nav-button--notification">
           <i class="header__nav-button--notification__icon fas fa-bell"></i>
@@ -93,98 +116,115 @@ export default defineComponent({
       window.removeEventListener("click", handleWindowClick);
     });
 
+    const isDropdownOpen = ref(false);
+    const selectedLanguage = ref({
+      code: "RUS",
+      name: "Русский",
+      flag: "/src/assets/images/russFlag_icon.svg",
+    });
+
+    const languages = ref([
+      {
+        code: "RUS",
+        name: "Русский",
+        flag: "/src/assets/images/russFlag_icon.svg",
+      },
+      {
+        code: "UZB",
+        name: "O'zbekcha",
+        flag: "/src/assets/images/uzbFlag_icon.svg",
+      },
+      {
+        code: "ENG",
+        name: "English",
+        flag: "/src/assets/images/engFlag_icon.svg",
+      },
+    ]);
+
+    const toggleDropdown = () => {
+      isDropdownOpen.value = !isDropdownOpen.value;
+    };
+
+    const selectLanguage = (language: { code: string; name: string; flag: string }) => {
+      selectedLanguage.value = language;
+      isDropdownOpen.value = false;
+    };
+
     return {
       hasNotifications,
       notificationCount,
+
       isModalVisible,
       toggleModal,
       closeModal,
+
+      isDropdownOpen,
+      selectedLanguage,
+      languages,
+      toggleDropdown,
+      selectLanguage,
     };
   },
 });
 </script>
 
+
 <style lang="scss" scoped>
-.header__nav-phone {
-  display: flex;
-  gap: 6px;
-  padding: 8px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  color: #6d7586;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border: none;
+.language-selector {
+  position: relative;
 
-  i {
-    transform: rotate(90deg);
-  }
+  .header__nav-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-family: "Mulish", sans-serif;
 
-  &:hover {
-    background-color: #e4e4e457;
-    color: #00b8d7;
-  }
-
-  i {
-    margin-right: 5px;
-  }
-}
-.modal-container {
-  margin-top: 150px;
-
-  .modal {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff85;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    z-index: 1000;
-    opacity: 0; /* Начальное состояние */
-    transform: translate(-50%, -60%); /* Начальное смещение */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Плавное появление и движение */
-
-    &.visible {
-      opacity: 1; /* Финальное состояние */
-      transform: translate(-50%, -50%); /* Финальное положение */
+    .flag-icon {
+      width: 20px;
+      height: 14px;
     }
+  }
 
-    &-content {
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    width: 150px;
+    z-index: 1000;
+
+    .dropdown-item {
       display: flex;
       align-items: center;
-      justify-content: center;
-      width: 260px;
-      height: 60px;
-      border-radius: 15px;
-      border: 2px solid white;
-      background-color: #ffff;
-      padding: 10px 15px;
-      font-weight: thin;
-      font-size: 16px;
-      text-align: left;
-      word-spacing: 2px;
-      font-family: Mulish;
+      gap: 8px;
+      padding: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
 
-      a {
-        text-decoration: none;
-        color: black;
-        font-weight: 600;
+      &:hover {
+        background-color: #f0f0f0;
+      }
+
+      .flag-icon {
+        width: 20px;
+        height: 14px;
+      }
+
+      input[type="radio"] {
+        margin-left: auto;
+        accent-color: #007bff;
       }
     }
   }
 }
 
-
-@keyframes slide-up {
-  from {
-    transform: translateX(-50%) translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-  }
-}
 </style>
