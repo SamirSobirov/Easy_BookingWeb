@@ -65,6 +65,7 @@
                 v-for="language in languages"
                 :key="language.code"
                 class="dropdown-item"
+                 :class="{ active: selectedLanguage.code === language.code }"
                 @click="selectLanguage(language)"
               >
                 <img
@@ -81,12 +82,12 @@
               </div>
             </div>
 
-            <!-- Секция валют -->
             <div v-if="currentSection === 'currency'">
               <div
                 v-for="currency in currencies"
                 :key="currency.code"
                 class="dropdown-item"
+                :class="{ active: selectedCurrency.code === currency.code }"
                 @click="selectCurrency(currency)"
               >
                 <span>{{ currency.name }}</span>
@@ -279,20 +280,17 @@ export default defineComponent({
         // background-color:#80dbeb1d;
         border: none;
         &.active {
-    background-color: #80dbeb1d;
-    color: #80dbeb;
-    border: none;
-    border-radius: 8px;
-  }
+          background-color: #80dbeb1d;
+          color: #80dbeb;
+          border: none;
+          border-radius: 8px;
+        }
       }
     }
     span {
       color: #9399a8;
       font-family: Mulish, sans-serif;
       font-size: 14px;
-      &:hover {
-        color: black;
-      }
     }
 
     .dropdown-item {
@@ -303,10 +301,16 @@ export default defineComponent({
       cursor: pointer;
       transition: background-color 0.2s;
 
+      &.active {
+          background-color: #80dbeb1d;
+          color: #80dbeb;
+          border: none;
+          border-radius: 8px;
+        }
+
       &:hover {
         background-color: #80dbeb1d;
         border-radius: 12px;
-        color: black;
       }
 
       .flag-icon {
