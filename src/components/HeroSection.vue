@@ -252,7 +252,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-
 .language-selector {
   
   margin-right: 30px;
