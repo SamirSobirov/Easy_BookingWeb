@@ -229,10 +229,43 @@ export default defineComponent({
         height: 14px;
       }
 
-      input[type="radio"] {
-        margin-left: auto;
-        accent-color: #007bff;
-      }
+     input[type="radio"] {
+                appearance: none;
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+                border: 2px solid #ccc;
+                border-radius: 50%;
+                background-color: white;
+                position: relative;
+                outline: none;
+                margin-left: auto;
+                cursor: pointer;
+
+                &::before {
+                  content: '';
+                  display: block;
+                  width: 12px;
+                  height: 12px;
+                  border-radius: 50%;
+                  background-color: transparent;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  transition: background-color 0.2s, transform 0.2s;
+                }
+
+                &:checked {
+                  border: 1.5px solid #80dbeb;
+                  border-color:#80dbeb;
+
+                  &::before {
+                    background-color: #80dbeb;
+                    transform: translate(-50%, -50%) scale(1);
+                  }
+                }
+              }
     }
   }
 }
