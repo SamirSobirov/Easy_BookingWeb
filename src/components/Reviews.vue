@@ -59,7 +59,7 @@
                   class="author-image"
                 />
                 <div>
-                  <p class="author-name">Сарвар Тулаганов</p>
+                  <p class="author-name">Самир Собиров</p>
                   <p class="author-position">Программист</p>
                 </div>
               </div>
