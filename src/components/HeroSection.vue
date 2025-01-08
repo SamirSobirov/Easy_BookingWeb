@@ -28,7 +28,7 @@
           </div>
         </div>
 
-        <div class="language-selector" >
+        <div class="language-selector">
           <button
             class="header__nav-button header__nav-button--language"
             @click="toggleDropdown"
@@ -43,17 +43,17 @@
           </button>
 
           <div v-if="isDropdownOpen" class="dropdown-menu">
-              <div class="toogle_box" style="margin-bottom: 10px;">
+            <div class="toogle_box" style="margin-bottom: 10px">
               <button class="toogle_btn">Язык</button>
               <button class="toogle_btn">Валюта</button>
             </div>
-            <div 
+            <div
               v-for="language in languages"
               :key="language.code"
               class="dropdown-item"
               @click="selectLanguage(language)"
             >
-              <img   
+              <img
                 :src="language.flag"
                 :alt="`${language.name} Flag`"
                 class="flag-icon"
@@ -184,7 +184,7 @@ export default defineComponent({
       languages,
       toggleDropdown,
       closeDropdown,
-      selectLanguage, 
+      selectLanguage,
     };
   },
 });
@@ -229,19 +229,19 @@ export default defineComponent({
       align-items: center;
       justify-content: center;
       text-align: center;
-    .toogle_btn{
-      // padding: 5px;
-      width: 90px;
-      height: 35px;
-      border-radius: 10px;
-      font-weight: 500;
-      background-color: #fff;
-      color: #9399a8;
-      // color: #80dbeb;
-      // background-color:#80dbeb1d;
-      border: none;
+      .toogle_btn {
+        // padding: 5px;
+        width: 90px;
+        height: 35px;
+        border-radius: 10px;
+        font-weight: 500;
+        background-color: #fff;
+        color: #9399a8;
+        // color: #80dbeb;
+        // background-color:#80dbeb1d;
+        border: none;
+      }
     }
-  }
     span {
       color: #9399a8;
       font-family: Mulish, sans-serif;
@@ -260,10 +260,9 @@ export default defineComponent({
       transition: background-color 0.2s;
 
       &:hover {
-        background-color:#80dbeb1d;
+        background-color: #80dbeb1d;
         border-radius: 12px;
         color: black;
-
       }
 
       .flag-icon {
@@ -301,7 +300,7 @@ export default defineComponent({
         &:checked {
           border: 1.5px solid #80dbeb;
           border-color: #80dbeb;
-          background-color:#80dbeb1d;
+          background-color: #80dbeb1d;
 
           &::before {
             background-color: #80dbeb;
