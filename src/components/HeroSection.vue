@@ -126,11 +126,9 @@ import "@fortawesome/fontawesome-free/css/all.css";
 export default defineComponent({
   name: "HeroSection",
   setup() {
-    // Уведомления
     const hasNotifications = ref(true);
     const notificationCount = ref(32);
 
-    // Модалка
     const isModalVisible = ref(false);
     const toggleModal = () => {
       isModalVisible.value = !isModalVisible.value;
@@ -139,7 +137,6 @@ export default defineComponent({
       isModalVisible.value = false;
     };
 
-    // Dropdown
     const isDropdownOpen = ref(false);
     const currentSection = ref("language"); // Активный раздел ('language' или 'currency')
     const selectedLanguage = ref({
