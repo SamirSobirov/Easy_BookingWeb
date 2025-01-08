@@ -155,7 +155,7 @@ export default defineComponent({
       {
         code: "RUS",
         name: "Русский",
-        flag: "/src/assets/images/russFlag_icon.svg",
+        flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFhSURBVHgBnVQ7TsNAEJ1ZG1FE4gQgmS5UGCF6p6AmnCDiaFwAwQkSapBIRzosRJ8oygf82WGeYxfBFnH2Sd6d3Z15fvNWNlMD1ut1ZK0daBjpE5Tb4/J56nQ6j/QflCBYrVZDnSVNU1EyqYAYe3ouy+XyA7mNJIvFItSEKZJ3IUkSkE1RU1OCgzzPpS2Qi5otZZDaRkmTMlhRkMzn8z76dgX8xOX4R9cPN0QeERtyglgdsoGvUUgGJExOgABLERhCZ5INE4bAsZ86QBRre+QOi/KxUWXPG8McIQI5Y37pHkeeoeEhu/n0bUUF8W1R/Xp2Mjxgjvw9uTJVkwnHl++fp4XZnnh3GdFsnwbhakY8M2J6WBdEF5M4ztn0EqFZ1sJ3KPnRXNSgFntbzbx1g8Cy1W9HAl89M1y+qVSQ65BrpLaM0EVFUiOqoJ71deoT87neSlgmxroe6X/p/mryNfpb8wuORYlMNlTRpQAAAABJRU5ErkJggg==",
       },
       {
         code: "UZB",
@@ -252,7 +252,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+
 .language-selector {
+  
   margin-right: 30px;
   position: relative;
 
