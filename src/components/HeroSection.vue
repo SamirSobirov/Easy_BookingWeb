@@ -195,15 +195,6 @@ export default defineComponent({
   position: relative;
 
   .header__nav-button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-family: "Mulish", sans-serif;
 
     .flag-icon {
       width: 25px;
