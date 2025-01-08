@@ -100,22 +100,6 @@ export default defineComponent({
       isModalVisible.value = false;
     };
 
-    const handleWindowClick = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-
-      if (!target.closest(".modal") && !target.closest(".header__nav-phone")) {
-        closeModal();
-      }
-    };
-
-    onMounted(() => {
-      window.addEventListener("click", handleWindowClick);
-    });
-
-    onUnmounted(() => {
-      window.removeEventListener("click", handleWindowClick);
-    });
-
     const isDropdownOpen = ref(false);
     const selectedLanguage = ref({
       code: "RUS",
@@ -145,10 +129,34 @@ export default defineComponent({
       isDropdownOpen.value = !isDropdownOpen.value;
     };
 
-    const selectLanguage = (language: { code: string; name: string; flag: string }) => {
-      selectedLanguage.value = language;
+    const closeDropdown = () => {
       isDropdownOpen.value = false;
     };
+
+    const selectLanguage = (language: { code: string; name: string; flag: string }) => {
+      selectedLanguage.value = language;
+      closeDropdown();
+    };
+
+    const handleWindowClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+
+      if (!target.closest(".modal") && !target.closest(".header__nav-phone")) {
+        closeModal();
+      }
+
+      if (!target.closest(".dropdown-menu") && !target.closest(".header__nav-button--language")) {
+        closeDropdown();
+      }
+    };
+
+    onMounted(() => {
+      window.addEventListener("click", handleWindowClick);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener("click", handleWindowClick);
+    });
 
     return {
       hasNotifications,
@@ -162,11 +170,13 @@ export default defineComponent({
       selectedLanguage,
       languages,
       toggleDropdown,
+      closeDropdown,
       selectLanguage,
     };
   },
 });
 </script>
+
 
 
 <style lang="scss" scoped>
@@ -178,15 +188,15 @@ export default defineComponent({
     align-items: center;
     gap: 8px;
     background-color: white;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 8px;
     padding: 8px 12px;
     cursor: pointer;
     font-family: "Mulish", sans-serif;
 
     .flag-icon {
-      width: 20px;
-      height: 14px;
+      width: 25px;
+      height: 20px;
     }
   }
 
@@ -194,12 +204,12 @@ export default defineComponent({
     position: absolute;
     top: 100%;
     left: 0;
-    margin-top: 8px;
+    margin-top: 18px;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 10px;
-    width: 150px;
+    width: 250px;
     z-index: 1000;
 
     .dropdown-item {
