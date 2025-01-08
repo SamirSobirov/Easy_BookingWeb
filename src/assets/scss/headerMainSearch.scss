@@ -161,17 +161,16 @@
         filter: brightness(0) invert(56%);
         // transition: filter 0.3s ease;
       }
-
-      &:hover {
-        color: #80dbeb;
-        border: 1px solid #80dbeb;
-        border-radius: 8px;
-        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-      }
-
-      &:hover img {
-        filter: brightness(0) saturate(100%) invert(90%) sepia(17%) saturate(1411%) hue-rotate(162deg) brightness(98%) contrast(89%);
-      }
+    }
+    .tab.active {
+      color: #80dbeb;
+      border: 1px solid #80dbeb;
+      border-radius: 8px;
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .tab.active img {
+      filter: brightness(0) saturate(100%) invert(90%) sepia(17%) saturate(1411%) hue-rotate(162deg) brightness(98%) contrast(89%);
     }
   }
 

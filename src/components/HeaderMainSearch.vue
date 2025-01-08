@@ -14,27 +14,27 @@
 
     <div class="search-box">
       <nav class="tabs">
-        <button class="tab active">
+        <button class="tab active" data-tab="flights">
           <img src="/src/assets/icons/plane_icon.svg" alt="plane" />
           Перелеты
         </button>
-        <button class="tab">
+        <button class="tab" data-tab="hotels">
           <img src="/src/assets/icons/hotel_icon.svg" alt="hotels" />
           Отели
         </button>
-        <button class="tab">
+        <button class="tab" data-tab="train">
           <img src="/src/assets/icons/train_icon.svg" alt="train" />
           Ж/Д
         </button>
-        <button class="tab">
+        <button class="tab" data-tab="transfers">
           <img src="/src/assets/icons/transport.svg" alt="transport" />
           Трансферы
         </button>
-        <button class="tab">
+        <button class="tab" data-tab="tours">
           <img src="/src/assets/icons/tours_icon.svg" alt="tours" />
           Туры
         </button>
-        <button class="tab">
+        <button class="tab" data-tab="insurance">
           <img src="/src/assets/icons/insurance_icon.svg" alt="insurance" />
           Страхование
         </button>
@@ -151,9 +151,8 @@
     </div>
   </section>
 </template>
-
 <script lang="ts" setup>
-import { ref, reactive, computed, onBeforeUnmount } from "vue";
+import { ref, reactive, computed, onBeforeUnmount, onMounted } from "vue";
 
 const isDropdownOpen = ref(false);
 const isSwitched = ref(false);
@@ -200,6 +199,18 @@ const selectedText = computed(() => {
   } пассажир${passengerCount.adults > 1 ? "а" : ""}`;
 
   return `${adultsText}`;
+});
+
+onMounted(() => {
+  const tabs = document.querySelectorAll(".tab");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((item) => item.classList.remove("active"));
+
+      tab.classList.add("active");
+    });
+  });
 });
 </script>
 
