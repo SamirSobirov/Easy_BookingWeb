@@ -3,7 +3,7 @@
     <div class="box">
       <div class="box1">
         <h1>Скачайте приложение EASYBOOKING</h1>
-        <p>
+        <p style="text-align: left; font-family: sans-serif; font-size: 14px;">
           Уведомления о лучших ценах, данные пассажиров и информация по заказам
           у вас под рукой
         </p>
@@ -84,8 +84,9 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 30px;
+    margin-top: -30px;
     padding: 43px 40px;
+    padding-left: 50px;
 
     .box1 {
       padding-left: 30px;
@@ -98,6 +99,7 @@
       text-align: center;
       gap: 20px;
 
+      
       .elem {
         display: flex;
         align-items: center;
@@ -108,6 +110,7 @@
           padding: 30px 16px;
           border-radius: 16px;
           width: 180px;
+          height: 140px;
           background-color: #ffffffa6;
           border: 2px solid #ffffffbf;
           display: flex;
@@ -118,7 +121,7 @@
 
           p {
             color: black;
-            font-size: 24px;
+            font-size: 16px;
             font-weight: bold;
             margin: 0;
             display: flex;
@@ -142,8 +145,9 @@
             text-align: center;
             justify-content: center;
             gap: 10px;
-            width: 160px;
+            width: 140px;
             height: 48px;
+            padding: 12px;
             background: white;
             border: none;
             border-radius: 8px;
@@ -151,18 +155,19 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
             img {
-              width: 24px;
-              height: 24px;
+              width: 25px;
+              height: 25px;
             }
 
             div {
               display: flex;
               flex-direction: column;
+              
               align-items: start;
               justify-content: left;
               
               span {
-                font-size: 12px;
+                font-size: 8px;
                 color: #9399a8;
                 line-height: 16px;
                 font-weight: 500;
