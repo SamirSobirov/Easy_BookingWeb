@@ -17,11 +17,8 @@
       <GroundHandling />
       <HelpCenter />
       <Reviews />
-    <Footer />
+      <Footer />
     </main>
-    
-    
-    
   </div>
 </template>
 
