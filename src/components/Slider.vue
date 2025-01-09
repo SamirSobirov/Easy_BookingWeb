@@ -34,7 +34,7 @@ export default defineComponent({
       currentIndex: 0,
       items: [
         {
-          image: "/src/assets/images/ads.png",
+          image: "http://b2c-api2.globaltravel.space/files/new_b2c_bnr_2.png",
         },
         { image: "https://via.placeholder.com/600x300?text=Slide+2" },
         { image: "https://via.placeholder.com/600x300?text=Slide+3" },
