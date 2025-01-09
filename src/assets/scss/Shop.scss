@@ -70,7 +70,7 @@
             color: #eb5757;
             text-decoration: line-through;
             border-radius: 6px;
-            font-family: Mulish;
+            font-family: sans-serif;
 
             gap: 20px;
             font-size: 13px;
@@ -81,7 +81,7 @@
             background-color: #6a67f81f;
             color: #6a67f8;
             border-radius: 6px;
-            font-family: Mulish;
+            font-family: sans-serif;
 
             gap: 20px;
             font-size: 13px;
@@ -108,6 +108,7 @@
           justify-content: center;
           display: flex;
           white-space: nowrap;
+          font-family: sans-serif;
           gap: 10px;
           line-height: 28px;
         }
