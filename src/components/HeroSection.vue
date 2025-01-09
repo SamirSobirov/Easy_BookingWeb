@@ -30,17 +30,17 @@
 
         <div class="language-selector">
           <button
-  class="header__nav-button header__nav-button--language"
-  @click="toggleDropdown"
->
-  <img
-    :src="selectedLanguage.flag"
-    :alt="selectedLanguage.name + ' Flag'"
-    class="flag-icon"
-  />
-  <span>{{ selectedLanguage.code }}</span>
-  <i class="fas fa-chevron-down"></i>
-</button>
+            class="header__nav-button header__nav-button--language"
+            @click="toggleDropdown"
+          >
+            <img
+              :src="selectedLanguage.flag"
+              :alt="selectedLanguage.name + ' Flag'"
+              class="flag-icon"
+            />
+            <span>{{ selectedLanguage.code }}</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
           <div v-if="isDropdownOpen" class="dropdown-menu">
             <div class="toogle_box" style="margin-bottom: 10px">
               <button
@@ -251,7 +251,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .language-selector {
-  
   margin-right: 30px;
   position: relative;
 
