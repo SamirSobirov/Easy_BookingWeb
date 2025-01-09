@@ -17,7 +17,6 @@
           <span>1240</span>
         </button>
 
-        <!-- Модальное окно -->
         <div class="tel_modal-container">
           <div :class="['modal', { visible: isModalVisible }]">
             <div class="modal-content">
@@ -31,18 +30,17 @@
 
         <div class="language-selector">
           <button
-            class="header__nav-button header__nav-button--language"
-            @click="toggleDropdown"
-          >
-            <img
-              src="/src/assets/images/russFlag_icon.svg"
-              alt="Russian Flag"
-              class="flag-icon"
-            />
-            <span>{{ selectedLanguage.code }}</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-
+  class="header__nav-button header__nav-button--language"
+  @click="toggleDropdown"
+>
+  <img
+    :src="selectedLanguage.flag"
+    :alt="selectedLanguage.name + ' Flag'"
+    class="flag-icon"
+  />
+  <span>{{ selectedLanguage.code }}</span>
+  <i class="fas fa-chevron-down"></i>
+</button>
           <div v-if="isDropdownOpen" class="dropdown-menu">
             <div class="toogle_box" style="margin-bottom: 10px">
               <button
