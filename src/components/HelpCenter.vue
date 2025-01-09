@@ -29,7 +29,7 @@
                   <img
                     :src="
                       isActive(index)
-                        ? '/src/assets/icons/minus.svg'
+                        ? '../src/assets/icons/minus.svg'
                         : '/src/assets/icons/add.svg'
                     "
                     alt="Toggle"
@@ -60,7 +60,6 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-
 interface AccordionItem {
   question: string;
   answer: string;
