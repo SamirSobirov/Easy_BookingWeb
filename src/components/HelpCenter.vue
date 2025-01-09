@@ -29,7 +29,7 @@
                   <img
                     :src="
                       isActive(index)
-                        ? '../src/assets/icons/minus.svg'
+                        ? '/src/assets/icons/minus.svg'
                         : '/src/assets/icons/add.svg'
                     "
                     alt="Toggle"
