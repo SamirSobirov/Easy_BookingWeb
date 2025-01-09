@@ -114,8 +114,10 @@
             }
         }
     }
-
+    
     &__contact {
+        text-decoration: none;
+        color: #6D7586;
         font-size: 14px;
         margin-bottom: 8px;
     }
