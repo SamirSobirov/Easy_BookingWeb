@@ -60,56 +60,72 @@
         />
 
         <div class="dropdown">
-          <button class="dropdown-button" @click="toggleDropdown" type="button">
-            {{ selectedText }}
+    <button class="dropdown-button" @click="toggleDropdown" type="button">
+      {{ selectedText }}
+    </button>
+    <div v-if="isDropdownOpen" class="dropdown-menu">
+      <div class="dropdown-item">
+        <span>Взрослые</span>
+        <div class="controls">
+          <button
+            @click="decrement('adults')"
+            :disabled="passengerCount.adults <= 1"
+            type="button"
+          >
+            -
           </button>
+          <span>{{ passengerCount.adults }}</span>
+          <button
+            @click="increment('adults')"
+            :disabled="totalPassengers >= maxPassengers"
+            type="button"
+          >
+            +
+          </button>
+        </div>
+      </div>
 
-          <div v-if="isDropdownOpen" class="dropdown-menu">
-            <div class="dropdown-item">
-              <span>Взрослые</span>
-              <div class="controls">
-                <button
-                  @click="decrement('adults')"
-                  :disabled="passengerCount.adults <= 1"
-                  type="button"
-                >
-                  -
-                </button>
-                <span>{{ passengerCount.adults }}</span>
-                <button @click="increment('adults')" type="button">+</button>
-              </div>
-            </div>
+      <div class="dropdown-item">
+        <span>Дети</span>
+        <div class="controls">
+          <button
+            @click="decrement('children')"
+            :disabled="passengerCount.children <= 0"
+            type="button"
+          >
+            -
+          </button>
+          <span>{{ passengerCount.children }}</span>
+          <button
+            @click="increment('children')"
+            :disabled="totalPassengers >= maxPassengers"
+            type="button"
+          >
+            +
+          </button>
+        </div>
+      </div>
 
-            <div class="dropdown-item">
-              <span>Дети</span>
-              <div class="controls">
-                <button
-                  @click="decrement('children')"
-                  :disabled="passengerCount.children <= 0"
-                  type="button"
-                >
-                  -
-                </button>
-                <span>{{ passengerCount.children }}</span>
-                <button @click="increment('children')" type="button">+</button>
-              </div>
-            </div>
-
-            <div class="dropdown-item">
-              <span>Младенцы</span>
-              <div class="controls">
-                <button
-                  @click="decrement('infants')"
-                  :disabled="passengerCount.infants <= 0"
-                  type="button"
-                >
-                  -
-                </button>
-                <span>{{ passengerCount.infants }}</span>
-                <button @click="increment('infants')" type="button">+</button>
-              </div>
-            </div>
-
+      <div class="dropdown-item">
+        <span>Младенцы</span>
+        <div class="controls">
+          <button
+            @click="decrement('infants')"
+            :disabled="passengerCount.infants <= 0"
+            type="button"
+          >
+            -
+          </button>
+          <span>{{ passengerCount.infants }}</span>
+          <button
+            @click="increment('infants')"
+            :disabled="totalPassengers >= maxPassengers"
+            type="button"
+          >
+            +
+          </button>
+        </div>
+      </div>
             <hr style="margin-top: 10px; height: 0.2px" />
 
             <div class="dropdown-item class-selection">
@@ -163,6 +179,8 @@ const passengerCount = reactive({
   infants: 0,
 });
 
+const maxPassengers = 9;
+
 const travelClass = ref("economy");
 
 const toggleDropdown = () => {
@@ -186,19 +204,32 @@ onBeforeUnmount(() => {
 });
 
 const increment = (type: "adults" | "children" | "infants") => {
-  passengerCount[type]++;
+  if (totalPassengers.value < maxPassengers) {
+    passengerCount[type]++;
+  }
 };
 
 const decrement = (type: "adults" | "children" | "infants") => {
   if (passengerCount[type] > 0) passengerCount[type]--;
 };
 
-const selectedText = computed(() => {
-  const adultsText = `${
-    passengerCount.adults + passengerCount.children + passengerCount.infants
-  } пассажир${passengerCount.adults > 1 ? "а" : ""}`;
+const totalPassengers = computed(() => {
+  return (
+    passengerCount.adults +
+    passengerCount.children +
+    passengerCount.infants
+  );
+});
 
-  return `${adultsText}`;
+const selectedText = computed(() => {
+  const passengerWord =
+    totalPassengers.value === 1
+      ? "пассажир"
+      : totalPassengers.value <= 4
+      ? "пассажира"
+      : "пассажиров";
+
+  return `${totalPassengers.value} ${passengerWord}`;
 });
 
 onMounted(() => {
