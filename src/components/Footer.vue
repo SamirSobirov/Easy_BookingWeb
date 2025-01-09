@@ -15,21 +15,21 @@
           <button class="download">
             <img src="/src/assets/icons/apple.svg" alt="" />
             <div>
-              <span style="color: #9399a8; font-size: 9px;">Доступно в</span>
+              <span style="color: #9399a8; font-size: 9px">Доступно в</span>
               <span style="font-size: 12px">App store</span>
             </div>
           </button>
           <button class="download">
             <img src="/src/assets/icons/GooglePlay.svg" alt="" />
             <div>
-              <span style="color: #9399a8; font-size: 9px;">Доступно в</span>
+              <span style="color: #9399a8; font-size: 9px">Доступно в</span>
               <span style="font-size: 12px">Google Play</span>
             </div>
           </button>
           <button class="download">
             <img src="/src/assets/icons/huawei.svg" alt="" />
             <div>
-              <span style="color: #9399a8; font-size: 9px;">Доступно в</span>
+              <span style="color: #9399a8; font-size: 9px">Доступно в</span>
               <span style="font-size: 12px">App Gallery</span>
             </div>
           </button>
@@ -55,15 +55,21 @@
 
       <div class="footer__section">
         <h3 class="footer__title">Контакты</h3>
-<address class="footer__contact">
-  <a href="mailto:support@easybooking.uz" class="footer__contact">support@easybooking.uz</a>
-</address>
-<p class="footer__contact">
-  <a href="tel:+998662304400" class="footer__contact">+998 66 230 44 00</a>
-</p>
-<p class="footer__contact">
-  <a href="tel:+998712030011" class="footer__contact">+998 71 203 00 11</a>
-</p>
+        <address class="footer__contact">
+          <a href="mailto:support@easybooking.uz" class="footer__contact"
+            >support@easybooking.uz</a
+          >
+        </address>
+        <p class="footer__contact">
+          <a href="tel:+998662304400" class="footer__contact"
+            >+998 66 230 44 00</a
+          >
+        </p>
+        <p class="footer__contact">
+          <a href="tel:+998712030011" class="footer__contact"
+            >+998 71 203 00 11</a
+          >
+        </p>
 
         <div class="footer__socials">
           <a href="#" class="footer__social-link"
