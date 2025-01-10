@@ -110,31 +110,42 @@
           </span>
         </button>
 
-        <button class="accountButton">
-          <img src="/src/assets/images/notification_icon.svg" alt="" />
+        <button class="header__nav-button account-button" @click="toggleRegisterModal">
+          <img src="/src/assets/images/acc_img.svg" alt="Account" />
         </button>
       </nav>
     </div>
+    
+    <RegistrModal 
+      v-if="isRegisterModalVisible" 
+      @close="toggleRegisterModal" 
+      class="register-modal"
+    />
   </header>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted, onUnmounted } from "vue";
+import RegistrModal from "./Registr/RegistrModal.vue";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 export default defineComponent({
   name: "HeroSection",
+  components: {
+    RegistrModal,
+  },
   setup() {
     const hasNotifications = ref(true);
     const notificationCount = ref(32);
     const isModalVisible = ref(false);
+    const isRegisterModalVisible = ref(false);
 
     const toggleModal = () => {
       isModalVisible.value = !isModalVisible.value;
     };
 
-    const closeModal = () => {
-      isModalVisible.value = false;
+    const toggleRegisterModal = () => {
+      isRegisterModalVisible.value = !isRegisterModalVisible.value;
     };
 
     const isDropdownOpen = ref(false);
@@ -153,17 +164,17 @@ export default defineComponent({
       {
         code: "RUS",
         name: "Русский",
-        flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFhSURBVHgBnVQ7TsNAEJ1ZG1FE4gQgmS5UGCF6p6AmnCDiaFwAwQkSapBIRzosRJ8oygf82WGeYxfBFnH2Sd6d3Z15fvNWNlMD1ut1ZK0daBjpE5Tb4/J56nQ6j/QflCBYrVZDnSVNU1EyqYAYe3ouy+XyA7mNJIvFItSEKZJ3IUkSkE1RU1OCgzzPpS2Qi5otZZDaRkmTMlhRkMzn8z76dgX8xOX4R9cPN0QeERtyglgdsoGvUUgGJExOgABLERhCZ5INE4bAsZ86QBRre+QOi/KxUWXPG8McIQI5Y37pHkeeoeEhu/n0bUUF8W1R/Xp2Mjxgjvw9uTJVkwnHl++fp4XZnnh3GdFsnwbhakY8M2J6WBdEF5M4ztn0EqFZ1sJ3KPnRXNSgFntbzbx1g8Cy1W9HAl89M1y+qVSQ65BrpLaM0EVFUiOqoJ71deoT87neSlgmxroe6X/p/mryNfpb8wuORYlMNlTRpQAAAABJRU5ErkJggg==",
+        flag: "data:image/png;base64,...",
       },
       {
         code: "UZB",
         name: "O'zbekcha",
-        flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG5SURBVHgBnVQxSyNBFP7ezF7wGokc1xwIue6623R3zZG0VyXHlQenpYWdjb/CQsRS/QOuFtaJhRCwSEpBxEUE2wgGJTszz/c2iZggqPvBsDNv5vvmmzf7hvASNpMaCP8RWL+VcbQHoh7YH2L178EshaZG20kFjndgqAZjZdZIGy9hlhYA5yXGKSzVsdJMJ1Qz6fw+OolFpFv9vFBDVMJI6Nk+2tdYKZ+TDdHFVhJPOxIn82S7dzDlkjV4CIxXoQ6zrI8IVXWWO/rI1Pr15VPZyq7xwjzeBHVoTTlPhQ7j9Y3G3P0woShCEbB3iC/P63R7cbETMS9Za1EEzjl4Y3YxGAy63nsuihACi8al5ig2xqAoaHSzleIKM1ChVOyhKMbcXjS8uTmWo1aigrcm+YWT0qG1f3Ht7JttmQ/FTumzgIc528wztbj/o0WR1Jeld4mwZ5Dj9OpP52tuQ/jLcKGP96RKKoSEYwh1HeZCabOTGgp1ZL4P/3qdqRMMfV85yn0SGomd9gxRVWon5aFY08Vh2oHGOJOO47auVc5k+sWkLCY/G1LdDQJ9F+rkqUjl32uL9t51s9Oe5TwC9JXxyFex1b4AAAAASUVORK5CYII=",
+        flag: "data:image/png;base64,...",
       },
       {
         code: "ENG",
         name: "English",
-        flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALbSURBVHgBpVRLSFRRGP7uuefeGSWvUouctBkNLSksI2xMDBGsTRa1UUoraCGku9wJbVoIQW2CDFok9jCyIovahFRm5qiIQgniCx2hhYmPsWbua87t3BuOjg618IMD53999/yP+wMJsLv4euHE6OS93iPlgU/b84zPO/KifSWnP4x/H7+9/2STP1EMjZN8jR6I+sOwKpZLUjLSUhSoRHRMbkkqcyWllM3Na9eQ3RBAMq3CyM3gaihZvaQdaCyAaHwFkcsFIkOiEgRBwJqjAJFyUuIGRFcRIqzbiVlPtLCw4O1ur+2oqy7JSktJxv8gUxn1NSXenpe1HcFgcFcsNcbYs705Ht/dGz5cOHMId1p6ExKIREBRfgYa60tRWJAJFjV9Kysrrdx0QpidnfUrihLgJxagqiZEZmKqogaRb6OOLjk/D1lvH4MRCrd7rbScCLquH6WSZVUlUQpL12NGF0/YMs241zAWBeXkAiVxvjIhiOj6FSHA25pKpTKyrrA2LB6oTQXBItrfYrpdcOdmb0rXsiwshkJ9Qtf2fVGFUIItIMSLxQkEhi1CgEWonJU56FYUvz0nG6FOTIOpqnMnSS64sn0QSPzjGSxoptFF97x7NJSaovhlSYpzsAs6VnER6siYI7tzspHzphWCLMf5GaaBpcXFIcLzajEsxh2k2NGYgCj/NTZ+3dbZtvW+Ku+uRWk78Xg8/ZqmdfJZQDTK0DsYRGXdUz7t4U2p/pz/hUsNL9AzMOPIdoxhGIH09PQ+Z7LC4fDlufnfPc1PhrPuPx+Csk3mc2MhET72T+N97ySqT+Xj6vmDMxme1Cpb7xB5vd4faQWN55ZCxmsIkpePGf6F5VAYzW1fZtpe9Z1dGmlyNkCsCEvDTcNcPA6mBSymw7Rzt6y47tg6brc70QkjUsxJhlft8ftoytkvx3bmNvm1yEplyDQOq8wstWdNXQ4NSlp4iIrkAaZuDWx85R+OLTKc21+ZcgAAAABJRU5ErkJggg==",
+        flag: "data:image/png;base64,...",
       },
     ]);
 
@@ -208,7 +219,7 @@ export default defineComponent({
         !target.closest(".header__nav-phone") &&
         isModalVisible.value
       ) {
-        closeModal();
+        toggleModal();
       }
 
       if (
@@ -233,7 +244,8 @@ export default defineComponent({
       notificationCount,
       isModalVisible,
       toggleModal,
-      closeModal,
+      isRegisterModalVisible,
+      toggleRegisterModal,
       isDropdownOpen,
       currentSection,
       selectedLanguage,
@@ -249,4 +261,23 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.account-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.register-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+</style>
