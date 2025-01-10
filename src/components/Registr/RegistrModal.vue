@@ -72,7 +72,7 @@ export default defineComponent({
     font-size: 24px;
     font-weight: 200;
     text-align: center;
-    margin-bottom: 20px;
+
     color: #7a7a7a;
   }
 
@@ -80,6 +80,7 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 20px;
     .form-group {
       position: relative;
 
@@ -119,7 +120,6 @@ export default defineComponent({
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
 
       .checkbox-label {
         font-size: 14px;
@@ -127,12 +127,13 @@ export default defineComponent({
         display: flex;
         font-family: Mulish, sans-serif;
         align-items: center;
+        gap: 8px;
 
         input[type="checkbox"] {
           appearance: none;
           width: 18px;
           height: 18px;
-          margin-right: 8px;
+
           border: 1px solid #d9d9d9;
           border-radius: 4px;
           cursor: pointer;
@@ -175,10 +176,10 @@ export default defineComponent({
     }
 
     .btn-primary {
-      background-color: #00b8d7;
+      background-color: #00b7d7b0;
       color: white;
       border: none;
-      padding: 10px;
+      padding: 15px;
       border-radius: 8px;
       width: 100%;
       font-size: 16px;
