@@ -60,72 +60,72 @@
         />
 
         <div class="dropdown">
-    <button class="dropdown-button" @click="toggleDropdown" type="button">
-      {{ selectedText }}
-    </button>
-    <div v-if="isDropdownOpen" class="dropdown-menu">
-      <div class="dropdown-item">
-        <span>Взрослые</span>
-        <div class="controls">
-          <button
-            @click="decrement('adults')"
-            :disabled="passengerCount.adults <= 1"
-            type="button"
-          >
-            -
+          <button class="dropdown-button" @click="toggleDropdown" type="button">
+            {{ selectedText }}
           </button>
-          <span>{{ passengerCount.adults }}</span>
-          <button
-            @click="increment('adults')"
-            :disabled="totalPassengers >= maxPassengers"
-            type="button"
-          >
-            +
-          </button>
-        </div>
-      </div>
+          <div v-if="isDropdownOpen" class="dropdown-menu">
+            <div class="dropdown-item">
+              <span>Взрослые</span>
+              <div class="controls">
+                <button
+                  @click="decrement('adults')"
+                  :disabled="passengerCount.adults <= 1"
+                  type="button"
+                >
+                  -
+                </button>
+                <span>{{ passengerCount.adults }}</span>
+                <button
+                  @click="increment('adults')"
+                  :disabled="totalPassengers >= maxPassengers"
+                  type="button"
+                >
+                  +
+                </button>
+              </div>
+            </div>
 
-      <div class="dropdown-item">
-        <span>Дети</span>
-        <div class="controls">
-          <button
-            @click="decrement('children')"
-            :disabled="passengerCount.children <= 0"
-            type="button"
-          >
-            -
-          </button>
-          <span>{{ passengerCount.children }}</span>
-          <button
-            @click="increment('children')"
-            :disabled="totalPassengers >= maxPassengers"
-            type="button"
-          >
-            +
-          </button>
-        </div>
-      </div>
+            <div class="dropdown-item">
+              <span>Дети</span>
+              <div class="controls">
+                <button
+                  @click="decrement('children')"
+                  :disabled="passengerCount.children <= 0"
+                  type="button"
+                >
+                  -
+                </button>
+                <span>{{ passengerCount.children }}</span>
+                <button
+                  @click="increment('children')"
+                  :disabled="totalPassengers >= maxPassengers"
+                  type="button"
+                >
+                  +
+                </button>
+              </div>
+            </div>
 
-      <div class="dropdown-item">
-        <span>Младенцы</span>
-        <div class="controls">
-          <button
-            @click="decrement('infants')"
-            :disabled="passengerCount.infants <= 0"
-            type="button"
-          >
-            -
-          </button>
-          <span>{{ passengerCount.infants }}</span>
-          <button
-            @click="increment('infants')"
-            :disabled="totalPassengers >= maxPassengers"
-            type="button"
-          >
-            +
-          </button>
-        </div>
-      </div>
+            <div class="dropdown-item">
+              <span>Младенцы</span>
+              <div class="controls">
+                <button
+                  @click="decrement('infants')"
+                  :disabled="passengerCount.infants <= 0"
+                  type="button"
+                >
+                  -
+                </button>
+                <span>{{ passengerCount.infants }}</span>
+                <button
+                  @click="increment('infants')"
+                  :disabled="totalPassengers >= maxPassengers"
+                  type="button"
+                >
+                  +
+                </button>
+              </div>
+            </div>
             <hr style="margin-top: 10px; height: 0.2px" />
 
             <div class="dropdown-item class-selection">
@@ -215,9 +215,7 @@ const decrement = (type: "adults" | "children" | "infants") => {
 
 const totalPassengers = computed(() => {
   return (
-    passengerCount.adults +
-    passengerCount.children +
-    passengerCount.infants
+    passengerCount.adults + passengerCount.children + passengerCount.infants
   );
 });
 
