@@ -5,12 +5,19 @@
       <h1 class="modal-title">Вход</h1>
       <form class="login-form">
         <div class="form-group">
-          <input type="email" placeholder="Email" class="form-control" />
-        </div>
-        <div class="form-group password-group">
-          <input type="password" placeholder="Пароль" class="form-control" />
-          <button type="button" class="toggle-password"></button>
-        </div>
+  <div class="floating-input">
+    <input type="email" id="email" class="form-control" required />
+    <label for="email">Email</label>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="floating-input">
+    <input type="password" id="password" class="form-control" required />
+    <label for="password">Пароль</label>
+  </div>
+</div>
+
         <div class="form-footer">
           <label class="checkbox-label">
             <input type="checkbox" />
@@ -82,39 +89,48 @@ export default defineComponent({
     gap: 10px;
     margin-top: 20px;
     .form-group {
+  margin-bottom: 20px;
+
+  .floating-input {
+    position: relative;
+
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      background: transparent;
       position: relative;
+      z-index: 1;
 
-      .form-control {
-        width: 100%;
-        padding: 10px 14px;
-        border: 1px solid #d9d9d9;
-        border-radius: 8px;
-        font-size: 16px;
-        outline: none;
-
-        &:focus {
-          border-color: #00b8d7;
-          box-shadow: 0 0 5px rgba(0, 153, 255, 0.5);
-        }
+      &:focus {
+        border-color: #00b8d7;
+        box-shadow: 0 0 5px rgba(0, 184, 215, 0.5);
       }
 
-      .password-group {
-        display: flex;
-        align-items: center;
-
-        .toggle-password {
-          background: none;
-          border: none;
-          cursor: pointer;
-          position: absolute;
-          right: 10px;
-          top: 50%;
-          transform: translateY(-50%);
-          font-size: 16px;
-          color: #7a7a7a;
-        }
+      &:focus + label {
+        transform: translateY(-20px);
+        font-size: 10px;
+        color: #00b8d7;
       }
     }
+
+    label {
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #9e9e9e;
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+  }
+}
+
+
 
     .form-footer {
       display: flex;
