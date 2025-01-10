@@ -197,22 +197,23 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 260px;
-        height: 60px;
+        width: 300px;
+        height: 70px;
         border-radius: 15px;
         border: 2px solid white;
         background-color: #ffff;
-        padding: 10px 15px;
-        font-weight: thin;
-        font-size: 16px;
+        // padding: 5px 5px;
+        padding-right: 40px;
+        font-size: 14px;
+        line-height: 20px;
         text-align: left;
         word-spacing: 2px;
-        font-family: Mulish;
+        font-family: Mulish, sans-serif;
 
         a {
           text-decoration: none;
           color: black;
-          font-weight: 600;
+          font-weight: 500;
         }
       } 
     }
