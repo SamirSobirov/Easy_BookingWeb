@@ -13,6 +13,7 @@ import './assets/scss/GroundHandling.scss'
 import './assets/scss/helperCenter.scss'
 import './assets/scss/reviews.scss'
 import './assets/scss/footer.scss'
+import './assets/scss/registModal.scss'
 import App from './App.vue'
 
 createApp(App).mount('#app')
