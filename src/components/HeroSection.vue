@@ -110,15 +110,18 @@
           </span>
         </button>
 
-        <button class="header__nav-button account-button" @click="toggleRegisterModal">
+        <button
+          class="header__nav-button account-button"
+          @click="toggleRegisterModal"
+        >
           <img src="/src/assets/images/acc_img.svg" alt="Account" />
         </button>
       </nav>
     </div>
-    
-    <RegistrModal 
-      v-if="isRegisterModalVisible" 
-      @close="toggleRegisterModal" 
+
+    <RegistrModal
+      v-if="isRegisterModalVisible"
+      @close="toggleRegisterModal"
       class="register-modal"
     />
   </header>
