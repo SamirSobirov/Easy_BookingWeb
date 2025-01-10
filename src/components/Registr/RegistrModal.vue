@@ -10,7 +10,6 @@
           <div class="form-group password-group">
             <input type="password" placeholder="Пароль" class="form-control" />
             <button type="button" class="toggle-password">
-              <span>👁️</span>
             </button>
           </div>
           <div class="form-footer">
@@ -91,7 +90,7 @@
           outline: none;
   
           &:focus {
-            border-color: #0099ff;
+            border-color:#00b8d7;
             box-shadow: 0 0 5px rgba(0, 153, 255, 0.5);
           }
         }
@@ -133,7 +132,7 @@
   
         .forgot-password {
           font-size: 14px;
-          color: #0099ff;
+          color: #00b8d7;
           text-decoration: none;
   
           &:hover {
@@ -143,7 +142,7 @@
       }
   
       .btn-primary {
-        background-color: #00c2ff;
+        background-color: #00b8d7;
         color: white;
         border: none;
         padding: 10px;
@@ -153,7 +152,7 @@
         cursor: pointer;
   
         &:hover {
-          background-color: #0099ff;
+          background-color: #00b8d7;
         }
       }
     }
@@ -165,7 +164,7 @@
       color: #7a7a7a;
   
       .register-link {
-        color: #0099ff;
+        color: #00b8d7;
         text-decoration: none;
   
         &:hover {
@@ -177,11 +176,20 @@
   
   .close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 20px;
     background: none;
-    border: none;
-    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 9999px;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 2px 25px 3px;
+    font-size: 24px;
+    
+    font-weight: 100;
     cursor: pointer;
     color: #7a7a7a;
   
