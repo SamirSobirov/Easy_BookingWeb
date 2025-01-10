@@ -4,22 +4,21 @@
       <h1>Акции и предложения</h1>
 
       <div class="offers-card__header-buttons">
-  <button class="button active" data-button="flights">
-    <img src="/src/assets/icons/hotel_icon.svg" alt="" />
-    Перелеты
-  </button>
+        <button class="button active" data-button="flights">
+          <img src="/src/assets/icons/hotel_icon.svg" alt="" />
+          Перелеты
+        </button>
 
-  <button class="button" data-button="tours">
-    <img src="/src/assets/icons/tours_icon.svg" alt="" />
-    Туры
-  </button>
+        <button class="button" data-button="tours">
+          <img src="/src/assets/icons/tours_icon.svg" alt="" />
+          Туры
+        </button>
 
-  <button class="button" data-button="train">
-    <img src="/src/assets/icons/train_icon.svg" alt="" />
-    Ж/Д
-  </button>
-</div>
-
+        <button class="button" data-button="train">
+          <img src="/src/assets/icons/train_icon.svg" alt="" />
+          Ж/Д
+        </button>
+      </div>
     </div>
 
     <div class="Cards">
@@ -85,14 +84,13 @@ export default defineComponent({
 
   setup() {
     onMounted(() => {
-      const buttons = document.querySelectorAll(".offers-card__header-buttons .button");
+      const buttons = document.querySelectorAll(
+        ".offers-card__header-buttons .button"
+      );
 
       buttons.forEach((button) => {
         button.addEventListener("click", () => {
-          // Удаляем класс 'active' у всех кнопок
           buttons.forEach((btn) => btn.classList.remove("active"));
-
-          // Добавляем класс 'active' на выбранную кнопку
           button.classList.add("active");
         });
       });
@@ -100,4 +98,3 @@ export default defineComponent({
   },
 });
 </script>
-

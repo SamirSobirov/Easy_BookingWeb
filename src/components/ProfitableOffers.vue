@@ -46,11 +46,7 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-// #agreement-checkbox {
-//   background-color: #fff;
-// }
-</style>
+<style lang="scss" scoped></style>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
