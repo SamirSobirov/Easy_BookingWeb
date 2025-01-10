@@ -179,7 +179,7 @@
     top: 15px;
     right: 20px;
     background: none;
-    border: 1px solid black;
+    border: 1px solid #7a7a7a;
     border-radius: 9999px;
     width: 25px;
     height: 25px;
@@ -193,9 +193,6 @@
     cursor: pointer;
     color: #7a7a7a;
   
-    &:hover {
-      color: #ff0000;
-    }
   }
   </style>
   
