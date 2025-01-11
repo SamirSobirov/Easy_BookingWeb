@@ -9,9 +9,6 @@
           EasyBooking Можно спокойно готовиться.
         </p>
 
-
-
-        
         <div class="floating-label-input">
           <div class="input-container">
             <div class="input-wrapper">
