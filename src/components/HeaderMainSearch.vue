@@ -53,8 +53,9 @@
                 </button>
 
                 <div class="input-container">
-                    <input type="text" placeholder="Откуда" class="input"/>
+                    <input type="text" placeholder="Откуда" class="input" id="city-input"/>
                     <label class="floating-label">Куда</label>
+                    <div class="dropdown" id="dropdown"></div>
                 </div>
                 <input
                     type="text"
@@ -138,7 +139,7 @@
                                 </button>
                             </div>
                         </div>
-                        <hr style="margin-top: 10px; height: 0.2px"/>
+                        <hr style="margin-top: 10px;"/>
 
                         <div class="custom-dropdown-item custom-class-selection">
                             <div class="custom-radio-group">
@@ -165,7 +166,7 @@
             <div class="searchFooter">
                 <button class="accommodation_button">
                     <img src="/src/assets/icons/accommodation_icon.svg" alt=""/>
-                    <p>Сложный маршрут</p>
+                    <span>Сложный маршрут</span>
                 </button>
 
                 <div class="switch-container">
