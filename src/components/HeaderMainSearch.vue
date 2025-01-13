@@ -126,7 +126,7 @@
                 </button>
               </div>
             </div>
-            <hr style="margin-top: 10px; height: 0.2px" />
+            <hr style="margin-top: 10px; height: 0" />
 
             <div class="dropdown-item class-selection">
               <div class="radio-group">
@@ -153,7 +153,7 @@
       <div class="searchFooter">
         <button class="accommodation_button">
           <img src="/src/assets/icons/accommodation_icon.svg" alt="" />
-          <p>Сложный маршрут</p>
+          <span>Сложный маршрут</span>
         </button>
 
         <div class="switch-container">
