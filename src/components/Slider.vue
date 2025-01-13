@@ -9,7 +9,6 @@
         </div>
       </div>
 
-
       <div class="slider__controls">
         <button @click="prevSlide" class="slider__button prev">
           <i class="fa fa-arrow-left"></i>
