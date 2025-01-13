@@ -42,7 +42,11 @@
 
       <form class="search-form">
         <input type="text" placeholder="Откуда" class="input" />
-        <img src="/src/assets/icons/Swap_inputs.svg" alt="" />
+
+        <button class="swap_btn">
+          <img src="/src/assets/icons/Swap_inputs.svg" alt="" />
+        </button>
+
         <input type="text" placeholder="Куда" class="input" />
         <input
           type="text"

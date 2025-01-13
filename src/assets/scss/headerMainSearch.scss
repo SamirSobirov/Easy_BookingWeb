@@ -179,6 +179,11 @@
     gap: 10px;
     flex-wrap: wrap;
 
+    .swap_btn {
+      border: none;
+      background-color: transparent;
+    }
+
     .input {
       width: 180px;
       height: 50px;
