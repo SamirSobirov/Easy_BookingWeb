@@ -29,8 +29,8 @@
                   <img
                     :src="
                       isActive(index)
-                        ? '/src/assets/icons/minus.svg'
-                        : '/src/assets/icons/add.svg'
+                        ? 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xOCAxMi45OThINmExIDEgMCAwIDEgMC0yaDEyYTEgMSAwIDAgMSAwIDIiLz48L3N2Zz4='
+                        : 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xMSAxM0g2cS0uNDI1IDAtLjcxMi0uMjg4VDUgMTJ0LjI4OC0uNzEyVDYgMTFoNVY2cTAtLjQyNS4yODgtLjcxMlQxMiA1dC43MTMuMjg4VDEzIDZ2NWg1cS40MjUgMCAuNzEzLjI4OFQxOSAxMnQtLjI4OC43MTNUMTggMTNoLTV2NXEwIC40MjUtLjI4OC43MTNUMTIgMTl0LS43MTItLjI4OFQxMSAxOHoiLz48L3N2Zz4='
                     "
                     alt="Toggle"
                     class="accordion-icon"
