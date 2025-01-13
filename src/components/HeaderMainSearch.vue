@@ -53,7 +53,7 @@
 
         <div class="input-container">
           <input type="text" placeholder="Откуда" class="input" />
-          <label class="floating-label">Откуда</label>
+          <label class="floating-label">Куда</label>
         </div>
         <input
           type="text"
