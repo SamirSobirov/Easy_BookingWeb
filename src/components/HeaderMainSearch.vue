@@ -41,13 +41,20 @@
       </nav>
 
       <form class="search-form">
-        <input type="text" placeholder="Откуда" class="input" />
+        <div class="input-container">
+          <input type="text" placeholder="Откуда" class="input" />
+          <label class="floating-label">Откуда</label>
+        </div>
+
 
         <button class="swap_btn">
           <img src="/src/assets/icons/Swap_inputs.svg" alt="" />
         </button>
 
-        <input type="text" placeholder="Куда" class="input" />
+        <div class="input-container">
+          <input type="text" placeholder="Откуда" class="input" />
+          <label class="floating-label">Откуда</label>
+        </div>
         <input
           type="text"
           class="input_date"

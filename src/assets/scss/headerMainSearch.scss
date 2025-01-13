@@ -140,7 +140,6 @@
     white-space: nowrap;
 
     .tab {
-      background-color: #fff;
       display: flex;
       align-items: center;
       text-align: center;
@@ -184,27 +183,45 @@
       background-color: transparent;
     }
 
-    .input {
-      width: 180px;
-      height: 50px;
-      border: none;
-      flex: 1;
-      min-width: 150px;
-      padding: 0.8rem;
-      border-radius: 12px;
-      font-size: 1rem;
-      color: #9399A8;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+    .input-container {
+      position: relative;
+      width: 172px;
     }
 
-    .input:hover {
-      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    .input {
+      height: 48px;
+      width: 100%;
+      padding: 22px 10px 10px 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 12px;
+      outline: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .input:focus {
-      outline: none;
-      // border: 1px solid #80dbeb;
+      border-color: #007bff;
+    }
+
+    .floating-label {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #9399A8;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .input:focus + .floating-label,
+    .input:not(:placeholder-shown) + .floating-label {
+      top: 10px;
+      font-size: 10px;
+    }
+
+    .input::placeholder {
+      color: transparent;
     }
 
     .input_date {
@@ -216,7 +233,7 @@
       border-radius: 12px;
       font-size: 1rem;
       color: #9399A8;
-      background: #fff url('/src/assets/icons/calendar_icon.svg') no-repeat right 0.8rem center;
+      background: #fff no-repeat right 0.8rem center;
       background-size: 1rem;
       cursor: pointer;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -278,7 +295,7 @@
     }
 
     .search-button:hover {
-      border: outline #005bb5;
+      border: #005bb5;
       background: #008fb3;
       box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     }
