@@ -59,90 +59,90 @@
           onblur="(this.type='text')"
         />
 
-        <div class="dropdown">
-          <button class="dropdown-button" @click="toggleDropdown" type="button">
-            {{ selectedText }}
-          </button>
-          <div v-if="isDropdownOpen" class="dropdown-menu">
-            <div class="dropdown-item">
-              <span>Взрослые</span>
-              <div class="controls">
-                <button
-                  @click="decrement('adults')"
-                  :disabled="passengerCount.adults <= 1"
-                  type="button"
-                >
-                  -
-                </button>
-                <span>{{ passengerCount.adults }}</span>
-                <button
-                  @click="increment('adults')"
-                  :disabled="totalPassengers >= maxPassengers"
-                  type="button"
-                >
-                  +
-                </button>
-              </div>
-            </div>
+          <div class="custom-dropdown">
+              <button class="custom-dropdown-button" @click="toggleDropdown" type="button">
+                  {{ selectedText }}
+              </button>
+              <div v-if="isDropdownOpen" class="custom-dropdown-menu">
+                  <div class="custom-dropdown-item">
+                      <span>Взрослые</span>
+                      <div class="custom-controls">
+                          <button
+                              @click="decrement('adults')"
+                              :disabled="passengerCount.adults <= 1"
+                              type="button"
+                          >
+                              -
+                          </button>
+                          <span>{{ passengerCount.adults }}</span>
+                          <button
+                              @click="increment('adults')"
+                              :disabled="totalPassengers >= maxPassengers"
+                              type="button"
+                          >
+                              +
+                          </button>
+                      </div>
+                  </div>
 
-            <div class="dropdown-item">
-              <span>Дети</span>
-              <div class="controls">
-                <button
-                  @click="decrement('children')"
-                  :disabled="passengerCount.children <= 0"
-                  type="button"
-                >
-                  -
-                </button>
-                <span>{{ passengerCount.children }}</span>
-                <button
-                  @click="increment('children')"
-                  :disabled="totalPassengers >= maxPassengers"
-                  type="button"
-                >
-                  +
-                </button>
-              </div>
-            </div>
+                  <div class="custom-dropdown-item">
+                      <span>Дети</span>
+                      <div class="custom-controls">
+                          <button
+                              @click="decrement('children')"
+                              :disabled="passengerCount.children <= 0"
+                              type="button"
+                          >
+                              -
+                          </button>
+                          <span>{{ passengerCount.children }}</span>
+                          <button
+                              @click="increment('children')"
+                              :disabled="totalPassengers >= maxPassengers"
+                              type="button"
+                          >
+                              +
+                          </button>
+                      </div>
+                  </div>
 
-            <div class="dropdown-item">
-              <span>Младенцы</span>
-              <div class="controls">
-                <button
-                  @click="decrement('infants')"
-                  :disabled="passengerCount.infants <= 0"
-                  type="button"
-                >
-                  -
-                </button>
-                <span>{{ passengerCount.infants }}</span>
-                <button
-                  @click="increment('infants')"
-                  :disabled="totalPassengers >= maxPassengers"
-                  type="button"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-            <hr style="margin-top: 10px; height: 0.2px" />
+                  <div class="custom-dropdown-item">
+                      <span>Младенцы</span>
+                      <div class="custom-controls">
+                          <button
+                              @click="decrement('infants')"
+                              :disabled="passengerCount.infants <= 0"
+                              type="button"
+                          >
+                              -
+                          </button>
+                          <span>{{ passengerCount.infants }}</span>
+                          <button
+                              @click="increment('infants')"
+                              :disabled="totalPassengers >= maxPassengers"
+                              type="button"
+                          >
+                              +
+                          </button>
+                      </div>
+                  </div>
+                  <hr style="margin-top: 10px; height: 0.2px" />
 
-            <div class="dropdown-item class-selection">
-              <div class="radio-group">
-                <label class="radio-wrapper">
-                  <input type="radio" value="economy" v-model="travelClass" />
-                  Эконом-класс
-                </label>
+                  <div class="custom-dropdown-item custom-class-selection">
+                      <div class="custom-radio-group">
+                          <label class="custom-radio-wrapper">
+                              <input type="radio" value="economy" v-model="travelClass" />
+                              Эконом-класс
+                          </label>
 
-                <label class="radio-wrapper">
-                  <input type="radio" value="business" v-model="travelClass" />
-                  Бизнес-класс
-                </label>
+                          <label class="custom-radio-wrapper">
+                              <input type="radio" value="business" v-model="travelClass" />
+                              Бизнес-класс
+                          </label>
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
 
         <button type="submit" class="search-button">
           <img src="/src/assets/icons/search_icon.svg" alt="" />
@@ -168,78 +168,62 @@
   </section>
 </template>
 <script lang="ts" setup>
-import { ref, reactive, computed, onBeforeUnmount, onMounted } from "vue";
+import  { ref, reactive, computed, onBeforeUnmount } from "vue";
 
 const isDropdownOpen = ref(false);
-const isSwitched = ref(false);
-
 const passengerCount = reactive({
-  adults: 1,
-  children: 0,
-  infants: 0,
+    adults: 1,
+    children: 0,
+    infants: 0,
 });
 
 const maxPassengers = 9;
-
 const travelClass = ref("economy");
 
 const toggleDropdown = () => {
-  isDropdownOpen.value = !isDropdownOpen.value;
-
-  if (isDropdownOpen.value) {
-    window.addEventListener("click", handleOutsideClick);
-  }
+    isDropdownOpen.value = !isDropdownOpen.value;
+    if (isDropdownOpen.value) {
+        window.addEventListener("click", handleOutsideClick);
+    }
 };
 
 const handleOutsideClick = (event: MouseEvent) => {
-  const dropdown = document.querySelector(".dropdown");
-  if (!dropdown || !dropdown.contains(event.target as Node)) {
-    isDropdownOpen.value = false;
-    window.removeEventListener("click", handleOutsideClick);
-  }
+    const dropdown = document.querySelector(".custom-dropdown");
+    if (!dropdown || !dropdown.contains(event.target as Node)) {
+        isDropdownOpen.value = false;
+        window.removeEventListener("click", handleOutsideClick);
+    }
 };
 
 onBeforeUnmount(() => {
-  window.removeEventListener("click", handleOutsideClick);
+    window.removeEventListener("click", handleOutsideClick);
 });
 
 const increment = (type: "adults" | "children" | "infants") => {
-  if (totalPassengers.value < maxPassengers) {
-    passengerCount[type]++;
-  }
+    if (totalPassengers.value < maxPassengers) {
+        passengerCount[type]++;
+    }
 };
 
 const decrement = (type: "adults" | "children" | "infants") => {
-  if (passengerCount[type] > 0) passengerCount[type]--;
+    if (passengerCount[type] > 0) passengerCount[type]--;
 };
 
 const totalPassengers = computed(() => {
-  return (
-    passengerCount.adults + passengerCount.children + passengerCount.infants
-  );
+    return (
+        passengerCount.adults + passengerCount.children + passengerCount.infants
+    );
 });
 
 const selectedText = computed(() => {
-  const passengerWord =
-    totalPassengers.value === 1
-      ? "пассажир"
-      : totalPassengers.value <= 4
-      ? "пассажира"
-      : "пассажиров";
+    const passengerWord =
+        totalPassengers.value === 1
+            ? "пассажир"
+            : totalPassengers.value <= 4
+                ? "пассажира"
+                : "пассажиров";
 
-  return `${totalPassengers.value} ${passengerWord}`;
-});
-
-onMounted(() => {
-  const tabs = document.querySelectorAll(".tab");
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((item) => item.classList.remove("active"));
-
-      tab.classList.add("active");
-    });
-  });
+    return `${totalPassengers.value} ${passengerWord}`;
 });
 </script>
 

@@ -92,11 +92,11 @@
           }
         }
 
-        input:checked+.slider {
+        input:checked + .slider {
           background-color: #80dbeb;
         }
 
-        input:checked+.slider::before {
+        input:checked + .slider::before {
           transform: translateX(14px);
         }
       }
@@ -273,19 +273,18 @@
     }
 
     .search-button:hover {
-      border: outline #005bb5;
+      border: #005bb5;
       background: #008fb3;
       box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     }
   }
 
 
-
-  .dropdown {
+  .custom-dropdown {
     position: relative;
     display: inline-block;
 
-    .dropdown-button {
+    .custom-dropdown-button {
       background-color: #ffffff;
       color: #666;
       padding: 5px 10px;
@@ -313,7 +312,7 @@
       }
     }
 
-    .dropdown-menu {
+    .custom-dropdown-menu {
       position: absolute;
       top: 110%;
       z-index: 10;
@@ -328,7 +327,7 @@
       flex-direction: column;
       gap: 15px;
 
-      .dropdown-item {
+      .custom-dropdown-item {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -336,19 +335,18 @@
         font-size: 14px;
         gap: 10px;
 
-
-        &.class-selection {
+        &.custom-class-selection {
           margin-top: 10px;
           flex-direction: column;
           align-items: flex-start;
           margin-bottom: 10px;
 
-          .radio-group {
+          .custom-radio-group {
             display: flex;
             flex-direction: column;
             gap: 13px;
 
-            .radio-wrapper {
+            .custom-radio-wrapper {
               display: inline-flex;
               align-items: center;
               cursor: pointer;
@@ -393,7 +391,7 @@
           }
         }
 
-        .controls {
+        .custom-controls {
           display: flex;
           align-items: center;
 
@@ -406,7 +404,7 @@
             text-align: center;
             cursor: pointer;
             margin: 0 5px;
-            font-weight: 100px;
+            font-weight: 100;
             color: black;
             font-size: 18px;
 
@@ -424,7 +422,7 @@
           span {
             min-width: 20px;
             text-align: center;
-            font-weight: 100px;
+            font-weight: 100;
             font-size: 15px;
             color: #333;
           }
