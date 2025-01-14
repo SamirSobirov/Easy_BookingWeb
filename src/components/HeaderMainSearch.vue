@@ -42,9 +42,9 @@
 
             <form class="search-form">
                 <div class="input-container">
-                    <input type="text" placeholder="Откуда" class="input" id="city-input" v-model="fromCity"/>
+                    <input type="text" placeholder="Откуда" class="input" id="city-input-from" v-model="fromCity"/>
                     <label class="floating-label">Откуда</label>
-                    <div class="dropdown" id="dropdown"></div>
+                    <div class="dropdown" id="dropdown-from"></div>
                 </div>
 
                 <button type="button" class="swap_btn" @click="swapInputs">
@@ -54,7 +54,7 @@
                 <div class="input-container">
                     <input type="text" placeholder="Куда" class="input" id="city-input-to" v-model="toCity"/>
                     <label class="floating-label">Куда</label>
-                    <div class="dropdown" id="dropdown"></div>
+                    <div class="dropdown" id="dropdown-to"></div>
                 </div>
 
                 <input
@@ -180,9 +180,8 @@
         </div>
     </section>
 </template>
-
 <script lang="ts" setup>
-import {ref, reactive, computed, onMounted, onBeforeUnmount} from "vue";
+import { ref, reactive, computed, onMounted, onBeforeUnmount } from "vue";
 
 const fromCity = ref<string>("");
 const toCity = ref<string>("");
@@ -195,7 +194,6 @@ const passengerCount = reactive({
 
 const maxPassengers = 9;
 const travelClass = ref("economy");
-
 
 const swapInputs = () => {
     const temp = fromCity.value;
@@ -255,9 +253,11 @@ onMounted(() => {
             button.classList.add("active");
         });
     });
+
+    new CityInputDropdown("city-input-from", "dropdown-from");
+    new CityInputDropdown("city-input-to", "dropdown-to");
 });
 </script>
-
 <script lang="ts">
 interface Airport {
     id: number;
@@ -387,10 +387,6 @@ class CityInputDropdown {
         this.dropdown.style.display = "none";
     }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    new CityInputDropdown("city-input", "dropdown");
-});
 </script>
 
 <style lang="scss" scoped></style>
