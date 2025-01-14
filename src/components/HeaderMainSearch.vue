@@ -180,6 +180,8 @@
         </div>
     </section>
 </template>
+
+
 <script lang="ts" setup>
 import {ref, reactive, computed, onBeforeUnmount} from "vue";
 
@@ -296,7 +298,7 @@ class CityInputDropdown {
             const response = await fetch(this.apiUrl);
 
             if (!response.ok) {
-                throw new Error(`Failed to fetch data: ${response.statusText}`);
+                throw new Error(`Failed data: ${response.statusText}`);
             }
 
             const data = await response.json();
@@ -304,10 +306,10 @@ class CityInputDropdown {
             if (Array.isArray(data.data)) {
                 return data.data;
             } else {
-                throw new Error("API returned data in an unexpected format");
+                throw new Error("API returned");
             }
         } catch (error) {
-            console.error("Error fetching cities:", error);
+            console.error("Error cities:", error);
             return [];
         }
     }
