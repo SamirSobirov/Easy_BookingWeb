@@ -181,7 +181,6 @@
     </section>
 </template>
 
-
 <script lang="ts" setup>
 import {ref, reactive, computed, onBeforeUnmount} from "vue";
 
