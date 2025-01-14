@@ -53,7 +53,7 @@
                 </button>
 
                 <div class="input-container">
-                    <input type="text" placeholder="Откуда" class="input" id="city-input"/>
+                    <input type="text" placeholder="Куда" class="input" id="city-input"/>
                     <label class="floating-label">Куда</label>
                     <div class="dropdown" id="dropdown"></div>
                 </div>
@@ -331,15 +331,17 @@ class CityInputDropdown {
         this.clearDropdown();
 
         cities.forEach((city) => {
-            const item = document.createElement("div");
-            item.className = "dropdown-item";
+            const item = document.createElement("button");
+            item.className = "dropdown-btn";
             item.innerHTML = `
                 <span class="icon">
-                    <img id="icon" style=" width: 18px; height: 18px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NzYiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTc2IDUxMiI+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNNDgwIDE5MkgzNjUuNzFMMjYwLjYxIDguMDZBMTYuMDEgMTYuMDEgMCAwIDAgMjQ2LjcxIDBoLTY1LjVjLTEwLjYzIDAtMTguMyAxMC4xNy0xNS4zOCAyMC4zOUwyMTQuODYgMTkySDExMmwtNDMuMi01Ny42Yy0zLjAyLTQuMDMtNy43Ny02LjQtMTIuOC02LjRIMTYuMDFDNS42IDEyOC0yLjA0IDEzNy43OC40OSAxNDcuODhMMzIgMjU2TC40OSAzNjQuMTJDLTIuMDQgMzc0LjIyIDUuNiAzODQgMTYuMDEgMzg0SDU2YzUuMDQgMCA5Ljc4LTIuMzcgMTIuOC02LjRMMTEyIDMyMGgxMDIuODZsLTQ5LjAzIDE3MS42Yy0yLjkyIDEwLjIyIDQuNzUgMjAuNCAxNS4zOCAyMC40aDY1LjVjNS43NCAwIDExLjA0LTMuMDggMTMuODktOC4wNkwzNjUuNzEgMzIwSDQ4MGMzNS4zNSAwIDk2LTI4LjY1IDk2LTY0cy02MC42NS02NC05Ni02NCIvPjwvc3ZnPg==" alt="icon">
+                    <img id="icon_plane" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NzYiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTc2IDUxMiI+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNNDgwIDE5MkgzNjUuNzFMMjYwLjYxIDguMDZBMTYuMDEgMTYuMDEgMCAwIDAgMjQ2LjcxIDBoLTY1LjVjLTEwLjYzIDAtMTguMyAxMC4xNy0xNS4zOCAyMC4zOUwyMTQuODYgMTkySDExMmwtNDMuMi01Ny42Yy0zLjAyLTQuMDMtNy43Ny02LjQtMTIuOC02LjRIMTYuMDFDNS42IDEyOC0yLjA0IDEzNy43OC40OSAxNDcuODhMMzIgMjU2TC40OSAzNjQuMTJDLTIuMDQgMzc0LjIyIDUuNiAzODQgMTYuMDEgMzg0SDU2YzUuMDQgMCA5Ljc4LTIuMzcgMTIuOC02LjRMMTEyIDMyMGgxMDIuODZsLTQ5LjAzIDE3MS42Yy0yLjkyIDEwLjIyIDQuNzUgMjAuNCAxNS4zOCAyMC40aDY1LjVjNS43NCAwIDExLjA0LTMuMDggMTMuODktOC4wNkwzNjUuNzEgMzIwSDQ4MGMzNS4zNSAwIDk2LTI4LjY1IDk2LTY0cy02MC42NS02NC05Ni02NCIvPjwvc3ZnPg==" alt="icon">
                 </span>
                 <div class="city-info">
-                    <span class="city-name">${city.name_rus}</span>
-                    <span class="iata-code">${city.iata_code}</span>
+                    <span class="city-name">${city.name_rus}
+                     <span class="iata-code">${city.iata_code}</span>
+                    </span>
+
                 </div>
             `;
             this.dropdown.appendChild(item);
@@ -356,7 +358,7 @@ class CityInputDropdown {
     private showNoResults() {
         this.clearDropdown();
         const noResultItem = document.createElement("div");
-        noResultItem.className = "dropdown-item";
+        noResultItem.className = "dropdown-btn";
         noResultItem.textContent = "No results found";
         this.dropdown.appendChild(noResultItem);
 
@@ -376,62 +378,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <style lang="scss" scoped>
-.dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 300px;
-    max-width: 300px;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-height: 250px;
-    overflow-y: auto;
-    display: none;
-    z-index: 1000;
-    padding: 10px 15px;
-    font-family: Arial, sans-serif;
 
-
-    .dropdown-item {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        font-size: 14px;
-        color: #333;
-        cursor: pointer;
-        border-radius: 8px;
-        transition: background-color 0.2s ease;
-        white-space: nowrap;
-
-        &:hover {
-            background-color: #f4f4f4;
-        }
-
-        .icon {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #007bff;
-        }
-
-        .city-info {
-            display: flex;
-            white-space: nowrap;
-
-            .city-name {
-                font-weight: bold;
-                color: #333;
-            }
-
-            .iata-code {
-                font-size: 12px;
-                color: #999;
-            }
-        }
-    }
-}
 </style>
