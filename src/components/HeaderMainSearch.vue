@@ -182,9 +182,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, computed, onMounted, onBeforeUnmount } from "vue";
+import {ref, reactive, computed, onMounted, onBeforeUnmount} from "vue";
 
-// Dropdown for passenger count
 const isDropdownOpen = ref(false);
 const passengerCount = reactive({
     adults: 1,
@@ -238,7 +237,6 @@ const selectedText = computed(() => {
     return `${totalPassengers.value} ${passengerWord}`;
 });
 
-// Tabs with active state
 onMounted(() => {
     const buttons = document.querySelectorAll(".tabs .tab");
 
@@ -250,7 +248,6 @@ onMounted(() => {
     });
 });
 </script>
-
 
 <script lang="ts">
 interface Airport {
@@ -363,7 +360,6 @@ class CityInputDropdown {
                 this.clearDropdown();
             });
         });
-
         this.dropdown.style.display = "block";
     }
 
@@ -388,7 +384,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
