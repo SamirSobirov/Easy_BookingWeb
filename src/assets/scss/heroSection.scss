@@ -329,7 +329,6 @@
           position: relative;
           outline: none;
           margin-left: auto;
-          cursor: pointer;
 
           &::before {
             content: "";
@@ -347,7 +346,6 @@
 
           &:checked {
             border: 1.5px solid #80dbeb;
-            border-color: #80dbeb;
             background-color: #80dbeb1d;
 
             &::before {
