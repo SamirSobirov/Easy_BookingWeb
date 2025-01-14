@@ -97,7 +97,7 @@
         align-items: center;
         justify-content: center;
         width: 40px;
-        height: 40px;
+        height: 38px;
         border: none;
         border-radius: 50%;
         background-color: #e7f2fc;
@@ -118,7 +118,7 @@
         &__badge {
           position: absolute;
           top: -2px;
-          right: -3px;
+          right: -7px;
           background-color: #ff4d4d;
           color: white;
           font-size: 12px;
@@ -176,21 +176,15 @@
       transform: translate(-50%, -50%);
       background-color: #ffffff85;
       border-radius: 15px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       padding: 10px;
       z-index: 1000;
       opacity: 0;
-      /* Начальное состояние */
-      transform: translate(-50%, -60%);
-      /* Начальное смещение */
       transition: opacity 0.3s ease, transform 0.3s ease;
-      /* Плавное появление и движение */
 
       &.visible {
         opacity: 1;
-        /* Финальное состояние */
         transform: translate(-50%, -50%);
-        /* Финальное положение */
       }
 
       &-content {
@@ -202,7 +196,6 @@
         border-radius: 15px;
         border: 2px solid white;
         background-color: #ffff;
-        // padding: 5px 5px;
         padding-right: 40px;
         font-size: 14px;
         line-height: 20px;
@@ -230,9 +223,6 @@
       opacity: 1;
     }
   }
-
-
-
 
 
   //
