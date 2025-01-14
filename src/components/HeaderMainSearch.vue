@@ -57,13 +57,16 @@
                     <div class="dropdown" id="dropdown-to"></div>
                 </div>
 
-                <input
-                    type="text"
-                    class="input_date"
-                    placeholder="Когда"
-                    onfocus="(this.type='date')"
-                    onblur="(this.type='text')"
-                />
+                <div class="datepicker-wrapper">
+                    <VueDatePicker
+                        v-model="date"
+                        range
+                        :multi-calendars="{ solo: true }"
+                        :format="formatDate"
+                        placeholder="Когда"
+                        class="custom-datepicker"
+                    />
+                </div>
                 <input
                     type="text"
                     class="input_date"
@@ -186,6 +189,7 @@ import { ref, reactive, computed, onMounted, onBeforeUnmount } from "vue";
 const fromCity = ref<string>("");
 const toCity = ref<string>("");
 const isDropdownOpen = ref(false);
+const date = ref();
 const passengerCount = reactive({
     adults: 1,
     children: 0,
@@ -194,6 +198,12 @@ const passengerCount = reactive({
 
 const maxPassengers = 9;
 const travelClass = ref("economy");
+
+onMounted(() => {
+    const startDate = new Date();
+    const endDate = new Date(new Date().setDate(startDate.getDate() + 7));
+    date.value = [startDate, endDate];
+})
 
 const swapInputs = () => {
     const temp = fromCity.value;
