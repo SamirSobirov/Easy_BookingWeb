@@ -42,21 +42,21 @@
 
             <form class="search-form">
                 <div class="input-container">
-                    <input type="text" placeholder="Откуда" class="input" id="city-input"/>
+                    <input type="text" placeholder="Откуда" class="input" id="city-input" v-model="fromCity"/>
                     <label class="floating-label">Откуда</label>
                     <div class="dropdown" id="dropdown"></div>
                 </div>
 
-
-                <button class="swap_btn">
-                    <img src="/src/assets/icons/Swap_inputs.svg" alt=""/>
+                <button type="button" class="swap_btn" @click="swapInputs">
+                    <img src="/src/assets/icons/Swap_inputs.svg" alt="Swap" />
                 </button>
 
                 <div class="input-container">
-                    <input type="text" placeholder="Куда" class="input" id="city-input"/>
+                    <input type="text" placeholder="Куда" class="input" id="city-input-to" v-model="toCity"/>
                     <label class="floating-label">Куда</label>
                     <div class="dropdown" id="dropdown"></div>
                 </div>
+
                 <input
                     type="text"
                     class="input_date"
@@ -184,6 +184,8 @@
 <script lang="ts" setup>
 import {ref, reactive, computed, onMounted, onBeforeUnmount} from "vue";
 
+const fromCity = ref<string>("");
+const toCity = ref<string>("");
 const isDropdownOpen = ref(false);
 const passengerCount = reactive({
     adults: 1,
@@ -193,6 +195,13 @@ const passengerCount = reactive({
 
 const maxPassengers = 9;
 const travelClass = ref("economy");
+
+
+const swapInputs = () => {
+    const temp = fromCity.value;
+    fromCity.value = toCity.value;
+    toCity.value = temp;
+};
 
 const toggleDropdown = () => {
     isDropdownOpen.value = !isDropdownOpen.value;
