@@ -65,7 +65,13 @@
                         :format="formatDate"
                         placeholder="Когда"
                         class="custom-datepicker"
+                        :enable-time-picker="false"
+                        :time-picker="false"
+                        :enable-minutes="false"
+                        :enable-seconds="false"
+                        :hide-navigation="['time', 'hours', 'minutes', 'seconds']"
                     />
+
                 </div>
                 <input
                     type="text"
