@@ -203,13 +203,13 @@
         transition: 0.1s ease-in;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
+
+      &:focus {
+        border: 1px solid #80dbeb;
+        box-shadow: 0 0 4px #80dbeb;
+      }
     }
 
-
-
-    .input:focus {
-      border-color: #007bff;
-    }
 
     .floating-label {
       position: absolute;
@@ -306,6 +306,11 @@
       border: #005bb5;
       background: #008fb3;
       box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    &:focus {
+      border: 1px solid #00b8d7; // Цвет границы при фокусе
+      box-shadow: 0 0 4px rgba(74, 144, 226, 0.5); // Тень при фокусе
     }
   }
 

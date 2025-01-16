@@ -48,7 +48,7 @@
                 </div>
 
                 <button type="button" class="swap_btn" @click="swapInputs">
-                    <img src="/src/assets/icons/Swap_inputs.svg" alt="Swap" />
+                    <img src="/src/assets/icons/Swap_inputs.svg" alt="Swap"/>
                 </button>
 
                 <div class="input-container">
@@ -189,7 +189,7 @@
     </section>
 </template>
 <script lang="ts" setup>
-import { ref, reactive, computed, onMounted, onBeforeUnmount } from "vue";
+import {ref, reactive, computed, onMounted, onBeforeUnmount} from "vue";
 
 const fromCity = ref<string>("");
 const toCity = ref<string>("");
@@ -407,39 +407,42 @@ class CityInputDropdown {
 <style lang="scss">
 .custom-datepicker {
 
+    .dp__input_icon {
+        width: 1px;
+        height: 1px;
+    }
+
     input {
         height: 50px;
         width: 183px;
         min-width: 150px;
         padding: 0.8rem;
-        background-color: #fff; // Цвет фона
-        border: none; // Цвет границы
+        background-color: #fff;
+        border: none;
         border-radius: 12px;
 
-        font-size: 14px; // Размер шрифта
-        color: #333; // Цвет текста
-        outline: none; // Убираем подсветку при фокусе
+        font-size: 14px;
+        color: #333;
+        outline: none;
         transition: border-color 0.2s ease, box-shadow 0.2s ease;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
         &:focus {
-            border-color: #4a90e2; // Цвет границы при фокусе
-            box-shadow: 0 0 4px rgba(74, 144, 226, 0.5); // Тень при фокусе
+            border: 1px solid #80dbeb;
+            box-shadow: 0 0 4px #80dbeb;
         }
 
         &::placeholder {
-            color: #aaa; // Цвет текста для плейсхолдера
-            font-style: italic; // Курсив для плейсхолдера
+            color: #4c4c4c;
+            font-size: 18px;
         }
     }
 
-    // Стили для состояния ошибки
     &.is-invalid input {
         border-color: #e74c3c;
         box-shadow: 0 0 4px rgba(231, 76, 60, 0.5);
     }
 
-    // Стили для отключенного состояния
     input:disabled {
         background-color: #f0f0f0;
         border-color: #ccc;
