@@ -59,7 +59,7 @@
 
                 <div class="datepicker-wrapper">
                     <VueDatePicker
-                        v-model="date"
+                        v-model="returnDate"
                         range
                         :multi-calendars="{ solo: true }"
                         placeholder="Когда"
@@ -69,12 +69,13 @@
                         :enable-minutes="false"
                         :enable-seconds="false"
                         :hide-navigation="['time', 'hours', 'minutes', 'seconds']"
+                        @update:model-value="handleReturnDateSelection"
                     />
                 </div>
 
                 <div class="datepicker-wrapper">
                     <VueDatePicker
-                        v-model="date"
+                        v-model="returnDate"
                         range
                         :multi-calendars="{ solo: true }"
                         placeholder="Обратно"
@@ -84,8 +85,10 @@
                         :enable-minutes="false"
                         :enable-seconds="false"
                         :hide-navigation="['time', 'hours', 'minutes', 'seconds']"
+                        @update:model-value="handleReturnDateSelection"
                     />
                 </div>
+
 
                 <div class="custom-dropdown">
                     <button class="custom-dropdown-button" @click="toggleDropdown" type="button">
@@ -196,7 +199,7 @@
     </section>
 </template>
 <script lang="ts" setup>
-import {ref, reactive, computed, onMounted, onBeforeUnmount} from "vue";
+import {computed, onBeforeUnmount, onMounted, reactive, ref} from "vue";
 
 const fromCity = ref<string>("");
 const toCity = ref<string>("");
@@ -411,7 +414,27 @@ class CityInputDropdown {
         this.dropdown.style.display = "none";
     }
 }
+
+export default {
+    data() {
+        return {
+            date: null as string | null,
+            returnDate: null as string | null,
+        };
+    },
+    methods: {
+        handleReturnDateSelection(value: string | null) {
+            this.returnDate = value ? this.formatDate(value) : null;
+        },
+        formatDate(date: string | null): string {
+            if (!date) return "";
+            const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+            return new Date(date).toLocaleDateString('ru-RU', options);
+        },
+    },
+};
 </script>
+
 
 <style lang="scss">
 .custom-datepicker {
@@ -506,7 +529,8 @@ class CityInputDropdown {
 
         &::placeholder {
             color: #4c4c4c;
-            font-size: 18px;
+            font-size: 1rem;
+            font-family: Arial, sans-serif;
         }
     }
 
