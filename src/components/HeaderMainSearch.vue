@@ -59,8 +59,8 @@
 
                 <div class="datepicker-wrapper">
                     <VueDatePicker
-                        v-model="returnDate"
-                        range
+                        v-model="departureDate"
+                        :range="false"
                         :multi-calendars="{ solo: true }"
                         placeholder="Когда"
                         class="custom-datepicker"
@@ -69,15 +69,15 @@
                         :enable-minutes="false"
                         :enable-seconds="false"
                         :hide-navigation="['time', 'hours', 'minutes', 'seconds']"
-                        @update:model-value="handleReturnDateSelection"
+                        :disabled-dates="disableReturnDates"
+                        @update:model-value="handleDepartureDateSelection"
                     />
                 </div>
 
-
                 <div class="datepicker-wrapper">
                     <VueDatePicker
-                        v-model="date"
-                        range
+                        v-model="returnDate"
+                        :range="false"
                         :multi-calendars="{ solo: true }"
                         placeholder="Обратно"
                         class="custom-datepicker"
@@ -86,7 +86,8 @@
                         :enable-minutes="false"
                         :enable-seconds="false"
                         :hide-navigation="['time', 'hours', 'minutes', 'seconds']"
-                        @update:model-value="handleDateSelection"
+                        :disabled-dates="disableDepartureDates"
+                        @update:model-value="handleReturnDateSelection"
                     />
                 </div>
 
@@ -420,25 +421,44 @@ export default {
     data() {
         return {
             date: null as string | null,
+            departureDate: null as string | null,
             returnDate: null as string | null,
         };
     },
+    computed: {
+        disableReturnDates() {
+            if (!this.departureDate) return () => false;
+            const minDate = new Date(this.departureDate);
+            return (date: Date) => date < minDate;
+        },
+        disableDepartureDates() {
+            if (!this.returnDate) return () => false;
+            const maxDate = new Date(this.returnDate);
+            return (date: Date) => date > maxDate;
+        },
+    },
     methods: {
-        handleDateSelection(value: string | null) {
-            this.date = value ? this.formatDate(value) : null;
+        handleDepartureDateSelection(value: string | null) {
+            this.departureDate = value;
+            if (this.returnDate && new Date(value) > new Date(this.returnDate)) {
+                this.returnDate = null;
+            }
         },
         handleReturnDateSelection(value: string | null) {
-            this.returnDate = value ? this.formatDate(value) : null;
-            this.date = value ? this.formatDate(value) : null;
+            this.returnDate = value;
+            if (this.departureDate && new Date(value) < new Date(this.departureDate)) {
+                this.departureDate = null;
+            }
         },
         formatDate(date: string | null): string {
             if (!date) return "";
-            const options = { year: "numeric", month: "2-digit", day: "2-digit" };
-            return new Date(date).toLocaleDateString("ru-RU", options);
+            const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+            return new Date(date).toLocaleDateString('ru-RU', options);
         },
     },
 };
 </script>
+
 
 
 <style lang="scss">
@@ -536,6 +556,11 @@ export default {
             color: #4c4c4c;
             font-size: 1rem;
             font-family: Arial, sans-serif;
+        }
+
+        &:hover {
+            transition: 0.1s ease-in;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
     }
 
