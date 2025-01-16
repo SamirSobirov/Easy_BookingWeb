@@ -77,7 +77,7 @@
                         v-model="date"
                         range
                         :multi-calendars="{ solo: true }"
-                        placeholder="Когда"
+                        placeholder="Обратно"
                         class="custom-datepicker"
                         :enable-time-picker="false"
                         :time-picker="false"
@@ -336,7 +336,8 @@ class CityInputDropdown {
             const response = await fetch(this.apiUrl);
 
             if (!response.ok) {
-                throw new Error(`Failed data: ${response.statusText}`);
+                console.error(`Failed to fetch data: ${response.statusText}`);
+                return [];
             }
 
             const data = await response.json();
@@ -344,10 +345,11 @@ class CityInputDropdown {
             if (Array.isArray(data.data)) {
                 return data.data;
             } else {
-                throw new Error("API returned");
+                console.error("API returned.");
+                return [];
             }
         } catch (error) {
-            console.error("Error cities:", error);
+            console.error("Error fetching cities:", error);
             return [];
         }
     }
@@ -446,7 +448,6 @@ class CityInputDropdown {
                 display: flex;
                 gap: 10px;
                 padding: 0 30px;
-                //margin-top: 30px;
 
                 .dp__selection_preview {
                     display: none;
