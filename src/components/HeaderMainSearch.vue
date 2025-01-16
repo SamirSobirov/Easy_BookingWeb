@@ -73,9 +73,10 @@
                     />
                 </div>
 
+
                 <div class="datepicker-wrapper">
                     <VueDatePicker
-                        v-model="returnDate"
+                        v-model="date"
                         range
                         :multi-calendars="{ solo: true }"
                         placeholder="Обратно"
@@ -85,7 +86,7 @@
                         :enable-minutes="false"
                         :enable-seconds="false"
                         :hide-navigation="['time', 'hours', 'minutes', 'seconds']"
-                        @update:model-value="handleReturnDateSelection"
+                        @update:model-value="handleDateSelection"
                     />
                 </div>
 
@@ -423,13 +424,17 @@ export default {
         };
     },
     methods: {
+        handleDateSelection(value: string | null) {
+            this.date = value ? this.formatDate(value) : null;
+        },
         handleReturnDateSelection(value: string | null) {
             this.returnDate = value ? this.formatDate(value) : null;
+            this.date = value ? this.formatDate(value) : null;
         },
         formatDate(date: string | null): string {
             if (!date) return "";
-            const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-            return new Date(date).toLocaleDateString('ru-RU', options);
+            const options = { year: "numeric", month: "2-digit", day: "2-digit" };
+            return new Date(date).toLocaleDateString("ru-RU", options);
         },
     },
 };
