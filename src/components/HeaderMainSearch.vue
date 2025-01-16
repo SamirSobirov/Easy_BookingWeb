@@ -406,6 +406,52 @@ class CityInputDropdown {
 
 <style lang="scss">
 .custom-datepicker {
+    .dp__outer_menu_wrap {
+        width: 600px;
+        height: 380px;
+        border-radius: 15px;
+        border: none;
+        .dp__menu {
+            height: 380px;
+
+
+            .dp__menu_inner {
+                padding: 10px 20px;
+                margin-top: 20px;
+            }
+
+            .dp__action_row {
+                display: flex;
+                    gap: 10px;
+              padding: 10px 30px;
+                .dp__selection_preview {
+                    display: none;
+                }
+
+                .dp__action_buttons {
+                    .dp__action_cancel {
+                        width: 80px;
+                        height: 30px;
+                        text-align: center;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .dp__action_select {
+                        width: 80px;
+                        height: 30px;
+                        text-align: center;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #35deff;
+                    }
+                }
+            }
+        }
+    }
+    .dp__arrow_top {
+        height: 1px;
+    }
 
     .dp__input_icon {
         width: 1px;
