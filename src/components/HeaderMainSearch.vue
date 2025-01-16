@@ -407,7 +407,7 @@ class CityInputDropdown {
 <style lang="scss">
 .custom-datepicker {
     .dp__outer_menu_wrap {
-        width: 600px;
+        width: 700px;
         height: 380px;
         border-radius: 15px;
         border: none;
@@ -418,6 +418,16 @@ class CityInputDropdown {
             .dp__menu_inner {
                 padding: 10px 20px;
                 margin-top: 20px;
+                display: flex;
+                gap: 10px;
+                .dp__instance_calendar {
+
+                    .dp__calendar_header {
+                        color: #a1a1a1;
+                        font-weight: 500;
+                        font-size: 12px;
+                    }
+                }
             }
 
             .dp__action_row {
