@@ -232,31 +232,6 @@
       color: transparent;
     }
 
-    .input_date {
-      height: 50px;
-      width: 183px;
-      min-width: 150px;
-      padding: 0.8rem;
-      border: none;
-      border-radius: 12px;
-      font-size: 1rem;
-      color: #868686;
-      background: #fff no-repeat right 0.8rem center;
-      background-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
-    }
-
-    .input_date:hover {
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .input_date:focus {
-      outline: none;
-      // border: 1px solid #80dbeb;
-    }
-
     .input_select {
       border-radius: 12px;
       appearance: none;

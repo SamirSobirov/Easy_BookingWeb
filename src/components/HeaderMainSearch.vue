@@ -72,13 +72,22 @@
                         :hide-navigation="['time', 'hours', 'minutes', 'seconds']"
                     />
                 </div>
-                <input
-                    type="text"
-                    class="input_date"
-                    placeholder="Обратно"
-                    onfocus="(this.type='date')"
-                    onblur="(this.type='text')"
-                />
+
+                <div class="datepicker-wrapper">
+                    <VueDatePicker
+                        v-model="date"
+                        range
+                        :multi-calendars="{ solo: true }"
+                        :format="formatDate"
+                        placeholder="Когда"
+                        class="custom-datepicker"
+                        :enable-time-picker="false"
+                        :time-picker="false"
+                        :enable-minutes="false"
+                        :enable-seconds="false"
+                        :hide-navigation="['time', 'hours', 'minutes', 'seconds']"
+                    />
+                </div>
 
                 <div class="custom-dropdown">
                     <button class="custom-dropdown-button" @click="toggleDropdown" type="button">
