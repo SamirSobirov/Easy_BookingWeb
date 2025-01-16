@@ -415,7 +415,7 @@ class CityInputDropdown {
 .custom-datepicker {
     .dp__outer_menu_wrap {
         width: 700px;
-        height: 380px;
+        height: 450px;
         border-radius: 15px;
         border: none;
 
@@ -423,7 +423,7 @@ class CityInputDropdown {
         .dp__menu {
             border-radius: 14px;
             //border: none;
-            height: 380px;
+            height: 410px;
 
 
             .dp__menu_inner {
@@ -445,7 +445,8 @@ class CityInputDropdown {
             .dp__action_row {
                 display: flex;
                 gap: 10px;
-                padding: 10px 30px;
+                padding: 0 30px;
+                //margin-top: 30px;
 
                 .dp__selection_preview {
                     display: none;
