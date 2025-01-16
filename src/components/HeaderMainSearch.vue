@@ -439,26 +439,41 @@ export default {
     },
     methods: {
         handleDepartureDateSelection(value: string | null) {
+            if (value === null) {
+                this.departureDate = null;
+                return;
+            }
+
             this.departureDate = value;
-            if (this.returnDate && new Date(value) > new Date(this.returnDate)) {
+            if (this.returnDate && new Date(value).getTime() > new Date(this.returnDate).getTime()) {
                 this.returnDate = null;
             }
         },
         handleReturnDateSelection(value: string | null) {
+            if (value === null) {
+                this.returnDate = null;
+                return;
+            }
+
             this.returnDate = value;
-            if (this.departureDate && new Date(value) < new Date(this.departureDate)) {
+            if (this.departureDate && new Date(value).getTime() < new Date(this.departureDate).getTime()) {
                 this.departureDate = null;
             }
         },
         formatDate(date: string | null): string {
             if (!date) return "";
-            const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+
+            const options: Intl.DateTimeFormatOptions = {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            };
+
             return new Date(date).toLocaleDateString('ru-RU', options);
         },
-    },
-};
+    }
+}
 </script>
-
 
 
 <style lang="scss">
@@ -576,5 +591,4 @@ export default {
         cursor: not-allowed;
     }
 }
-
 </style>
