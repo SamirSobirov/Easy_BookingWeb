@@ -62,7 +62,6 @@
                         v-model="date"
                         range
                         :multi-calendars="{ solo: true }"
-                        :format="formatDate"
                         placeholder="Когда"
                         class="custom-datepicker"
                         :enable-time-picker="false"
@@ -78,8 +77,7 @@
                         v-model="date"
                         range
                         :multi-calendars="{ solo: true }"
-                        :format="formatDate"
-                        placeholder="Обратно"
+                        placeholder="Когда"
                         class="custom-datepicker"
                         :enable-time-picker="false"
                         :time-picker="false"
