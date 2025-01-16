@@ -404,4 +404,48 @@ class CityInputDropdown {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.custom-datepicker {
+
+    input {
+        height: 50px;
+        width: 183px;
+        min-width: 150px;
+        padding: 0.8rem;
+        background-color: #fff; // Цвет фона
+        border: none; // Цвет границы
+        border-radius: 12px;
+
+        font-size: 14px; // Размер шрифта
+        color: #333; // Цвет текста
+        outline: none; // Убираем подсветку при фокусе
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        &:focus {
+            border-color: #4a90e2; // Цвет границы при фокусе
+            box-shadow: 0 0 4px rgba(74, 144, 226, 0.5); // Тень при фокусе
+        }
+
+        &::placeholder {
+            color: #aaa; // Цвет текста для плейсхолдера
+            font-style: italic; // Курсив для плейсхолдера
+        }
+    }
+
+    // Стили для состояния ошибки
+    &.is-invalid input {
+        border-color: #e74c3c;
+        box-shadow: 0 0 4px rgba(231, 76, 60, 0.5);
+    }
+
+    // Стили для отключенного состояния
+    input:disabled {
+        background-color: #f0f0f0;
+        border-color: #ccc;
+        color: #999;
+        cursor: not-allowed;
+    }
+}
+
+</style>
