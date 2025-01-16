@@ -79,7 +79,7 @@
                         range
                         :multi-calendars="{ solo: true }"
                         :format="formatDate"
-                        placeholder="Когда"
+                        placeholder="Обратно"
                         class="custom-datepicker"
                         :enable-time-picker="false"
                         :time-picker="false"
