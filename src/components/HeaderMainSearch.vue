@@ -411,7 +411,11 @@ class CityInputDropdown {
         height: 380px;
         border-radius: 15px;
         border: none;
+
+
         .dp__menu {
+            border-radius: 14px;
+            //border: none;
             height: 380px;
 
 
@@ -420,6 +424,7 @@ class CityInputDropdown {
                 margin-top: 20px;
                 display: flex;
                 gap: 10px;
+
                 .dp__instance_calendar {
 
                     .dp__calendar_header {
@@ -432,8 +437,9 @@ class CityInputDropdown {
 
             .dp__action_row {
                 display: flex;
-                    gap: 10px;
-              padding: 10px 30px;
+                gap: 10px;
+                padding: 10px 30px;
+
                 .dp__selection_preview {
                     display: none;
                 }
@@ -459,6 +465,7 @@ class CityInputDropdown {
             }
         }
     }
+
     .dp__arrow_top {
         height: 1px;
     }
