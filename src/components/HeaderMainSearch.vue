@@ -13,33 +13,7 @@
         </div>
 
         <div class="search-box">
-            <nav class="tabs">
-                <button class="tab active" data-tab="flights">
-                    <img src="/src/assets/icons/plane_icon.svg" alt="plane"/>
-                    Перелеты
-                </button>
-                <button class="tab" data-tab="hotels">
-                    <img src="/src/assets/icons/hotel_icon.svg" alt="hotels"/>
-                    Отели
-                </button>
-                <button class="tab" data-tab="train">
-                    <img src="/src/assets/icons/train_icon.svg" alt="train"/>
-                    Ж/Д
-                </button>
-                <button class="tab" data-tab="transfers">
-                    <img src="/src/assets/icons/transport.svg" alt="transport"/>
-                    Трансферы
-                </button>
-                <button class="tab" data-tab="tours">
-                    <img src="/src/assets/icons/tours_icon.svg" alt="tours"/>
-                    Туры
-                </button>
-                <button class="tab" data-tab="insurance">
-                    <img src="/src/assets/icons/insurance_icon.svg" alt="insurance"/>
-                    Страхование
-                </button>
-            </nav>
-
+            <tabs/>
             <form class="search-form">
                 <div class="input-container">
                     <input type="text" placeholder="Откуда" class="input" id="city-input-from" v-model="fromCity"/>
@@ -201,6 +175,7 @@
 </template>
 <script lang="ts" setup>
 import {computed, onBeforeUnmount, onMounted, reactive, ref} from "vue";
+import tabs from "./HeaderMainSearch/tabs.vue";
 
 const fromCity = ref<string>("");
 const toCity = ref<string>("");
@@ -471,5 +446,4 @@ export default {
     }
 }
 </script>
-
 <style lang="scss"></style>
