@@ -91,7 +91,6 @@
                     />
                 </div>
 
-
                 <div class="custom-dropdown">
                     <button class="custom-dropdown-button" @click="toggleDropdown" type="button">
                         {{ selectedText }}
@@ -273,7 +272,6 @@ const selectedText = computed(() => {
 
 onMounted(() => {
     const buttons = document.querySelectorAll(".tabs .tab");
-
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             buttons.forEach((btn) => btn.classList.remove("active"));
@@ -407,7 +405,6 @@ class CityInputDropdown {
         noResultItem.className = "dropdown-btn";
         noResultItem.textContent = "No results found";
         this.dropdown.appendChild(noResultItem);
-
         this.dropdown.style.display = "block";
     }
 
@@ -475,6 +472,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
