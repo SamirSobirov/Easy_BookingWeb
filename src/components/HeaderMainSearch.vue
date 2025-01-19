@@ -432,6 +432,9 @@ export default {
                 this.departureDate = null;
             }
         },
+
+
+
         formatDate(date: string | null): string {
             if (!date) return "";
             const options: Intl.DateTimeFormatOptions = {
