@@ -426,7 +426,6 @@ export default {
                 this.returnDate = null;
                 return;
             }
-
             this.returnDate = value;
             if (this.departureDate && new Date(value).getTime() < new Date(this.departureDate).getTime()) {
                 this.departureDate = null;
