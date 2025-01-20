@@ -25,6 +25,8 @@ const imageList = imageNames.map((name) => ({
     </header>
 </template>
 
-<style scoped lang="scss">
-
+<style lang="scss">
+.full-width-header {
+    width: 100%;
+}
 </style>

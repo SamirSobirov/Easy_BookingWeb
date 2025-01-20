@@ -1,6 +1,6 @@
 <template>
     <section class="hero-section">
-        <div class="hero-content" v-if="!hideContent">
+        <div :class="{'full-width-header': hideContent}" class="hero-content" v-if="!hideContent">
             <img
                 src="/src/assets/images/Hero.svg"
                 alt="Hero Image"
@@ -13,7 +13,8 @@
         </div>
 
         <div class="search-box">
-            <tabs v-if="showTabs" />
+            <EasyTabs />
+            <tabs v-if="showTabs"/>
             <form class="search-form">
                 <div class="input-container">
                     <input type="text" placeholder="Откуда" class="input" id="city-input-from" v-model="fromCity"/>
@@ -177,22 +178,22 @@
     </section>
 </template>
 <script lang="ts" setup>
-import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue";
+import {computed, onBeforeUnmount, onMounted, reactive, ref, watch} from "vue";
 import tabs from "./HeaderMainSearch/tabs.vue";
-import { useRoute } from 'vue-router';
+import {useRoute} from 'vue-router';
+import EasyTabs from "./HeaderMainSearch/EasyTabs.vue";
 
 const route = useRoute();
 const hideContent = computed(() => route.path === '/result');
 
 const showTabs = ref(true);
 
-// Следим за изменением маршрута
 watch(
     () => route.path,
     (newPath) => {
         showTabs.value = newPath !== '/result';
     },
-    { immediate: true }  // Проверка при первой загрузке
+    {immediate: true}
 );
 
 const fromCity = ref<string>("");
@@ -462,4 +463,4 @@ export default {
     }
 }
 </script>
-<style lang="scss"></style>
+
