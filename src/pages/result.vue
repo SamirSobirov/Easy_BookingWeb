@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
 <div class="container">
     <img src="" alt="NOT FOUND">
@@ -50,3 +46,8 @@ body {
 
     }
 </style>
+
+
+<script setup lang="ts">
+
+</script>

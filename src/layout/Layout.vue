@@ -3,6 +3,11 @@ import HeaderMainSearch from "../components/HeaderMainSearch.vue";
 import HeroSection from "../components/HeroSection.vue";
 import HeaderMainButtons from "../components/HeaderMainButtons.vue";
 import BreadCrumb from "../components/breadcrumbs/BreadCrumb.vue";
+import { computed } from "vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
+
+const isResultPage = computed(() => route.path === "/result");
 
 const imageNames = [
     "DubaiCountry.svg",
@@ -16,15 +21,17 @@ const imageList = imageNames.map((name) => ({
     url: new URL(`./assets/images/${name}`, import.meta.url).href,
 }));
 </script>
-
 <template>
     <header>
         <HeroSection msg="Welcome to EasyBooking!" />
 
+        <!-- Показываем BreadCrumb только на странице /result -->
+        <BreadCrumb v-if="isResultPage" />
+
         <HeaderMainButtons :images="imageList" />
         <HeaderMainSearch />
     </header>
-    <RouterView/>
+    <RouterView />
 </template>
 
 <style lang="scss">
