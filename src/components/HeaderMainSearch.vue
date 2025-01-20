@@ -154,7 +154,6 @@
                     <button type="button" class="search-button">
                         <img src="/src/assets/icons/search_icon.svg" alt=""/>
                         <span>Поиск</span>
-
                     </button>
                 </router-link>
 
