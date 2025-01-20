@@ -10,7 +10,8 @@
     justify-content: center;
     margin: 0 auto -60px;
     text-align: left;
-    width: 1140px;
+    width: 1128px;
+    max-width: 1200px;
     height: 60px;
     background: rgba(255, 255, 255, 0.555);
     border: 2px solid #ffffff;
