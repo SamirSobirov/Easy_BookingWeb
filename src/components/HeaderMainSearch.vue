@@ -150,7 +150,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="search-button">
+                <button type="button" class="search-button">
                     <img src="/src/assets/icons/search_icon.svg" alt=""/>
                     Поиск
                 </button>
