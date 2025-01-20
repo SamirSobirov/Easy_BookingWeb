@@ -150,10 +150,13 @@
                     </div>
                 </div>
 
-                <button type="button" class="search-button">
-                    <img src="/src/assets/icons/search_icon.svg" alt=""/>
-                    Поиск
-                </button>
+                <router-link to="/result">
+                    <button type="button" class="search-button">
+                        <img src="/src/assets/icons/search_icon.svg" alt=""/>
+                        Поиск
+                    </button>
+                </router-link>
+
             </form>
 
             <div class="searchFooter">

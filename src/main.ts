@@ -15,6 +15,7 @@ import './assets/scss/reviews.scss'
 import './assets/scss/footer.scss'
 import './assets/scss/registModal.scss'
 import './assets/scss/searchForm.scss'
+import router from "./pages/router";
 import App from './App.vue'
 
 import VueDatePicker from '@vuepic/vue-datepicker';
@@ -22,6 +23,8 @@ import '@vuepic/vue-datepicker/dist/main.css'
 
 const app = createApp(App);
 
+
+app.use(router);
 app.component('VueDatePicker', VueDatePicker);
 app.mount('#app');
 
