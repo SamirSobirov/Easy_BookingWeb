@@ -13,8 +13,8 @@
         </div>
 
         <div class="search-box">
-            <EasyTabs />
-            <tabs v-if="showTabs"/>
+            <EasyTabs v-if="route.path === '/result' "/>
+            <tabs v-if="!isResultPage && showTabs" />
             <form class="search-form">
                 <div class="input-container">
                     <input type="text" placeholder="Откуда" class="input" id="city-input-from" v-model="fromCity"/>

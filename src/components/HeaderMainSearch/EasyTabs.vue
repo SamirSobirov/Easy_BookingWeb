@@ -40,7 +40,7 @@ export default {
     button {
 
         border: none;
-        background-color: white;
+        background-color: transparent;
         width: 100%;
         height: 50px;
         border-radius: 10px;
@@ -61,6 +61,7 @@ export default {
     }
 
     .active {
+        background-color: white;
         border: 1px solid #80dbeb;
 
         span {
