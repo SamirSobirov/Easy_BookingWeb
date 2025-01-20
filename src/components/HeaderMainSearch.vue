@@ -1,6 +1,6 @@
 <template>
     <section class="hero-section">
-        <div class="hero-content">
+        <div class="hero-content" v-if="!hideContent">
             <img
                 src="/src/assets/images/Hero.svg"
                 alt="Hero Image"
@@ -179,7 +179,12 @@
 <script lang="ts" setup>
 import {computed, onBeforeUnmount, onMounted, reactive, ref} from "vue";
 import tabs from "./HeaderMainSearch/tabs.vue";
+import { useRoute } from 'vue-router';
 
+
+
+const route = useRoute();
+const hideContent = computed(() => route.path === '/result');
 const fromCity = ref<string>("");
 const toCity = ref<string>("");
 const isDropdownOpen = ref(false);
