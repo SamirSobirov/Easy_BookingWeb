@@ -3,23 +3,50 @@
 </script>
 
 <template>
-    <div class="container">
+<div class="container">
+    <img src="" alt="NOT FOUND">
+    <p>По заданным параметрам поиска не найдено результатов
 
-
-    </div>
+    <span>Рекомендуем попробовать другие даты для поиска.</span>
+    </p>
+</div>
 </template>
 
+<style>
+body {
+    height: 100vh;
+}
 
+.search-box {
+    margin-top: -80px;
+}
+</style>
 
 <style scoped lang="scss">
-.container {
-align-items: center;
-justify-content: center;
-    div {
-        width: 1170px;
-        height: 60px;
-        border-radius: 24px;
-        background-color: #4c4c4c;
+
+    .container {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 170px;
+
+        p {
+            color: black;
+            font-weight: 700;
+            line-height: 24px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+
+            font-size: 22px;
+        span {
+            font-size: 15px;
+            font-weight: 400;
+            font-family: Arial, sans-serif;
+            padding-top: 12px;
+            color: #6D7586;
+        }
+        }
+
     }
-}
 </style>

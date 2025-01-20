@@ -2,6 +2,7 @@
 import HeaderMainSearch from "../components/HeaderMainSearch.vue";
 import HeroSection from "../components/HeroSection.vue";
 import HeaderMainButtons from "../components/HeaderMainButtons.vue";
+import BreadCrumb from "../components/breadcrumbs/BreadCrumb.vue";
 
 const imageNames = [
     "DubaiCountry.svg",
@@ -19,10 +20,11 @@ const imageList = imageNames.map((name) => ({
 <template>
     <header>
         <HeroSection msg="Welcome to EasyBooking!" />
+
         <HeaderMainButtons :images="imageList" />
         <HeaderMainSearch />
-    <RouterView/>
     </header>
+    <RouterView/>
 </template>
 
 <style lang="scss">
