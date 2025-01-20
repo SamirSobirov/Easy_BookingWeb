@@ -153,7 +153,8 @@
                 <router-link to="/result">
                     <button type="button" class="search-button">
                         <img src="/src/assets/icons/search_icon.svg" alt=""/>
-                        Поиск
+                        <span>Поиск</span>
+
                     </button>
                 </router-link>
 

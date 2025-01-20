@@ -44,6 +44,8 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border: 2px solid #ffffff;
 
+
+
   .searchFooter {
     display: flex;
     margin-top: 25px;
@@ -273,10 +275,16 @@
       border: none;
       border-radius: 12px;
       font-size: 1rem;
+      height: 100%;
       cursor: pointer;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       transition: background-color 0.3s;
     }
+
+    a:-webkit-any-link {
+      text-decoration: none;
+    }
+
 
     .search-button:hover {
       border: #005bb5;
