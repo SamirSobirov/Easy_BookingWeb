@@ -450,16 +450,6 @@ export default {
                 this.departureDate = null;
             }
         },
-        formatDate(date: string | null): string {
-            if (!date) return "";
-            const options: Intl.DateTimeFormatOptions = {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit'
-            };
-
-            return new Date(date).toLocaleDateString('ru-RU', options);
-        },
     }
 }
 </script>
