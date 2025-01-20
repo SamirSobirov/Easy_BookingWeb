@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import HeaderMainSearch from "../components/HeaderMainSearch.vue";
 import HeroSection from "../components/HeroSection.vue";
 import HeaderMainButtons from "../components/HeaderMainButtons.vue";
@@ -22,8 +21,8 @@ const imageList = imageNames.map((name) => ({
         <HeroSection msg="Welcome to EasyBooking!" />
         <HeaderMainButtons :images="imageList" />
         <HeaderMainSearch />
-    </header>
     <RouterView/>
+    </header>
 </template>
 
 <style scoped lang="scss">

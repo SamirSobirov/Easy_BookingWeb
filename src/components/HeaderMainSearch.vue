@@ -13,7 +13,7 @@
         </div>
 
         <div class="search-box">
-            <tabs/>
+            <tabs v-if="showTabs" />
             <form class="search-form">
                 <div class="input-container">
                     <input type="text" placeholder="Откуда" class="input" id="city-input-from" v-model="fromCity"/>
@@ -177,14 +177,24 @@
     </section>
 </template>
 <script lang="ts" setup>
-import {computed, onBeforeUnmount, onMounted, reactive, ref} from "vue";
+import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue";
 import tabs from "./HeaderMainSearch/tabs.vue";
 import { useRoute } from 'vue-router';
 
-
-
 const route = useRoute();
 const hideContent = computed(() => route.path === '/result');
+
+const showTabs = ref(true);
+
+// Следим за изменением маршрута
+watch(
+    () => route.path,
+    (newPath) => {
+        showTabs.value = newPath !== '/result';
+    },
+    { immediate: true }  // Проверка при первой загрузке
+);
+
 const fromCity = ref<string>("");
 const toCity = ref<string>("");
 const isDropdownOpen = ref(false);
@@ -202,7 +212,7 @@ onMounted(() => {
     const startDate = new Date();
     const endDate = new Date(new Date().setDate(startDate.getDate() + 7));
     date.value = [startDate, endDate];
-})
+});
 
 const swapInputs = () => {
     const temp = fromCity.value;
