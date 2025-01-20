@@ -24,10 +24,7 @@ const imageList = imageNames.map((name) => ({
 <template>
     <header>
         <HeroSection msg="Welcome to EasyBooking!" />
-
-        <!-- Показываем BreadCrumb только на странице /result -->
         <BreadCrumb v-if="isResultPage" />
-
         <HeaderMainButtons :images="imageList" />
         <HeaderMainSearch />
     </header>

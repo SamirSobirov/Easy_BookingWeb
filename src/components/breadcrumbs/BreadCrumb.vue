@@ -5,16 +5,18 @@
 </template>
 
 <style scoped lang="scss">
-    .box {
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-    text-align: center;
-        width: 1180px;
-        height: 60px;
-        background-color: rgba(223, 223, 223, 0.31);
-        border-radius: 10px;
-    }
+.box {
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto -60px;
+    text-align: left;
+    width: 1140px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.555);
+    border: 2px solid #ffffff;
+    //margin-bottom: -60px;
+    border-radius: 10px;
+}
 </style>
 
 
