@@ -6,7 +6,7 @@
                 alt="Назад"/>
         </button>
         <nav class="breadcrumb-nav">
-            <span class="breadcrumb-item">Главная</span>
+            <button class="breadcrumb-item" @click="goToHome">Главная</button>
             <span class="breadcrumb-separator">/</span>
             <span class="breadcrumb-item active">Поиск</span>
         </nav>
@@ -57,6 +57,8 @@
     font-weight: 500;
     font-size: 14px;
     color: #9399A8;
+    border: none;
+    background-color: transparent;
 }
 
 .breadcrumb-separator {
