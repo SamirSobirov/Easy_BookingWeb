@@ -5,6 +5,7 @@ import HeaderMainButtons from "../components/HeaderMainButtons.vue";
 import BreadCrumb from "../components/breadcrumbs/BreadCrumb.vue";
 import { computed } from "vue";
 import { useRoute } from "vue-router";
+import AppBackground from "./AppBackground.vue";
 const route = useRoute();
 
 const isResultPage = computed(() => route.path === "/result");
@@ -22,6 +23,7 @@ const imageList = imageNames.map((name) => ({
 }));
 </script>
 <template>
+    <AppBackground />
     <header>
         <HeroSection msg="Welcome to EasyBooking!" />
         <BreadCrumb v-if="isResultPage" />
@@ -29,6 +31,7 @@ const imageList = imageNames.map((name) => ({
         <HeaderMainSearch />
     </header>
     <RouterView />
+
 </template>
 
 <style lang="scss">
