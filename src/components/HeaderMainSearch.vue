@@ -1,10 +1,10 @@
 <template>
     <section class="hero-section">
-        <HeroContent />
+        <HeroContent/>
 
         <div class="search-box">
             <EasyTabs v-if="route.path === '/result' "/>
-            <tabs v-else />
+            <tabs v-else/>
             <form class="search-form">
                 <div class="input-container">
                     <input
@@ -161,20 +161,20 @@
 
                 <router-link to="/result" custom>
                     <button type="button" class="search-button" @click="handleSearch()">
-                        <img src="/src/assets/icons/search_icon.svg" alt="" />
+                        <img src="/src/assets/icons/search_icon.svg" alt=""/>
                         <span>Поиск</span>
                     </button>
                 </router-link>
 
             </form>
-            <SearchFooter />
+            <SearchFooter/>
         </div>
     </section>
 </template>
 <script lang="ts" setup>
-import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue";
+import {computed, onBeforeUnmount, onMounted, reactive, ref, watch} from "vue";
 import tabs from "./HeaderMainSearch/tabs.vue";
-import { useRoute, useRouter } from 'vue-router';
+import {useRoute, useRouter} from 'vue-router';
 import EasyTabs from "./HeaderMainSearch/EasyTabs.vue";
 import SearchFooter from "./HeaderMainSearch/SearchFooter.vue";
 import HeroContent from "./HeaderMainSearch/HeroContent.vue";
@@ -188,7 +188,7 @@ watch(
     (newPath) => {
         showTabs.value = newPath !== '/result';
     },
-    { immediate: true }
+    {immediate: true}
 );
 
 // Поля ввода
