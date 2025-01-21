@@ -1,30 +1,22 @@
 <template>
     <div class="container">
-        <button :class="{ active: activeButton === 'avia' }" @click="setActive('avia')">
+        <button :class="{ active: activeButton === 'avia' }" @click="activeButton = 'avia'">
             <img src="/src/assets/icons/plane_icon.svg" alt="plane"/>
             <span>Авиабилеты</span>
         </button>
 
-        <button :class="{ active: activeButton === 'tours' }" @click="setActive('tours')">
+        <button :class="{ active: activeButton === 'tours' }" @click="activeButton = 'tours'">
             <img src="/src/assets/icons/tours_icon.svg" alt="tours"/>
             <span>Туры</span>
         </button>
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            activeButton: 'avia',
-        };
-    },
-    methods: {
-        setActive(button) {
-            this.activeButton = button;
-        },
-    },
-};
+<script setup lang="ts">
+import {ref} from "vue";
+
+const activeButton = ref('avia');
+
 </script>
 
 <style scoped lang="scss">

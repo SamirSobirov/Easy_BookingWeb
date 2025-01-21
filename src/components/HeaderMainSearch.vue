@@ -14,7 +14,7 @@
 
         <div class="search-box">
             <EasyTabs v-if="route.path === '/result' "/>
-            <tabs v-if="!isResultPage && showTabs" />
+            <tabs v-else />
             <form class="search-form">
                 <div class="input-container">
                     <input type="text" placeholder="Откуда" class="input" id="city-input-from" v-model="fromCity"/>
