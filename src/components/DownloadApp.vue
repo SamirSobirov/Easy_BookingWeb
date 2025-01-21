@@ -72,10 +72,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1128px;
+  max-width: 1135px;
+
   margin: 60px auto 0;
   background: #ffffffaf;
   height: 360px;
+    width: 1140px;
   border-radius: 24px;
 
   .box {
