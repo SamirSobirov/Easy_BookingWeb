@@ -1,16 +1,6 @@
 <template>
     <section class="hero-section">
-        <div :class="{'full-width-header': hideContent}" class="hero-content" v-if="!hideContent">
-            <img
-                src="/src/assets/images/Hero.svg"
-                alt="Hero Image"
-                class="hero-image"
-            />
-            <div class="text-content">
-                <h1 class="hero-title">Путешествуй с нами и ощути магию мира</h1>
-                <p class="hero-subtitle">Простое бронирование — лёгкая экономия</p>
-            </div>
-        </div>
+        <HeroContent />
 
         <div class="search-box">
             <EasyTabs v-if="route.path === '/result' "/>
@@ -159,21 +149,7 @@
                 </router-link>
 
             </form>
-
-            <div class="searchFooter">
-                <button class="accommodation_button">
-                    <img src="/src/assets/icons/accommodation_icon.svg" alt=""/>
-                    <span>Сложный маршрут</span>
-                </button>
-
-                <div class="switch-container">
-                    <label class="switch">
-                        <input type="checkbox"/>
-                        <span class="slider"></span>
-                    </label>
-                    <button class="switch-btn">± 1 день</button>
-                </div>
-            </div>
+            <SearchFooter />
         </div>
     </section>
 </template>
@@ -182,9 +158,10 @@ import {computed, onBeforeUnmount, onMounted, reactive, ref, watch} from "vue";
 import tabs from "./HeaderMainSearch/tabs.vue";
 import {useRoute} from 'vue-router';
 import EasyTabs from "./HeaderMainSearch/EasyTabs.vue";
+import SearchFooter from "./HeaderMainSearch/SearchFooter.vue";
+import HeroContent from "./HeaderMainSearch/HeroContent.vue";
 
 const route = useRoute();
-const hideContent = computed(() => route.path === '/result');
 
 const showTabs = ref(true);
 
