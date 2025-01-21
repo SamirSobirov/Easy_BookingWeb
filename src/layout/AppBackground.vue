@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 
 import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
@@ -19,7 +19,7 @@ function generateSphere() {
     }
 }
 
-function getPosition() {
+function getPosition(): string[] {
     const x = getRandomNumber(200, window.innerWidth)
     const y = getRandomNumber(0, window.innerHeight)
     return [
@@ -28,11 +28,11 @@ function getPosition() {
     ]
 }
 
-function getPercentage(total, val) {
+function getPercentage(total, val): string {
     return Math.ceil(val * 100 / total) + '%'
 }
 
-function getRandomNumber(min, max) {
+function getRandomNumber(min, max): number {
     const randomDecimal = Math.random()
     const range = max - min
     return Math.floor(randomDecimal * range) + min
