@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-    <img src="" alt="NOT FOUND">
+    <img src="/src/assets/images/notFound.svg" alt="NOT FOUND">
     <p>По заданным параметрам поиска не найдено результатов
 
     <span>Рекомендуем попробовать другие даты для поиска.</span>
