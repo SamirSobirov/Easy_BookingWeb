@@ -7,8 +7,19 @@
             <tabs v-else />
             <form class="search-form">
                 <div class="input-container">
-                    <input type="text" placeholder="Откуда" class="input" id="city-input-from" v-model="fromCity"/>
-                    <label class="floating-label">Откуда</label>
+                    <input
+                        type="text"
+                        placeholder="Откуда"
+                        required
+                        class="input"
+                        :class="{ 'input-error': errors.fromCity }"
+                        id="city-input-from"
+                        v-model="fromCity"
+                    />
+                    <label
+                        class="floating-label"
+                        :class="{ 'floating-label-error': errors.fromCity }"
+                    >Откуда</label>
                     <div class="dropdown" id="dropdown-from"></div>
                 </div>
 
@@ -17,8 +28,19 @@
                 </button>
 
                 <div class="input-container">
-                    <input type="text" placeholder="Куда" class="input" id="city-input-to" v-model="toCity"/>
-                    <label class="floating-label">Куда</label>
+                    <input
+                        type="text"
+                        placeholder="Куда"
+                        required
+                        class="input"
+                        :class="{ 'input-error': errors.toCity }"
+                        id="city-input-to"
+                        v-model="toCity"
+                    />
+                    <label
+                        class="floating-label"
+                        :class="{ 'floating-label-error': errors.toCity }"
+                    >Куда</label>
                     <div class="dropdown" id="dropdown-to"></div>
                 </div>
 
@@ -29,12 +51,8 @@
                         :multi-calendars="{ solo: true }"
                         placeholder="Когда"
                         class="custom-datepicker"
+                        :class="{ 'input-error': errors.departureDate }"
                         :enable-time-picker="false"
-                        :time-picker="false"
-                        :enable-minutes="false"
-                        :enable-seconds="false"
-                        :hide-navigation="['time', 'hours', 'minutes', 'seconds']"
-                        :disabled-dates="disableReturnDates"
                         @update:model-value="handleDepartureDateSelection"
                     />
                 </div>
@@ -141,9 +159,9 @@
                     </div>
                 </div>
 
-                <router-link to="/result">
-                    <button type="button" class="search-button">
-                        <img src="/src/assets/icons/search_icon.svg" alt=""/>
+                <router-link to="/result" custom>
+                    <button type="button" class="search-button" @click="handleSearch()">
+                        <img src="/src/assets/icons/search_icon.svg" alt="" />
                         <span>Поиск</span>
                     </button>
                 </router-link>
@@ -154,15 +172,15 @@
     </section>
 </template>
 <script lang="ts" setup>
-import {computed, onBeforeUnmount, onMounted, reactive, ref, watch} from "vue";
+import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue";
 import tabs from "./HeaderMainSearch/tabs.vue";
-import {useRoute} from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import EasyTabs from "./HeaderMainSearch/EasyTabs.vue";
 import SearchFooter from "./HeaderMainSearch/SearchFooter.vue";
 import HeroContent from "./HeaderMainSearch/HeroContent.vue";
 
 const route = useRoute();
-
+const router = useRouter();
 const showTabs = ref(true);
 
 watch(
@@ -170,11 +188,45 @@ watch(
     (newPath) => {
         showTabs.value = newPath !== '/result';
     },
-    {immediate: true}
+    { immediate: true }
 );
 
+// Поля ввода
 const fromCity = ref<string>("");
 const toCity = ref<string>("");
+const departureDate = ref<string | null>(null);
+
+// Ошибки формы
+const errors = reactive({
+    fromCity: false,
+    toCity: false,
+    departureDate: false,
+});
+
+// Функция валидации формы
+const validateForm = () => {
+    errors.fromCity = fromCity.value.trim() === "";
+    errors.toCity = toCity.value.trim() === "";
+    errors.departureDate = !departureDate.value;
+
+    return !errors.fromCity && !errors.toCity && !errors.departureDate;
+};
+
+// Обработчик кнопки поиска
+const handleSearch = () => {
+    if (validateForm()) {
+        router.push("/result"); // Переход на страницу result, если данные валидны
+    } else {
+        console.log("Пожалуйста, заполните все обязательные поля.");
+    }
+};
+
+const handleDepartureDateSelection = (value: string | null) => {
+    departureDate.value = value;
+    errors.departureDate = !value;
+};
+
+// Остальная логика
 const isDropdownOpen = ref(false);
 const date = ref();
 const passengerCount = reactive({
@@ -254,6 +306,8 @@ onMounted(() => {
     new CityInputDropdown("city-input-to", "dropdown-to");
 });
 </script>
+
+
 <script lang="ts">
 interface Airport {
     id: number;
@@ -394,11 +448,6 @@ export default {
         };
     },
     computed: {
-        disableReturnDates() {
-            if (!this.departureDate) return () => false;
-            const minDate = new Date(this.departureDate);
-            return (date: Date) => date < minDate;
-        },
         disableDepartureDates() {
             if (!this.returnDate) return () => false;
             const maxDate = new Date(this.returnDate);
@@ -406,17 +455,6 @@ export default {
         },
     },
     methods: {
-        handleDepartureDateSelection(value: string | null) {
-            if (value === null) {
-                this.departureDate = null;
-                return;
-            }
-
-            this.departureDate = value;
-            if (this.returnDate && new Date(value).getTime() > new Date(this.returnDate).getTime()) {
-                this.returnDate = null;
-            }
-        },
         handleReturnDateSelection(value: string | null) {
             if (value === null) {
                 this.returnDate = null;
@@ -430,4 +468,13 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.input-error {
+    transition: border-color 0.3s;
+    border: 1px solid red !important;
+    color: red !important;
+    border-radius: 12px;
+}
+</style>
 
