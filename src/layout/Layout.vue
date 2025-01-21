@@ -9,7 +9,6 @@ import AppBackground from "./AppBackground.vue";
 const route = useRoute();
 
 const isResultPage = computed(() => route.path === "/result");
-
 const imageNames = [
     "DubaiCountry.svg",
     "BaliCountry.svg",
