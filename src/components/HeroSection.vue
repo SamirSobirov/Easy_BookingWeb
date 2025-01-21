@@ -2,10 +2,12 @@
   <header class="header">
     <div class="header__container">
       <div class="header__logo">
+          <a href="/">
         <img
           src="/src/assets/images/EasyBooking_logo.svg"
           alt="EasyBooking Logo"
         />
+          </a>
       </div>
       <nav class="header__nav">
         <a href="#" class="header__nav-link">Агентствам</a>
