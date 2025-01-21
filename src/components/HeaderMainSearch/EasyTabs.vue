@@ -51,6 +51,7 @@ const activeButton = ref('avia');
     }
 
     .active {
+        transition: 0.1s;
         background-color: white;
         border: 1px solid #80dbeb;
         span {
