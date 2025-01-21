@@ -26,6 +26,7 @@ body {
         text-align: center;
         margin-top: 170px;
 
+
         p {
             color: black;
             font-weight: 700;
@@ -33,8 +34,8 @@ body {
             display: flex;
             flex-direction: column;
             margin-top: 40px;
-
             font-size: 22px;
+
         span {
             font-size: 15px;
             font-weight: 400;

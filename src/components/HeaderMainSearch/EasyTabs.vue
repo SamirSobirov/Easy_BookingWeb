@@ -21,16 +21,15 @@ const activeButton = ref('avia');
 
 <style scoped lang="scss">
 .container {
-    width: 1180px;
+    width: 100%;
     height: 60px;
     background-color: rgba(223, 223, 223, 0.31);
     border-radius: 10px;
     display: flex;
-    gap: 5px;
+
     padding: 5px 5px;
 
     button {
-
         border: none;
         background-color: transparent;
         width: 100%;
@@ -46,7 +45,6 @@ const activeButton = ref('avia');
             font-size: 16px;
             color: rgba(170, 170, 170, 0.66);
         }
-
         img {
             filter: brightness(0) invert(56%);
         }
@@ -55,11 +53,9 @@ const activeButton = ref('avia');
     .active {
         background-color: white;
         border: 1px solid #80dbeb;
-
         span {
             color: #80dbeb;
         }
-
         img {
             filter: brightness(0) saturate(100%) invert(90%) sepia(17%) saturate(1411%) hue-rotate(162deg) brightness(98%) contrast(89%);
         }
