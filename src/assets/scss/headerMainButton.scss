@@ -1,42 +1,42 @@
-.image-buttons {
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-
-  .image-button {
-    width: 80px;
-    height: 80px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    box-shadow: none;
-    border: none;
-
-     &:hover {
-    z-index: 1;
-    transform: scale(1.1);
-  }
-
-    &::before {
-      content: none;
-    }
-
-    &:not(:first-child) {
-      margin-left: -30px;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 50%;
-    }
-  }
-}
+//.image-buttons {
+//  margin-top: 100px;
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//
+//
+//  .image-button {
+//    width: 80px;
+//    height: 80px;
+//    background-size: cover;
+//    background-position: center;
+//    border-radius: 50%;
+//    position: relative;
+//    cursor: pointer;
+//    transition: transform 0.3s ease;
+//    box-shadow: none;
+//    border: none;
+//
+//     &:hover {
+//    z-index: 1;
+//    transform: scale(1.1);
+//  }
+//
+//    &::before {
+//      content: none;
+//    }
+//
+//    &:not(:first-child) {
+//      margin-left: -30px;
+//    }
+//
+//    .overlay {
+//      position: absolute;
+//      top: 0;
+//      left: 0;
+//      right: 0;
+//      bottom: 0;
+//      border-radius: 50%;
+//    }
+//  }
+//}

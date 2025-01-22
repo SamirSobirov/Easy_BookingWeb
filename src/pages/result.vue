@@ -14,7 +14,7 @@ body {
 }
 
 .search-box {
-    margin-top: -80px;
+    margin-top: -60px;
 }
 </style>
 
