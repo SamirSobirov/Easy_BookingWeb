@@ -3,15 +3,15 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  max-width: 1128px;
-  margin: 54px auto 0;
+  max-width: 1138px;
+  margin: 60px auto 0;
 
   .advantages__header {
     width: 100%;
 
     h1 {
       text-align: left;
-      margin: 0;
+      margin-left: 5px;
       font-weight: 600;
       font-size: 28px;
     }
@@ -34,7 +34,7 @@
         border-radius: 24px;
         justify-content: flex-start;
         align-items: flex-start;
-        width: 360px;
+        width: 370px;
         height: 194px;
         gap: 10px;
 
@@ -63,7 +63,7 @@
       .person_img {
         grid-row: span 2;
         height: 400px;
-        width: 390px;
+        width: 399px;
         border-radius: 24px;
         overflow: hidden;
 
