@@ -72,7 +72,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1135px;
+  max-width: 1138px;
 
   margin: 60px auto 0;
   background: #ffffffaf;
