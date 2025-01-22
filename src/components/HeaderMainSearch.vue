@@ -2,7 +2,10 @@
     <section class="hero-section">
         <HeroContent/>
 
-        <div class="search-box">
+        <div
+            class="search-box"
+            :class="{ 'adjust-margin': isSearchBoxVisible, 'isHomepage': route.path !== '/' }"
+        >
             <EasyTabs v-if="route.path === '/result' "/>
             <tabs v-else/>
             <form class="search-form">
@@ -191,19 +194,16 @@ watch(
     {immediate: true}
 );
 
-// Поля ввода
 const fromCity = ref<string>("");
 const toCity = ref<string>("");
 const departureDate = ref<string | null>(null);
 
-// Ошибки формы
 const errors = reactive({
     fromCity: false,
     toCity: false,
     departureDate: false,
 });
 
-// Функция валидации формы
 const validateForm = () => {
     errors.fromCity = fromCity.value.trim() === "";
     errors.toCity = toCity.value.trim() === "";
@@ -212,12 +212,11 @@ const validateForm = () => {
     return !errors.fromCity && !errors.toCity && !errors.departureDate;
 };
 
-// Обработчик кнопки поиска
 const handleSearch = () => {
     if (validateForm()) {
-        router.push("/result"); // Переход на страницу result, если данные валидны
+        router.push("/result");
     } else {
-        console.log("Пожалуйста, заполните все обязательные поля.");
+        alert("Пожалуйста, заполните все обязательные поля.");
     }
 };
 
@@ -226,7 +225,6 @@ const handleDepartureDateSelection = (value: string | null) => {
     errors.departureDate = !value;
 };
 
-// Остальная логика
 const isDropdownOpen = ref(false);
 const date = ref();
 const passengerCount = reactive({
@@ -304,6 +302,25 @@ onMounted(() => {
 
     new CityInputDropdown("city-input-from", "dropdown-from");
     new CityInputDropdown("city-input-to", "dropdown-to");
+});
+
+const isSearchBoxVisible = ref(false);
+
+const checkVisibility = () => {
+    const searchBox = document.querySelector('.search-box') as HTMLElement;
+    if (searchBox) {
+        searchBox.style.marginTop = '-60px';
+        isSearchBoxVisible.value = true;
+    }
+};
+
+onMounted(() => {
+    checkVisibility();
+    window.addEventListener('DOMContentLoaded', checkVisibility);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener('DOMContentLoaded', checkVisibility);
 });
 </script>
 
@@ -478,3 +495,16 @@ export default {
 }
 </style>
 
+<style scoped>
+.search-box {
+    transition: margin-top 0.3s ease;
+}
+
+.adjust-margin {
+    margin-top: 60px;
+}
+
+.isHomepage {
+    margin-top: 100px !important;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="image-buttons">
+    <div class="image-buttons" v-if="route.path === '/'">
         <div
             v-for="(image, index) in images"
             :key="index"
@@ -12,24 +12,22 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { defineProps, defineEmits } from "vue";
+import { useRoute } from "vue-router";
 
-export default defineComponent({
-    name: "HeaderMainButtons",
-    props: {
-        images: {
-            type: Array as () => { url: string }[],
-            required: true,
-        },
-    },
-    emits: ["button-click"],
-    methods: {
-        onButtonClick(index: number) {
-            this.$emit("button-click", index);
-        },
-    },
-});
+const route = useRoute();
+
+const { images } = defineProps<{
+    images: { url: string }[];
+}>();
+
+const emit = defineEmits(["button-click"]);
+
+const onButtonClick = (index: number) => {
+    console.log(images[index]);
+    emit("button-click", index);
+};
 </script>
 
 <style lang="scss" scoped>
