@@ -29,7 +29,10 @@ const imageList = imageNames.map((name) => ({
         <HeaderMainButtons :images="imageList" />
         <HeaderMainSearch />
     </header>
+    <main>
+
     <RouterView />
+    </main>
 
 </template>
 

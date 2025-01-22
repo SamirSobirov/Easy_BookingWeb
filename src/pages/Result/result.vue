@@ -1,6 +1,15 @@
 <template>
     <div class="container">
      <PriceChart />
+
+        <div class="box">
+
+            <Asides/>
+            <Ticket/>
+            <main>
+
+            </main>
+        </div>
     </div>
 </template>
 
@@ -13,11 +22,22 @@ body {
     margin-top: 100px;
 }
 
+.box {
+    display: flex;
+    //gap: 12px;
+    margin: 20px auto;
+    max-width: 1140px;
+    width: 1138px;
+
+}
+
 
 </style>
 
 
 <script setup lang="ts">
 import PriceChart from "./component/PriceChart.vue";
+import Asides from "./component/Asides.vue";
+import Ticket from "./component/Ticket.vue";
 
 </script>
