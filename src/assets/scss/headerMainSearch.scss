@@ -12,8 +12,9 @@
     margin-top: -100px;
 
     .hero-image {
-      width: 250px;
+      width: 220px;
       height: auto;
+      margin-left: -120px;
     }
 
     .text-content {
@@ -36,7 +37,8 @@
 }
 
 .search-box {
-  width: 1128px;
+  width: 1138px;
+  height: 192px;
   max-width: 1200px;
   background: rgba(255, 255, 255, 0.555);
   border-radius: 1rem;
@@ -48,7 +50,7 @@
 
   .searchFooter {
     display: flex;
-    margin-top: 25px;
+    margin-top: 12px;
     align-items: center;
     text-align: center;
     justify-content: start;
@@ -57,11 +59,14 @@
     .switch-container {
       display: flex;
       align-items: center;
+      justify-content: center;
+      text-align: center;
 
       .switch {
         position: relative;
         display: inline-block;
         width: 34px;
+        margin-top: 5px;
         height: 20px;
 
         input {
@@ -77,19 +82,20 @@
           left: 0;
           right: 0;
           bottom: 0;
-          background-color: #ccc;
+          background-color: #E3E5ED;
           transition: 0.4s;
           border-radius: 34px;
           width: 34px;
+          height: 14px;
 
           &::before {
             position: absolute;
             content: "";
-            height: 24px;
-            width: 24px;
-            left: -2px;
-            bottom: -2px;
-            background-color: white;
+            height: 20px;
+            width: 20px;
+            left: -0px;
+            bottom: -3px;
+            background-color: #FFFFFF;
             transition: 0.4s;
             border-radius: 50%;
           }
@@ -128,13 +134,17 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s;
+
+      span {
+        font-size: 14px;
+      }
     }
   }
 
   .tabs {
-    margin-top: 20px;
+    margin-top: 0;
     border-radius: 12px;
-    height: 60px;
+    height: 54px;
     background-color: rgba(255, 255, 255, 0.886);
     display: flex;
     justify-content: space-between;
@@ -148,7 +158,7 @@
       text-align: center;
       justify-content: center;
       gap: 10px;
-      height: 50px;
+      height: 44px;
       margin: 0 5px;
       flex: 1;
       padding: 0.5rem;
@@ -179,6 +189,7 @@
     margin-top: 15px;
     display: flex;
     gap: 10px;
+    height: 48px;
     flex-wrap: wrap;
 
     .swap_btn {
@@ -201,11 +212,10 @@
       border-radius: 12px;
       outline: none;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-      &:hover {
-        transition: 0.1s ease-in;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
+      //&:hover {
+      //  transition: 0.1s ease-in;
+      //  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      //}
 
       &:focus {
         border: 1px solid #80dbeb;
@@ -254,9 +264,9 @@
       transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
     }
 
-    .input_select:hover {
-      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-    }
+    //.input_select:hover {
+    //  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    //}
 
     .input_select:focus {
       outline: none;
@@ -287,7 +297,7 @@
     .search-button:hover {
       border: #005bb5;
       background: #008fb3;
-      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+      //box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     }
 
     &:focus {
@@ -318,9 +328,9 @@
       align-items: center;
       justify-content: space-between;
 
-      &:hover {
-        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-      }
+      //&:hover {
+      //  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+      //}
 
       &:after {
         content: "▼";
@@ -536,10 +546,10 @@
         font-family: Arial, sans-serif;
       }
 
-      &:hover {
-        transition: 0.1s ease-in;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
+      //&:hover {
+      //  transition: 0.1s ease-in;
+      //  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      //}
     }
 
     &.is-invalid input {

@@ -17,10 +17,10 @@
     box-shadow: none;
     border: none;
 
-    &:hover {
-      z-index: 1;
-      transform: scale(1.1);
-    }
+     &:hover {
+    z-index: 1;
+    transform: scale(1.1);
+  }
 
     &::before {
       content: none;
