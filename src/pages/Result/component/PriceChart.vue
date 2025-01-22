@@ -9,8 +9,10 @@
                 :class="['price-item', { active: selectedIndex === index }]"
                 @click="selectItem(index)"
             >
+                <div>
                 <div class="date">{{ item.date }}</div>
                 <div :class="['price', { 'green': item.isLower }]">{{ item.price }} UZS</div>
+                </div>
             </div>
         </div>
         <button class="nav-btn right" @click="scrollRight">&#10095;</button>
