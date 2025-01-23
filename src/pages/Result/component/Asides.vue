@@ -97,6 +97,37 @@ aside {
                     color: #23282D;
                 }
 
+                input[type="checkbox"] {
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    width: 15px;
+                    height: 15px;
+                    border: 1px solid #B5BBC9;
+                    border-radius: 4px;
+                    outline: none;
+                    cursor: pointer;
+                    background-color: #fff;
+                    position: relative;
+                }
+
+                input[type="checkbox"]:checked {
+                    border: 1px solid #00B8D7;
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 2px;
+                        height: 7px;
+                        border: solid #00B8D7;
+                        border-width: 0 3px 3px 0;
+                        position: absolute;
+                        left: 4.7px;
+                        top: 1.5px;
+                        transform: rotate(45deg);
+
+                    }
+                }
+
             }
 
             img.rotated {
