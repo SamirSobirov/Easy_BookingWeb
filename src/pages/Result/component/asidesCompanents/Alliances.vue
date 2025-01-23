@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar_item">
         <h3>
-            Аэропорты пересадок
+            Альянсы
             <button class="hideButton" @click="toggleVisibility('baggage')">
                 <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg"
                      alt="arrow_down"/>
@@ -11,27 +11,25 @@
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
 
-
-                <div class="group">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
-                        <g>
-                            <path
-                                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
-                            ></path>
-                        </g>
-                    </svg>
-                    <input class="input" type="search" placeholder="Search" />
-                </div>
-
                 <label>
                     <input name="toggle" type="checkbox"/>
-                    <p>Выбрать все</p>
+                    <p>Star Alliance
+                        <span class="price">цена</span>
+                    </p>
                 </label>
 
+                <label>
+                    <input name="toggle" type="checkbox"/>
+                    <p>SkyTeam
+                        <span class="price">цена</span>
+                    </p>
+                </label>
 
                 <label>
                     <input name="toggle" type="checkbox"/>
-                    <p>Москва<span class="price">цена</span> </p>
+                    <p>One world
+                        <span class="price">цена</span>
+                    </p>
                 </label>
 
             </div>
@@ -39,22 +37,6 @@
         </transition>
     </div>
 </template>
-
-
-
-<script setup lang="ts">
-import {ref} from 'vue';
-
-
-const visibility = ref({
-    transfers: true,
-    baggage: true
-});
-
-const toggleVisibility = (section: keyof typeof visibility.value) => {
-    visibility.value[section] = !visibility.value[section];
-};
-</script>
 
 <style scoped lang="scss">
 .sidebar_item {
@@ -69,7 +51,6 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         gap: 16px;
 
 
-
         input[type="checkbox"] {
             appearance: none;
             -webkit-appearance: none;
@@ -80,7 +61,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
             border-radius: 4px;
             outline: none;
             cursor: pointer;
-            background-color: transparent;
+            background-color: #fff;
             position: relative;
         }
 
@@ -146,7 +127,6 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         line-height: 17px;
         color: #23282D;
 
-
         p {
             display: flex;
             text-align: center;
@@ -159,41 +139,19 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
             }
         }
     }
-
-
-    .group {
-        display: flex;
-        line-height: 28px;
-        align-items: center;
-        position: relative;
-        max-width: 190px;
-
-
-        .input {
-            width: 245px;
-            height: 34px;
-            line-height: 28px;
-            padding: 0 2rem ;
-            padding-left: 2.5rem;
-            border-radius: 8px;
-            outline: none;
-            border: 1px solid #47556933;
-            background-color: transparent;
-            color: #0d0c22;
-            transition: 0.3s ease;
-        }
-
-        .input::placeholder {
-            color: #9e9ea7;
-        }
-
-        .icon {
-            position: absolute;
-            left: 1rem;
-            fill: #9e9ea7;
-            width: 1rem;
-            height: 1rem;
-        }
-    }
 }
 </style>
+
+<script setup lang="ts">
+import {ref} from 'vue';
+
+
+const visibility = ref({
+    transfers: true,
+    baggage: true
+});
+
+const toggleVisibility = (section: keyof typeof visibility.value) => {
+    visibility.value[section] = !visibility.value[section];
+};
+</script>

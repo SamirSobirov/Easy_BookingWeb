@@ -10,6 +10,7 @@
             <Baggage/>
             <TravelTime />
             <TransferAirports />
+            <Alliances />
             <hr>
         </div>
     </aside>
@@ -64,6 +65,7 @@ import Baggage from "./asidesCompanents/Baggage.vue";
 import Transfers from "./asidesCompanents/Transfers.vue";
 import TravelTime from "./asidesCompanents/TravelTime.vue";
 import TransferAirports from "./asidesCompanents/TransferAirports.vue";
+import Alliances from "./asidesCompanents/Alliances.vue";
 
 
 </script>
