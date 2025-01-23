@@ -50,8 +50,8 @@ aside {
     width: 267px;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     flex-direction: column;
     gap: 16px;
 
@@ -145,10 +145,7 @@ aside {
                 font-weight: 400;
                 line-height: 17px;
                 color: #23282D;
-
             }
-
-
         }
 
         hr {
@@ -162,7 +159,7 @@ aside {
 </style>
 <script setup lang="ts">
 import {ref} from 'vue';
-import DoubleRange from "./DoubleRange.vue";
+import DoubleRange from "./asidesCompanents/DoubleRange.vue";
 
 const isVisible = ref(true);
 

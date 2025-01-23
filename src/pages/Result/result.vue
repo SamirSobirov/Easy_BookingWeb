@@ -24,7 +24,8 @@ body {
 
 .box {
     display: flex;
-    //gap: 12px;
+    align-items: start;
+    justify-content: start;
     margin: 20px auto;
     max-width: 1140px;
     width: 1138px;
