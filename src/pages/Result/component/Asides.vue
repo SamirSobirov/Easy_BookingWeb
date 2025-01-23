@@ -7,56 +7,38 @@
 
         <div class="sidebar">
             <div class="sidebar__item">
-                <h3>Пересадки
-                    <button>
-                        <img src="/src/assets/icons/arrow_down.svg" alt="arrow_down">
+                <h3>
+                    Пересадки
+                    <button class="hideButton" @click="toggleVisibility">
+                        <img :class="{ rotated: !isVisible }" src="/src/assets/icons/arrow_down.svg" alt="arrow_down"/>
                     </button>
                 </h3>
-                <ul>
-                    <input type="checkbox">
-                    <span>Без пересадок</span>
-                </ul>
+                <transition name="fade">
+                    <div class="box_item" v-show="isVisible">
+                        <ul>
+                            <input type="checkbox"/>
+                            <span>Без пересадок</span>
+                        </ul>
+                        <ul>
+                            <input type="checkbox"/>
+                            <span>1 пересадка</span>
+                        </ul>
+                        <ul>
+                            <input type="checkbox"/>
+                            <span>2 и более</span>
+                        </ul>
+                        <ul>
+                            <input type="checkbox"/>
+                            <span>Без смены аэропорта</span>
+                        </ul>
+                    <DoubleRange />
 
-                <ul>
-                    <input type="checkbox">
-                    1 пересадка
-                </ul>
-
-                <ul>
-                    <input type="checkbox">
-                    <span>2 и более</span>
-                </ul>
-
-                <ul>
-                    <input type="checkbox">
-                    <span>Без смены аэропорта</span>
-                </ul>
-
-
-                <div class="sliders_control">
-                    <span>{{ formattedTime }}</span>
-                    <input
-                        id="fromSlider"
-                        type="range"
-                        v-model="fromValue"
-                        :min="min"
-                        :max="max"
-                        @input="updateFromValue"
-                    />
-                    <input
-                        id="toSlider"
-                        type="range"
-                        v-model="toValue"
-                        :min="min"
-                        :max="max"
-                        @input="updateToValue"
-                    />
-                </div>
-
-                <hr>
-
-
+                    </div>
+                </transition>
             </div>
+
+            <hr>
+
 
         </div>
     </aside>
@@ -103,6 +85,34 @@ aside {
             flex-direction: column;
             gap: 16px;
 
+            .box_item {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                span {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 17px;
+                    color: #23282D;
+                }
+
+            }
+
+            img.rotated {
+                transform: rotate(180deg);
+                transition: transform 0.3s ease;
+            }
+
+
+            .fade-enter-active, .fade-leave-active {
+                transition: opacity 0.3s ease;
+            }
+
+            .fade-enter, .fade-leave-to {
+                opacity: 0;
+            }
+
             h3 {
                 display: flex;
                 align-items: center;
@@ -139,94 +149,29 @@ aside {
             }
 
 
-            .sliders_control {
-                position: relative;
-                width: 232px;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
 
-                span {
-                    font-size: 13px;
-                    font-weight: 400;
-                    line-height: 17px;
-                    color: #9399A8;
-                    padding-bottom: 12px;
-                }
+        }
 
-                input[type=range]::-webkit-slider-thumb {
-                    -webkit-appearance: none;
-                    pointer-events: all;
-                    width: 16px;
-                    height: 16px;
-                    border: 1px solid #00B8D7;
-                    background-color: #fff;
-                    border-radius: 50%;
-                    box-shadow: 0 0 0 1px #C6C6C6;
-                    cursor: pointer;
-                }
-
-
-                input[type=range]::-webkit-slider-thumb:active {
-                    box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
-                    -webkit-box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
-                }
-
-                input[type="range"] {
-                    -webkit-appearance: none;
-                    appearance: none;
-                    height: 2px;
-                    border-radius: 5px;
-                    width: 232px;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                    background-color: #E3E5ED;
-                    pointer-events: none;
-                }
-
-                #fromSlider {
-                    height: 0;
-                    z-index: 1;
-                }
-            }
-
-            hr {
-                width: 235px;
-                border: 1px solid #E3E5ED;
-            }
+        hr {
+            margin: 25px 0;
+            width: 235px;
+            border: 1px solid #E3E5ED;
         }
     }
 }
 
 </style>
-
-
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import {ref} from 'vue';
+import DoubleRange from "./DoubleRange.vue";
 
-const min = ref(0);
-const max = ref(100);
-const fromValue = ref(10);
-const toValue = ref(30);
+const isVisible = ref(true);
 
-const formattedTime = computed(() => {
-    const hours = Math.floor(toValue.value / 60);
-    const minutes = toValue.value % 60;
-    return `${hours}ч ${minutes}мин`;
-});
-
-const updateFromValue = () => {
-    if (fromValue.value > toValue.value) {
-        fromValue.value = toValue.value;
-    }
+const toggleVisibility = () => {
+    isVisible.value = !isVisible.value;
 };
 
-const updateToValue = () => {
-    if (toValue.value < fromValue.value) {
-        toValue.value = fromValue.value;
-    }
-};
+
+
+
 </script>
