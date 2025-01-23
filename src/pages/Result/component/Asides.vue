@@ -37,6 +37,8 @@
                     <span class="time-label" id="time-label">1ч 15мин</span>
                     <input type="range" min="0" max="180" value="75" class="slider" id="time-slider">
                 </div>
+
+                <hr>
             </div>
 
         </div>
@@ -71,12 +73,12 @@ aside {
         align-items: center;
         text-align: center;
         justify-content: center;
-        background-color: #FFFFFF59;
+        background-color: rgba(255, 255, 255, 0.68);
     }
 
 
     .sidebar {
-        background-color: #FFFFFF59;
+        background-color: rgba(255, 255, 255, 0.68);
         width: 100%;
         border-radius: 18px;
         border: 1px solid #FFFFFFA6;
@@ -120,8 +122,30 @@ aside {
                 color: #23282D;
 
             }
+
+            .slider-container {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 2px;
+
+                span {
+                    font-size: 13px;
+                    font-weight: 400;
+                    color: #9399A8;
+                }
+            }
+
+            hr {
+                width: 235px;
+                border: 1px solid #E3E5ED;
+            }
         }
     }
 }
 
 </style>
+<script setup lang="ts">
+</script>
