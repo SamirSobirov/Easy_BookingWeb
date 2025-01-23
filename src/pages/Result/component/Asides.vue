@@ -8,6 +8,7 @@
         <div class="sidebar">
             <Transfers/>
             <Baggage/>
+            <TravelTime />
             <hr>
         </div>
     </aside>
@@ -60,6 +61,7 @@ aside {
 <script setup lang="ts">
 import Baggage from "./asidesCompanents/Baggage.vue";
 import Transfers from "./asidesCompanents/Transfers.vue";
+import TravelTime from "./asidesCompanents/TravelTime.vue";
 
 
 </script>

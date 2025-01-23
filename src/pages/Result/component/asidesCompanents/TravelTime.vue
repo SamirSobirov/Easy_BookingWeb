@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar_item">
         <h3>
-            Багаж
+            Время в пути
             <button class="hideButton" @click="toggleVisibility('baggage')">
                 <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg"
                      alt="arrow_down"/>
