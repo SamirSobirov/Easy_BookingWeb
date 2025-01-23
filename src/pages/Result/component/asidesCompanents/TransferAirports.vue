@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar_item">
         <h3>
-            Время в пути
+            Аэропорты пересадок
             <button class="hideButton" @click="toggleVisibility('baggage')">
                 <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg"
                      alt="arrow_down"/>
@@ -12,45 +12,33 @@
             <div class="item_box" v-if="visibility.baggage">
 
 
+                <div class="group">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+                        <g>
+                            <path
+                                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                            ></path>
+                        </g>
+                    </svg>
+                    <input class="input" type="search" placeholder="Search" />
+                </div>
+
+
+
                 <label>
-                    <p>Всего
-                        <span class="time" id="time">до {{ timeDisplay || 0 }}ч</span>
+                    <input name="toggle" type="checkbox"/>
+
+
+                    <p>Багаж включён
+
+                        <span class="price">цена</span>
                     </p>
                 </label>
-
-
-                <input :class="{'slider-full': timeDisplay === 23}" type="range" id="slider" min="0" max="23" value="0" @input="updateTime">
             </div>
 
         </transition>
     </div>
 </template>
-
-
-<script setup lang="ts">
-import { ref} from 'vue';
-
-const timeDisplay = ref(0);
-const visibility = ref({
-    transfers: true,
-    baggage: true
-});
-
-const toggleVisibility = (section: keyof typeof visibility.value) => {
-    visibility.value[section] = !visibility.value[section];
-};
-
-const updateTime = (e:any) => {
-        const hours = e?.target?.value;
-    if ( hours) {
-        timeDisplay.value = hours;
-    }
-    console.log()
-};
-
-
-</script>
-
 
 <style scoped lang="scss">
 .sidebar_item {
@@ -63,6 +51,8 @@ const updateTime = (e:any) => {
         display: flex;
         flex-direction: column;
         gap: 16px;
+
+
 
         input[type="checkbox"] {
             appearance: none;
@@ -94,30 +84,6 @@ const updateTime = (e:any) => {
                 transform: rotate(45deg);
 
             }
-        }
-
-        input[type="range"] {
-            -webkit-appearance: none;
-            appearance: none;
-            height: 2px;
-            border-radius: 5px;
-            width: 232px;
-            background: #E3E5ED;
-        }
-
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 16px;
-            height: 16px;
-            border: 1px solid #00B8D7;
-            background-color: #fff;
-            border-radius: 50%;
-            box-shadow: 0 0 0 1px #C6C6C6;
-            cursor: pointer;
-        }
-
-        input[type=range]::-webkit-slider-thumb:active {
-            box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
         }
 
         .slider-full {
@@ -169,13 +135,63 @@ const updateTime = (e:any) => {
             display: flex;
             text-align: center;
             justify-content: space-between;
-            gap: 152px;
 
-            .time {
+            .price {
+                padding-left: 75px;
                 font-size: 14px;
                 color: #9399A8;
             }
         }
     }
+
+
+    .group {
+        display: flex;
+        line-height: 28px;
+        align-items: center;
+        position: relative;
+        max-width: 190px;
+
+
+        .input {
+            width: 245px;
+            height: 34px;
+            line-height: 28px;
+            padding: 0 2rem;
+            padding-left: 2.5rem;
+            border-radius: 8px;
+            outline: none;
+            border: 1px solid #47556933;
+            background-color: transparent;
+            color: #0d0c22;
+            transition: 0.3s ease;
+        }
+
+        .input::placeholder {
+            color: #9e9ea7;
+        }
+
+        .icon {
+            position: absolute;
+            left: 1rem;
+            fill: #9e9ea7;
+            width: 1rem;
+            height: 1rem;
+        }
+    }
 }
 </style>
+
+<script setup lang="ts">
+import {ref} from 'vue';
+
+
+const visibility = ref({
+    transfers: true,
+    baggage: true
+});
+
+const toggleVisibility = (section: keyof typeof visibility.value) => {
+    visibility.value[section] = !visibility.value[section];
+};
+</script>
