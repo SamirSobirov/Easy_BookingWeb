@@ -15,22 +15,24 @@
                 </h3>
                 <transition name="fade">
                     <div class="box_item" v-show="isVisible">
-                        <ul>
-                            <input type="checkbox"/>
-                            <span>Без пересадок</span>
-                        </ul>
-                        <ul>
-                            <input type="checkbox"/>
+
+                            <label>
+                                <input name="toggle" type="checkbox" />
+                                <span>Без пересадок</span>
+                            </label>
+
+                        <label>
+                            <input name="toggle" type="checkbox" />
                             <span>1 пересадка</span>
-                        </ul>
-                        <ul>
-                            <input type="checkbox"/>
+                        </label>
+                        <label>
+                            <input name="toggle" type="checkbox" />
                             <span>2 и более</span>
-                        </ul>
-                        <ul>
-                            <input type="checkbox"/>
+                        </label>
+                        <label>
+                            <input name="toggle" type="checkbox" />
                             <span>Без смены аэропорта</span>
-                        </ul>
+                        </label>
                         <DoubleRange/>
 
                     </div>
@@ -168,7 +170,7 @@ aside {
                 }
             }
 
-            ul {
+            label {
                 display: flex;
                 gap: 12px;
                 font-size: 14px;
