@@ -31,7 +31,7 @@
                             <input type="checkbox"/>
                             <span>Без смены аэропорта</span>
                         </ul>
-                    <DoubleRange />
+                        <DoubleRange/>
 
                     </div>
                 </transition>
@@ -149,7 +149,6 @@ aside {
             }
 
 
-
         }
 
         hr {
@@ -170,8 +169,5 @@ const isVisible = ref(true);
 const toggleVisibility = () => {
     isVisible.value = !isVisible.value;
 };
-
-
-
 
 </script>
