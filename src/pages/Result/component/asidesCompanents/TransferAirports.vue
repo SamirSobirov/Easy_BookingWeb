@@ -23,17 +23,17 @@
                     <input class="input" type="search" placeholder="Search" />
                 </div>
 
+                <label>
+                    <input name="toggle" type="checkbox"/>
+                    <p>Выбрать все</p>
+                </label>
 
 
                 <label>
                     <input name="toggle" type="checkbox"/>
-
-
-                    <p>Багаж включён
-
-                        <span class="price">цена</span>
-                    </p>
+                    <p>Москва<span class="price">цена</span> </p>
                 </label>
+
             </div>
 
         </transition>
@@ -64,7 +64,7 @@
             border-radius: 4px;
             outline: none;
             cursor: pointer;
-            background-color: #fff;
+            background-color: transparent;
             position: relative;
         }
 
