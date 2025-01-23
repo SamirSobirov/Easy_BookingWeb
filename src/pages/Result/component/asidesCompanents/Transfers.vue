@@ -1,18 +1,3 @@
-<script setup lang="ts">
-
-import DoubleRange from "./DoubleRange.vue";
-import {ref} from "vue";
-
-const visibility = ref({
-    transfers: true,
-    baggage: true
-});
-
-const toggleVisibility = (section: keyof typeof visibility.value) => {
-    visibility.value[section] = !visibility.value[section];
-};
-</script>
-
 <template>
     <div class="sidebar_item">
         <h3>
@@ -163,3 +148,18 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
     }
 }
 </style>
+
+<script setup lang="ts">
+
+import DoubleRange from "./DoubleRange.vue";
+import {ref} from "vue";
+
+const visibility = ref({
+    transfers: true,
+    baggage: true
+});
+
+const toggleVisibility = (section: keyof typeof visibility.value) => {
+    visibility.value[section] = !visibility.value[section];
+};
+</script>
