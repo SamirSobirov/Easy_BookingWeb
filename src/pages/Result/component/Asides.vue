@@ -17,20 +17,20 @@
                     <div class="box_item" v-show="isVisible">
 
                             <label>
-                                <input name="toggle" type="checkbox" />
+                                <input name="toggle" type="radio" />
                                 <span>Без пересадок</span>
                             </label>
 
                         <label>
-                            <input name="toggle" type="checkbox" />
+                            <input name="toggle" type="radio" />
                             <span>1 пересадка</span>
                         </label>
                         <label>
-                            <input name="toggle" type="checkbox" />
+                            <input name="toggle" type="radio" />
                             <span>2 и более</span>
                         </label>
                         <label>
-                            <input name="toggle" type="checkbox" />
+                            <input name="toggle" type="radio" />
                             <span>Без смены аэропорта</span>
                         </label>
                         <DoubleRange/>
@@ -99,7 +99,7 @@ aside {
                     color: #23282D;
                 }
 
-                input[type="checkbox"] {
+                input[type="radio"] {
                     appearance: none;
                     -webkit-appearance: none;
                     -moz-appearance: none;
@@ -113,7 +113,7 @@ aside {
                     position: relative;
                 }
 
-                input[type="checkbox"]:checked {
+                input[type="radio"]:checked {
                     border: 1px solid #00B8D7;
                     &::before {
                         content: "";
