@@ -109,6 +109,12 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
     flex-direction: column;
     gap: 16px;
 
+
+    hideButton.rotated {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+    }
+
     .item_box {
         display: flex;
         flex-direction: column;
@@ -237,10 +243,11 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
                     color: #23282D;
                     padding-left: 60px;
                 }
-
             }
         }
     }
+
+
 
     .group {
         display: flex;
