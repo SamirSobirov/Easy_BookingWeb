@@ -52,9 +52,10 @@
 .ticket-card {
     background-color: rgba(255, 255, 255, 0.68);
     border: 1px solid #FFFFFFA6;
-    width: 845px;
+    width: 860px;
     display: flex;
     justify-content: space-between;
+    gap: 10px;
     align-items: center;
 
     border-radius: 12px;
