@@ -19,6 +19,7 @@
                 </label>
 
 
+
                 <input :class="{'slider-full': timeDisplay === 23}" type="range" id="slider" min="0" max="23" value="0" @input="updateTime">
             </div>
 
@@ -172,6 +173,7 @@ const updateTime = (e:any) => {
             gap: 152px;
 
             .time {
+                padding-left: 8px;
                 font-size: 14px;
                 color: #9399A8;
             }

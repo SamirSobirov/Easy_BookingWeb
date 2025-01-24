@@ -11,14 +11,13 @@
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
 
+
                 <label>
                     <input name="toggle" type="checkbox"/>
-
-
-                    <p>Багаж включён
-
+                    <div class="flex-container">
+                        <p>Багаж включён</p>
                         <span class="price">цена</span>
-                    </p>
+                    </div>
                 </label>
 
                 <input type="range" id="slider" min="0" max="100" value="0">
@@ -142,17 +141,16 @@
         line-height: 17px;
         color: #23282D;
 
-
-        p {
+        .flex-container {
             display: flex;
-            text-align: center;
             justify-content: space-between;
-
-            .price {
-                padding-left: 75px;
-                font-size: 14px;
-                color: #9399A8;
-            }
+            align-items: center;
+            width: 100%;
+        }
+        .price {
+            padding-right: 19px;
+            font-size: 14px;
+            color: #9399A8;
         }
     }
 }

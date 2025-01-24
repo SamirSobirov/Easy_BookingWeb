@@ -13,23 +13,26 @@
 
                 <label>
                     <input name="toggle" type="checkbox"/>
-                    <p>Star Alliance
+                    <div class="flex-container">
+                        <p>Star Alliance</p>
                         <span class="price">цена</span>
-                    </p>
+                    </div>
                 </label>
 
                 <label>
                     <input name="toggle" type="checkbox"/>
-                    <p>SkyTeam
+                    <div class="flex-container">
+                        <p>SkyTeam</p>
                         <span class="price">цена</span>
-                    </p>
+                    </div>
                 </label>
 
                 <label>
                     <input name="toggle" type="checkbox"/>
-                    <p>One world
+                    <div class="flex-container">
+                        <p>One world</p>
                         <span class="price">цена</span>
-                    </p>
+                    </div>
                 </label>
 
             </div>
@@ -127,19 +130,20 @@
         line-height: 17px;
         color: #23282D;
 
-        p {
+        .flex-container {
             display: flex;
-            text-align: center;
             justify-content: space-between;
-
+            align-items: center;
+            width: 100%;
+        }
             .price {
-                padding-left: 75px;
+                padding-right: 19px;
                 font-size: 14px;
                 color: #9399A8;
             }
         }
     }
-}
+
 </style>
 
 <script setup lang="ts">

@@ -79,7 +79,7 @@
 <script setup lang="ts">
 import {computed, ref} from "vue";
 
-const fromValue = ref(10);
+const fromValue = ref(0);
 const toValue = ref(30);
 
 const min = ref(0);
