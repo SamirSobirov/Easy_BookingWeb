@@ -20,7 +20,7 @@
                             ></path>
                         </g>
                     </svg>
-                    <input class="input" type="search" placeholder="Search" />
+                    <input class="input" type="search" placeholder="Search"/>
                 </div>
 
                 <label>
@@ -28,10 +28,56 @@
                     <p>Выбрать все</p>
                 </label>
 
+                <label>
+                    <input name="toggle" type="checkbox"/>
+                    <div>
+                        <p class="country">Москва, <p> Домодедово DME</p></p>
+
+                        <ul>
+                            <span class="price">Россия</span>
+                            <span> 2,5 млн</span>
+
+                        </ul>
+                    </div>
+                </label>
 
                 <label>
                     <input name="toggle" type="checkbox"/>
-                    <p>Москва<span class="price">цена</span> </p>
+                    <div>
+                        <p class="country">Москва, <p>Шереметьево SVO</p></p>
+
+                        <ul>
+                            <span class="price">Россия</span>
+                            <span> 3,5 млн</span>
+
+                        </ul>
+                    </div>
+                </label>
+
+                <label>
+                    <input name="toggle" type="checkbox"/>
+                    <div>
+                        <p class="country">Москва, <p> Самарканд SKD</p></p>
+
+                        <ul>
+                            <span class="price">Узбекистан</span>
+                            <span> 2,5 млн</span>
+
+                        </ul>
+                    </div>
+                </label>
+
+                <label>
+                    <input name="toggle" type="checkbox"/>
+                    <div>
+                        <p class="country">Ургенч, <p> Ургенч UGC</p></p>
+
+                        <ul>
+                            <span class="price">Узбекистан</span>
+                            <span> 2,5 млн</span>
+
+                        </ul>
+                    </div>
                 </label>
 
             </div>
@@ -40,7 +86,6 @@
 
     </div>
 </template>
-
 
 
 <script setup lang="ts">
@@ -68,7 +113,6 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         display: flex;
         flex-direction: column;
         gap: 16px;
-
 
 
         input[type="checkbox"] {
@@ -139,7 +183,9 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
     }
 
     label {
+        width: 100%;
         display: flex;
+        align-items: center;  // Центрирование по вертикали
         gap: 12px;
         font-size: 14px;
         cursor: pointer;
@@ -147,20 +193,54 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         line-height: 17px;
         color: #23282D;
 
+        input {
+            align-self: center;  // Центрирование внутри flex-контейнера
+        }
 
-        p {
+        div {
             display: flex;
-            text-align: center;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
 
-            .price {
-                padding-left: 75px;
+            .country {
+                display: flex;
                 font-size: 14px;
-                color: #9399A8;
+                color: #23282D;
+                gap: 8px;
+
+                p {
+                    margin: 0;
+                    font-weight: 600;
+                }
+
+                p:last-child {
+                    color: #9299A2;
+                    font-weight: 400;
+                }
+            }
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                .price {
+                    color: #9399A8;
+                    font-weight: 400;
+                }
+
+                span:last-child {
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #23282D;
+                    padding-left: 60px;
+                }
+
             }
         }
     }
-
 
     .group {
         display: flex;
@@ -174,7 +254,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
             width: 245px;
             height: 34px;
             line-height: 28px;
-            padding: 0 2rem ;
+            padding: 0 2rem;
             padding-left: 2.5rem;
             border-radius: 8px;
             outline: none;
