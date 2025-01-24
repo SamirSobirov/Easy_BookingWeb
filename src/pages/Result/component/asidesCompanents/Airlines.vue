@@ -12,7 +12,7 @@
             <div class="item_box" v-if="visibility.baggage">
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>Все</p>
 
@@ -20,7 +20,7 @@
                 </label>
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>Air Astana</p>
 
@@ -28,7 +28,7 @@
                 </label>
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>UZBEKEKISTAN AIR</p>
 
@@ -37,7 +37,7 @@
 
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>S7 Airlines</p>
 
@@ -46,7 +46,7 @@
 
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>Аэрофлот</p>
 
@@ -55,7 +55,7 @@
 
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>flydubai</p>
 
@@ -64,7 +64,7 @@
 
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>Belavia</p>
 
@@ -90,7 +90,7 @@
         gap: 16px;
 
 
-        input[type="checkbox"] {
+        input[type="radio"] {
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -104,7 +104,7 @@
             position: relative;
         }
 
-        input[type="checkbox"]:checked {
+        input[type="radio"]:checked {
             border: 1px solid #00B8D7;
 
             &::before {

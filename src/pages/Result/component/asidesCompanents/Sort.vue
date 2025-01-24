@@ -12,7 +12,7 @@
             <div class="item_box" v-if="visibility.baggage">
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>Сначала рекомендуемые</p>
 
@@ -20,7 +20,7 @@
                 </label>
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>Сначала дешёвые</p>
 
@@ -28,7 +28,7 @@
                 </label>
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>Время вылета</p>
 
@@ -37,7 +37,7 @@
 
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>Время прибытия</p>
 
@@ -46,7 +46,7 @@
 
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>Длительность пересадок</p>
 
@@ -55,7 +55,7 @@
 
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input name="toggle" type="radio"/>
                     <div class="flex-container">
                         <p>Длительность поездки</p>
 
@@ -81,7 +81,7 @@
         margin-bottom: 20px;
 
 
-        input[type="checkbox"] {
+        input[type="radio"] {
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -95,7 +95,7 @@
             position: relative;
         }
 
-        input[type="checkbox"]:checked {
+        input[type="radio"]:checked {
             border: 1px solid #00B8D7;
 
             &::before {
