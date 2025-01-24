@@ -7,9 +7,13 @@
 
         <div class="sidebar">
             <Transfers/>
+            <hr>
             <Baggage/>
+            <hr>
             <TravelTime />
+            <hr>
             <TransferAirports />
+            <hr>
             <Alliances />
             <hr>
         </div>
