@@ -39,7 +39,7 @@ import Footer from "../../../components/Footer.vue";
         align-items: center;
         justify-content: center;
         display: flex;
-        margin-left: -260px;
+        margin-left: -250px;
     }
 }
 </style>
