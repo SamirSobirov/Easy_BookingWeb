@@ -10,10 +10,6 @@
 
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
-
-
-
-
                 <DoubleRange />
            </div>
 
