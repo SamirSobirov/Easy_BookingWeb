@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar_item">
         <h3>
-            Альянсы
+            Стоимость
             <button class="hideButton" @click="toggleVisibility('baggage')">
                 <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg"
                      alt="arrow_down"/>
@@ -11,35 +11,35 @@
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
 
-                <label>
-                    <input name="toggle" type="checkbox"/>
-                    <div class="flex-container">
-                        <p>Star Alliance</p>
-                        <span class="price">цена</span>
-                    </div>
-                </label>
 
-                <label>
-                    <input name="toggle" type="checkbox"/>
-                    <div class="flex-container">
-                        <p>SkyTeam</p>
-                        <span class="price">цена</span>
-                    </div>
-                </label>
 
-                <label>
-                    <input name="toggle" type="checkbox"/>
-                    <div class="flex-container">
-                        <p>One world</p>
-                        <span class="price">цена</span>
-                    </div>
-                </label>
 
-            </div>
+                <DoubleRange />
+           </div>
 
         </transition>
     </div>
 </template>
+
+
+<script setup lang="ts">
+import { ref} from 'vue';
+import DoubleRange from "./DoubleRange.vue";
+
+const visibility = ref({
+    transfers: true,
+    baggage: true
+});
+
+const toggleVisibility = (section: keyof typeof visibility.value) => {
+    visibility.value[section] = !visibility.value[section];
+};
+
+
+
+
+</script>
+
 
 <style scoped lang="scss">
 .sidebar_item {
@@ -53,18 +53,17 @@
         flex-direction: column;
         gap: 16px;
 
-
         input[type="checkbox"] {
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            width: 16px;
+            width: 15px;
             height: 15px;
             border: 1px solid #B5BBC9;
             border-radius: 4px;
             outline: none;
             cursor: pointer;
-            background-color: transparent;
+            background-color: #fff;
             position: relative;
         }
 
@@ -84,6 +83,30 @@
                 transform: rotate(45deg);
 
             }
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 2px;
+            border-radius: 5px;
+            width: 232px;
+            background: #E3E5ED;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #00B8D7;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px #C6C6C6;
+            cursor: pointer;
+        }
+
+        input[type=range]::-webkit-slider-thumb:active {
+            box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
         }
 
         .slider-full {
@@ -130,32 +153,19 @@
         line-height: 17px;
         color: #23282D;
 
-        .flex-container {
+
+        p {
             display: flex;
+            text-align: center;
             justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-            .price {
-                padding-right: 19px;
+            gap: 152px;
+
+            .time {
+                padding-left: 8px;
                 font-size: 14px;
                 color: #9399A8;
             }
         }
     }
-
+}
 </style>
-
-<script setup lang="ts">
-import {ref} from 'vue';
-
-
-const visibility = ref({
-    transfers: true,
-    baggage: true
-});
-
-const toggleVisibility = (section: keyof typeof visibility.value) => {
-    visibility.value[section] = !visibility.value[section];
-};
-</script>

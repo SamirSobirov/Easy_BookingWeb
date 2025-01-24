@@ -16,6 +16,8 @@
             <hr>
             <Alliances />
             <hr>
+            <Price />
+            <hr>
         </div>
     </aside>
 </template>
@@ -70,6 +72,7 @@ import Transfers from "./asidesCompanents/Transfers.vue";
 import TravelTime from "./asidesCompanents/TravelTime.vue";
 import TransferAirports from "./asidesCompanents/TransferAirports.vue";
 import Alliances from "./asidesCompanents/Alliances.vue";
+import Price from "./asidesCompanents/Price.vue";
 
 
 </script>
