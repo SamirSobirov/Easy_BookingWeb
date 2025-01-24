@@ -16,6 +16,21 @@
 
     </div>
 
+        <div class="tickets_box">
+
+        </div>
+
+        <div class="tickets_box">
+
+        </div>
+
+        <div class="tickets_box">
+
+        </div>
+
+        <div class="tickets_box">
+
+        </div>
     </div>
 </template>
 
