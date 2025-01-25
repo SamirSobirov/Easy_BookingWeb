@@ -113,6 +113,10 @@
         button {
             width: 20px;
             height: 20px;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            padding-top: 2px;
             background-color: transparent;
             border: none;
 
