@@ -25,6 +25,9 @@ import Footer from "../../../components/Footer.vue";
 
 <style scoped lang="scss">
 .box {
+
+    align-items: center;
+    justify-content: center;
     display: flex;
     flex-direction: column;
 
@@ -32,14 +35,13 @@ import Footer from "../../../components/Footer.vue";
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin-left: 25px;
-
+    margin-left: 20px;
 }
     .containerFooter {
         align-items: center;
         justify-content: center;
         display: flex;
-        margin-left: -250px;
+        margin-left: -280px;
     }
 }
 </style>

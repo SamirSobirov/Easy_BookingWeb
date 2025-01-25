@@ -27,8 +27,8 @@
 
 <style scoped lang="scss">
 aside {
-    margin-top: 20px;
-    width: 267px;
+    margin-top: 11px;
+    width: 265px;
     height: 100%;
     display: flex;
     justify-content: start;
@@ -55,7 +55,7 @@ aside {
 
 
     .sidebar {
-        padding: 2px 16px;
+        padding: 2px 15px 5px 15px;
         background-color: rgba(255, 255, 255, 0.85);
         width: 100%;
         border-radius: 18px;
@@ -64,7 +64,7 @@ aside {
 
         hr {
             margin: 25px 0 5px 0;
-            width: 235px;
+            width: 230px;
             border: 1px solid #E3E5ED;
         }
     }

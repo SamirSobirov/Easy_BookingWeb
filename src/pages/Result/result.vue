@@ -26,10 +26,9 @@ body {
     display: flex;
     align-items: start;
     justify-content: center;
-    margin: 20px auto;
+    margin: 12px auto;
     max-width: 1140px;
     width: 1138px;
-
 }
 
 

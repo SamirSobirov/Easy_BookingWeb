@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: start;
     margin: 0 auto -70px;
-    width: 1128px;
+    width: 1138px;
     max-width: 1200px;
     height: 60px;
     background: rgba(255, 255, 255, 0.555);

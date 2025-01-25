@@ -50,9 +50,9 @@
 
 <style scoped lang="scss">
 .ticket-card {
-    background-color: rgba(255, 255, 255, 0.68);
+    background-color: rgba(255, 255, 255, 0.85);
     border: 1px solid #FFFFFFA6;
-    width: 860px;
+    width: 855px;
     display: flex;
     justify-content: space-between;
     gap: 10px;

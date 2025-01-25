@@ -23,7 +23,7 @@
 <style scoped lang="scss">
 .sliders_control {
     position: relative;
-    width: 232px;
+    width: 225px;
     align-items: center;
     justify-content: center;
     text-align: center;
