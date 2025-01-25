@@ -27,13 +27,14 @@
 
 <style scoped lang="scss">
 aside {
+    margin-top: 20px;
     width: 267px;
     height: 100%;
     display: flex;
     justify-content: start;
     align-items: start;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 
     .folowPrice {
         padding: 16px;
@@ -49,16 +50,17 @@ aside {
         align-items: center;
         text-align: center;
         justify-content: center;
-        background-color: rgba(255, 255, 255, 0.68);
+        background-color: rgba(255, 255, 255, 0.85);
     }
 
 
     .sidebar {
-        background-color: rgba(255, 255, 255, 0.68);
+        padding: 2px 16px;
+        background-color: rgba(255, 255, 255, 0.85);
         width: 100%;
         border-radius: 18px;
         border: 1px solid #FFFFFFA6;
-        padding-left: 16px;
+        //padding-left: 16px;
 
         hr {
             margin: 25px 0 5px 0;
