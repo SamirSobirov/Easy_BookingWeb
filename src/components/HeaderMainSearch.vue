@@ -1,7 +1,6 @@
 <template>
     <section class="hero-section">
         <HeroContent/>
-
         <div
             class="search-box"
             :class="{ 'adjust-margin': isSearchBoxVisible, 'isHomepage': route.path !== '/' }"
