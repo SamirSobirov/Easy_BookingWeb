@@ -56,6 +56,7 @@
                         :class="{ 'input-error': errors.departureDate }"
                         :enable-time-picker="false"
                         @update:model-value="handleDepartureDateSelection"
+                        auto-apply
                     />
                 </div>
 
@@ -73,6 +74,7 @@
                         :hide-navigation="['time', 'hours', 'minutes', 'seconds']"
                         :disabled-dates="disableDepartureDates"
                         @update:model-value="handleReturnDateSelection"
+                        auto-apply
                     />
                 </div>
 
