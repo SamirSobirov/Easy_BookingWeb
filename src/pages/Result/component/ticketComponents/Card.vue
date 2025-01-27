@@ -99,6 +99,8 @@ import {Icon} from '@iconify/vue';
         .header-content {
             height: 20px;
             display: flex;
+
+            text-align: center;
             justify-content: space-between;
             align-items: center;
             gap: 10px;
@@ -111,6 +113,7 @@ import {Icon} from '@iconify/vue';
             .Header_btns {
                 display: flex;
                 gap: 0;
+                padding-top: 8px;
 
                 button {
                     background: transparent;
