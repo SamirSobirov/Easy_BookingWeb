@@ -20,7 +20,6 @@
     .text-content {
       text-align: left;
 
-
       .hero-title {
         font-size: 42px;
         font-weight: bold;
@@ -39,7 +38,6 @@
 }
 
 .search-box {
-
   width: 1138px;
   height: 192px;
   max-width: 1200px;
@@ -48,8 +46,6 @@
   padding: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border: 2px solid #ffffff;
-
-
 
   .searchFooter {
     display: flex;
@@ -168,7 +164,6 @@
       margin: 0 5px;
       width: 170px;
       flex: 1;
-      //padding: 0.5rem;
       border: none;
       background: transparent;
       font-size: 1rem;
