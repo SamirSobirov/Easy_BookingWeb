@@ -9,28 +9,18 @@ import AppBackground from "./AppBackground.vue";
 const route = useRoute();
 
 const isResultPage = computed(() => route.path === "/result");
- const imageNames = [
-     "DubaiCountry.svg",
-     "BaliCountry.svg",
-     "SochiCountry.svg",
-     "SaintPetersburgCountry.svg",
-     "AstanaCountry.svg",
- ];
 
- const imageList = imageNames.map((name) => ({
-     url:`/src/assets/public/images/${name}`
- }));
 </script>
 <template>
     <AppBackground />
     <header>
         <HeroSection msg="Welcome to EasyBooking!" />
         <BreadCrumb v-if="isResultPage" />
-     <HeaderMainButtons :images="imageList" />
+        <HeaderMainButtons  />
         <HeaderMainSearch />
     </header>
     <main>
-    <RouterView />
+        <RouterView />
     </main>
 
 </template>

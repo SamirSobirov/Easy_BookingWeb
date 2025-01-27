@@ -1,30 +1,21 @@
 <template>
     <div class="image-buttons" v-if="route.path === '/'">
-            <img
-                v-for="(image, index) in images"
-                :key="index"
-                class="image-button"
-                @click="onButtonClick(index)"
-                :src="image.url" alt="">
+        <img src="/src/assets/images/DubaiCountry.svg" class="image-button" alt="">
+        <img src="/src/assets/images/BaliCountry.svg" class="image-button" alt="">
+        <img src="/src/assets/images/SochiCountry.svg" class="image-button" alt="">
+        <img src="/src/assets/images/SaintPetersburgCountry.svg" class="image-button" alt="">
+        <img src="/src/assets/images/AstanaCountry.svg" class="image-button" alt="">
     </div>
 </template>
 
 <script setup lang="ts">
-import {defineProps, defineEmits} from "vue";
+// import {defineProps} from "vue";
 import {useRoute} from "vue-router";
 
 const route = useRoute();
 
-const {images} = defineProps<{
-    images: { url: string }[];
-}>();
 
-const emit = defineEmits(["button-click"]);
 
-const onButtonClick = (index: number) => {
-    console.log(images[index]);
-    emit("button-click", index);
-};
 </script>
 
 <style lang="scss" scoped>
