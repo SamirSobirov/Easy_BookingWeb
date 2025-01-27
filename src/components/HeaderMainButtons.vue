@@ -13,12 +13,12 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from "vue";
-import { useRoute } from "vue-router";
+import {defineProps, defineEmits} from "vue";
+import {useRoute} from "vue-router";
 
 const route = useRoute();
 
-const { images } = defineProps<{
+const {images} = defineProps<{
     images: { url: string }[];
 }>();
 
