@@ -1,14 +1,13 @@
 <template>
     <div class="image-buttons" v-if="route.path === '/'">
-        <div
-            v-for="(image, index) in images"
-            :key="index"
-            class="image-button"
-            :style="{ backgroundImage: `url(${image.url})` }"
-            @click="onButtonClick(index)"
-        >
-            <img class="overlay" src="" alt="">
-        </div>
+
+            <img
+                v-for="(image, index) in images"
+                :key="index"
+                class="image-button"
+                @click="onButtonClick(index)"
+                :src="image.url" alt="">
+
     </div>
 </template>
 
