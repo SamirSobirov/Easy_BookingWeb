@@ -18,7 +18,7 @@ const isResultPage = computed(() => route.path === "/result");
  ];
 
  const imageList = imageNames.map((name) => ({
-     url:`/src/assets/images/${name}`
+     url:`./assets/images/${name}`
  }));
 </script>
 <template>
@@ -30,7 +30,6 @@ const isResultPage = computed(() => route.path === "/result");
         <HeaderMainSearch />
     </header>
     <main>
-
     <RouterView />
     </main>
 
