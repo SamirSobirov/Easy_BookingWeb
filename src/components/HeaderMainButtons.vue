@@ -1,13 +1,11 @@
 <template>
     <div class="image-buttons" v-if="route.path === '/'">
-
             <img
                 v-for="(image, index) in images"
                 :key="index"
                 class="image-button"
                 @click="onButtonClick(index)"
                 :src="image.url" alt="">
-
     </div>
 </template>
 
