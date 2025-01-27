@@ -1,25 +1,41 @@
 <script setup lang="ts">
-
+import {Icon} from '@iconify/vue';
 </script>
 
 <template>
+
     <div class="ticket-card">
+        <header class="ticket-header">
+
+            <div class="header-content">
+
+                <div>
+                <img src="/src/assets/icons/Card_logo.svg" alt="">
+                <div class="getBonus">
+                    <span>Получите 100 EP</span>
+                </div>
+                </div>
+
+
+                <div class="Header_btns">
+                    <button><Icon icon="mdi-light:heart" width="24" height="24"  style="color: #6D7586" /></button>
+                    <button><Icon icon="solar:share-outline" width="24" height="24"  style="color: #6D7586" /></button>
+                </div>
+            </div>
+        </header>
         <div class="flight-info">
             <div class="departure-arrival">
                 <div class="time">20:10
                     <span>25 мая, чт</span>
-
                     <span class="Cities">Ташкент (TAS)</span>
                 </div>
 
                 <div class="route_line">
-
                     <div>
                         <div class="airport-code">TAS</div>
                         <div class="route"></div>
                         <div class="airport-code">LED</div>
                     </div>
-
                     <span>в пути 4ч 35мин</span>
                 </div>
 
@@ -31,7 +47,6 @@
 
             <a href="#" class="details-link">Детали маршрута ▼</a>
         </div>
-
 
         <div class="fare-details">
             <span>Тариф: <strong>Эконом Базовый</strong></span>
@@ -48,27 +63,87 @@
             </div>
         </div>
     </div>
+
 </template>
 
 <style scoped lang="scss">
 .ticket-card {
+    position: relative;
     background-color: rgba(255, 255, 255, 0.85);
     border: 1px solid #FFFFFFA6;
     width: 855px;
     display: flex;
-    justify-content: space-between;
     gap: 10px;
     align-items: center;
-
-    border-radius: 12px;
+    border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     font-family: Arial, sans-serif;
+    overflow: hidden;
+
+    .ticket-header {
+        width: 855px;
+        margin-left: -20px;
+        height: 40px;
+        position: absolute;
+        top: 0;
+        color: #FFFFFF;
+        font-size: 14px;
+        font-weight: bold;
+
+        //border-radius: 20px;
+        padding: 8px 16px;
+
+        background-color: #FFFFFFA6;
+
+        .header-content {
+            height: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+
+            div {
+                display: flex;
+                gap: 10px;
+            }
+
+            .Header_btns {
+                display: flex;
+                gap: 0;
+
+                button {
+                    background: transparent;
+                    border: none;
+                    border-radius: 50%;
+                    padding: 8px;
+                    cursor: pointer;
+                }
+            }
+
+            .getBonus {
+                width: 98px;
+                height: 20px;
+                padding: 3px 8px;
+                background-color: #7879F1;
+                border-radius: 50px;
+                font-size: 10px;
+                font-family: Mulish, sans-serif;
+                font-weight: 400;
+
+            }
+        }
+    }
+
+    .flight-info, .fare-details, .price-info {
+        width: 100%;
+    }
 
     .flight-info {
         display: flex;
         flex-direction: column;
         gap: 8px;
+        margin-top: 20px;
 
         .departure-arrival {
             display: flex;
@@ -104,6 +179,7 @@
                     align-items: center;
                     gap: 10px;
                 }
+
                 .route {
                     flex-grow: 1;
                     width: 165px;
@@ -112,11 +188,12 @@
                     margin-bottom: 10px;
 
                 }
-                    span {
-                        font-size: 12px;
-                        color: #9399A8;
 
-                    }
+                span {
+                    font-size: 12px;
+                    color: #9399A8;
+
+                }
             }
 
             .duration {
@@ -130,7 +207,7 @@
 
             color: #00B8D7;
             text-align: left;
-            margin-top: 60px;
+            margin-top: 30px;
             cursor: pointer;
             text-decoration: none;
 
@@ -138,7 +215,6 @@
                 text-decoration: underline;
             }
         }
-
 
 
     }
@@ -152,12 +228,27 @@
         align-items: flex-start;
         align-self: flex-start;
         justify-content: flex-start;
-        margin-top: 20px;
+        margin-top: 40px;
+        margin-left: 24px;
+        font-family: Mulish, sans-serif;
+
+    }
+
+    span {
+
+        strong {
+            color: #23282D;
+            font-weight: 400;
+        }
     }
 
 
     .fare-details .baggage {
-        font-weight: bold;
+        font-weight: 400;
+        font-size: 13px;
+
+        text-decoration: underline;
+        color: #9399A8;
     }
 
     .fare-details .return {
@@ -169,9 +260,11 @@
     .price-info {
         width: 191px;
         text-align: center;
+        font-family: Mulish, sans-serif;
+        margin-top: 40px;
 
         .old-price {
-        line-height: 19px;
+            line-height: 19px;
             font-size: 15px;
             color: #EB5757;
             text-decoration: line-through;
@@ -186,6 +279,7 @@
         .button-container {
             margin-top: 16px;
             width: 191px;
+
             .buy-btn {
                 background: #00B8D7;
                 color: #FFFFFF;

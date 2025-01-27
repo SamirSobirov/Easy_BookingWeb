@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './style.css'
+import './assets/scss/style.scss'
 import './assets/scss/heroSection.scss'
 import './assets/scss/headerMainButton.scss'
 import './assets/scss/headerMainSearch.scss'

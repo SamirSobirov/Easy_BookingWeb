@@ -20,6 +20,8 @@
   padding: 17px 45px;
   color: #23282D;
   margin-right: 10px;
+  display: flex;
+  white-space: nowrap;
 }
 
 .nav-btn {
@@ -40,7 +42,6 @@
 }
 
 .price-list {
-  margin-left: 10px;
   display: flex;
   gap: 10px;
   scroll-behavior: smooth;
@@ -52,7 +53,7 @@
 .price-item {
   align-items: center;
   margin: 0 auto;
-  padding: 10px 15px;
+  padding: 4px ;
   background: #fff;
   border-radius: 8px;
   text-align: center;
