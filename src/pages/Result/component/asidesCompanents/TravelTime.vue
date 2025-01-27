@@ -64,6 +64,7 @@ const updateTime = (e:any) => {
         display: flex;
         flex-direction: column;
         gap: 16px;
+        white-space: nowrap;
 
         input[type="checkbox"] {
             appearance: none;
@@ -173,7 +174,6 @@ const updateTime = (e:any) => {
             gap: 152px;
 
             .time {
-                padding-left: 8px;
                 font-size: 14px;
                 color: #9399A8;
             }

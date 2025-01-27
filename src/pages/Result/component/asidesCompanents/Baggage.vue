@@ -39,8 +39,6 @@
         flex-direction: column;
         gap: 16px;
 
-
-
         input[type="checkbox"] {
             appearance: none;
             -webkit-appearance: none;
