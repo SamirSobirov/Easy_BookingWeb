@@ -38,8 +38,8 @@ const onButtonClick = (index: number) => {
     align-items: center;
 
     .image-button {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         background-size: cover;
         background-position: center;
         border-radius: 50%;
@@ -59,7 +59,7 @@ const onButtonClick = (index: number) => {
         }
 
         &:not(:first-child) {
-            margin-left: -12px;
+            margin-left: -20px;
 
         }
 
@@ -70,7 +70,7 @@ const onButtonClick = (index: number) => {
             right: 0;
             bottom: 0;
             border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.2);
+
         }
     }
 }

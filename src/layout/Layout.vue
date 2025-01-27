@@ -18,7 +18,7 @@ const isResultPage = computed(() => route.path === "/result");
  ];
 
  const imageList = imageNames.map((name) => ({
-     url: new URL(`./assets/images/${name}`, import.meta.url).href,
+     url:`/src/assets/images/${name}`
  }));
 </script>
 <template>
