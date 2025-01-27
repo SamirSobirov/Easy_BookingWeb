@@ -10,16 +10,20 @@ import {Icon} from '@iconify/vue';
             <div class="header-content">
 
                 <div>
-                <img src="/src/assets/icons/Card_logo.svg" alt="">
-                <div class="getBonus">
-                    <span>Получите 100 EP</span>
-                </div>
+                    <img src="/src/assets/icons/Card_logo.svg" alt="">
+                    <div class="getBonus">
+                        <span>Получите 100 EP</span>
+                    </div>
                 </div>
 
 
                 <div class="Header_btns">
-                    <button><Icon icon="mdi-light:heart" width="24" height="24"  style="color: #6D7586" /></button>
-                    <button><Icon icon="solar:share-outline" width="24" height="24"  style="color: #6D7586" /></button>
+                    <button>
+                        <Icon icon="mdi-light:heart" width="24" height="24" style="color: #6D7586"/>
+                    </button>
+                    <button>
+                        <Icon icon="solar:share-outline" width="24" height="24" style="color: #6D7586"/>
+                    </button>
                 </div>
             </div>
         </header>
