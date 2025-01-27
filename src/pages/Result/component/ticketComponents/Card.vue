@@ -3,7 +3,6 @@ import {Icon} from '@iconify/vue';
 </script>
 
 <template>
-
     <div class="ticket-card">
         <header class="ticket-header">
 
@@ -15,7 +14,6 @@ import {Icon} from '@iconify/vue';
                         <span>Получите 100 EP</span>
                     </div>
                 </div>
-
 
                 <div class="Header_btns">
                     <button>
