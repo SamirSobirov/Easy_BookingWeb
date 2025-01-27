@@ -177,7 +177,6 @@
 
       img {
         filter: brightness(0) invert(56%);
-        // transition: filter 0.3s ease;
       }
     }
 
@@ -204,7 +203,6 @@
       border: none;
       background-color: transparent;
     }
-
     .input-container {
       position: relative;
       width: 172px;
@@ -220,17 +218,12 @@
       border-radius: 12px;
       outline: none;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      //&:hover {
-      //  transition: 0.1s ease-in;
-      //  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      //}
 
       &:focus {
         border: 1px solid #80dbeb;
         box-shadow: 0 0 4px #80dbeb;
       }
     }
-
 
     .floating-label {
       position: absolute;
@@ -271,11 +264,6 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
     }
-
-    //.input_select:hover {
-    //  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-    //}
-
     .input_select:focus {
       outline: none;
     }
@@ -308,11 +296,10 @@
     }
 
     &:focus {
-      border: 1px solid #00b8d7; // Цвет границы при фокусе
-      box-shadow: 0 0 4px rgba(74, 144, 226, 0.5); // Тень при фокусе
+      border: 1px solid #00b8d7;
+      box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
     }
   }
-
 
   .custom-dropdown {
     position: relative;
@@ -547,11 +534,6 @@
         font-size: 1rem;
         font-family: Arial, sans-serif;
       }
-
-      //&:hover {
-      //  transition: 0.1s ease-in;
-      //  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      //}
     }
 
     &.is-invalid input {
@@ -566,5 +548,4 @@
       cursor: not-allowed;
     }
   }
-
 }
