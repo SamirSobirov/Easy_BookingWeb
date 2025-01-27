@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer" style="margin-top: 60px; margin-bottom: 43px;">
+  <footer class="footer" style="margin-top: 60px;">
     <div class="footer__container">
       <div class="footer__section">
         <img
