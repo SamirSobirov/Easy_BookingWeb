@@ -29,12 +29,14 @@
                 </div>
             </div>
 
-<!--            <div class="fare-details">-->
-<!--                <span>Тариф: <strong>Эконом Базовый</strong></span>-->
-<!--                <span class="baggage">Багаж 23 кг</span>-->
-<!--                <span class="return">Возвратный &#10004;</span>-->
-<!--            </div>-->
             <a href="#" class="details-link">Детали маршрута ▼</a>
+        </div>
+
+
+        <div class="fare-details">
+            <span>Тариф: <strong>Эконом Базовый</strong></span>
+            <span class="baggage">Багаж 23 кг</span>
+            <span class="return">Возвратный &#10004;</span>
         </div>
 
         <div class="price-info">
@@ -123,23 +125,6 @@
             }
         }
 
-        .fare-details {
-            font-size: 14px;
-            color: #6c757d;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-
-            .baggage {
-                font-weight: bold;
-            }
-
-            .return {
-                color: #6c757d;
-                font-size: 12px;
-            }
-        }
-
         .details-link {
             font-size: 15px;
 
@@ -153,7 +138,33 @@
                 text-decoration: underline;
             }
         }
+
+
+
     }
+
+    .fare-details {
+        font-size: 14px;
+        color: #6c757d;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+        align-self: flex-start;
+        justify-content: flex-start;
+        margin-top: 20px;
+    }
+
+
+    .fare-details .baggage {
+        font-weight: bold;
+    }
+
+    .fare-details .return {
+        color: #6c757d;
+        font-size: 12px;
+    }
+
 
     .price-info {
         width: 191px;
