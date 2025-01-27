@@ -7,7 +7,7 @@
             :style="{ backgroundImage: `url(${image.url})` }"
             @click="onButtonClick(index)"
         >
-            <div class="overlay"></div>
+            <img class="overlay" src="" alt="">
         </div>
     </div>
 </template>

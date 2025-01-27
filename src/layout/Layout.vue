@@ -18,7 +18,7 @@ const isResultPage = computed(() => route.path === "/result");
  ];
 
  const imageList = imageNames.map((name) => ({
-     url:`/assets/images/${name}`
+     url:`/src/assets/images/${name}`
  }));
 </script>
 <template>
