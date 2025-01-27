@@ -3,26 +3,25 @@ import HeaderMainSearch from "../components/HeaderMainSearch.vue";
 import HeroSection from "../components/HeroSection.vue";
 import HeaderMainButtons from "../components/HeaderMainButtons.vue";
 import BreadCrumb from "../components/breadcrumbs/BreadCrumb.vue";
-import { computed } from "vue";
-import { useRoute } from "vue-router";
+import {computed} from "vue";
+import {useRoute} from "vue-router";
 import AppBackground from "./AppBackground.vue";
-const route = useRoute();
 
+const route = useRoute();
 const isResultPage = computed(() => route.path === "/result");
 
 </script>
 <template>
-    <AppBackground />
+    <AppBackground/>
     <header>
-        <HeroSection msg="Welcome to EasyBooking!" />
-        <BreadCrumb v-if="isResultPage" />
-        <HeaderMainButtons  />
-        <HeaderMainSearch />
+        <HeroSection msg="Welcome to EasyBooking!"/>
+        <BreadCrumb v-if="isResultPage"/>
+        <HeaderMainButtons/>
+        <HeaderMainSearch/>
     </header>
     <main>
-        <RouterView />
+        <RouterView/>
     </main>
-
 </template>
 
 <style lang="scss">
