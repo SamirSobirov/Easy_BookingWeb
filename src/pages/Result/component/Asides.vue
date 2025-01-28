@@ -37,6 +37,7 @@ aside {
     gap: 14px;
 
     .folowPrice {
+        backdrop-filter: blur(10px);
         padding: 16px;
         width: 100%;
         height: 54px;
@@ -50,13 +51,14 @@ aside {
         align-items: center;
         text-align: center;
         justify-content: center;
-        background-color: rgba(255, 255, 255, 0.85);
+        background-color: #FFFFFFA6;
     }
 
 
     .sidebar {
+        backdrop-filter: blur(10px);
         padding: 2px 15px 5px 15px;
-        background-color: rgba(255, 255, 255, 0.85);
+        background-color: #FFFFFFA6;
         width: 100%;
         border-radius: 18px;
         border: 1px solid #FFFFFFA6;
