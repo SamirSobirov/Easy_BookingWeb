@@ -59,7 +59,7 @@ aside {
         backdrop-filter: blur(10px);
         padding: 2px 15px 5px 15px;
         background-color: #FFFFFFA6;
-        width: 100%;
+        width: 267px;
         border-radius: 18px;
         border: 1px solid #FFFFFFA6;
         //padding-left: 16px;

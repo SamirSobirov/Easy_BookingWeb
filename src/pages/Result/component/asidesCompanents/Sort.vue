@@ -96,18 +96,18 @@
         }
 
         input[type="radio"]:checked {
-            border: 1px solid #00B8D7;
+            border: 1.5px solid #00B8D7;
 
             &::before {
                 content: "";
                 display: block;
-                width: 2px;
-                height: 7px;
+                width: 4px;
+                height: 6px;
                 border: solid #00B8D7;
-                border-width: 0 3px 3px 0;
+                border-width: 0 1.4px 1.4px 0;
                 position: absolute;
-                left: 4.7px;
-                top: 1.5px;
+                left: 3.2px;
+                top: 1.8px;
                 transform: rotate(45deg);
 
             }
