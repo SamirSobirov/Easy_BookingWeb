@@ -6,11 +6,12 @@
   display: flex;
   gap: 12px;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: #FFFFFF59;
   border: 2px solid #ffffff;
   padding: 10px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .title {
@@ -51,10 +52,11 @@
 }
 
 .price-item {
+
   align-items: center;
   margin: 0 auto;
   padding: 4px;
-  background: #fff;
+  background: #FFFFFF;
   border-radius: 8px;
   text-align: center;
   transition: all 0.3s ease-in-out;

@@ -47,7 +47,7 @@ import {Icon} from '@iconify/vue';
                 </div>
             </div>
 
-            <a href="#" class="details-link">Детали маршрута ▼</a>
+            <a href="#" class="details-link">Детали маршрута <img src="/src/assets/icons/Cardarrow.svg" alt=""></a>
         </div>
 
         <div class="fare-details">
@@ -71,7 +71,7 @@ import {Icon} from '@iconify/vue';
 <style scoped lang="scss">
 .ticket-card {
     position: relative;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: #FFFFFF59;
     border: 1px solid #FFFFFFA6;
     width: 855px;
     display: flex;
@@ -82,6 +82,8 @@ import {Icon} from '@iconify/vue';
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     font-family: Arial, sans-serif;
     overflow: hidden;
+    //z-index: -1;
+    backdrop-filter: blur(10px);
 
     .ticket-header {
         width: 855px;
@@ -140,35 +142,31 @@ import {Icon} from '@iconify/vue';
         }
     }
 
-    .flight-info, .fare-details, .price-info {
-        width: 100%;
-    }
-
     .flight-info {
         display: flex;
         flex-direction: column;
         gap: 8px;
-        margin-top: 20px;
+        margin-top: 36px;
 
         .departure-arrival {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 10px;
 
             .time {
-                margin-top: 20px;
                 display: flex;
                 flex-direction: column;
                 text-align: left;
-                gap: 10px;
+                gap: 8px;
                 font-size: 24px;
-                font-weight: 400;
+                font-weight: 100;
                 color: #23282D;
+                white-space: nowrap;
 
                 span {
-                    font-size: 12px;
+                    font-size: 13px;
                     color: #9399A8;
-                    font-weight: 400;
+                    font-weight: 100;
                 }
             }
 
@@ -192,13 +190,11 @@ import {Icon} from '@iconify/vue';
                     border-bottom: 2px dashed #838C97;
                     margin-top: -5px;
                     margin-bottom: 10px;
-
                 }
 
                 span {
                     font-size: 12px;
                     color: #9399A8;
-
                 }
             }
 
@@ -209,34 +205,38 @@ import {Icon} from '@iconify/vue';
         }
 
         .details-link {
-            font-size: 15px;
-
+            font-size: 14px;
+            line-height: 18px;
             color: #00B8D7;
+            display: flex;
+            gap: 5px;
             text-align: left;
-            margin-top: 30px;
             cursor: pointer;
             text-decoration: none;
+            //margin-top: auto;
+            padding-top: 60px;
 
             &:hover {
                 text-decoration: underline;
             }
         }
-
-
     }
+
 
     .fare-details {
         font-size: 14px;
         color: #6c757d;
         display: flex;
+        text-align: left;
         flex-direction: column;
         gap: 4px;
         align-items: flex-start;
         align-self: flex-start;
         justify-content: flex-start;
-        margin-top: 40px;
-        margin-left: 24px;
+        margin-top: 36px;
+        margin-left: 10px;
         font-family: Mulish, sans-serif;
+        white-space: nowrap;
 
     }
 

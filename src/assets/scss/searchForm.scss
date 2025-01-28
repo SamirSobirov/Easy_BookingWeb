@@ -9,7 +9,6 @@
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
-
     max-height: 250px;
     overflow-y: auto;
     display: none;
@@ -17,7 +16,6 @@
     padding: 10px 15px;
     font-family: Arial, sans-serif;
     flex-direction: column;
-
 
     .dropdown-btn {
       display: flex;
@@ -33,10 +31,6 @@
       border-radius: 8px;
       transition: background-color 0.2s ease;
       white-space: nowrap;
-
-      &:hover {
-        background-color: #f4f4f4;
-      }
 
       #icon_plane {
         width: 20px;
