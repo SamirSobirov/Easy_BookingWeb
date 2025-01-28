@@ -10,17 +10,17 @@
             <hr>
             <Baggage/>
             <hr>
-            <TravelTime />
+            <TravelTime/>
             <hr>
-            <TransferAirports />
+            <TransferAirports/>
             <hr>
-            <Alliances />
+            <Alliances/>
             <hr>
-            <Price />
+            <Price/>
             <hr>
-            <Airlines />
+            <Airlines/>
             <hr>
-            <Sort />
+            <Sort style="margin-bottom: 15px;"/>
         </div>
     </aside>
 </template>
@@ -37,6 +37,7 @@ aside {
     gap: 14px;
 
     .folowPrice {
+
         backdrop-filter: blur(10px);
         padding: 16px;
         width: 100%;
@@ -47,13 +48,12 @@ aside {
         color: #6D7586;
         display: flex;
         gap: 10px;
-        font-family: Arial, sans-serif;
+        font-family: Mulish, sans-serif;
         align-items: center;
         text-align: center;
         justify-content: center;
         background-color: #FFFFFFA6;
     }
-
 
     .sidebar {
         backdrop-filter: blur(10px);
@@ -62,10 +62,8 @@ aside {
         width: 267px;
         border-radius: 18px;
         border: 1px solid #FFFFFFA6;
-        //padding-left: 16px;
-
         hr {
-            margin: 25px 0 5px 0;
+            margin: 15px 0 0 0;
             width: 230px;
             border: 1px solid #E3E5ED;
         }

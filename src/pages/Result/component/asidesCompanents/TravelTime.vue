@@ -55,7 +55,7 @@ const updateTime = (e:any) => {
 
 <style scoped lang="scss">
 .sidebar_item {
-    margin-top: 16px;
+
     display: flex;
     flex-direction: column;
     gap: 16px;
