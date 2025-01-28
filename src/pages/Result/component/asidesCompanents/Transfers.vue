@@ -1,10 +1,9 @@
 <template>
     <div class="sidebar_item">
-        <h3>
+        <h3 @click="toggleVisibility('transfers')" style="cursor: pointer;">
             Пересадки
-            <button class="hideButton" @click="toggleVisibility('transfers')">
-                <img :class="{ rotated: !visibility.transfers }" src="/src/assets/icons/arrow_down.svg"
-                     alt="arrow_down"/>
+            <button class="hideButton" @click.stop="toggleVisibility('transfers')">
+                <img :class="{ rotated: !visibility.transfers }" src="/src/assets/icons/arrow_down.svg" alt="arrow_down" />
             </button>
         </h3>
         <transition name="fade">
@@ -39,6 +38,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+
 
     .item_box {
         display: flex;
@@ -113,12 +113,11 @@
         button {
             width: 20px;
             height: 20px;
-            align-items: center;
             text-align: center;
-            justify-content: center;
             padding-top: 2px;
             background-color: transparent;
             border: none;
+            cursor: pointer;
 
             img {
                 rotate: 180deg;

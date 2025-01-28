@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar_item">
-        <h3>
+        <h3 @click="toggleVisibility('baggage')" style="cursor: pointer;">
             Аэропорты пересадок
             <button class="hideButton" @click="toggleVisibility('baggage')">
                 <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg"
