@@ -91,6 +91,11 @@ import DropDown from "../../../../components/DropDown.vue";
         font-size: 18px;
         font-weight: 600;
         font-family: Mulish, sans-serif;
+
+        button {
+            border-radius: 32px;
+            border: 1px solid #C9D4E4;
+        }
     }
 }
 </style>
