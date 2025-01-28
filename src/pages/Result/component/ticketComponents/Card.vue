@@ -191,6 +191,7 @@ const toggleActive = (): void => {
     }
 
     .icons {
+        margin-top: 24px;
         display: flex;
         justify-content: space-between;
 
