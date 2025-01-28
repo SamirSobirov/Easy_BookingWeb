@@ -9,7 +9,7 @@ import DropDown from "../../../../components/DropDown.vue";
 
             <div class="header-content">
 
-                <div>
+                <div class="Bonus">
                     <img src="/src/assets/icons/Card_logo.svg" alt="">
                     <div class="getBonus">
                         <span>Получите 100 EP</span>
@@ -22,16 +22,41 @@ import DropDown from "../../../../components/DropDown.vue";
                     </button>
                     <DropDown>
                         <template #trigger>
-                    <button>
-                        <Icon icon="solar:share-outline" width="24" height="24" style="color: #6D7586"/>
-                    </button>
+                            <button>
+                                <Icon icon="solar:share-outline" width="24" height="24" style="color: #6D7586"/>
+                            </button>
                         </template>
                         <div class="Trigger_box">
                             <h1>Поделиться билетом
-                                <button><Icon icon="material-symbols:close-rounded" width="24" height="24"  style="color: #475569" /></button>
+                                <button class="triggerBtn" style="border: 1px solid #C9D4E4;">
+                                    <span class="close-icon">&times;</span>
+                                </button>
                             </h1>
+
+                            <div class="icons">
+                                <div class="icon telegram">
+                                    <img src="/src/assets/images/Telegram.svg" alt="Телеграм">
+                                    <span>Телеграм</span>
+                                </div>
+                                <div class="icon instagram">
+                                    <img src="/src/assets/images/Instagram.svg" alt="Инстаграм">
+                                    <span>Инстаграм</span>
+                                </div>
+                                <div class="icon facebook">
+                                    <img src="/src/assets/images/Facebook.svg" alt="Фейсбук">
+                                    <span>Фейсбук</span>
+                                </div>
+                                <div class="icon twitter">
+                                    <img src="/src/assets/images/Twitter.svg" alt="Твиттер">
+                                    <span>Твиттер</span>
+                                </div>
+                                <div class="icon link">
+                                    <img src="/src/assets/images/Link.svg" alt="Ссылка">
+                                    <span>Ссылка</span>
+                                </div>
+                            </div>
                         </div>
-                        </DropDown>
+                    </DropDown>
                 </div>
             </div>
         </header>
@@ -79,23 +104,74 @@ import DropDown from "../../../../components/DropDown.vue";
 </template>
 
 <style scoped lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap');
+
 .Trigger_box {
-        //align-items: center;
-    padding: 20px 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
     h1 {
+        display: flex;
         align-items: center;
         justify-content: space-between;
-        text-align: center;
-        display: flex;
-        color: black;
         font-size: 18px;
         font-weight: 600;
-        font-family: Mulish, sans-serif;
+        font-family: 'Mulish', sans-serif;
+        color: black;
+        margin-bottom: 15px;
 
-        button {
-            border-radius: 32px;
-            border: 1px solid #C9D4E4;
+        .triggerBtn {
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+
+            .close-icon {
+                font-size: 24px;
+                color: #475569;
+            }
         }
     }
+
+    .icons {
+        display: flex;
+        justify-content: space-between;
+
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 10px;
+            transition: background 0.3s;
+            font-family: 'Mulish', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+
+            span {
+                color: #555;
+                margin-top: 5px;
+            }
+        }
+
+    }
 }
+
 </style>
