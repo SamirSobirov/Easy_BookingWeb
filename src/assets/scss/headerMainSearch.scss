@@ -327,10 +327,9 @@
     .custom-dropdown-menu {
       position: absolute;
       top: 110%;
-      z-index: 10;
+      z-index: 1000;
       left: 0;
       background: white;
-      border: 1px solid #ccc;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       border-radius: 12px;
       width: 250px;

@@ -33,28 +33,7 @@
                                 </button>
                             </h1>
 
-                            <div class="icons">
-                                <div class="icon telegram">
-                                    <img src="/src/assets/images/Telegram.svg" alt="Телеграм">
-                                    <span>Телеграм</span>
-                                </div>
-                                <div class="icon instagram">
-                                    <img src="/src/assets/images/Instagram.svg" alt="Инстаграм">
-                                    <span>Инстаграм</span>
-                                </div>
-                                <div class="icon facebook">
-                                    <img src="/src/assets/images/Facebook.svg" alt="Фейсбук">
-                                    <span>Фейсбук</span>
-                                </div>
-                                <div class="icon twitter">
-                                    <img src="/src/assets/images/Twitter.svg" alt="Твиттер">
-                                    <span>Твиттер</span>
-                                </div>
-                                <div class="icon link">
-                                    <img src="/src/assets/images/Link.svg" alt="Ссылка">
-                                    <span>Ссылка</span>
-                                </div>
-                            </div>
+                           <ShareTicket />
                         </div>
                     </DropDown>
                 </div>
@@ -87,7 +66,9 @@
 
         <div class="fare-details">
             <span>Тариф: <strong>Эконом Базовый</strong></span>
-            <span class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt=""></span>
+            <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt="">
+
+            </button>
             <span class="return">Возвратный <img src="/src/assets/icons/CardCheckCircle.svg" alt=""></span>
         </div>
 
@@ -107,6 +88,7 @@
 import {Icon} from '@iconify/vue';
 import DropDown from "../../../../components/DropDown.vue";
 import {ref} from 'vue';
+import ShareTicket from "../../../../components/ShareTicket.vue";
 
 const isActive = ref<boolean>(false);
 const toggleActive = (): void => {

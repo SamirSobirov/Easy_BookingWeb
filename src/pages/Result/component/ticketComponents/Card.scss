@@ -143,7 +143,6 @@
       text-align: left;
       cursor: pointer;
       text-decoration: none;
-      //margin-top: auto;
       padding-top: 60px;
 
       &:hover {
@@ -166,17 +165,14 @@
     margin-left: 10px;
     font-family: Mulish, sans-serif;
     white-space: nowrap;
-
   }
 
   span {
-
     strong {
       color: #23282D;
       font-weight: 400;
     }
   }
-
 
   .fare-details .baggage {
     font-weight: 400;
@@ -187,6 +183,8 @@
     justify-content: center;
     gap: 5px;
     text-decoration: underline;
+    background-color: transparent;
+    border: none;
     color: #9399A8;
 
     img {
