@@ -28,6 +28,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 0 20px;
     font-family: Arial, sans-serif;
+    backdrop-filter: blur(10px);
 }
 
 .back-button {
