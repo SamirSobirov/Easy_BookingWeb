@@ -23,6 +23,7 @@ const isOpen = ref(false)
 .container {
     position: relative;
 
+
 .share-container {
     position: absolute;
     top: 38px;
@@ -31,7 +32,7 @@ const isOpen = ref(false)
     width: 412px;
     height: 170px;
     background-color: #FFFFFF;
-    box-shadow: 0 5px 5px #0000000D;
+    box-shadow: 0 5px 10px 5px #0000000D;
 }
 }
 </style>

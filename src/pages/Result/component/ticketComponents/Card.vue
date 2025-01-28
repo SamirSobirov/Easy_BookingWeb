@@ -26,9 +26,11 @@ import DropDown from "../../../../components/DropDown.vue";
                         <Icon icon="solar:share-outline" width="24" height="24" style="color: #6D7586"/>
                     </button>
                         </template>
-                        <template>
-                            <h5>HELLO WORLD</h5>
-                        </template>
+                        <div class="Trigger_box">
+                            <h1>Поделиться билетом
+                                <button><Icon icon="material-symbols:close-rounded" width="24" height="24"  style="color: #475569" /></button>
+                            </h1>
+                        </div>
                         </DropDown>
                 </div>
             </div>
@@ -77,5 +79,18 @@ import DropDown from "../../../../components/DropDown.vue";
 </template>
 
 <style scoped lang="scss">
-
+.Trigger_box {
+        //align-items: center;
+    padding: 20px 20px;
+    h1 {
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        display: flex;
+        color: black;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: Mulish, sans-serif;
+    }
+}
 </style>
