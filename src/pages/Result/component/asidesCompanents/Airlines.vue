@@ -30,7 +30,7 @@
                 <label>
                     <input name="toggle" type="checkbox"/>
                     <div class="flex-container">
-                        <p>UZBEKEKISTAN AIR</p>
+                        <p>UZBEKISTAN AIR</p>
 
                     </div>
                 </label>
