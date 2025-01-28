@@ -38,7 +38,7 @@ import {Icon} from '@iconify/vue';
                         <div class="route"></div>
                         <div class="airport-code">LED</div>
                     </div>
-                    <span>в пути 4ч 35мин</span>
+                    <span class="way">в пути 4ч 35мин</span>
                 </div>
 
                 <div class="time">23:05
