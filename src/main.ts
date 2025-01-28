@@ -16,6 +16,7 @@ import './assets/scss/footer.scss'
 import './assets/scss/registModal.scss'
 import './assets/scss/searchForm.scss'
 import './components/breadcrumbs/breadCrumb.scss'
+import './pages/Result/component/ticketComponents/Card.scss'
 import router from "./pages/router";
 import App from './App.vue'
 
