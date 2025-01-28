@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {Icon} from '@iconify/vue';
+import DropDown from "../../../../components/DropDown.vue";
 </script>
 
 <template>
@@ -19,9 +20,16 @@ import {Icon} from '@iconify/vue';
                     <button>
                         <img src="/src/assets/icons/CardHeartOutline.svg" width="24" height="24" alt="">
                     </button>
+                    <DropDown>
+                        <template #trigger>
                     <button>
                         <Icon icon="solar:share-outline" width="24" height="24" style="color: #6D7586"/>
                     </button>
+                        </template>
+                        <template>
+                            <h5>HELLO WORLD</h5>
+                        </template>
+                        </DropDown>
                 </div>
             </div>
         </header>
@@ -69,4 +77,5 @@ import {Icon} from '@iconify/vue';
 </template>
 
 <style scoped lang="scss">
+
 </style>
