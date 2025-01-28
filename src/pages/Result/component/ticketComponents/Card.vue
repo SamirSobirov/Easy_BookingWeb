@@ -28,7 +28,7 @@
                         </template>
                         <div class="Trigger_box">
                             <h1>Поделиться билетом
-                                <button class="triggerBtn" style="border: 1px solid #C9D4E4;">
+                                <button class="triggerBtn" style="border: 1px solid #C9D4E4;" @click="hideTriggerBox">
                                     <span class="close-icon">&times;</span>
                                 </button>
                             </h1>
@@ -112,10 +112,37 @@ const isActive = ref<boolean>(false);
 const toggleActive = (): void => {
     isActive.value = !isActive.value;
 };
+
+// Логика для скрытия Trigger Box
+const hideTriggerBox = (event: Event): void => {
+    const button = event.target as HTMLElement;
+    const triggerBox = button.closest(".trigger-box") as HTMLElement;
+    if (triggerBox) {
+        triggerBox.classList.add("hidden"); // Скрывает Trigger Box
+    }
+};
 </script>
 
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap');
+.DropDown button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg, img {
+        transition: fill 0.3s ease, color 0.3s ease;
+    }
+    &:active, &.active {
+        svg, img {
+            fill: #00B8D7 !important;
+            color: #00B8D7 !important;
+        }
+    }
+}
 .icon-button {
     background: none;
     border: none;
@@ -209,25 +236,6 @@ const toggleActive = (): void => {
                 color: #555;
                 margin-top: 5px;
             }
-        }
-    }
-}
-.DropDown button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg, img {
-        transition: fill 0.3s ease, color 0.3s ease;
-    }
-
-    &:active, &.active {
-        svg, img {
-            fill: #00B8D7 !important;
-            color: #00B8D7 !important;
         }
     }
 }
