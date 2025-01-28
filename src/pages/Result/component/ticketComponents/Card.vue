@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import {Icon} from '@iconify/vue';
-import DropDown from "../../../../components/DropDown.vue";
-</script>
-
 <template>
     <div class="ticket-card">
         <header class="ticket-header">
@@ -22,9 +17,14 @@ import DropDown from "../../../../components/DropDown.vue";
                     </button>
                     <DropDown>
                         <template #trigger>
-                            <button>
-                                <Icon icon="solar:share-outline" width="24" height="24" style="color: #6D7586"/>
+                            <button
+                                class="icon-button"
+                                :class="{ active: isActive }"
+                                @click="toggleActive"
+                            >
+                                <Icon icon="solar:share-outline" width="24" height="24" />
                             </button>
+
                         </template>
                         <div class="Trigger_box">
                             <h1>Поделиться билетом
@@ -103,9 +103,38 @@ import DropDown from "../../../../components/DropDown.vue";
 
 </template>
 
+<script setup lang="ts">
+import {Icon} from '@iconify/vue';
+import DropDown from "../../../../components/DropDown.vue";
+import { ref } from 'vue';
+
+const isActive = ref<boolean>(false);
+const toggleActive = (): void => {
+    isActive.value = !isActive.value;
+};
+</script>
+
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap');
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
 
+.icon-button :deep(svg) {
+    color: #6D7586;
+    transition: color 0.3s ease;
+}
+
+.icon-button.active :deep(svg) {
+    color: #00B8D7;
+}
 .Trigger_box {
     height: 170px;
     padding: 20px;
@@ -136,11 +165,21 @@ import DropDown from "../../../../components/DropDown.vue";
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            transition: background 0.3s ease;
+            border: 1px solid #C9D4E4;
+            transition: background 0.3s ease, border 0.3s ease;
 
             .close-icon {
                 font-size: 24px;
                 color: #475569;
+                transition: color 0.3s ease;
+            }
+
+            &:active, &.active {
+                border-color: #00B8D7;
+
+                .close-icon {
+                    color: #00B8D7;
+                }
             }
         }
     }
@@ -171,8 +210,27 @@ import DropDown from "../../../../components/DropDown.vue";
                 margin-top: 5px;
             }
         }
-
     }
 }
+.DropDown button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg, img {
+        transition: fill 0.3s ease, color 0.3s ease;
+    }
+
+    &:active, &.active {
+        svg, img {
+            fill: #00B8D7 !important;
+            color: #00B8D7 !important;
+        }
+    }
+}
+
 
 </style>
