@@ -22,7 +22,7 @@
                                 :class="{ active: isActive }"
                                 @click="toggleActive"
                             >
-                                <Icon icon="solar:share-outline" width="24" height="24" />
+                                <Icon icon="solar:share-outline" width="24" height="24"/>
                             </button>
 
                         </template>
@@ -106,25 +106,19 @@
 <script setup lang="ts">
 import {Icon} from '@iconify/vue';
 import DropDown from "../../../../components/DropDown.vue";
-import { ref } from 'vue';
+import {ref} from 'vue';
 
 const isActive = ref<boolean>(false);
 const toggleActive = (): void => {
     isActive.value = !isActive.value;
 };
 
-// Логика для скрытия Trigger Box
-const hideTriggerBox = (event: Event): void => {
-    const button = event.target as HTMLElement;
-    const triggerBox = button.closest(".trigger-box") as HTMLElement;
-    if (triggerBox) {
-        triggerBox.classList.add("hidden"); // Скрывает Trigger Box
-    }
-};
 </script>
+
 
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap');
+
 .DropDown button {
     background: none;
     border: none;
@@ -136,6 +130,7 @@ const hideTriggerBox = (event: Event): void => {
     svg, img {
         transition: fill 0.3s ease, color 0.3s ease;
     }
+
     &:active, &.active {
         svg, img {
             fill: #00B8D7 !important;
@@ -143,6 +138,7 @@ const hideTriggerBox = (event: Event): void => {
         }
     }
 }
+
 .icon-button {
     background: none;
     border: none;
@@ -162,6 +158,7 @@ const hideTriggerBox = (event: Event): void => {
 .icon-button.active :deep(svg) {
     color: #00B8D7;
 }
+
 .Trigger_box {
     height: 170px;
     padding: 20px;
