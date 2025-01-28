@@ -222,7 +222,6 @@ import {Icon} from '@iconify/vue';
         }
     }
 
-
     .fare-details {
         font-size: 14px;
         color: #6c757d;
@@ -267,7 +266,8 @@ import {Icon} from '@iconify/vue';
         width: 191px;
         text-align: center;
         font-family: Mulish, sans-serif;
-        margin-top: 40px;
+        margin-top: 28px;
+        margin-left: 14px;
 
         .old-price {
             line-height: 19px;
@@ -285,6 +285,9 @@ import {Icon} from '@iconify/vue';
         .button-container {
             margin-top: 16px;
             width: 191px;
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
 
             .buy-btn {
                 background: #00B8D7;
