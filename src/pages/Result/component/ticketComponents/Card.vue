@@ -107,6 +107,7 @@ import DropDown from "../../../../components/DropDown.vue";
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap');
 
 .Trigger_box {
+    height: 170px;
     padding: 20px;
     background: #fff;
     border-radius: 12px;
