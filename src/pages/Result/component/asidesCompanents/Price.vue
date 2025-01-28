@@ -47,7 +47,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
     .item_box {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 12px;
 
         input[type="checkbox"] {
             appearance: none;
