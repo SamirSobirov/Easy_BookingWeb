@@ -43,6 +43,12 @@
         width: 25px;
         height: 20px;
     }
+
+    &:hover {
+        transition: 0.3s ease;
+        background-color: rgba(200, 200, 200, 0.42);
+
+    }
 }
 
 .breadcrumb-nav {
@@ -59,6 +65,14 @@
     color: #9399A8;
     border: none;
     background-color: transparent;
+    padding: 6px 6px;
+    border-radius: 8px;
+
+    &:hover {
+        transition: 0.3s ease;
+        background-color: rgba(200, 200, 200, 0.26);
+
+    }
 }
 
 .breadcrumb-separator {
@@ -71,6 +85,12 @@
     margin-left: 5px;
     color: #6D7586;
     font-weight: 500;
+
+    &:hover {
+        transition: 0.3s ease;
+        background-color: rgba(200, 200, 200, 0.26);
+
+    }
 }
 </style>
 
