@@ -15,7 +15,6 @@
                         <span class="close-icon">&times;</span>
                     </button>
                 </h1>
-
                 <div class="subscription-box">
                     <input type="email" placeholder="Электронная почта">
                     <button>Подписаться</button>
