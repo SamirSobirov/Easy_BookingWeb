@@ -11,7 +11,6 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   font-family: Arial, sans-serif;
   overflow: hidden;
-  //z-index: -1;
   backdrop-filter: blur(10px);
 
   .ticket-header {
@@ -23,8 +22,6 @@
     color: #FFFFFF;
     font-size: 14px;
     font-weight: bold;
-
-    //border-radius: 20px;
     padding: 8px 16px;
 
     background-color: #FFFFFFA6;
@@ -38,10 +35,7 @@
       align-items: center;
       gap: 10px;
 
-      .Bonus {
-        display: flex;
-        gap: 10px;
-      }
+
 
       .Header_btns {
         display: flex;
@@ -57,17 +51,6 @@
         }
       }
 
-      .getBonus {
-        width: 98px;
-        height: 20px;
-        padding: 3px 8px;
-        background-color: #7879F1;
-        border-radius: 50px;
-        font-size: 10px;
-        font-family: Mulish, sans-serif;
-        font-weight: 400;
-
-      }
     }
   }
 
@@ -106,27 +89,7 @@
         font-weight: 400;
       }
 
-      .route_line {
-        div {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin-top: -15px;
-        }
 
-        .route {
-          flex-grow: 1;
-          width: 165px;
-          border-bottom: 2px dashed #838C97;
-          margin-top: 2px;
-          margin-bottom: 20px;
-        }
-
-        span {
-          font-size: 12px;
-          color: #9399A8;
-        }
-      }
 
       .duration {
         font-size: 14px;
@@ -206,7 +169,6 @@
       padding-top: 2px;
     }
   }
-
 
   .price-info {
     border-left: 1px solid #E3E5ED;
