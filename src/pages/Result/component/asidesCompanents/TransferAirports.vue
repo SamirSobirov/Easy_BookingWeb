@@ -119,7 +119,6 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         flex-direction: column;
         gap: 12px;
 
-
         input[type="checkbox"] {
             appearance: none;
             -webkit-appearance: none;
@@ -138,7 +137,6 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
             border: 1.5px solid #00B8D7;
             background-color: #00B8D7;
 
-
             &::before {
                 content: "";
                 display: block;
@@ -150,14 +148,12 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
                 left: 5px;
                 top: 1px;
                 transform: rotate(45deg);
-
             }
         }
 
         .slider-full {
             background: linear-gradient(to right, #00B8D7 100%, #E3E5ED 0%);
         }
-
     }
 
     img.rotated {
@@ -192,7 +188,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
     label {
         width: 100%;
         display: flex;
-        align-items: center;  // Центрирование по вертикали
+        align-items: center; // Центрирование по вертикали
         gap: 12px;
         font-size: 14px;
         cursor: pointer;
@@ -201,7 +197,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         color: #23282D;
 
         input {
-            align-self: center;  // Центрирование внутри flex-контейнера
+            align-self: center; // Центрирование внутри flex-контейнера
         }
 
         div {
@@ -247,7 +243,6 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
             }
         }
     }
-
 
 
     .group {
