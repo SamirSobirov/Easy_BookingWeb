@@ -97,7 +97,6 @@ const toggleActive = (): void => {
 
 </script>
 
-
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap');
 
@@ -186,35 +185,6 @@ const toggleActive = (): void => {
                 .close-icon {
                     color: #00B8D7;
                 }
-            }
-        }
-    }
-
-    .icons {
-        margin-top: 24px;
-        display: flex;
-        justify-content: space-between;
-
-        .icon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 10px;
-            transition: background 0.3s;
-            font-family: 'Mulish', sans-serif;
-            font-size: 12px;
-            font-weight: 500;
-
-            img {
-                width: 40px;
-                height: 40px;
-            }
-
-            span {
-                color: #555;
-                margin-top: 5px;
             }
         }
     }
