@@ -124,8 +124,8 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            width: 15px;
-            height: 15px;
+            width: 18px;
+            height: 18px;
             border: 1px solid #B5BBC9;
             border-radius: 4px;
             outline: none;
@@ -147,8 +147,8 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
                 border: solid white;
                 border-width: 0 1.4px 1.4px 0;
                 position: absolute;
-                left: 3.5px;
-                top: -0.5px;
+                left: 5px;
+                top: 1px;
                 transform: rotate(45deg);
 
             }

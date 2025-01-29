@@ -93,8 +93,8 @@
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            width: 16px;
-            height: 15px;
+            width: 20px;
+            height: 18px;
             border: 1px solid #B5BBC9;
             border-radius: 4px;
             outline: none;
@@ -116,8 +116,8 @@
                 border: solid white;
                 border-width: 0 1.4px 1.4px 0;
                 position: absolute;
-                left: 3.4px;
-                top: -0.5px;
+                left: 5px;
+                top: 1px;
                 transform: rotate(45deg);
 
             }
