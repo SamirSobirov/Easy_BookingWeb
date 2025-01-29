@@ -31,8 +31,7 @@ const isOpen = ref(false)
     right: -15px;
     width: 412px;
     height: 170px;
-    background-color: #FFFFFF;
-    box-shadow: 0 5px 10px 5px #0000000D;
+    background-color: transparent;
 }
 }
 </style>

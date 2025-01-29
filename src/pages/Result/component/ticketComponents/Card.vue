@@ -26,7 +26,8 @@
                         </template>
                         <div class="Trigger_box">
                             <h1>Поделиться билетом
-                                <button class="triggerBtn" style="border: 1px solid #C9D4E4;">
+                                <button class="triggerBtn"
+                                        style="border: 1px solid #C9D4E4;" >
                                     <span class="close-icon">&times;</span>
                                 </button>
                             </h1>
