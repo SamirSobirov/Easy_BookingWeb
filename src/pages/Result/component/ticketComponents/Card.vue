@@ -1,10 +1,13 @@
 <template>
     <div class="ticket-card">
         <header class="ticket-header">
-
             <div class="header-content">
-
-                <BonusTicket />
+                <div class="Bonus">
+                    <img src="/src/assets/icons/Card_logo.svg" alt="">
+                    <div class="getBonus">
+                        <span>Получите 100 EP</span>
+                    </div>
+                </div>
 
                 <div class="Header_btns">
                     <button>
@@ -73,7 +76,6 @@ import {ref} from 'vue';
 import ShareTicket from "../../../../components/ShareTicket.vue";
 import RouteLine from "../../../../components/RouteLine.vue";
 import DateInfo from "../../../../components/DateInfo.vue";
-import BonusTicket from "../../../../components/BonusTicket.vue";
 
 const isActive = ref<boolean>(false);
 const toggleActive = (): void => {

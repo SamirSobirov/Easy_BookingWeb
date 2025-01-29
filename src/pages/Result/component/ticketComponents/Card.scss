@@ -35,7 +35,10 @@
       align-items: center;
       gap: 10px;
 
-
+      .Bonus {
+        display: flex;
+        gap: 10px;
+      }
 
       .Header_btns {
         display: flex;
@@ -51,6 +54,17 @@
         }
       }
 
+      .getBonus {
+        width: 98px;
+        height: 20px;
+        padding: 3px 8px;
+        background-color: #7879F1;
+        border-radius: 50px;
+        font-size: 10px;
+        font-family: Mulish, sans-serif;
+        font-weight: 400;
+
+      }
     }
   }
 
