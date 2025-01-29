@@ -46,7 +46,6 @@
 
 <style scoped lang="scss">
 .price {
-
     left: 50px;
     top: 25px;
     position: relative;
