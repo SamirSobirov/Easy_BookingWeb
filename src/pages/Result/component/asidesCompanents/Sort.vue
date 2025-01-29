@@ -90,7 +90,7 @@
             border-radius: 4px;
             outline: none;
             cursor: pointer;
-            background-color: transparent;
+            background-color: white;
             position: relative;
         }
 

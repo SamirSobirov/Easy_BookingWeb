@@ -130,7 +130,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
             border-radius: 4px;
             outline: none;
             cursor: pointer;
-            background-color: transparent;
+            background-color: #FFFFFF;
             position: relative;
         }
 
