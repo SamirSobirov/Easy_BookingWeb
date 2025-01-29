@@ -65,15 +65,9 @@
   color: #999;
 }
 
-.breadcrumb-item.active {
+.breadcrumb-itemSearch.active {
   font-size: 14px;
   margin-left: 5px;
   color: #6D7586;
   font-weight: 500;
-
-  &:hover {
-    transition: 0.3s ease;
-    background-color: rgba(200, 200, 200, 0.26);
-
-  }
 }

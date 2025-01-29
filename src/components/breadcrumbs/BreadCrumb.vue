@@ -8,7 +8,7 @@
         <nav class="breadcrumb-nav">
             <button class="breadcrumb-item" @click="goToHome">Главная</button>
             <span class="breadcrumb-separator">/</span>
-            <span class="breadcrumb-item active">Поиск</span>
+            <span class="breadcrumb-itemSearch active">Поиск</span>
         </nav>
     </div>
 </template>
