@@ -10,7 +10,20 @@
 
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
-                <DoubleRange />
+                <div class="slider-container">
+                    <div class="price-display"><span>Всего</span>  <span> до {{ formattedPrice }} UZS</span></div>
+                    <Slider
+                        :value="priceValue"
+                        @slide="priceValue = $event"
+                        :min="0"
+                        :max="20000000"
+                        :step="1000"
+                        :ticks="true"
+                        :tooltip="'none'"
+                        @input="updatePrice"
+                    />
+                </div>
+
            </div>
 
         </transition>
@@ -19,9 +32,25 @@
 
 
 <script setup lang="ts">
-import { ref} from 'vue';
-import DoubleRange from "./DoubleRange.vue";
+import { ref, computed, defineProps } from "vue";
+import Slider from "@vueform/slider";
+import "@vueform/slider/themes/default.css";
 
+const props = defineProps<{
+    initialPrice: number;
+}>();
+
+const priceValue = ref(props.initialPrice);
+
+const formattedPrice = computed(() => {
+    return new Intl.NumberFormat('ru-RU', {
+        style: 'decimal',
+        minimumFractionDigits: 2,
+    }).format(priceValue.value);
+});
+
+const updatePrice = () => {
+};
 const visibility = ref({
     transfers: true,
     baggage: true
@@ -32,5 +61,17 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped>
+.slider-container {
+    width: 218px;
+}
+
+.price-display {
+    font-size: 12px;
+    color: #7b8794;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
 </style>
