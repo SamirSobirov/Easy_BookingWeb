@@ -51,7 +51,7 @@ const sliderLabels = {
 <style scoped lang="scss">
 
 .RangeDouble {
-    font-family: Arial, sans-serif;
+    font-family: Mulish, sans-serif;
 }
 
 .slider-wrapper {
@@ -64,6 +64,7 @@ const sliderLabels = {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
+    color: #81899A;
     margin-bottom: 10px;
 }
 </style>
