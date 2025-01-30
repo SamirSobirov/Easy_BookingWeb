@@ -163,6 +163,8 @@ const toggleActive = (): void => {
 
             .close-icon {
                 font-size: 24px;
+                padding-bottom: 3px;
+                font-weight: bold;
                 color: #475569;
                 transition: color 0.3s ease;
             }
