@@ -33,7 +33,7 @@
                                     </button>
                                 </h1>
 
-                                <ShareTicket />
+                                <ShareTicket/>
                             </div>
                         </template>
                     </DropDown>
@@ -42,11 +42,11 @@
         </header>
         <div class="flight-info">
             <div class="departure-arrival">
-                <DateInfo time="20:10" date="25 мая, чт" city="Ташкент (TAS)" />
+                <DateInfo time="20:10" date="25 мая, чт" city="Ташкент (TAS)"/>
 
-            <RouteLine />
+                <RouteLine/>
 
-                <DateInfo time="23:05" date="25 мая, чт" city="Ташкент (TAS)" />
+                <DateInfo time="23:05" date="25 мая, чт" city="Ташкент (TAS)"/>
             </div>
 
             <a href="#" class="details-link">Детали маршрута <img src="/src/assets/icons/Cardarrow.svg" alt=""></a>
@@ -73,12 +73,12 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
+import {Icon} from '@iconify/vue';
 import DropDown from "../../../../components/DropDown.vue";
 import ShareTicket from "../../../../components/ShareTicket.vue";
 import RouteLine from "../../../../components/RouteLine.vue";
 import DateInfo from "../../../../components/DateInfo.vue";
-import { ref } from 'vue';
+import {ref} from 'vue';
 
 const isActive = ref<boolean>(false);
 const toggleActive = (): void => {
