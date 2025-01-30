@@ -27,9 +27,12 @@ import App from './App.vue'
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 
-const app = createApp(App);
+import vClickOutside from "click-outside-vue3"
 
+const app = createApp(App);
+app.use(vClickOutside)
 app.use(router);
+app.directive(vClickOutside.directive)
 app.component('VueDatePicker', VueDatePicker);
 app.mount('#app');
 

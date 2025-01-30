@@ -8,15 +8,15 @@
                 </button>
 
             </template>
-            <div class="price">
+            <div class="price" v-if="isSubscriptionBoxVisible">
                 <h1>Следить за ценой
-                    <button class="triggerBtn"
-                            style="border: 1px solid #C9D4E4;" >
+                    <button class="triggerBtn" style="border: 1px solid #C9D4E4;" @click="closeSubscriptionBox">
                         <span class="close-icon">&times;</span>
                     </button>
+
                 </h1>
-                <div class="subscription-box">
-                    <input type="email" placeholder="Электронная почта">
+                <div  class="subscription-box">
+                    <input type="email" placeholder="Электронная почта" />
                     <button>Подписаться</button>
                 </div>
             </div>
@@ -188,6 +188,7 @@ aside {
 </style>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import Baggage from "./asidesCompanents/Baggage.vue";
 import Transfers from "./asidesCompanents/Transfers.vue";
 import TravelTime from "./asidesCompanents/TravelTime.vue";
@@ -199,5 +200,9 @@ import Sort from "./asidesCompanents/Sort.vue";
 
 import DropDown from "../../../components/DropDown.vue";
 
+const isSubscriptionBoxVisible = ref(true);
 
+const closeSubscriptionBox = () => {
+    isSubscriptionBoxVisible.value = false;
+};
 </script>

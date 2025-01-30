@@ -24,15 +24,15 @@
                             </button>
 
                         </template>
-                        <div class="Trigger_box">
-                            <h1>Поделиться билетом
-                                <button class="triggerBtn"
-                                        style="border: 1px solid #C9D4E4;" >
+                        <div v-if="isBoxVisible" class="Trigger_box">
+                            <h1>
+                                Поделиться билетом
+                                <button class="triggerBtn" @click="closeBox" style="border: 1px solid #C9D4E4;">
                                     <span class="close-icon">&times;</span>
                                 </button>
                             </h1>
 
-                           <ShareTicket />
+                            <ShareTicket />
                         </div>
                     </DropDown>
                 </div>
@@ -71,18 +71,23 @@
 </template>
 
 <script setup lang="ts">
-import {Icon} from '@iconify/vue';
+import { Icon } from '@iconify/vue';
 import DropDown from "../../../../components/DropDown.vue";
-import {ref} from 'vue';
 import ShareTicket from "../../../../components/ShareTicket.vue";
 import RouteLine from "../../../../components/RouteLine.vue";
 import DateInfo from "../../../../components/DateInfo.vue";
+import { ref } from 'vue';
 
 const isActive = ref<boolean>(false);
 const toggleActive = (): void => {
     isActive.value = !isActive.value;
 };
 
+const isBoxVisible = ref<boolean>(true);
+const closeBox = (): void => {
+    isBoxVisible.value = false;
+    isActive.value = !isActive.value;
+};
 </script>
 
 <style scoped lang="scss">
