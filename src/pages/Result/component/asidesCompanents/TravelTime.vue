@@ -48,7 +48,7 @@ h3 {
 }
 
 .item_box {
-    width: 100%;
+    width: 218px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
