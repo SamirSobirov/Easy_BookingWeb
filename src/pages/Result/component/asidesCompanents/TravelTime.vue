@@ -11,14 +11,11 @@
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
 
-
                 <label>
                     <p>Всего
                         <span class="time" id="time">до {{ timeDisplay || 0 }}ч</span>
                     </p>
                 </label>
-
-
 
                 <input :class="{'slider-full': timeDisplay === 23}" type="range" id="slider" min="0" max="23" value="0" @input="updateTime">
             </div>
