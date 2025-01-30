@@ -52,7 +52,7 @@
 
         <div class="fare-details">
             <span>Тариф: <strong>Эконом Базовый</strong></span>
-            <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt="">
+            <button class="baggage">Без багажа<img src="/src/assets/icons/cardFareStop.svg" alt="">
 
             </button>
             <span class="return">Возвратный <img src="/src/assets/icons/CardCheckCircle.svg" alt=""></span>
