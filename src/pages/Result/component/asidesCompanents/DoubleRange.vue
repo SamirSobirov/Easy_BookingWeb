@@ -62,13 +62,12 @@ const sliderLabels = {
 }
 .slider-base {
     height: 4px !important;
-    background-color: #00B8D7 !important;
 }
 
-//.slider-connect {
-//    background-color: #00B8D7 !important;
-//    height: 4px !important;
-//}
+.slider-connect {
+    background-color: #00B8D7 !important;
+    height: 4px !important;
+}
 
 .slider-connect {
     background-color: #00B8D7 !important;
