@@ -8,18 +8,20 @@
                 </button>
 
             </template>
-            <div class="price" v-if="isSubscriptionBoxVisible">
-                <h1>Следить за ценой
-                    <button class="triggerBtn" style="border: 1px solid #C9D4E4;" @click="closeSubscriptionBox">
-                        <span class="close-icon">&times;</span>
-                    </button>
+            <template #default="{close}">
+                <div class="price">
+                    <h1>Следить за ценой
+                        <button class="triggerBtn" style="border: 1px solid #C9D4E4;" @click="close">
+                            <span class="close-icon">&times;</span>
+                        </button>
 
-                </h1>
-                <div  class="subscription-box">
-                    <input type="email" placeholder="Электронная почта" />
-                    <button>Подписаться</button>
+                    </h1>
+                    <div  class="subscription-box">
+                        <input type="email" placeholder="Электронная почта" />
+                        <button>Подписаться</button>
+                    </div>
                 </div>
-            </div>
+            </template>
         </DropDown>
 
 
@@ -42,6 +44,23 @@
         </div>
     </aside>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+import Baggage from "./asidesCompanents/Baggage.vue";
+import Transfers from "./asidesCompanents/Transfers.vue";
+import TravelTime from "./asidesCompanents/TravelTime.vue";
+import TransferAirports from "./asidesCompanents/TransferAirports.vue";
+import Alliances from "./asidesCompanents/Alliances.vue";
+import Price from "./asidesCompanents/Price.vue";
+import Airlines from "./asidesCompanents/Airlines.vue";
+import Sort from "./asidesCompanents/Sort.vue";
+
+import DropDown from "../../../components/DropDown.vue";
+</script>
+
+
+
 
 <style scoped lang="scss">
 .price {
@@ -186,23 +205,3 @@ aside {
     }
 }
 </style>
-
-<script setup lang="ts">
-import { ref } from 'vue';
-import Baggage from "./asidesCompanents/Baggage.vue";
-import Transfers from "./asidesCompanents/Transfers.vue";
-import TravelTime from "./asidesCompanents/TravelTime.vue";
-import TransferAirports from "./asidesCompanents/TransferAirports.vue";
-import Alliances from "./asidesCompanents/Alliances.vue";
-import Price from "./asidesCompanents/Price.vue";
-import Airlines from "./asidesCompanents/Airlines.vue";
-import Sort from "./asidesCompanents/Sort.vue";
-
-import DropDown from "../../../components/DropDown.vue";
-
-const isSubscriptionBoxVisible = ref(true);
-
-const closeSubscriptionBox = () => {
-    isSubscriptionBoxVisible.value = false;
-};
-</script>

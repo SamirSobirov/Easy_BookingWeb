@@ -24,16 +24,18 @@
                             </button>
 
                         </template>
-                        <div v-if="isBoxVisible" class="Trigger_box">
-                            <h1>
-                                Поделиться билетом
-                                <button class="triggerBtn" @click="closeBox" style="border: 1px solid #C9D4E4;">
-                                    <span class="close-icon">&times;</span>
-                                </button>
-                            </h1>
+                        <template #default="{ close }">
+                            <div class="Trigger_box">
+                                <h1>
+                                    Поделиться билетом
+                                    <button class="triggerBtn" @click="close" style="border: 1px solid #C9D4E4;">
+                                        <span class="close-icon">&times;</span>
+                                    </button>
+                                </h1>
 
-                            <ShareTicket />
-                        </div>
+                                <ShareTicket />
+                            </div>
+                        </template>
                     </DropDown>
                 </div>
             </div>

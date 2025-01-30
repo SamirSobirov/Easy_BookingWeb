@@ -3,7 +3,7 @@ import {ref} from "vue";
 
 const isOpen = ref(false)
 
-const onClickOutside = () => isOpen.value = false;
+const close = () => isOpen.value = false;
 </script>
 
 <template>
@@ -12,8 +12,8 @@ const onClickOutside = () => isOpen.value = false;
         <slot name="trigger"  />
     </div>
 
-    <div class="share-container" v-if="isOpen" v-click-outside="onClickOutside">
-        <slot />
+    <div class="share-container" v-if="isOpen" v-click-outside="close">
+        <slot :close="close"/>
 
 
     </div>
