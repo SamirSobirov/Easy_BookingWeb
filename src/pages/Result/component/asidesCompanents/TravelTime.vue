@@ -9,7 +9,7 @@
 
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
-                <TimerSlider :min="0" :max="1615" :initialTime="1615" />
+                <TimerSlider :min="0" :max="1615" :initialTime="0" />
             </div>
         </transition>
     </div>

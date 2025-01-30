@@ -1,6 +1,9 @@
 <template>
     <div class="slider-container">
-        <div class="time-display"><span>Всего</span>  <span>до {{ formattedMaxTime }}</span></div>
+        <div class="time-display">
+            <span>Всего</span>
+            <span>до {{ formattedMaxTime }}</span>
+        </div>
         <Slider
             :value="timeValue"
             @slide="timeValue = $event"
@@ -21,10 +24,10 @@ import "@vueform/slider/themes/default.css";
 const props = defineProps<{
     min: number;
     max: number;
-    initialTime: number;
+    initialTime?: number;
 }>();
 
-const timeValue = ref(props.initialTime);
+const timeValue = ref(props.initialTime ?? props.min);
 
 const formattedMaxTime = computed(() => formatTime(timeValue.value));
 
@@ -45,5 +48,4 @@ function formatTime(minutes: number): string {
     color: #7b8794;
     margin-bottom: 10px;
 }
-
 </style>
