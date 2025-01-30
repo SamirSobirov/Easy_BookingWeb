@@ -26,7 +26,6 @@ import { ref, computed } from "vue";
 import Slider from "@vueform/slider";
 import "@vueform/slider/themes/default.css";
 
-// Двойное значение ползунка
 const rangeValue = ref<[number, number]>([0, 196]);
 
 const formattedFromTime = computed(() => formatTime(rangeValue.value[0]));
@@ -38,7 +37,6 @@ function formatTime(value: number): string {
     return `${hours}ч ${minutes}мин`;
 }
 
-// Добавляем подписи на шкале
 const sliderLabels = {
     0: '0мин',
     60: '1ч',
