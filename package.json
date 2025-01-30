@@ -11,6 +11,8 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@heroicons/vue": "^2.2.0",
+    "@iconify/vue": "^4.1.2",
+    "@vueform/slider": "^2.1.10",
     "@vuepic/vue-datepicker": "^11.0.1",
     "axios": "^1.7.9",
     "flag-icon-css": "^4.1.7",
@@ -18,8 +20,7 @@
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
     "vue-slick-carousel": "^1.0.6",
-    "vue-slider-component": "^3.2.24",
-    "@iconify/vue": "^4.1.2"
+    "vue-slider-component": "^3.2.24"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",

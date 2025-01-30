@@ -1,55 +1,69 @@
 <template>
-    <div class="sliders_control">
-        <span>{{ formattedTime }}</span>
-        <input
-            id="fromSlider"
-            type="range"
-            v-model="fromValue"
-            :min="min"
-            :max="max"
-            @input="updateFromValue"
-        />
-        <input
-            id="toSlider"
-            type="range"
-            v-model="toValue"
-            :min="min"
-            :max="max"
-            @input="updateToValue"
-        />
+    <div class="RangeDouble">
+
+        <div class="slider-wrapper">
+            <div class="time-display">
+                <span>{{ formattedFromTime }}</span>
+                <span>{{ formattedToTime }}</span>
+            </div>
+
+            <Slider
+                v-model="rangeValue"
+                :min="0"
+                :max="196"
+                :tooltip="'none'"
+                :range="true"
+                :step="1"
+                :ticks="true"
+                :labels="sliderLabels"
+            />
+        </div>
     </div>
 </template>
 
-<style scoped lang="scss">
-
-</style>
-
 <script setup lang="ts">
-import {computed, ref} from "vue";
+import { ref, computed } from "vue";
+import Slider from "@vueform/slider";
+import "@vueform/slider/themes/default.css";
 
-const fromValue = ref(0);
-const toValue = ref(30);
+// Двойное значение ползунка
+const rangeValue = ref<[number, number]>([0, 196]);
 
-const min = ref(0);
-const max = ref(100);
+const formattedFromTime = computed(() => formatTime(rangeValue.value[0]));
+const formattedToTime = computed(() => formatTime(rangeValue.value[1]));
 
-
-const formattedTime = computed(() => {
-    const hours = Math.floor(toValue.value / 60);
-    const minutes = toValue.value % 60;
+function formatTime(value: number): string {
+    const hours = Math.floor(value / 60);
+    const minutes = value % 60;
     return `${hours}ч ${minutes}мин`;
-});
+}
 
-const updateFromValue = () => {
-    if (fromValue.value > toValue.value) {
-        fromValue.value = toValue.value;
-    }
-};
-
-const updateToValue = () => {
-    if (toValue.value < fromValue.value) {
-        toValue.value = fromValue.value;
-    }
+// Добавляем подписи на шкале
+const sliderLabels = {
+    0: '0мин',
+    60: '1ч',
+    120: '2ч',
+    180: '3ч',
+    196: '3ч 16мин'
 };
 </script>
 
+<style scoped lang="scss">
+
+.RangeDouble {
+    font-family: Arial, sans-serif;
+}
+
+.slider-wrapper {
+    width: 217px;
+    padding: 10px 0 0 0;
+
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+</style>
