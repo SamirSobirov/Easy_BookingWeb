@@ -85,11 +85,6 @@ const toggleActive = (): void => {
     isActive.value = !isActive.value;
 };
 
-const isBoxVisible = ref<boolean>(true);
-const closeBox = (): void => {
-    isBoxVisible.value = false;
-    isActive.value = !isActive.value;
-};
 </script>
 
 <style scoped lang="scss">

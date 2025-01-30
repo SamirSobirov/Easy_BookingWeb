@@ -46,7 +46,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import Baggage from "./asidesCompanents/Baggage.vue";
 import Transfers from "./asidesCompanents/Transfers.vue";
 import TravelTime from "./asidesCompanents/TravelTime.vue";
