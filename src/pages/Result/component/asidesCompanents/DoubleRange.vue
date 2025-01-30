@@ -48,7 +48,7 @@ const sliderLabels = {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 
 .RangeDouble {
     font-family: Mulish, sans-serif;
@@ -57,9 +57,19 @@ const sliderLabels = {
 .slider-wrapper {
     width: 217px;
     padding: 10px 0 0 0;
-
 }
 
+.slider-tooltip {
+    display: none !important;
+}
+
+.slider-connect {
+    background-color: #00B8D7 !important;
+}
+
+.slider-connect {
+    background-color: #00B8D7 !important;
+}
 .time-display {
     display: flex;
     justify-content: space-between;
