@@ -179,8 +179,8 @@ aside {
         border-radius: 18px;
         border: 1px solid #FFFFFFA6;
         hr {
-            margin: 15px 0 0 0;
-            width: 230px;
+            margin-top: 10px;
+            width: 225px;
             border: 1px solid #E3E5ED;
         }
     }

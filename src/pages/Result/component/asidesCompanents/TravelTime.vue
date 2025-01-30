@@ -11,13 +11,7 @@
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
 
-                <label>
-                    <p>Всего
-                        <span class="time" id="time">до {{ timeDisplay || 0 }}ч</span>
-                    </p>
-                </label>
-
-                <input :class="{'slider-full': timeDisplay === 23}" type="range" id="slider" min="0" max="23" value="0" @input="updateTime">
+              <PriceSlider />
             </div>
 
         </transition>
@@ -27,8 +21,8 @@
 
 <script setup lang="ts">
 import { ref} from 'vue';
+import PriceSlider from "../../../../components/PriceSlider.vue";
 
-const timeDisplay = ref(0);
 const visibility = ref({
     transfers: true,
     baggage: true
@@ -38,13 +32,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
     visibility.value[section] = !visibility.value[section];
 };
 
-const updateTime = (e:any) => {
-        const hours = e?.target?.value;
-    if ( hours) {
-        timeDisplay.value = hours;
-    }
-    console.log()
-};
+
 
 
 </script>

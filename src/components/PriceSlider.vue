@@ -1,6 +1,6 @@
 <template>
     <div class="slider-container">
-        <div class="price-display"><span>Всего</span>  <span> до {{ formattedPrice }} UZS</span></div>
+        <div class="price-display"><span style="color: #000000">Всего</span>  <span> до {{ formattedPrice }} UZS</span></div>
         <Slider
             :value="priceValue"
             @slide="priceValue = $event"
@@ -40,6 +40,9 @@ const updatePrice = () => {
 <style scoped>
 .slider-container {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .price-display {
