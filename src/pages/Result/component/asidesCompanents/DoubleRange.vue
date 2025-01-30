@@ -8,7 +8,8 @@
             </div>
 
             <Slider
-                v-model="rangeValue"
+                :value="rangeValue"
+                @slide="rangeValue = $event"
                 :min="0"
                 :max="196"
                 :tooltip="'none'"
