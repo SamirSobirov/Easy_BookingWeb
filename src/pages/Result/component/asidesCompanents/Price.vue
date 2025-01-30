@@ -30,8 +30,6 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
 
 <style scoped>
 .sidebar_item {
-    padding: 15px;
-    background-color: #f5f7fb;
     border-radius: 8px;
 }
 
@@ -50,6 +48,10 @@ h3 {
 }
 
 .item_box {
-    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
 }
 </style>

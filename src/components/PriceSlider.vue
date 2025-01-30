@@ -39,7 +39,7 @@ const updatePrice = () => {
 
 <style scoped>
 .slider-container {
-    width: 100%;
+    width: 218px;
     display: flex;
     flex-direction: column;
     gap: 5px;
