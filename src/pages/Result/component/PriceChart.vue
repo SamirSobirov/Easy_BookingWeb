@@ -19,10 +19,6 @@
     </div>
 </template>
 
-<style scoped lang="scss">
-
-</style>
-
 <script setup lang="ts">
 import { ref } from "vue";
 import "../style/PriceChart.scss";
@@ -54,3 +50,5 @@ const scrollRight = () => {
     }
 };
 </script>
+
+<style scoped lang="scss"></style>

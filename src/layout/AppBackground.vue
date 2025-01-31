@@ -51,8 +51,6 @@ watch(() => route.path, () => {
 onMounted(() => {
     generateSphere();
 });
-
-
 </script>
 
 <template>

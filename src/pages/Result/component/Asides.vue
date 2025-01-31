@@ -16,14 +16,13 @@
                         </button>
 
                     </h1>
-                    <div  class="subscription-box">
-                        <input type="email" placeholder="Электронная почта" />
+                    <div class="subscription-box">
+                        <input type="email" placeholder="Электронная почта"/>
                         <button>Подписаться</button>
                     </div>
                 </div>
             </template>
         </DropDown>
-
 
         <div class="sidebar">
             <Transfers/>
@@ -57,9 +56,6 @@ import Sort from "./asidesCompanents/Sort.vue";
 
 import DropDown from "../../../components/DropDown.vue";
 </script>
-
-
-
 
 <style scoped lang="scss">
 .price {
@@ -196,6 +192,7 @@ aside {
         width: 267px;
         border-radius: 18px;
         border: 1px solid #FFFFFFA6;
+
         hr {
             margin-top: 10px;
             width: 225px;

@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, defineProps } from "vue";
+import {ref, computed, defineProps} from "vue";
 import Slider from "@vueform/slider";
 import "@vueform/slider/themes/default.css";
 

@@ -14,8 +14,6 @@ import MainCards from "../components/OffersCard.vue";
 </script>
 
 <template>
-
-
     <main>
         <Slider />
         <mainCards />
@@ -31,6 +29,4 @@ import MainCards from "../components/OffersCard.vue";
     </main>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

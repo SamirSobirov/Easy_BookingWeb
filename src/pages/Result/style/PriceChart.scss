@@ -33,12 +33,10 @@
   color: #555;
   font-weight: 200;
   transition: color 0.3s;
-
   padding: 16px 16px;
 
   &:hover {
     color: #000;
-
   }
 }
 
@@ -46,13 +44,11 @@
   display: flex;
   gap: 10px;
   scroll-behavior: smooth;
-
   white-space: nowrap;
   overflow: hidden;
 }
 
 .price-item {
-
   align-items: center;
   margin: 0 auto;
   padding: 4px;

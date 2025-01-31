@@ -1,13 +1,10 @@
 <template>
     <div class="container">
-     <PriceChart />
-
+        <PriceChart/>
         <div class="box">
-
             <Asides/>
             <Ticket/>
             <main>
-
             </main>
         </div>
     </div>
@@ -30,8 +27,6 @@ body {
     max-width: 1140px;
     width: 1138px;
 }
-
-
 </style>
 
 

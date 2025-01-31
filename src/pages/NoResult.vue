@@ -2,11 +2,13 @@
     <div class="container">
         <img src="/src/assets/images/notFound.svg" alt="NOT FOUND">
         <p>По заданным параметрам поиска не найдено результатов
-
             <span>Рекомендуем попробовать другие даты для поиска.</span>
         </p>
     </div>
 </template>
+
+<script setup lang="ts"></script>
+
 
 <style>
 body {
@@ -15,13 +17,11 @@ body {
 </style>
 
 <style scoped lang="scss">
-
 .container {
     align-items: center;
     justify-content: center;
     text-align: center;
     margin-top: 170px;
-
 
     p {
         color: black;
@@ -43,8 +43,3 @@ body {
 
 }
 </style>
-
-
-<script setup lang="ts">
-
-</script>
