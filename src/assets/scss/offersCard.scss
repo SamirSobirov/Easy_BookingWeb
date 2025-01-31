@@ -134,7 +134,8 @@
             align-items: center;
             text-align: center;
             justify-content: center;
-            background-color: #ffffff;
+            background: rgba(255, 255, 255, 0.555);
+            backdrop-filter: blur(10px);
             color: #80dbeb;
             border: none;
             margin-top: 20px;
