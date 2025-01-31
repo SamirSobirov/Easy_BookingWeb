@@ -124,7 +124,6 @@
         }
 
         .price {
-            padding-right: 19px;
             font-size: 14px;
             color: #9399A8;
         }
