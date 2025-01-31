@@ -6,26 +6,21 @@
             <form class="login-form">
                 <div class="form-group">
                     <div class="floating-input">
-                        <input type="email" id="email" class="form-control" required/>
+                        <input type="email" id="email" class="form-control" required />
                         <label for="email">Email</label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="floating-input">
-                        <input
-                            type="password"
-                            id="password"
-                            class="form-control"
-                            required
-                        />
+                        <input type="password" id="password" class="form-control" required />
                         <label for="password">Пароль</label>
                     </div>
                 </div>
 
                 <div class="form-footer">
                     <label class="checkbox-label">
-                        <input type="checkbox"/>
+                        <input type="checkbox" />
                         Запомнить меня
                     </label>
                     <a href="#" class="forgot-password">Забыли пароль?</a>
@@ -39,21 +34,14 @@
     </div>
 </template>
 
-<script lang="ts">
-import {defineComponent} from "vue";
+<script setup lang="ts">
+import { defineEmits } from 'vue';
 
-export default defineComponent({
-    name: "SignModal",
-    emits: ["close"],
-    setup(_, {emit}) {
-        const close = () => {
-            emit("close");
-        };
-        return {
-            close,
-        };
-    },
-});
+const emit = defineEmits(["close"]);
+const close = () => {
+    emit("close");
+};
 </script>
+
 
 <style lang="scss" scoped></style>

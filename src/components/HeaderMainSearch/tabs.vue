@@ -1,38 +1,40 @@
 <template>
     <nav class="tabs">
-        <button class="tab active" data-tab="flights">
-            <img src="/src/assets/icons/plane_icon.svg" alt="plane"/>
-            Перелеты
-        </button>
-        <button class="tab" data-tab="hotels">
-            <img src="/src/assets/icons/hotel_icon.svg" alt="hotels"/>
-            Отели
-        </button>
-        <button class="tab" data-tab="train">
-            <img src="/src/assets/icons/train_icon.svg" alt="train"/>
-            Ж/Д
-        </button>
-        <button class="tab" data-tab="transfers">
-            <img src="/src/assets/icons/transport.svg" alt="transport"/>
-            Трансферы
-        </button>
-        <button class="tab" data-tab="tours">
-            <img src="/src/assets/icons/tours_icon.svg" alt="tours"/>
-            Туры
-        </button>
-        <button class="tab" data-tab="insurance">
-            <img src="/src/assets/icons/insurance_icon.svg" alt="insurance"/>
-            Страхование
+        <button
+            v-for="tab in tabs"
+            :key="tab.key"
+            :class="['tab', { active: activeTab === tab.key }]"
+            @click="setActiveTab(tab.key)"
+        >
+            <img :src="tab.icon" :alt="tab.alt" />
+            {{ tab.label }}
         </button>
     </nav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { ref } from "vue";
+import planeIcon from "/src/assets/icons/plane_icon.svg";
+import hotelIcon from "/src/assets/icons/hotel_icon.svg";
+import trainIcon from "/src/assets/icons/train_icon.svg";
+import transportIcon from "/src/assets/icons/transport.svg";
+import toursIcon from "/src/assets/icons/tours_icon.svg";
+import insuranceIcon from "/src/assets/icons/insurance_icon.svg";
 
-export default defineComponent({
-    name: "tabs",
-});
+const tabs = [
+    { key: "flights", icon: planeIcon, alt: "plane", label: "Перелеты" },
+    { key: "hotels", icon: hotelIcon, alt: "hotels", label: "Отели" },
+    { key: "train", icon: trainIcon, alt: "train", label: "Ж/Д" },
+    { key: "transfers", icon: transportIcon, alt: "transport", label: "Трансферы" },
+    { key: "tours", icon: toursIcon, alt: "tours", label: "Туры" },
+    { key: "insurance", icon: insuranceIcon, alt: "insurance", label: "Страхование" },
+];
+
+const activeTab = ref<string>("flights");
+
+const setActiveTab = (tab: string) => {
+    activeTab.value = tab;
+};
 </script>
 
 

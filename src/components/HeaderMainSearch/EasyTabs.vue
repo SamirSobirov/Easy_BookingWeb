@@ -16,7 +16,6 @@
 import {ref} from "vue";
 
 const activeButton = ref('avia');
-
 </script>
 
 <style scoped lang="scss">
@@ -26,7 +25,6 @@ const activeButton = ref('avia');
     background-color: rgba(223, 223, 223, 0.31);
     border-radius: 10px;
     display: flex;
-
     padding: 5px 5px;
 
     button {
@@ -41,10 +39,12 @@ const activeButton = ref('avia');
         text-align: center;
         justify-content: center;
         cursor: pointer;
+
         span {
             font-size: 16px;
             color: rgba(170, 170, 170, 0.66);
         }
+
         img {
             filter: brightness(0) invert(56%);
         }
@@ -54,9 +54,11 @@ const activeButton = ref('avia');
         transition: 0.1s;
         background-color: white;
         border: 1px solid #80dbeb;
+
         span {
             color: #80dbeb;
         }
+
         img {
             filter: brightness(0) saturate(100%) invert(90%) sepia(17%) saturate(1411%) hue-rotate(162deg) brightness(98%) contrast(89%);
         }

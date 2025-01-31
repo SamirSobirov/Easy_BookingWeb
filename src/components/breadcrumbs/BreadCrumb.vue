@@ -13,10 +13,6 @@
     </div>
 </template>
 
-<style scoped lang="scss">
-
-</style>
-
 <script setup lang="ts">
 import {useRouter} from 'vue-router';
 
@@ -25,3 +21,5 @@ const goToHome = () => {
     router.push('/');
 };
 </script>
+
+<style scoped lang="scss"></style>

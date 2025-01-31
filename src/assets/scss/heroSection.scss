@@ -74,10 +74,8 @@
         gap: 6px;
         display: flex;
         align-items: center;
-        // padding: 8px 12px;
         border: none;
         background-color: transparent;
-        // font-size: 14px;
         color: #6d7586;
         cursor: pointer;
 
@@ -89,7 +87,6 @@
         i {
           font-size: 1.2em;
         }
-
       }
 
       &--notification {
@@ -225,8 +222,6 @@
     }
   }
 
-
-  //
   .language-selector {
     margin-right: 30px;
     position: relative;
@@ -258,15 +253,12 @@
         text-align: center;
 
         .toogle_btn {
-          // padding: 5px;
           width: 90px;
           height: 35px;
           border-radius: 10px;
           font-weight: 500;
           background-color: #fff;
           color: #9399a8;
-          // color: #80dbeb;
-          // background-color:#80dbeb1d;
           border: none;
 
           &.active {

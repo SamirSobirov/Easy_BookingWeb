@@ -56,7 +56,6 @@
 
       .container {
         padding: 12px 15px;
-
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -105,7 +104,7 @@
             border-radius: 8px;
             display: block;
             color: #9399a8;
-            font-family: Mulish;
+            font-family: Mulish, sans-serif;
             font-size: 14px;
             font-weight: 200;
             white-space: nowrap;

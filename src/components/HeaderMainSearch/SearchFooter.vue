@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
     <div class="searchFooter">
         <button class="accommodation_button">
@@ -19,6 +15,6 @@
     </div>
 </template>
 
-<style scoped lang="scss">
+<script setup lang="ts"></script>
 
-</style>
+<style scoped lang="scss"></style>
