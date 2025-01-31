@@ -6,21 +6,21 @@
             <form class="login-form">
                 <div class="form-group">
                     <div class="floating-input">
-                        <input type="email" id="email" class="form-control" required />
+                        <input type="email" id="email" class="form-control" required/>
                         <label for="email">Email</label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="floating-input">
-                        <input type="password" id="password" class="form-control" required />
+                        <input type="password" id="password" class="form-control" required/>
                         <label for="password">Пароль</label>
                     </div>
                 </div>
 
                 <div class="form-footer">
                     <label class="checkbox-label">
-                        <input type="checkbox" />
+                        <input type="checkbox"/>
                         Запомнить меня
                     </label>
                     <a href="#" class="forgot-password">Забыли пароль?</a>
@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits } from 'vue';
+import {defineEmits} from 'vue';
 
 const emit = defineEmits(["close"]);
 const close = () => {
