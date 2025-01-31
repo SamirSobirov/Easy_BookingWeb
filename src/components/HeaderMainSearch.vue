@@ -20,8 +20,7 @@
                     />
                     <label
                         class="floating-label"
-                        :class="{ 'floating-label-error': errors.fromCity }"
-                    >Откуда</label>
+                        :class="{ 'floating-label-error': errors.fromCity }">Откуда</label>
                     <div class="dropdown" id="dropdown-from"></div>
                 </div>
 
