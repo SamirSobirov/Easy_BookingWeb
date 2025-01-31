@@ -53,7 +53,6 @@ import Alliances from "./asidesCompanents/Alliances.vue";
 import Price from "./asidesCompanents/Price.vue";
 import Airlines from "./asidesCompanents/Airlines.vue";
 import Sort from "./asidesCompanents/Sort.vue";
-
 import DropDown from "../../../components/DropDown.vue";
 </script>
 
