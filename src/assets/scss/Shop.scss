@@ -20,7 +20,8 @@
     }
 
     button {
-      background-color: #ffffffaa;
+      background: rgba(255, 255, 255, 0.555);
+      backdrop-filter: blur(10px);
       border: 2px solid #ffffffcc;
       border-radius: 50px;
       width: 141px;
@@ -50,11 +51,10 @@
       height: 100%;
       background: rgba(255, 255, 255, 0.555);
       backdrop-filter: blur(10px);
-      border-radius: 20px;
+      border-radius: 24px;
       border: 1px solid white;
       margin: 10px;
-      border-radius: 10px;
-      padding: 12px 0 0 0px;
+      padding: 12px 0 0 0;
 
       .container {
         padding: 12px 15px;
@@ -88,7 +88,7 @@
 
             gap: 20px;
             font-size: 13px;
-            padding: 0px 10px;
+            padding: 0 10px;
           }
         }
 
@@ -96,7 +96,7 @@
           background-color: #6a67f81f;
           color: #6a67f8;
           border-radius: 6px;
-          font-family: Mulish;
+          font-family: Mulish, sans-serif;
 
           gap: 20px;
           font-size: 13px;

@@ -5,7 +5,8 @@
   justify-content: center;
   max-width: 1128px;
   margin: 60px auto 0;
-  background: #ffffffaf;
+  background: rgba(255, 255, 255, 0.555);
+  backdrop-filter: blur(10px);
   height: 256px;
   border-radius: 24px;
 

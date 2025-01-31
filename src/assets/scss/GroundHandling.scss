@@ -44,7 +44,8 @@
         border: 1px solid #FFFFFF59;
         border-radius: 24px;
         height: 176px;
-        background: #ffffffc2;
+        background: rgba(255, 255, 255, 0.555);
+        backdrop-filter: blur(10px);
         display: flex;
         flex-direction: column;
         gap: 20px;

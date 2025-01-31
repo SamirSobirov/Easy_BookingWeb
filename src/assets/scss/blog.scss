@@ -18,7 +18,8 @@
     }
 
     button {
-      background-color: #ffffffaa;
+      background: rgba(255, 255, 255, 0.555);
+      backdrop-filter: blur(10px);
       border: 2px solid #ffffffcc;
       border-radius: 50px;
       width: 141px;
@@ -46,7 +47,8 @@
     .card {
       width: 365px;
       height: 338px;
-      background-color: #ffffffbd;
+      background: rgba(255, 255, 255, 0.555);
+      backdrop-filter: blur(10px);
       border-radius: 20px;
       border: 1px solid white;
       margin: 10px;
