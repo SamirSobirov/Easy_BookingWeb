@@ -59,5 +59,4 @@ const subscribe = () => {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
