@@ -4,12 +4,13 @@ import {ref} from "vue";
 const isOpen = ref(false)
 
 const close = () => isOpen.value = false;
+
 </script>
 
 <template>
 <div class="container">
     <div  @click="isOpen = !isOpen ">
-        <slot name="trigger"  />
+        <slot name="trigger"  :isOpen="isOpen" />
     </div>
 
     <div class="share-container" v-if="isOpen" v-click-outside="close">

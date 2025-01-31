@@ -14,11 +14,10 @@
                         <img src="/src/assets/icons/CardHeartOutline.svg" width="24" height="24" alt="">
                     </button>
                     <DropDown>
-                        <template #trigger>
+                        <template #trigger="{isOpen}">
                             <button
                                 class="icon-button"
-                                :class="{ active: isActive }"
-                                @click="toggleActive"
+                                :class="{ active: isOpen }"
                             >
                                 <Icon icon="solar:share-outline" width="24" height="24"/>
                             </button>
@@ -32,7 +31,6 @@
                                         <span class="close-icon">&times;</span>
                                     </button>
                                 </h1>
-
                                 <ShareTicket/>
                             </div>
                         </template>
@@ -78,12 +76,6 @@ import DropDown from "../../../../components/DropDown.vue";
 import ShareTicket from "../../../../components/ShareTicket.vue";
 import RouteLine from "../../../../components/RouteLine.vue";
 import DateInfo from "../../../../components/DateInfo.vue";
-import {ref} from 'vue';
-
-const isActive = ref<boolean>(false);
-const toggleActive = (): void => {
-    isActive.value = !isActive.value;
-};
 
 </script>
 
