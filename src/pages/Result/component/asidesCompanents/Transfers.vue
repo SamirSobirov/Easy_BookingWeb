@@ -1,11 +1,11 @@
 <template>
     <div class="sidebar_item">
-        <h3 @click="toggleVisibility('transfers')" style="cursor: pointer;">
-            Пересадки
+        <toggle-section @click="toggleVisibility('transfers')">
+            <span class="label">Пересадки</span>
             <button class="hideButton" @click.stop="toggleVisibility('transfers')">
                 <img :class="{ rotated: !visibility.transfers }" src="/src/assets/icons/arrow_down.svg" alt="arrow_down" />
             </button>
-        </h3>
+        </toggle-section>
         <transition name="fade">
             <div class="item_box" v-if="visibility.transfers">
 
@@ -107,29 +107,31 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         transition: transform 0.3s ease;
     }
 
-    h3 {
+    toggle-section {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        text-align: center;
         padding: 14px 16px 0 0;
         font-size: 16px;
         font-weight: 400;
         line-height: 20px;
+        cursor: pointer; /* Указатель на весь элемент */
+    }
 
-        button {
-            width: 20px;
-            height: 20px;
-            background-color: transparent;
-            border: none;
+    .hideButton {
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer; /* Указатель на кнопке */
 
-            img {
-                rotate: 180deg;
-                width: 15px;
-                height: 15px;
-            }
+        img {
+            rotate: 180deg;
+            width: 15px;
+            height: 15px;
         }
     }
+
 
     label {
         display: flex;

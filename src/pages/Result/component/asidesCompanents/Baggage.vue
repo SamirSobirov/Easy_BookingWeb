@@ -1,12 +1,12 @@
 <template>
     <div class="sidebar_item">
-        <h3 @click="toggleVisibility('baggage')" style="cursor: pointer;">
-            Багаж
-            <button class="hideButton" @click="toggleVisibility('baggage')">
-                <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg"
-                     alt="arrow_down"/>
+        <toggle-section @click="toggleVisibility('baggage')">
+            <span class="label">Багаж</span>
+            <button class="hideButton" @click.stop="toggleVisibility('baggage')">
+                <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg" alt="arrow_down" />
             </button>
-        </h3>
+        </toggle-section>
+
 
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
@@ -83,29 +83,31 @@
         transition: transform 0.3s ease;
     }
 
-    h3 {
+    toggle-section {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        text-align: center;
         padding: 14px 16px 0 0;
         font-size: 16px;
         font-weight: 400;
         line-height: 20px;
+        cursor: pointer; /* Указатель на весь элемент */
+    }
 
-        button {
-            width: 20px;
-            height: 20px;
-            background-color: transparent;
-            border: none;
+    .hideButton {
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer; /* Указатель на кнопке */
 
-            img {
-                rotate: 180deg;
-                width: 15px;
-                height: 15px;
-            }
+        img {
+            rotate: 180deg;
+            width: 15px;
+            height: 15px;
         }
     }
+
 
     label {
         display: flex;
