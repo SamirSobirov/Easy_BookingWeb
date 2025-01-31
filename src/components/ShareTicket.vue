@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
     <div class="icons">
         <div class="icon telegram">
@@ -26,6 +22,8 @@
         </div>
     </div>
 </template>
+
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .icons {

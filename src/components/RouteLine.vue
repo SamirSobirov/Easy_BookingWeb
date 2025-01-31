@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
     <div class="route_line">
         <div>
@@ -12,6 +8,8 @@
         <span class="way">в пути 4ч 35мин</span>
     </div>
 </template>
+
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .route_line {
