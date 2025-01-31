@@ -3,12 +3,12 @@
         <toggle-section @click="toggleVisibility('transfers')">
             <span class="label">Пересадки</span>
             <button class="hideButton" @click.stop="toggleVisibility('transfers')">
-                <img :class="{ rotated: !visibility.transfers }" src="/src/assets/icons/arrow_down.svg" alt="arrow_down" />
+                <img :class="{ rotated: !visibility.transfers }" src="/src/assets/icons/arrow_down.svg"
+                     alt="arrow_down"/>
             </button>
         </toggle-section>
         <transition name="fade">
             <div class="item_box" v-if="visibility.transfers">
-
                 <label>
                     <input name="toggle" type="checkbox"/>
                     <span>Без пересадок</span>
@@ -27,14 +27,12 @@
                     <span>Без смены аэропорта</span>
                 </label>
                 <DoubleRange/>
-
             </div>
         </transition>
     </div>
 </template>
 
 <script setup lang="ts">
-
 import DoubleRange from "./DoubleRange.vue";
 import {ref} from "vue";
 
@@ -47,7 +45,6 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
     visibility.value[section] = !visibility.value[section];
 };
 </script>
-
 
 
 <style scoped lang="scss">

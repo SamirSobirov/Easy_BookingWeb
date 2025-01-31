@@ -1,6 +1,5 @@
 <template>
     <div class="RangeDouble">
-
         <div class="slider-wrapper">
             <div class="time-display">
                 <span>{{ formattedFromTime }}</span>
@@ -23,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import {ref, computed} from "vue";
 import Slider from "@vueform/slider";
 import "@vueform/slider/themes/default.css";
 
@@ -48,7 +47,6 @@ const sliderLabels = {
 </script>
 
 <style lang="scss">
-
 .RangeDouble {
     font-family: Mulish, sans-serif;
 }
@@ -61,6 +59,7 @@ const sliderLabels = {
 .slider-tooltip {
     display: none !important;
 }
+
 .slider-base {
     height: 4px !important;
 }
@@ -73,6 +72,7 @@ const sliderLabels = {
 .slider-connect {
     background-color: #00B8D7 !important;
 }
+
 .time-display {
     display: flex;
     justify-content: space-between;
