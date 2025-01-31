@@ -225,8 +225,14 @@
   .language-selector {
     margin-right: 30px;
     position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
     .header__nav-button {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       .flag-icon {
         width: 25px;
         height: 20px;
