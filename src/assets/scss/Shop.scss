@@ -48,7 +48,8 @@
     .card {
       width: 365px;
       height: 100%;
-      background-color: #ffffff7a;
+      background: rgba(255, 255, 255, 0.555);
+      backdrop-filter: blur(10px);
       border-radius: 20px;
       border: 1px solid white;
       margin: 10px;
