@@ -4,55 +4,21 @@
             <div class="box1">
                 <h1>Скачайте приложение EASYBOOKING</h1>
                 <p style="text-align: left; font-family: sans-serif; font-size: 14px;">
-                    Уведомления о лучших ценах, данные пассажиров и информация по заказам
-                    у вас под рукой
+                    Уведомления о лучших ценах, данные пассажиров и информация по заказам у вас под рукой
                 </p>
 
                 <div class="elem">
-                    <div class="item1">
+                    <div v-for="(item, index) in appStores" :key="index" class="item1">
                         <p>
-                            +120K
-                            <span>Скачать в App Store</span>
+                            {{ item.downloads }}
+                            <span>{{ item.storeName }}</span>
                         </p>
 
                         <button>
-                            <img src="/src/assets/icons/apple.svg" alt=""/>
-
+                            <img :src="item.icon" :alt="item.alt" />
                             <div>
                                 <span>Доступно в</span>
-                                <span class="App">App store</span>
-                            </div>
-                        </button>
-                    </div>
-
-                    <div class="item1">
-                        <p>
-                            +170K
-                            <span> Скачать в Google Play</span>
-                        </p>
-
-                        <button>
-                            <img src="/src/assets/icons/GooglePlay.svg" alt=""/>
-
-                            <div>
-                                <span>Доступно в</span>
-                                <span class="App">Google Play</span>
-                            </div>
-                        </button>
-                    </div>
-
-                    <div class="item1">
-                        <p>
-                            +34K
-                            <span>Скачать в AppGallery</span>
-                        </p>
-
-                        <button>
-                            <img src="/src/assets/icons/huawei.svg" alt=""/>
-
-                            <div>
-                                <span>Доступно в</span>
-                                <span class="App">AppGallery</span>
+                                <span class="App">{{ item.storeLabel }}</span>
                             </div>
                         </button>
                     </div>
@@ -60,11 +26,37 @@
             </div>
 
             <div>
-                <img src="/src/assets/images/telephone.svg" alt=""/>
+                <img src="/src/assets/images/telephone.svg" alt="telephone" />
             </div>
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+const appStores = [
+    {
+        downloads: "+120K",
+        storeName: "Скачать в App Store",
+        icon: "/src/assets/icons/apple.svg",
+        alt: "App Store",
+        storeLabel: "App Store",
+    },
+    {
+        downloads: "+170K",
+        storeName: "Скачать в Google Play",
+        icon: "/src/assets/icons/GooglePlay.svg",
+        alt: "Google Play",
+        storeLabel: "Google Play",
+    },
+    {
+        downloads: "+34K",
+        storeName: "Скачать в AppGallery",
+        icon: "/src/assets/icons/huawei.svg",
+        alt: "AppGallery",
+        storeLabel: "AppGallery",
+    },
+];
+</script>
 
 <style lang="scss" scoped>
 .container {
@@ -73,7 +65,6 @@
     align-items: center;
     justify-content: center;
     max-width: 1138px;
-
     margin: 60px auto 0;
     background: rgba(255, 255, 255, 0.555);
     backdrop-filter: blur(10px);
@@ -88,20 +79,17 @@
         justify-content: center;
         text-align: center;
         margin-top: -30px;
-        padding: 43px 40px;
-        padding-left: 50px;
+        padding: 43px 40px 13px 50px;
 
         .box1 {
             padding-left: 30px;
             width: 562px;
-            // height: 260px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             gap: 20px;
-
 
             .elem {
                 display: flex;
@@ -155,7 +143,7 @@
                         border: none;
                         border-radius: 8px;
                         cursor: pointer;
-                        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
                         img {
                             width: 25px;
@@ -165,7 +153,6 @@
                         div {
                             display: flex;
                             flex-direction: column;
-
                             align-items: start;
                             justify-content: left;
 
@@ -207,11 +194,3 @@
     }
 }
 </style>
-
-<script lang="ts">
-import {defineComponent} from "vue";
-
-export default defineComponent({
-    name: "DownloadApp",
-});
-</script>

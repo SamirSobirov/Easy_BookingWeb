@@ -21,6 +21,7 @@ import './pages/Result/component/scss/doubleRange.scss'
 import './pages/Result/component/scss/price.scss'
 import './pages/Result/component/scss/sort.scss'
 import './pages/Result/component/scss/travelTime.scss'
+
 import router from "./pages/router";
 import App from './App.vue'
 import VueDatePicker from '@vuepic/vue-datepicker';
