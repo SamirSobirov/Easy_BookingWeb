@@ -2,7 +2,6 @@
     <div class="shop">
         <div class="shop__header">
             <h1>EASYBOOKING Shop</h1>
-
             <button>
                 Все товары
                 <img src="/src/assets/icons/arrow-right.svg" alt="Arrow Right" />
