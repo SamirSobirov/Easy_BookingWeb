@@ -1,6 +1,7 @@
 <template>
     <div class="slider-container">
-        <div class="price-display"><span style="color: #000000">Всего</span>  <span> до {{ formattedPrice }} UZS</span></div>
+        <div class="price-display"><span style="color: #000000">Всего</span> <span> до {{ formattedPrice }} UZS</span>
+        </div>
         <Slider
             :value="priceValue"
             @slide="priceValue = $event"
@@ -15,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, defineProps } from "vue";
+import {ref, computed, defineProps} from "vue";
 import Slider from "@vueform/slider";
 import "@vueform/slider/themes/default.css";
 

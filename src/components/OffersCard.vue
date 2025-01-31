@@ -4,90 +4,95 @@
             <h1>Акции и предложения</h1>
 
             <div class="offers-card__header-buttons">
-                <button class="button active" data-button="flights">
-                    <img src="/src/assets/icons/hotel_icon.svg" alt=""/>
-                    Перелеты
-                </button>
-
-                <button class="button" data-button="tours">
-                    <img src="/src/assets/icons/tours_icon.svg" alt=""/>
-                    Туры
-                </button>
-
-                <button class="button" data-button="train">
-                    <img src="/src/assets/icons/train_icon.svg" alt=""/>
-                    Ж/Д
+                <button
+                    v-for="(button, index) in buttons"
+                    :key="index"
+                    :class="['button', { active: activeButton === button.type }]"
+                    @click="setActiveButton(button.type)"
+                >
+                    <img :src="button.icon" :alt="button.alt"/>
+                    {{ button.label }}
                 </button>
             </div>
         </div>
 
         <div class="Cards">
-            <div class="card">
-                <img src="/src/assets/images/SharmELSheyx.svg" alt=""/>
+            <div v-for="(card, index) in cards" :key="index" class="card">
+                <img :src="card.image" :alt="card.alt"/>
                 <div class="container">
-                    <p>Отдых в Шарм-эль-Шейхе</p>
+                    <p>{{ card.title }}</p>
                     <span>
-                        <img src="/src/assets/icons/Calendar.svg" alt=""/>
-                        12.01.2024 - 18.02.2024
-                    </span>
-                    <span class="price">7 844 000 UZS </span>
-                </div>
-            </div>
-            <!-- 2 -->
-            <div class="card">
-                <img src="/src/assets/images/Georgia.svg" alt=""/>
-                <div class="container">
-                    <p>Чудеса Грузи</p>
-                    <span>
-                        <img src="/src/assets/icons/Calendar.svg" alt=""/> 12.01.2024 - 18.02.2024</span>
-                    <span class="price">7 844 000 UZS </span>
-                </div>
-            </div>
-            <!-- 3 -->
-            <div class="card">
-                <img src="/src/assets/images/Georgia2.svg" alt=""/>
-
-                <div class="container">
-                    <p>Чудеса Грузи</p>
-                    <span>
-              <img src="/src/assets/icons/Calendar.svg" alt=""/>
-              12.01.2024 - 18.02.2024
+            <img src="/src/assets/icons/Calendar.svg" alt="Calendar"/>
+            {{ card.date }}
           </span>
-                    <span class="price">7 844 000 UZS </span>
+                    <span class="price">{{ card.price }}</span>
                 </div>
             </div>
         </div>
 
         <div class="cardFooter">
             <button>
-                <img src="/src/assets/icons/ToKnow.svg" alt=""/>
-                <span>Узнать больще</span>
+                <img src="/src/assets/icons/ToKnow.svg" alt="To Know"/>
+                <span>Узнать больше</span>
             </button>
         </div>
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<script setup lang="ts">
+import {ref} from "vue";
 
-<script lang="ts">
-import {defineComponent, onMounted} from "vue";
+const activeButton = ref("flights");
 
-export default defineComponent({
-    name: "mainCards",
-
-    setup() {
-        onMounted(() => {
-            const buttons = document.querySelectorAll(
-                ".offers-card__header-buttons .button"
-            );
-
-            buttons.forEach((button) => {
-                button.addEventListener("click", () => {
-                    buttons.forEach((btn) => btn.classList.remove("active"));
-                    button.classList.add("active");
-                });
-            });
-        });
+const buttons = [
+    {
+        type: "flights",
+        label: "Перелеты",
+        icon: "/src/assets/icons/hotel_icon.svg",
+        alt: "Flights",
     },
-});
+    {
+        type: "tours",
+        label: "Туры",
+        icon: "/src/assets/icons/tours_icon.svg",
+        alt: "Tours",
+    },
+    {
+        type: "train",
+        label: "Ж/Д",
+        icon: "/src/assets/icons/train_icon.svg",
+        alt: "Train",
+    },
+];
+
+const cards = [
+    {
+        image: "/src/assets/images/SharmELSheyx.svg",
+        alt: "Sharm El Sheikh",
+        title: "Отдых в Шарм-эль-Шейхе",
+        date: "12.01.2024 - 18.02.2024",
+        price: "7 844 000 UZS",
+    },
+    {
+        image: "/src/assets/images/Georgia.svg",
+        alt: "Georgia",
+        title: "Чудеса Грузии",
+        date: "12.01.2024 - 18.02.2024",
+        price: "7 844 000 UZS",
+    },
+    {
+        image: "/src/assets/images/Georgia2.svg",
+        alt: "Georgia",
+        title: "Чудеса Грузии",
+        date: "12.01.2024 - 18.02.2024",
+        price: "7 844 000 UZS",
+    },
+];
+
+const setActiveButton = (type: string) => {
+    activeButton.value = type;
+};
 </script>
+
+<style lang="scss" scoped>
+</style>
