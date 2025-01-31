@@ -115,7 +115,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         font-size: 16px;
         font-weight: 400;
         line-height: 20px;
-        cursor: pointer; /* Указатель на весь элемент */
+        cursor: pointer;
     }
 
     .hideButton {
@@ -123,7 +123,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         height: 20px;
         background-color: transparent;
         border: none;
-        cursor: pointer; /* Указатель на кнопке */
+        cursor: pointer;
 
         img {
             rotate: 180deg;

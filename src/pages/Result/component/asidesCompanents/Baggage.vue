@@ -10,8 +10,6 @@
 
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
-
-
                 <label>
                     <input name="toggle" type="checkbox"/>
                     <div class="flex-container">
@@ -91,7 +89,7 @@
         font-size: 16px;
         font-weight: 400;
         line-height: 20px;
-        cursor: pointer; /* Указатель на весь элемент */
+        cursor: pointer;
     }
 
     .hideButton {
@@ -99,7 +97,7 @@
         height: 20px;
         background-color: transparent;
         border: none;
-        cursor: pointer; /* Указатель на кнопке */
+        cursor: pointer;
 
         img {
             rotate: 180deg;

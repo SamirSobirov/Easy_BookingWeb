@@ -1,12 +1,11 @@
 <template>
     <div class="sidebar_item">
-        <h3 @click="toggleVisibility('baggage')" style="cursor: pointer;">
-            Cортировка
-            <button class="hideButton" @click="toggleVisibility('baggage')">
-                <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg"
-                     alt="arrow_down"/>
+        <toggle-section @click="toggleVisibility('transfers')">
+            <span class="label">Cортировка</span>
+            <button class="hideButton" @click.stop="toggleVisibility('transfers')">
+                <img :class="{ rotated: !visibility.transfers }" src="/src/assets/icons/arrow_down.svg" alt="arrow_down" />
             </button>
-        </h3>
+        </toggle-section>
 
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">

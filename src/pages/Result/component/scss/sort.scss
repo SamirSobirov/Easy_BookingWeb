@@ -55,27 +55,28 @@
     transition: transform 0.3s ease;
   }
 
-  h3 {
+  toggle-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    text-align: center;
     padding: 14px 16px 0 0;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
+    cursor: pointer
+  }
 
-    button {
-      width: 20px;
-      height: 20px;
-      background-color: transparent;
-      border: none;
+  .hideButton {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 
-      img {
-        rotate: 180deg;
-        width: 15px;
-        height: 15px;
-      }
+    img {
+      rotate: 180deg;
+      width: 15px;
+      height: 15px;
     }
   }
 

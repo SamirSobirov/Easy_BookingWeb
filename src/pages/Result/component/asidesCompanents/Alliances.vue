@@ -1,12 +1,11 @@
 <template>
     <div class="sidebar_item">
-        <h3 @click="toggleVisibility('baggage')" style="cursor: pointer;">
-            Альянсы
-            <button class="hideButton" @click="toggleVisibility('baggage')">
-                <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg"
-                     alt="arrow_down"/>
+        <toggle-section @click="toggleVisibility('baggage')">
+            <span class="label">Альянсы</span>
+            <button class="hideButton" @click.stop="toggleVisibility('baggage')">
+                <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg" alt="arrow_down" />
             </button>
-        </h3>
+        </toggle-section>
 
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
@@ -109,29 +108,30 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         transition: transform 0.3s ease;
     }
 
-    h3 {
+    toggle-section {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        text-align: center;
         padding: 14px 16px 0 0;
         font-size: 16px;
         font-weight: 400;
         line-height: 20px;
+        cursor: pointer;
+    }
 
-        button {
-            width: 20px;
-            height: 20px;
-            background-color: transparent;
-            border: none;
-
-            img {
-                rotate: 180deg;
-                width: 15px;
-                height: 15px;
-            }
+    .hideButton {
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        img {
+            rotate: 180deg;
+            width: 15px;
+            height: 15px;
         }
     }
+
 
     label {
         display: flex;
@@ -149,7 +149,6 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
             width: 100%;
         }
         .price {
-            padding-right: 19px;
             font-size: 14px;
             color: #9399A8;
         }

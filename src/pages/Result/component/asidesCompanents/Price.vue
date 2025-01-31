@@ -1,11 +1,12 @@
 <template>
     <div class="sidebar_item">
-        <h3 @click="toggleVisibility('baggage')" style="cursor: pointer;">
-            Стоимость
+        <toggle-section @click="toggleVisibility('baggage')">
+            <span class="label">Стоимость</span>
             <button class="hideButton" @click.stop="toggleVisibility('baggage')">
                 <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg" alt="arrow_down" />
             </button>
-        </h3>
+        </toggle-section>
+
 
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
@@ -33,19 +34,31 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
     border-radius: 8px;
 }
 
-h3 {
+toggle-section {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px 0 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    cursor: pointer;
 }
 
-.hideButton img {
-    transition: transform 0.3s ease;
+.hideButton {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    img {
+        rotate: 180deg;
+        width: 15px;
+        height: 15px;
+    }
 }
 
-.hideButton img.rotated {
-    transform: rotate(180deg);
-}
 
 .item_box {
     width: 100%;
