@@ -20,8 +20,6 @@
                         <span class="ball">{{ product.points }}</span>
                     </div>
 
-
-
                     <span class="price">{{ product.price }}</span>
                     <span>{{ product.name }}</span>
                 </div>
