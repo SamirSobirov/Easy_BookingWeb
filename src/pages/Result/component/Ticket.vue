@@ -4,6 +4,10 @@
         <div class="containerFooter">
             <Card/>
             <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
         </div>
 
 
