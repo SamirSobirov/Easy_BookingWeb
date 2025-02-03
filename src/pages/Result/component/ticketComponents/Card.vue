@@ -185,6 +185,7 @@ import DateInfo from "../../../../components/DateInfo.vue";
 }
 
 .details-box {
+    font-family: Mulish, sans-serif;
     margin-top: -235px;
     margin-left: -680px;
     width: 1000px;
@@ -198,12 +199,12 @@ import DateInfo from "../../../../components/DateInfo.vue";
     flex-direction: column;
 
     h1 {
+        font-family: Mulish, sans-serif;
         display: flex;
         align-items: center;
         justify-content: space-between;
         font-size: 18px;
         font-weight: 600;
-        font-family: 'Mulish', sans-serif;
         color: black;
         margin-bottom: 15px;
 
