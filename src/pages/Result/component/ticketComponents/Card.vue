@@ -1,8 +1,5 @@
 <template>
     <article class="ticket-card">
-
-        <div class="containerFlex">
-
         <header class="ticket-header">
             <div class="header-content">
                 <div class="bonus">
@@ -19,7 +16,7 @@
                     <DropDown>
                         <template #trigger="{ isOpen }">
                             <button class="icon-button" :class="{ active: isOpen }">
-                                <Icon icon="solar:share-outline" width="24" height="24" />
+                                <Icon icon="solar:share-outline" width="24" height="24"/>
                             </button>
                         </template>
 
@@ -27,9 +24,10 @@
                             <div class="dropdown-content">
                                 <h1>
                                     Поделиться билетом
-                                    <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
+                                    <button class="trigger-btn" @click="close"><span class="close-icon">×</span>
+                                    </button>
                                 </h1>
-                                <ShareTicket />
+                                <ShareTicket/>
                             </div>
                         </template>
                     </DropDown>
@@ -40,14 +38,15 @@
         <section class="flight-info">
 
             <div class="departure-arrival">
-                <DateInfo time="20:10" date="25 мая, чт" city="Ташкент (TAS)" />
-                <RouteLine />
-                <DateInfo time="23:05" date="25 мая, чт" city="Ташкент (TAS)" />
+                <DateInfo time="20:10" date="25 мая, чт" city="Ташкент (TAS)"/>
+                <RouteLine/>
+                <DateInfo time="23:05" date="25 мая, чт" city="Ташкент (TAS)"/>
             </div>
 
             <section class="fare-details">
                 <p>Тариф: <strong>Эконом Базовый</strong></p>
-                <button class="baggage">Без багажа <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
+                <button class="baggage">Без багажа <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon">
+                </button>
                 <p class="return">Возвратный <img src="/src/assets/icons/CardCheckCircle.svg" alt="check-icon"></p>
             </section>
 
@@ -61,22 +60,43 @@
             </footer>
 
         </section>
-            <DropDown>
-                <template #trigger>
-                    <button class="details-link" style="margin: 5px 0 0 16px">
-                        Детали маршрута
-                        <img src="/src/assets/icons/Cardarrow.svg" alt="arrow-icon">
-                    </button>
-                </template>
-                <div class="details-box">
-                    <h1>
-                        Поделиться билетом
-                        <button class="trigger-btn"><span class="close-icon">×</span></button>
-                    </h1>
-                    <ShareTicket />
+        <DropDown>
+            <template #trigger>
+                <button class="details-link" style="margin: 5px 0 0 16px">
+                    Детали маршрута
+                    <img src="/src/assets/icons/Cardarrow.svg" alt="arrow-icon">
+                </button>
+
+            </template>
+            <div class="details-box">
+                <div class="headerbtns">
+                    <div class="modal-header">Детализация цен</div>
+                    <button class="trigger-btn"><span class="close-icon">×</span></button>
                 </div>
-            </DropDown>
-        </div>
+                <table class="price-table">
+                    <thead>
+                    <tr>
+                        <th>Пассажиры</th>
+                        <th>Общая стоимость за одного пассажира</th>
+                        <th>Общая стоимость</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>3 Взрослых</td>
+                        <td>1 500 000 UZS</td>
+                        <td>4 500 000 UZS</td>
+                    </tr>
+                    <tr>
+                        <td>1 ребенок</td>
+                        <td>1 150 000 UZS</td>
+                        <td>1 150 000 UZS</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="total">Всего: <span>100 000.77 UZS</span></div>
+            </div>
+        </DropDown>
     </article>
 </template>
 
@@ -190,25 +210,23 @@ import DateInfo from "../../../../components/DateInfo.vue";
     margin-left: -680px;
     width: 1000px;
     height: 308px;
-    padding: 20px;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     display: flex;
     flex-direction: column;
+    padding: 20px 24px;
 
-    h1 {
-        font-family: Mulish, sans-serif;
+    .headerbtns {
         display: flex;
         align-items: center;
+        text-align: left;
         justify-content: space-between;
-        font-size: 18px;
-        font-weight: 600;
-        color: black;
-        margin-bottom: 15px;
+        font-family: Mulish, sans-serif;
 
         .trigger-btn {
+            padding: 0 0 3px 1px;
             background: none;
             cursor: pointer;
             display: flex;
@@ -217,13 +235,14 @@ import DateInfo from "../../../../components/DateInfo.vue";
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            border: 1px solid #C9D4E4;
+            border: 1px solid #B5BBC9;
             transition: background 0.3s ease, border 0.3s ease;
 
             .close-icon {
                 font-size: 24px;
-                padding-bottom: 3px;
-                color: #475569;
+                font-family: Mulish, sans-serif;
+
+                color: #81899A;
                 transition: color 0.3s ease;
             }
 
@@ -235,6 +254,63 @@ import DateInfo from "../../../../components/DateInfo.vue";
                 }
             }
         }
+    }
+
+    .modal-header {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: left;
+
+    }
+
+    .price-table {
+        border: 1px solid #B5BBC9;
+        border-collapse: collapse;
+        margin-top: 15px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .price-table th,
+    .price-table td {
+
+        padding: 10px;
+        border: 1px solid #dcdcdc;
+        text-align: left;
+    }
+
+    .price-table th {
+
+        width: 317px;
+        height: 56px;
+        background-color: #f4f4f4;
+        color: #6D7586;
+        font-size: 15px;
+        font-family: Mulish, sans-serif;
+        font-weight: 400;
+    }
+
+    .price-table td {
+        width: 317px;
+        height: 56px;
+        font-size: 16px;
+        font-family: Mulish, sans-serif;
+        color: #212121;
+        font-weight: 600;
+    }
+
+    .total {
+        font-size: 20px;
+        font-weight: 500;
+        text-align: right;
+        color: #00B8D7;
+    }
+
+    .total span {
+        font-size: 20px;
+        font-weight: 700;
+        color: #00B8D7;
     }
 }
 
