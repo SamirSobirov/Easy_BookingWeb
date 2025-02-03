@@ -120,7 +120,9 @@
       text-align: left;
       cursor: pointer;
       text-decoration: none;
-      padding-top: 60px;
+      background-color: transparent;
+      border: none;
+      margin-top: 60px;
 
       &:hover {
         text-decoration: underline;

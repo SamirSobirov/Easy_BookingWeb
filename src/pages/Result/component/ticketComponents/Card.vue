@@ -47,7 +47,7 @@
                 <DateInfo time="23:05" date="25 мая, чт" city="Ташкент (TAS)"/>
             </div>
 
-            <a href="#" class="details-link">Детали маршрута <img src="/src/assets/icons/Cardarrow.svg" alt=""></a>
+            <button class="details-link">Детали маршрута <img src="/src/assets/icons/Cardarrow.svg" alt=""></button>
         </div>
 
         <div class="fare-details">
