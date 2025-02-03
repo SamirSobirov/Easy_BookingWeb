@@ -63,7 +63,7 @@
         </section>
             <DropDown>
                 <template #trigger>
-                    <button class="details-link" style="margin: -10px 0 0 16px">
+                    <button class="details-link" style="margin: 5px 0 0 16px">
                         Детали маршрута
                         <img src="/src/assets/icons/Cardarrow.svg" alt="arrow-icon">
                     </button>
@@ -140,6 +140,59 @@ import DateInfo from "../../../../components/DateInfo.vue";
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: 'Mulish', sans-serif;
+        color: black;
+        margin-bottom: 15px;
+
+        .trigger-btn {
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid #C9D4E4;
+            transition: background 0.3s ease, border 0.3s ease;
+
+            .close-icon {
+                font-size: 24px;
+                padding-bottom: 3px;
+                color: #475569;
+                transition: color 0.3s ease;
+            }
+
+            &:active, &.active {
+                border-color: #00B8D7;
+
+                .close-icon {
+                    color: #00B8D7;
+                }
+            }
+        }
+    }
+}
+
+.details-box {
+    margin-top: -235px;
+    margin-left: -680px;
+    width: 1000px;
+    height: 308px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     display: flex;
     flex-direction: column;
