@@ -10,7 +10,6 @@
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
 
-
                 <div class="group">
                     <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
                         <g>
@@ -84,10 +83,8 @@
     </div>
 </template>
 
-
 <script setup lang="ts">
 import {ref} from 'vue';
-
 
 const visibility = ref({
     transfers: true,
@@ -166,7 +163,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         font-size: 16px;
         font-weight: 400;
         line-height: 20px;
-        cursor: pointer; /* Указатель на весь элемент */
+        cursor: pointer;
     }
 
     .hideButton {
@@ -174,7 +171,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         height: 20px;
         background-color: transparent;
         border: none;
-        cursor: pointer; /* Указатель на кнопке */
+        cursor: pointer;
 
         img {
             rotate: 180deg;
