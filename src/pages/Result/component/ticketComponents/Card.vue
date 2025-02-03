@@ -27,7 +27,7 @@
                             <div class="dropdown-content">
                                 <h1>
                                     Поделиться билетом
-                                    <button class="trigger-btn" @click="close">×</button>
+                                    <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
                                 </h1>
                                 <ShareTicket />
                             </div>
@@ -71,7 +71,7 @@
                 <div class="details-box">
                     <h1>
                         Поделиться билетом
-                        <button class="trigger-btn">×</button>
+                        <button class="trigger-btn"><span class="close-icon">×</span></button>
                     </h1>
                     <ShareTicket />
                 </div>
@@ -133,7 +133,7 @@ import DateInfo from "../../../../components/DateInfo.vue";
     color: #00B8D7;
 }
 
-.Trigger_box {
+.dropdown-content {
     height: 170px;
     padding: 20px;
     background: #fff;
@@ -154,7 +154,7 @@ import DateInfo from "../../../../components/DateInfo.vue";
         color: black;
         margin-bottom: 15px;
 
-        .triggerBtn {
+        .trigger-btn {
             background: none;
             cursor: pointer;
             display: flex;
@@ -169,7 +169,6 @@ import DateInfo from "../../../../components/DateInfo.vue";
             .close-icon {
                 font-size: 24px;
                 padding-bottom: 3px;
-                font-weight: bold;
                 color: #475569;
                 transition: color 0.3s ease;
             }
