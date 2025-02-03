@@ -38,6 +38,7 @@
                 </div>
             </div>
         </header>
+
         <div class="flight-info">
             <div class="departure-arrival">
                 <DateInfo time="20:10" date="25 мая, чт" city="Ташкент (TAS)"/>
@@ -173,6 +174,5 @@ import DateInfo from "../../../../components/DateInfo.vue";
         }
     }
 }
-
 
 </style>
