@@ -66,38 +66,37 @@
                     Детали маршрута
                     <img src="/src/assets/icons/Cardarrow.svg" alt="arrow-icon">
                 </button>
-
             </template>
 
             <template #default="{ close }">
-            <div class="details-box" >
-                <div class="headerbtns">
-                    <div class="modal-header">Детализация цен</div>
-                    <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
+                <div class="details-box">
+                    <div class="headerbtns">
+                        <div class="modal-header">Детализация цен</div>
+                        <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
+                    </div>
+                    <table class="price-table">
+                        <thead>
+                        <tr>
+                            <th>Пассажиры</th>
+                            <th>Общая стоимость за одного пассажира</th>
+                            <th>Общая стоимость</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>3 Взрослых</td>
+                            <td>1 500 000 UZS</td>
+                            <td>4 500 000 UZS</td>
+                        </tr>
+                        <tr>
+                            <td>1 ребенок</td>
+                            <td>1 150 000 UZS</td>
+                            <td>1 150 000 UZS</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="total">Всего: <span>100 000.77 UZS</span></div>
                 </div>
-                <table class="price-table">
-                    <thead>
-                    <tr>
-                        <th>Пассажиры</th>
-                        <th>Общая стоимость за одного пассажира</th>
-                        <th>Общая стоимость</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>3 Взрослых</td>
-                        <td>1 500 000 UZS</td>
-                        <td>4 500 000 UZS</td>
-                    </tr>
-                    <tr>
-                        <td>1 ребенок</td>
-                        <td>1 150 000 UZS</td>
-                        <td>1 150 000 UZS</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="total">Всего: <span>100 000.77 UZS</span></div>
-            </div>
             </template>
         </DropDown>
     </article>
@@ -264,7 +263,6 @@ import DateInfo from "../../../../components/DateInfo.vue";
         font-weight: bold;
         margin-bottom: 10px;
         text-align: left;
-
     }
 
     .price-table {
