@@ -68,10 +68,12 @@
                 </button>
 
             </template>
-            <div class="details-box">
+
+            <template #default="{ close }">
+            <div class="details-box" >
                 <div class="headerbtns">
                     <div class="modal-header">Детализация цен</div>
-                    <button class="trigger-btn"><span class="close-icon">×</span></button>
+                    <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
                 </div>
                 <table class="price-table">
                     <thead>
@@ -96,6 +98,7 @@
                 </table>
                 <div class="total">Всего: <span>100 000.77 UZS</span></div>
             </div>
+            </template>
         </DropDown>
     </article>
 </template>
