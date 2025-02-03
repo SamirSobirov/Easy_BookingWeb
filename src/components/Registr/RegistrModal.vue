@@ -20,7 +20,7 @@
 
                 <div class="form-footer">
                     <label class="checkbox-label">
-                        <input type="checkbox"/>
+                        <input name="toggle" type="checkbox"/>
                         Запомнить меня
                     </label>
                     <a href="#" class="forgot-password">Забыли пароль?</a>
