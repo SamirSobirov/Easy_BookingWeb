@@ -256,7 +256,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
             width: 245px;
             height: 34px;
             line-height: 28px;
-            padding: 0 2rem;
+            padding: 0 1rem;
             padding-left: 2.5rem;
             border-radius: 8px;
             outline: none;
