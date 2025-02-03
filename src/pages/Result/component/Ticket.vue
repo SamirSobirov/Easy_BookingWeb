@@ -1,47 +1,36 @@
 <template>
     <div class="box">
-        <div class="container">
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-        </div>
+        <asides/>
         <div class="containerFooter">
-            <Footer/>
+            <Card/>
+            <Card/>
         </div>
+
+
     </div>
 </template>
 
 <script setup lang="ts">
 
 import Card from "./ticketComponents/Card.vue";
-import Footer from "../../../components/Footer.vue";
+import Asides from "./Asides.vue";
 </script>
 
 <style scoped lang="scss">
 .box {
-    align-items: center;
-    justify-content: center;
+    max-width: 1138px;
+    width: 1138px;
     display: flex;
-    flex-direction: column;
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        margin-left: 20px;
-    }
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
 
     .containerFooter {
-        align-items: center;
-        justify-content: center;
+        gap: 20px;
         display: flex;
-        margin-left: -265px;
-        margin-bottom: -10px;
+        flex-direction: column;
+        margin-top: 0;
     }
 }
+
 </style>

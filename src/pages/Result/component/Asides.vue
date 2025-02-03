@@ -41,6 +41,8 @@
             <hr>
             <Sort style="margin-bottom: 15px;"/>
         </div>
+
+        <Footer />
     </aside>
 </template>
 
@@ -54,6 +56,7 @@ import Price from "./asidesCompanents/Price.vue";
 import Airlines from "./asidesCompanents/Airlines.vue";
 import Sort from "./asidesCompanents/Sort.vue";
 import DropDown from "../../../components/DropDown.vue";
+import Footer from "../../../components/Footer.vue";
 </script>
 
 <style scoped lang="scss">
@@ -157,7 +160,6 @@ import DropDown from "../../../components/DropDown.vue";
 }
 
 aside {
-    margin-top: 11px;
     width: 265px;
     height: 100%;
     display: flex;
