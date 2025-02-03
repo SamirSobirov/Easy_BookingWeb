@@ -169,6 +169,7 @@ aside {
     gap: 14px;
 
     .folowPrice {
+        cursor: pointer;
         backdrop-filter: blur(10px);
         padding: 16px;
         width: 267px;
