@@ -257,7 +257,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
             height: 34px;
             line-height: 28px;
             padding: 0 1rem;
-            padding-left: 2.5rem;
+            padding-left: 2rem;
             border-radius: 8px;
             outline: none;
             border: 1px solid #47556933;
@@ -272,7 +272,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
 
         .icon {
             position: absolute;
-            left: 1rem;
+            left: 8px;
             fill: #9e9ea7;
             width: 1rem;
             height: 1rem;
