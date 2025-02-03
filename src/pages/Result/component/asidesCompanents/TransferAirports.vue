@@ -260,6 +260,7 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
             background-color: transparent;
             color: #0d0c22;
             transition: 0.3s ease;
+            text-align: left;
         }
 
         .input::placeholder {
