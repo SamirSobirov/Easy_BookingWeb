@@ -9,13 +9,10 @@
             <Card/>
             <Card/>
         </div>
-
-
     </div>
 </template>
 
 <script setup lang="ts">
-
 import Card from "./ticketComponents/Card.vue";
 import Asides from "./Asides.vue";
 </script>
@@ -33,8 +30,6 @@ import Asides from "./Asides.vue";
         gap: 20px;
         display: flex;
         flex-direction: column;
-        margin-top: 0;
     }
 }
-
 </style>

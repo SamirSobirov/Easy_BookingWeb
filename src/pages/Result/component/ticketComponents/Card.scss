@@ -9,7 +9,6 @@
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   font-family: Arial, sans-serif;
-  overflow: hidden;
   backdrop-filter: blur(10px);
 
   .ticket-header {
@@ -22,8 +21,9 @@
     font-size: 14px;
     font-weight: bold;
     padding: 8px 16px;
-
     background-color: #FFFFFFA6;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 
     .header-content {
       height: 20px;

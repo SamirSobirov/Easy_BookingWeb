@@ -2,7 +2,6 @@
     <div class="container">
         <PriceChart/>
         <div class="box">
-<!--            <Asides/>-->
             <Ticket/>
             <main>
             </main>
@@ -32,7 +31,6 @@ body {
 
 <script setup lang="ts">
 import PriceChart from "./component/PriceChart.vue";
-// import Asides from "./component/Asides.vue";
 import Ticket from "./component/Ticket.vue";
 
 </script>
