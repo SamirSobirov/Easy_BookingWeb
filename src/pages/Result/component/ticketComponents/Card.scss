@@ -1,263 +1,207 @@
-.ticket-card {
-  background-color: #FFFFFF59;
-  border: 1px solid #FFFFFFA6;
-  width: 855px;
+
+.containerFlex {
   display: flex;
-  gap: 10px;
-  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.ticket-card {
+  background-color: rgba(255, 255, 255, 0.59);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  width: 855px;
   border-radius: 20px;
-  padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   font-family: Arial, sans-serif;
   backdrop-filter: blur(10px);
+  display: flex;
+  height: 240px;
+  gap: 16px;
+}
 
-  .ticket-header {
-    width: 855px;
-    margin-left: -20px;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    color: #FFFFFF;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 8px 16px;
-    background-color: #FFFFFFA6;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+.ticket-header {
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.65);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+}
 
-    .header-content {
-      height: 20px;
-      display: flex;
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
-      text-align: center;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
+.bonus {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-      .Bonus {
-        display: flex;
-        gap: 10px;
-      }
+.get-bonus {
+  padding: 3px 8px;
+  background-color: #7879f1;
+  border-radius: 50px;
+  font-size: 10px;
+  color: white;
+  cursor: pointer;
+}
 
-      .Header_btns {
-        display: flex;
-        gap: 0;
-        padding-top: 8px;
+.header-btns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-        button {
-          background: transparent;
-          border: none;
-          border-radius: 50%;
-          padding: 8px;
-          cursor: pointer;
-        }
-      }
-
-      .getBonus {
-        width: 98px;
-        height: 20px;
-        padding: 3px 8px;
-        background-color: #7879F1;
-        border-radius: 50px;
-        font-size: 10px;
-        font-family: Mulish, sans-serif;
-        font-weight: 400;
-        cursor: pointer;
-      }
-    }
+  button {
+    padding-top: 5px;
   }
+}
 
-  .flight-info {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 36px;
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-    .departure-arrival {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      .time {
-        font-family: 'Mulish', sans-serif;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        gap: 8px;
-        font-size: 24px;
-        font-weight: 100;
-        color: #23282D;
-        white-space: nowrap;
-
-        span {
-          font-size: 13px;
-          color: #9399A8;
-          font-weight: 100;
-          text-align: left;
-        }
-      }
-
-      .airport-code {
-        font-size: 10px;
-        color: #23282D;
-        font-weight: 400;
-      }
+.flight-info {
+  display: flex;
+  gap: 24px;
+  align-items: start;
+  justify-content: left;
+  text-align: center;
+  padding: 10px 16px;
+}
 
 
-      .duration {
-        font-size: 14px;
-        color: #6c757d;
-      }
-    }
+.departure-arrival {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+}
 
-    .details-link {
-      font-family: 'Mulish', sans-serif;
-      font-size: 14px;
-      line-height: 18px;
-      color: #00B8D7;
-      display: flex;
-      gap: 5px;
-      cursor: pointer;
-      text-decoration: none;
-      background-color: transparent;
-      border: none;
-      margin-top: 60px;
-      align-items: center;
-      text-align: center;
+.details-link {
+  font-size: 14px;
+  color: #00b8d7;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-      img {
-        width: 15px;
-      }
+.details-link img {
+  width: 15px;
+}
 
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
+.details-box {
+  padding: 10px;
+  background-color: #f1f3f8;
+  border-radius: 8px;
+}
 
-  .fare-details {
+.fare-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: start;
+  text-align: left;
+  justify-content: center;
+  font-family: Mulish, sans-serif;
+
+  p {
     font-size: 12px;
-    color: #6c757d;
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-    gap: 4px;
-    align-items: flex-start;
-    align-self: flex-start;
-    justify-content: flex-start;
-    margin-top: 36px;
-    margin-left: 10px;
-    font-family: Mulish, sans-serif;
-    white-space: nowrap;
-  }
-
-  span {
-    font-family: 'Mulish', sans-serif;
+    color: #9399A8;
 
     strong {
-      color: #23282D;
+      font-size: 12px;
       font-weight: 400;
-      font-family: 'Mulish', sans-serif;
-    }
-  }
-
-  .fare-details .baggage {
-    font-family: 'Mulish', sans-serif;
-    font-weight: 400;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    gap: 5px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    color: #9399A8;
-
-    img {
-      padding-top: 2px;
-    }
-  }
-
-  .fare-details .return {
-    font-weight: 400;
-    font-size: 13px;
-    font-family: 'Mulish', sans-serif;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    gap: 5px;
-    color: #9399A8;
-    cursor: pointer;
-
-    img {
-      padding-top: 2px;
-    }
-  }
-
-  .price-info {
-    border-left: 1px solid #E3E5ED;
-    display: flex;
-    flex-direction: column;
-    width: 191px;
-    text-align: center;
-    font-family: Mulish, sans-serif;
-    margin-top: 28px;
-    margin-left: 14px;
-
-
-    .old-price {
-      margin-left: 10px;
-      line-height: 19px;
-      font-size: 15px;
-      color: #EB5757;
-      text-decoration: line-through;
-    }
-
-    .new-price {
-      margin-left: 10px;
-      font-size: 20px;
-      font-weight: 700;
       color: #23282D;
-    }
-
-    .button-container {
-      margin-left: 10px;
-      margin-top: 26px;
-      width: 191px;
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-
-      .buy-btn {
-        background: #00B8D7;
-        color: #FFFFFF;
-        font-family: Mulish, sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-        border: none;
-        border-radius: 12px;
-        padding: 12px 30px;
-        cursor: pointer;
-        width: 191px;
-      }
-
-      .select-tariff {
-
-        width: 191px;
-        background: #fff;
-        color: #9399A8;
-        border: 1px solid #E3E5ED;
-        font-size: 14px;
-        font-weight: 400;
-        border-radius: 12px;
-        padding: 12px 30px;
-        cursor: pointer;
-        margin-top: 8px;
-      }
     }
   }
 }
 
+.baggage {
+  background: none;
+  border: none;
+  color: #9399a8;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: Mulish, sans-serif;
+}
+
+.return {
+  font-family: Mulish, sans-serif;
+  background: none;
+  border: none;
+  color: #9399a8;
+  display: flex;
+  font-size: 13px;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.price-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 10px;
+  border-left: 1px solid #e3e5ed;
+
+  .buy-btn {
+    width: 191px;
+    font-family: Mulish, sans-serif;
+  }
+}
+
+.old-price {
+  font-size: 15px;
+  color: #eb5757;
+  text-decoration: line-through;
+}
+
+.new-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #23282d;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.buy-btn {
+  background-color: #00b8d7;
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.select-tariff {
+  background-color: white;
+  color: #9399a8;
+  padding: 12px;
+  border: 1px solid #e3e5ed;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.time {
+
+}

@@ -1,37 +1,35 @@
 <template>
-    <div class="ticket-card">
+    <article class="ticket-card">
+
+        <div class="containerFlex">
+
         <header class="ticket-header">
             <div class="header-content">
-                <div class="Bonus">
-                    <img src="/src/assets/icons/Card_logo.svg" alt="">
-                    <div class="getBonus">
+                <div class="bonus">
+                    <img src="/src/assets/icons/Card_logo.svg" alt="logo">
+                    <div class="get-bonus">
                         <span>Получите 100 EP</span>
                     </div>
                 </div>
 
-                <div class="Header_btns">
+                <div class="header-btns">
                     <button>
-                        <img src="/src/assets/icons/CardHeartOutline.svg" width="24" height="24" alt="">
+                        <img src="/src/assets/icons/CardHeartOutline.svg" width="24" height="24" alt="heart-icon">
                     </button>
                     <DropDown>
-                        <template #trigger="{isOpen}">
-                            <button
-                                class="icon-button"
-                                :class="{ active: isOpen }"
-                            >
-                                <Icon icon="solar:share-outline" width="24" height="24"/>
+                        <template #trigger="{ isOpen }">
+                            <button class="icon-button" :class="{ active: isOpen }">
+                                <Icon icon="solar:share-outline" width="24" height="24" />
                             </button>
-
                         </template>
+
                         <template #default="{ close }">
-                            <div class="Trigger_box">
+                            <div class="dropdown-content">
                                 <h1>
                                     Поделиться билетом
-                                    <button class="triggerBtn" @click="close" style="border: 1px solid #C9D4E4;">
-                                        <span class="close-icon">&times;</span>
-                                    </button>
+                                    <button class="trigger-btn" @click="close">×</button>
                                 </h1>
-                                <ShareTicket/>
+                                <ShareTicket />
                             </div>
                         </template>
                     </DropDown>
@@ -39,37 +37,49 @@
             </div>
         </header>
 
-        <div class="flight-info">
+        <section class="flight-info">
+
             <div class="departure-arrival">
-                <DateInfo time="20:10" date="25 мая, чт" city="Ташкент (TAS)"/>
-
-                <RouteLine/>
-
-                <DateInfo time="23:05" date="25 мая, чт" city="Ташкент (TAS)"/>
+                <DateInfo time="20:10" date="25 мая, чт" city="Ташкент (TAS)" />
+                <RouteLine />
+                <DateInfo time="23:05" date="25 мая, чт" city="Ташкент (TAS)" />
             </div>
 
-            <button class="details-link">Детали маршрута <img src="/src/assets/icons/Cardarrow.svg" alt=""></button>
+            <section class="fare-details">
+                <p>Тариф: <strong>Эконом Базовый</strong></p>
+                <button class="baggage">Без багажа <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
+                <p class="return">Возвратный <img src="/src/assets/icons/CardCheckCircle.svg" alt="check-icon"></p>
+            </section>
+
+            <footer class="price-info">
+                <div class="old-price">2 912 000 UZS</div>
+                <div class="new-price">2 728 422 UZS</div>
+                <div class="button-container">
+                    <button class="buy-btn">Купить</button>
+                    <button class="select-tariff">Выбрать тарифы</button>
+                </div>
+            </footer>
+
+        </section>
+            <DropDown>
+                <template #trigger>
+                    <button class="details-link" style="margin: -10px 0 0 16px">
+                        Детали маршрута
+                        <img src="/src/assets/icons/Cardarrow.svg" alt="arrow-icon">
+                    </button>
+                </template>
+                <div class="details-box">
+                    <h1>
+                        Поделиться билетом
+                        <button class="trigger-btn">×</button>
+                    </h1>
+                    <ShareTicket />
+                </div>
+            </DropDown>
         </div>
-
-        <div class="fare-details">
-            <span>Тариф: <strong>Эконом Базовый</strong></span>
-            <button class="baggage">Без багажа<img src="/src/assets/icons/cardFareStop.svg" alt="">
-
-            </button>
-            <span class="return">Возвратный <img src="/src/assets/icons/CardCheckCircle.svg" alt=""></span>
-        </div>
-
-        <div class="price-info">
-            <div class="old-price">2 912 000 UZS</div>
-            <div class="new-price">2 728 422 UZS</div>
-            <div class="button-container">
-                <button class="buy-btn">Купить</button>
-                <button class="select-tariff">Выбрать тарифы</button>
-            </div>
-        </div>
-    </div>
-
+    </article>
 </template>
+
 
 <script setup lang="ts">
 import {Icon} from '@iconify/vue';
