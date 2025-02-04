@@ -63,12 +63,12 @@
                                 <div class="baggage-card">
                                     <div class="baggage-card__details">
                                         <h3>Багаж</h3>
-                                        <p class="weight">Вес: <span>1 PC</span></p>
+                                        <p class="weight">Вес: 1 PC</p>
                                         <p class="size">130 x 100 x 30</p>
                                     </div>
 
                                     <div class="baggage-card__icon">
-                                        <img src="" alt="Багаж">
+                                        <img src="/src/assets/images/baggage_dropdown.svg" alt="Багаж">
                                     </div>
                                 </div>
 
@@ -76,12 +76,12 @@
 
                                     <div class="baggage-card__details">
                                         <h3>Ручная кладь</h3>
-                                        <p class="weight">Вес: <span>10 кг</span></p>
+                                        <p class="weight">Вес: 10 кг</p>
                                         <p class="size">50 x 60 x 20</p>
                                     </div>
 
                                     <div class="baggage-card__icon">
-                                        <img src="" alt="Ручная кладь">
+                                        <img src="/src/assets/images/baggage_dropdown.svg" alt="Багаж">
                                     </div>
                                 </div>
 
@@ -89,23 +89,23 @@
                                 <div class="baggage-card">
                                     <div class="baggage-card__details">
                                         <h3>Багаж</h3>
-                                        <p class="weight">Вес: <span>1 PC</span></p>
+                                        <p class="weight">Вес: 1 PC</p>
                                         <p class="size">130 x 100 x 30</p>
                                     </div>
                                     <div class="baggage-card__icon">
-                                        <img src="" alt="Багаж">
+                                        <img src="/src/assets/images/baggage_dropdown.svg" alt="Багаж">
                                     </div>
                                 </div>
 
                                 <div class="baggage-card">
                                     <div class="baggage-card__details">
                                         <h3>Ручная кладь</h3>
-                                        <p class="weight">Вес: <span>8 кг</span></p>
+                                        <p class="weight">Вес: 8 кг</p>
                                         <p class="size">50 x 60 x 20</p>
                                     </div>
 
                                     <div class="baggage-card__icon">
-                                        <img src="" alt="Ручная кладь">
+                                        <img src="/src/assets/images/baggage_dropdown.svg" alt="Багаж">
                                     </div>
                                 </div>
                             </div>
@@ -280,7 +280,7 @@ import TarifModalCards from "../../../../components/TarifModalCards.vue";
 }
 
 .baggage-content {
-    overflow-y: scroll;
+overflow: hidden;
     position: absolute;
     z-index: 10000;
     left: 200px;
@@ -294,18 +294,6 @@ import TarifModalCards from "../../../../components/TarifModalCards.vue";
     display: flex;
     flex-direction: column;
 
-    &::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: #D0D5DD;
-        border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar-track {
-        background-color: white;
-    }
 
     h1 {
 
@@ -354,13 +342,28 @@ import TarifModalCards from "../../../../components/TarifModalCards.vue";
         //padding: 20px;
         max-width: 600px;
         margin: 0 auto;
+        overflow-y: scroll;
+
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #D0D5DD;
+            border-radius: 24px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: white;
+        }
+
 
         h2 {
             margin-top: 8px;
             background-color: #e5f1fb;
             padding: 10px;
             font-size: 16px;
-            margin-bottom: 15px;
             text-align: left;
             width: 288px;
             font-weight: 500;
@@ -370,13 +373,10 @@ import TarifModalCards from "../../../../components/TarifModalCards.vue";
             display: flex;
             background-color: #ffffff;
             padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            gap: 12px;
 
             &__icon {
-                margin-right: 15px;
+                padding: 4px 18px;
 
                 img {
                     width: 50px;
@@ -385,27 +385,27 @@ import TarifModalCards from "../../../../components/TarifModalCards.vue";
             }
 
             &__details {
+                width: 154px;
+                text-align: left;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
 
                 h3 {
                     margin: 0;
-                    font-size: 18px;
+                    font-size: 14px;
+                    font-weight: 600;
                 }
 
                 .weight {
-                    font-size: 16px;
-
-                    span {
-                        color: green;
-                        font-weight: bold;
-                    }
+                    color: #27AE60;
+                    font-size: 14px;
                 }
 
                 .size {
+                    margin-top: 8px;
                     font-size: 14px;
-                    color: #7d7d7d;
+                    color: #475569;
                 }
             }
         }
