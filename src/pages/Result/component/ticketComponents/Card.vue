@@ -45,8 +45,76 @@
 
             <section class="fare-details">
                 <p>Тариф: <strong>Эконом Базовый</strong></p>
-                <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon">
-                </button>
+
+                <DropDown>
+                    <template  #trigger>
+                <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
+                    </template>
+                    <template #default="{ close }">
+                        <div class="baggage-content">
+                            <h1>
+                                Разбивка багажа
+                                <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
+                            </h1>
+
+
+                            <div class="passenger-section">
+                                <h2>Взрослый</h2>
+                                <div class="baggage-card">
+                                    <div class="baggage-card__details">
+                                        <h3>Багаж</h3>
+                                        <p class="weight">Вес: <span>1 PC</span></p>
+                                        <p class="size">130 x 100 x 30</p>
+                                    </div>
+
+                                    <div class="baggage-card__icon">
+                                        <img src="" alt="Багаж">
+                                    </div>
+                                </div>
+
+                                <div class="baggage-card">
+
+                                    <div class="baggage-card__details">
+                                        <h3>Ручная кладь</h3>
+                                        <p class="weight">Вес: <span>10 кг</span></p>
+                                        <p class="size">50 x 60 x 20</p>
+                                    </div>
+
+                                    <div class="baggage-card__icon">
+                                        <img src="" alt="Ручная кладь">
+                                    </div>
+                                </div>
+
+                                <h2>Ребенок</h2>
+                                <div class="baggage-card">
+                                    <div class="baggage-card__details">
+                                        <h3>Багаж</h3>
+                                        <p class="weight">Вес: <span>1 PC</span></p>
+                                        <p class="size">130 x 100 x 30</p>
+                                    </div>
+                                    <div class="baggage-card__icon">
+                                        <img src="" alt="Багаж">
+                                    </div>
+                                </div>
+
+                                <div class="baggage-card">
+                                    <div class="baggage-card__details">
+                                        <h3>Ручная кладь</h3>
+                                        <p class="weight">Вес: <span>8 кг</span></p>
+                                        <p class="size">50 x 60 x 20</p>
+                                    </div>
+
+                                    <div class="baggage-card__icon">
+                                        <img src="" alt="Ручная кладь">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </template>
+                </DropDown>
+
                 <p class="return">Возвратный <img src="/src/assets/icons/CardCheckCircle.svg" alt="check-icon"></p>
             </section>
 
@@ -205,6 +273,139 @@ import TarifModalCards from "../../../../components/TarifModalCards.vue";
 
                 .close-icon {
                     color: #00B8D7;
+                }
+            }
+        }
+    }
+}
+
+.baggage-content {
+    overflow-y: scroll;
+    position: absolute;
+    z-index: 10000;
+    left: 200px;
+    top: -150%;
+    height: 476px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #D0D5DD;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: white;
+    }
+
+    h1 {
+
+        border-bottom: 1px solid #EAECF0;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: 'Mulish', sans-serif;
+        color: black;
+
+        .trigger-btn {
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid #C9D4E4;
+            transition: background 0.3s ease, border 0.3s ease;
+
+            .close-icon {
+                font-size: 20px;
+                color: #81899A;
+                font-weight: 200;
+                transition: color 0.3s ease;
+            }
+
+            &:active, &.active {
+                border-color: #00B8D7;
+
+                .close-icon {
+                    color: #00B8D7;
+                }
+            }
+        }
+    }
+
+
+
+    .passenger-section {
+        //padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+
+        h2 {
+            margin-top: 8px;
+            background-color: #e5f1fb;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: left;
+            width: 288px;
+            font-weight: 500;
+        }
+
+        .baggage-card {
+            display: flex;
+            background-color: #ffffff;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+            &__icon {
+                margin-right: 15px;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            &__details {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                h3 {
+                    margin: 0;
+                    font-size: 18px;
+                }
+
+                .weight {
+                    font-size: 16px;
+
+                    span {
+                        color: green;
+                        font-weight: bold;
+                    }
+                }
+
+                .size {
+                    font-size: 14px;
+                    color: #7d7d7d;
                 }
             }
         }
