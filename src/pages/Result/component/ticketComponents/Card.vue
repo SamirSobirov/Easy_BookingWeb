@@ -230,6 +230,8 @@ import TarifModalCards from "../../../../components/TarifModalCards.vue";
 }
 
 .dropdown-content {
+    position: absolute;
+    z-index: 10;
     height: 170px;
     padding: 20px;
     background: #fff;
