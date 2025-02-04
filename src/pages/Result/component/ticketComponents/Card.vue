@@ -81,7 +81,7 @@
                                     </div>
 
                                     <div class="baggage-card__icon">
-                                        <img src="/src/assets/images/baggage_dropdown.svg" alt="Багаж">
+                                        <img src="/src/assets/images/baggage_dropdown2.svg" alt="Багаж">
                                     </div>
                                 </div>
 
@@ -105,7 +105,7 @@
                                     </div>
 
                                     <div class="baggage-card__icon">
-                                        <img src="/src/assets/images/baggage_dropdown.svg" alt="Багаж">
+                                        <img src="/src/assets/images/baggage_dropdown2.svg" alt="Багаж">
                                     </div>
                                 </div>
                             </div>
