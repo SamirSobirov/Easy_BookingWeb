@@ -45,12 +45,8 @@
 
             <section class="fare-details">
                 <p>Тариф: <strong>Эконом Базовый</strong></p>
-
-
                 <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon">
                 </button>
-
-
                 <p class="return">Возвратный <img src="/src/assets/icons/CardCheckCircle.svg" alt="check-icon"></p>
             </section>
 
@@ -61,15 +57,15 @@
                     <button class="buy-btn">Купить</button>
 
                     <DropDown>
-                        <template #trigger>
+                        <template  #trigger>
                             <button class="select-tariff">Выбрать тарифы</button>
                         </template>
 
-                        <template #default>
+                        <template  #default="{ close }">
                             <div class="ChoosePlanModal">
                                 <div class="ChoosePlanModal-header">
                                     <TarifModalHeader/>
-                                    <button class="trigger-btn"><span class="close-icon">×</span></button>
+                                    <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
                                 </div>
                                 <TarifModalCards/>
 
