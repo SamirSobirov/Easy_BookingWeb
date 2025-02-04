@@ -124,7 +124,7 @@ import TarifModalCards from "../../../../components/TarifModalCards.vue";
     z-index: 10000;
     left: -130%;
     top: -150%;
-    width: 816px;
+    width: 900px;
     backdrop-filter: blur(80px);
     background-color: rgba(237, 237, 237, 0.09);
     border-radius: 12px;
