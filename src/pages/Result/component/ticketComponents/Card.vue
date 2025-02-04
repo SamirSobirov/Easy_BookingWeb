@@ -45,7 +45,8 @@
                 <p>Тариф: <strong>Эконом Базовый</strong></p>
                 <DropDown>
                     <template #trigger>
-                        <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
+                        <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg"
+                                                                 alt="baggage-icon"></button>
                     </template>
                     <template #default="{ close }">
                         <div class="baggage-content">
@@ -119,7 +120,6 @@
                         </div>
                     </template>
                 </DropDown>
-
                 <p class="return">Возвратный <img src="/src/assets/icons/CardCheckCircle.svg" alt="check-icon"></p>
             </section>
 
@@ -159,7 +159,6 @@
                     </DropDown>
                 </div>
             </footer>
-
         </section>
         <DropDown>
             <template #trigger>
@@ -175,7 +174,6 @@
         </DropDown>
     </article>
 </template>
-
 
 <script setup lang="ts">
 import {Icon} from '@iconify/vue';
