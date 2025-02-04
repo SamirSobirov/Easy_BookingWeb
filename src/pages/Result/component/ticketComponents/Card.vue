@@ -47,8 +47,9 @@
                 <p>Тариф: <strong>Эконом Базовый</strong></p>
 
                 <DropDown>
-                    <template  #trigger>
-                <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
+                    <template #trigger>
+                        <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg"
+                                                                 alt="baggage-icon"></button>
                     </template>
                     <template #default="{ close }">
                         <div class="baggage-content">
@@ -109,8 +110,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </template>
                 </DropDown>
@@ -125,15 +124,16 @@
                     <button class="buy-btn">Купить</button>
 
                     <DropDown>
-                        <template  #trigger>
+                        <template #trigger>
                             <button class="select-tariff">Выбрать тарифы</button>
                         </template>
 
-                        <template  #default="{ close }">
+                        <template #default="{ close }">
                             <div class="ChoosePlanModal">
                                 <div class="ChoosePlanModal-header">
                                     <TarifModalHeader/>
-                                    <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
+                                    <button class="trigger-btn" @click="close"><span class="close-icon">×</span>
+                                    </button>
                                 </div>
                                 <TarifModalCards/>
 
@@ -273,139 +273,6 @@ import TarifModalCards from "../../../../components/TarifModalCards.vue";
 
                 .close-icon {
                     color: #00B8D7;
-                }
-            }
-        }
-    }
-}
-
-.baggage-content {
-overflow: hidden;
-    position: absolute;
-    z-index: 10000;
-    left: 200px;
-    top: -150%;
-    height: 476px;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-
-
-    h1 {
-
-        border-bottom: 1px solid #EAECF0;
-        padding: 12px 16px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 18px;
-        font-weight: 600;
-        font-family: 'Mulish', sans-serif;
-        color: black;
-
-        .trigger-btn {
-            background: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            border: 1px solid #C9D4E4;
-            transition: background 0.3s ease, border 0.3s ease;
-
-            .close-icon {
-                font-size: 20px;
-                color: #81899A;
-                font-weight: 200;
-                transition: color 0.3s ease;
-            }
-
-            &:active, &.active {
-                border-color: #00B8D7;
-
-                .close-icon {
-                    color: #00B8D7;
-                }
-            }
-        }
-    }
-
-
-
-    .passenger-section {
-        //padding: 20px;
-        max-width: 600px;
-        margin: 0 auto;
-        overflow-y: scroll;
-
-
-        &::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: #D0D5DD;
-            border-radius: 24px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background-color: white;
-        }
-
-
-        h2 {
-            margin-top: 8px;
-            background-color: #e5f1fb;
-            padding: 10px;
-            font-size: 16px;
-            text-align: left;
-            width: 288px;
-            font-weight: 500;
-        }
-
-        .baggage-card {
-            display: flex;
-            background-color: #ffffff;
-            padding: 15px;
-            gap: 12px;
-
-            &__icon {
-                padding: 4px 18px;
-
-                img {
-                    width: 50px;
-                    height: 50px;
-                }
-            }
-
-            &__details {
-                width: 154px;
-                text-align: left;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-
-                h3 {
-                    margin: 0;
-                    font-size: 14px;
-                    font-weight: 600;
-                }
-
-                .weight {
-                    color: #27AE60;
-                    font-size: 14px;
-                }
-
-                .size {
-                    margin-top: 8px;
-                    font-size: 14px;
-                    color: #475569;
                 }
             }
         }
