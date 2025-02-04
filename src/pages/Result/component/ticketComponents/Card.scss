@@ -5,7 +5,6 @@
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   font-family: Arial, sans-serif;
-
   height: 240px;
   gap: 16px;
 }
@@ -198,8 +197,6 @@ button {
   width: 191px;
 }
 
-
-
 .ChoosePlanModal {
   font-family: Mulish, sans-serif;
   position: absolute;
@@ -217,7 +214,6 @@ button {
   display: flex;
   flex-direction: column;
   gap: 16px;
-
 
   .ChoosePlanModal-header {
     display: flex;
@@ -249,7 +245,6 @@ button {
       transition: color 0.3s ease;
     }
   }
-
 
   .ChoosePlanModal-summary {
     font-family: Mulish, sans-serif;
@@ -287,7 +282,6 @@ button {
   }
 }
 
-
 .baggage-content {
   overflow: hidden;
   position: absolute;
@@ -303,9 +297,7 @@ button {
   display: flex;
   flex-direction: column;
 
-
   h1 {
-
     border-bottom: 1px solid #EAECF0;
     padding: 12px 16px;
     display: flex;
