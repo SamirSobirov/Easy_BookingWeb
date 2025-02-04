@@ -1,19 +1,18 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
     <div class="header_sec">
         <img src="/src/assets/icons/PlanModalFlag.svg" alt="airline">
         <div class="header_box">
             <div>Выберите тариф:</div>
             <div class="ChoosePlanModal-route-title">
-                <span style="color: black">Ташкент</span> (TAS) — <span
-                style="color: black">Москва</span> (MOW)
+                <span style="color: black">Ташкент</span>(TAS) —
+                <span style="color: black">Москва</span> (MOW)
             </div>
         </div>
     </div>
+
 </template>
+
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .header_sec {

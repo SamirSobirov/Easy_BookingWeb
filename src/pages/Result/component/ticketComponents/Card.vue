@@ -72,6 +72,7 @@
                                 <div class="ChoosePlanModal-header">
                                     <TarifModalHeader/>
                                 </div>
+                                
                                 <TarifModalCards/>
 
                                 <div class="ChoosePlanModal-summary">
@@ -124,13 +125,13 @@ import TarifModalCards from "../../../../components/TarifModalCards.vue";
     z-index: 10000;
     left: -130%;
     top: -150%;
-    width: 900px;
+    width: 850px;
     backdrop-filter: blur(80px);
     background-color: rgba(237, 237, 237, 0.09);
     border-radius: 12px;
     border: 1px solid #FFFFFF26;
     box-shadow: 0 4px 10px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 16px 30px 10px 16px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
