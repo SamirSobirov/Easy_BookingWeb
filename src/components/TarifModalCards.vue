@@ -1,6 +1,17 @@
 <script setup lang="ts">
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import 'swiper/css';
+import {ref} from 'vue';
+
+const selectedCard = ref<number | null>(null);
+
+const toggleInput = (index: number) => {
+    if (selectedCard.value === index) {
+        selectedCard.value = null;
+    } else {
+        selectedCard.value = index;
+    }
+};
 </script>
 
 <template>
@@ -15,7 +26,13 @@ import 'swiper/css';
             <SwiperSlide v-for="(index) in 10" :key="index">
                 <div class="card">
                     <div class="card_content">
-                        <h3 class="card_title">Эконом Премиум <input name="toggle" type="checkbox"/></h3>
+                        <h3 class="card_title">Эконом Премиум <input
+                            name="toggle"
+                            type="checkbox"
+                            :checked="selectedCard === index"
+                            @change="toggleInput(index)"
+                        />
+                        </h3>
 
                         <div class="card_main">
                             <div class="inputs">
