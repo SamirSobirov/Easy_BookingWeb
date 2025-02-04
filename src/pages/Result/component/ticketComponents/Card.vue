@@ -8,12 +8,12 @@
                         <span>Получите 100 EP</span>
                     </div>
                 </div>
-
                 <div class="header-btns">
                     <button>
                         <img src="/src/assets/icons/CardHeartOutline.svg" width="24" height="24" alt="heart-icon">
                     </button>
                     <DropDown>
+
                         <template #trigger="{ isOpen }">
                             <button class="icon-button" :class="{ active: isOpen }">
                                 <Icon icon="solar:share-outline" width="24" height="24"/>
@@ -36,20 +36,16 @@
         </header>
 
         <section class="flight-info">
-
             <div class="departure-arrival">
                 <DateInfo time="20:10" date="25 мая, чт" city="Ташкент (TAS)"/>
                 <RouteLine/>
                 <DateInfo time="23:05" date="25 мая, чт" city="Ташкент (TAS)"/>
             </div>
-
             <section class="fare-details">
                 <p>Тариф: <strong>Эконом Базовый</strong></p>
-
                 <DropDown>
                     <template #trigger>
-                        <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg"
-                                                                 alt="baggage-icon"></button>
+                        <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
                     </template>
                     <template #default="{ close }">
                         <div class="baggage-content">
@@ -57,7 +53,6 @@
                                 Разбивка багажа
                                 <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
                             </h1>
-
 
                             <div class="passenger-section">
                                 <h2>Взрослый</h2>
@@ -194,10 +189,7 @@ import TarifModalCards from "../../../../components/TarifModalCards.vue";
 </script>
 
 <style scoped lang="scss">
-
-
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap');
-
 
 .DropDown button {
     background: none;
