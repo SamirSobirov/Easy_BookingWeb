@@ -68,21 +68,15 @@
                         <template #default>
                             <div class="ChoosePlanModal">
                                 <div class="ChoosePlanModal-header">
-
-                                   <TarifModalHeader />
+                                    <TarifModalHeader/>
                                     <button class="trigger-btn"><span class="close-icon">×</span></button>
                                 </div>
-
-                                <div class="plan_container">
-                                    <div class="card"></div>
-                                    <div class="card"></div>
-                                    <div class="card"></div>
-                                </div>
+                                <TarifModalCards/>
 
                                 <div class="ChoosePlanModal-header">
-
-                                    <TarifModalHeader />
+                                    <TarifModalHeader/>
                                 </div>
+                                <TarifModalCards/>
 
                                 <div class="ChoosePlanModal-summary">
                                     <div>Итого:</div>
@@ -120,6 +114,7 @@ import RouteLine from "../../../../components/RouteLine.vue";
 import DateInfo from "../../../../components/DateInfo.vue";
 import ModalTable from "../../../../components/ModalTable.vue";
 import TarifModalHeader from "../../../../components/TarifModalHeader.vue";
+import TarifModalCards from "../../../../components/TarifModalCards.vue";
 </script>
 
 <style scoped lang="scss">
@@ -145,19 +140,6 @@ import TarifModalHeader from "../../../../components/TarifModalHeader.vue";
     flex-direction: column;
     gap: 16px;
 
-    .plan_container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 11px;
-
-        .card {
-            border-radius: 12px;
-            width: 254px;
-            height: 192px;
-            background-color: #FFFFFF;
-        }
-    }
 
     .ChoosePlanModal-header {
         display: flex;
@@ -191,7 +173,6 @@ import TarifModalHeader from "../../../../components/TarifModalHeader.vue";
             transition: color 0.3s ease;
         }
     }
-
 
 
     .ChoosePlanModal-summary {
