@@ -368,11 +368,14 @@ button {
     .baggage-card {
       display: flex;
       background-color: #ffffff;
-      padding: 15px;
-      gap: 12px;
-
+      padding: 8px 1px 12px 34px;
+      gap: 20px;
+      border-bottom: 1px solid #47556914;
       &__icon {
-        padding: 4px 18px;
+        padding: 4px 16px 4px 15px;
+        border-left: 1px solid #47556914;
+
+
 
         img {
           width: 50px;

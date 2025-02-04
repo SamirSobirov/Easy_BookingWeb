@@ -94,6 +94,17 @@
                                         <p class="size">130 x 100 x 30</p>
                                     </div>
                                     <div class="baggage-card__icon">
+                                        <img src="/src/assets/images/baggage_dropdown2.svg" alt="Багаж">
+                                    </div>
+                                </div>
+
+                                <div class="baggage-card">
+                                    <div class="baggage-card__details">
+                                        <h3>Багаж</h3>
+                                        <p class="weight">Вес: 1 PC</p>
+                                        <p class="size">130 x 100 x 30</p>
+                                    </div>
+                                    <div class="baggage-card__icon">
                                         <img src="/src/assets/images/baggage_dropdown.svg" alt="Багаж">
                                     </div>
                                 </div>
