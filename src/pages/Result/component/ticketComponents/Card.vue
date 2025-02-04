@@ -65,8 +65,38 @@
                             <button class="select-tariff">Выбрать тарифы</button>
                         </template>
 
-                        <template #default="{ close }">
-                            <ModalTable :close="close"/>
+                        <template #default>
+                            <div class="ChoosePlanModal">
+                                <div class="ChoosePlanModal-header">
+
+                                    <div class="header_sec">
+                                        <img src="/src/assets/icons/PlanModalFlag.svg" alt="airline">
+                                        <div class="header_box">
+                                            <div>Выберите тариф:</div>
+                                            <div class="ChoosePlanModal-route-title">
+                                                <span style="color: black">Ташкент</span> (TAS) — <span
+                                                style="color: black">Москва</span> (MOW)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="trigger-btn"><span class="close-icon">×</span></button>
+                                </div>
+
+                                <div class="plan_container">
+
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+
+                                </div>
+
+
+                                <div class="ChoosePlanModal-summary">
+                                    <div>Итого:</div>
+                                    <div class="ChoosePlanModal-total">500 724 UZS</div>
+                                    <button class="ChoosePlanModal-select-btn">Выбрать</button>
+                                </div>
+                            </div>
                         </template>
                     </DropDown>
                 </div>
@@ -99,7 +129,137 @@ import ModalTable from "../../../../components/ModalTable.vue";
 </script>
 
 <style scoped lang="scss">
+
+
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap');
+
+.ChoosePlanModal {
+    font-family: Mulish, sans-serif;
+    position: absolute;
+    z-index: 10000;
+    left: -130%;
+    top: -150%;
+    width: 816px;
+    backdrop-filter: blur(80px);
+    background-color: rgba(237, 237, 237, 0.09);
+    border-radius: 12px;
+    border: 1px solid #FFFFFF26;
+    box-shadow: 0 4px 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .plan_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 11px;
+
+        .card {
+            border-radius: 12px;
+            width: 254px;
+            height: 192px;
+            background-color: #FFFFFF;
+        }
+    }
+
+    .ChoosePlanModal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 400;
+        color: #81899A;
+
+        .header_sec {
+            display: flex;
+            text-align: left;
+            gap: 10px;
+
+            img {
+                border: 1px solid #E5E9EB;
+                border-radius: 40px;
+                background-color: #FFFFFF;
+                padding: 3px 6px;
+            }
+
+            .header_box {
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    .trigger-btn {
+        padding: 0 0 3px 1px;
+        background: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid #B5BBC9;
+        transition: background 0.3s ease, border 0.3s ease;
+
+        .close-icon {
+            font-size: 24px;
+            font-family: Mulish, sans-serif;
+
+            color: #81899A;
+            transition: color 0.3s ease;
+        }
+    }
+
+    .ChoosePlanModal-route-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #00B8D7;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .ChoosePlanModal-summary {
+        font-family: Mulish, sans-serif;
+        display: flex;
+        align-items: center;
+        text-align: right;
+        justify-content: right;
+        gap: 12px;
+        margin-top: 20px;
+        font-weight: 600;
+        font-size: 16px;
+        color: #81899A;
+
+        .ChoosePlanModal-total {
+            color: #23282D;
+            font-family: Mulish, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .ChoosePlanModal-select-btn {
+            margin-left: 10px;
+            width: 160px;
+            height: 40px;
+            background: #00B8D7;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+            font-weight: 400;
+            font-family: Mulish, sans-serif;
+        }
+    }
+}
+
 
 .DropDown button {
     background: none;
