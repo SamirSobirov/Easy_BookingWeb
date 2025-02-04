@@ -69,27 +69,20 @@
                             <div class="ChoosePlanModal">
                                 <div class="ChoosePlanModal-header">
 
-                                    <div class="header_sec">
-                                        <img src="/src/assets/icons/PlanModalFlag.svg" alt="airline">
-                                        <div class="header_box">
-                                            <div>Выберите тариф:</div>
-                                            <div class="ChoosePlanModal-route-title">
-                                                <span style="color: black">Ташкент</span> (TAS) — <span
-                                                style="color: black">Москва</span> (MOW)
-                                            </div>
-                                        </div>
-                                    </div>
+                                   <TarifModalHeader />
                                     <button class="trigger-btn"><span class="close-icon">×</span></button>
                                 </div>
 
                                 <div class="plan_container">
-
                                     <div class="card"></div>
                                     <div class="card"></div>
                                     <div class="card"></div>
-
                                 </div>
 
+                                <div class="ChoosePlanModal-header">
+
+                                    <TarifModalHeader />
+                                </div>
 
                                 <div class="ChoosePlanModal-summary">
                                     <div>Итого:</div>
@@ -126,6 +119,7 @@ import ShareTicket from "../../../../components/ShareTicket.vue";
 import RouteLine from "../../../../components/RouteLine.vue";
 import DateInfo from "../../../../components/DateInfo.vue";
 import ModalTable from "../../../../components/ModalTable.vue";
+import TarifModalHeader from "../../../../components/TarifModalHeader.vue";
 </script>
 
 <style scoped lang="scss">
@@ -173,24 +167,7 @@ import ModalTable from "../../../../components/ModalTable.vue";
         font-weight: 400;
         color: #81899A;
 
-        .header_sec {
-            display: flex;
-            text-align: left;
-            gap: 10px;
 
-            img {
-                border: 1px solid #E5E9EB;
-                border-radius: 40px;
-                background-color: #FFFFFF;
-                padding: 3px 6px;
-            }
-
-            .header_box {
-                text-align: left;
-                display: flex;
-                flex-direction: column;
-            }
-        }
     }
 
     .trigger-btn {
@@ -215,14 +192,7 @@ import ModalTable from "../../../../components/ModalTable.vue";
         }
     }
 
-    .ChoosePlanModal-route-title {
-        font-size: 16px;
-        font-weight: 600;
-        color: #00B8D7;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+
 
     .ChoosePlanModal-summary {
         font-family: Mulish, sans-serif;
