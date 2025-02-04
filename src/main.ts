@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import './assets/scss/style.scss'
 import './assets/scss/heroSection.scss'
 import './assets/scss/headerMainSearch.scss'
@@ -16,12 +16,10 @@ import './assets/scss/registModal.scss'
 import './assets/scss/searchForm.scss'
 import './components/breadcrumbs/breadCrumb.scss'
 import './pages/Result/component/ticketComponents/Card.scss'
-import './pages/Result/component/scss/baggage.scss'
 import './pages/Result/component/scss/doubleRange.scss'
 import './pages/Result/component/scss/price.scss'
 import './pages/Result/component/scss/sort.scss'
 import './pages/Result/component/scss/travelTime.scss'
-
 import router from "./pages/router";
 import App from './App.vue'
 import VueDatePicker from '@vuepic/vue-datepicker';

@@ -47,7 +47,8 @@
                 <p>Тариф: <strong>Эконом Базовый</strong></p>
 
 
-                <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
+                <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon">
+                </button>
 
 
                 <p class="return">Возвратный <img src="/src/assets/icons/CardCheckCircle.svg" alt="check-icon"></p>
@@ -58,7 +59,16 @@
                 <div class="new-price">2 728 422 UZS</div>
                 <div class="button-container">
                     <button class="buy-btn">Купить</button>
-                    <button class="select-tariff">Выбрать тарифы</button>
+
+                    <DropDown>
+                        <template #trigger>
+                            <button class="select-tariff">Выбрать тарифы</button>
+                        </template>
+
+                        <template #default="{ close }">
+                            <ModalTable :close="close"/>
+                        </template>
+                    </DropDown>
                 </div>
             </footer>
 
@@ -72,7 +82,7 @@
             </template>
 
             <template #default="{ close }">
-                <ModalTable :close="close" />
+                <ModalTable :close="close"/>
             </template>
         </DropDown>
     </article>
