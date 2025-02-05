@@ -17,6 +17,7 @@
                         :class="{ 'input-error': errors.fromCity }"
                         id="city-input-from"
                         v-model="fromCity"
+                        autocomplete="off"
                     />
                     <label
                         class="floating-label"
@@ -37,6 +38,7 @@
                         :class="{ 'input-error': errors.toCity }"
                         id="city-input-to"
                         v-model="toCity"
+                        autocomplete="off"
                     />
                     <label
                         class="floating-label"
