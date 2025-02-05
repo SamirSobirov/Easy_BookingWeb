@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer" style="margin-top: 20px;">
+    <footer class="footer" style="margin-top: 40px;">
         <div class="footer__container">
             <div class="footer__section">
                 <img src="/src/assets/images/EasyBooking_logo.svg" alt="Easy Booking" class="footer__logo"/>
