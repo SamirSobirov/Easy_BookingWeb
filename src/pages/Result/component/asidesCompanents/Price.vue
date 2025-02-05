@@ -7,12 +7,10 @@
             </button>
         </toggle-section>
 
-
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
                 <PriceSlider :initialPrice="1615" />
             </div>
-
         </transition>
     </div>
 </template>
