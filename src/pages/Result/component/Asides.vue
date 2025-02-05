@@ -42,7 +42,7 @@
             <Sort style="margin-bottom: 15px;"/>
         </div>
 
-        <Footer />
+        <Footer/>
     </aside>
 </template>
 
@@ -156,7 +156,6 @@ import Footer from "../../../components/Footer.vue";
             }
         }
     }
-
 }
 
 aside {
