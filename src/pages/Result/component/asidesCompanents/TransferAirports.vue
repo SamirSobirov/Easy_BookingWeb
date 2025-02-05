@@ -9,7 +9,6 @@
 
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
-
                 <div class="group">
                     <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
                         <g>
@@ -18,62 +17,34 @@
                             ></path>
                         </g>
                     </svg>
-                    <input class="input" type="search" placeholder="Search"/>
+                    <input class="input" type="search" placeholder="Search" />
                 </div>
 
                 <label>
-                    <input name="toggle" type="checkbox"/>
+                    <input
+                        name="toggle"
+                        type="checkbox"
+                        :checked="selectAll"
+                        @change="toggleAll"
+                    />
                     <p>Выбрать все</p>
                 </label>
 
-                <label>
-                    <input name="toggle" type="checkbox"/>
+                <label v-for="(location, index) in locations" :key="index">
+                    <input
+                        name="toggle"
+                        type="checkbox"
+                        :checked="selectedLocations.includes(location)"
+                        @change="toggleLocation(location)"
+                    />
                     <div>
-                        <p class="country">Москва, <p> Домодедово DME</p></p>
+                        <p class="country">
+                            {{ location.city }}, <p>{{ location.airport }}</p>
+                        </p>
 
                         <ul>
-                            <span class="price">Россия</span>
-                            <span> 2,5 млн</span>
-
-                        </ul>
-                    </div>
-                </label>
-
-                <label>
-                    <input name="toggle" type="checkbox"/>
-                    <div>
-                        <p class="country">Москва, <p>Шереметьево SVO</p></p>
-
-                        <ul>
-                            <span class="price">Россия</span>
-                            <span> 3,5 млн</span>
-
-                        </ul>
-                    </div>
-                </label>
-
-                <label>
-                    <input name="toggle" type="checkbox"/>
-                    <div>
-                        <p class="country">Москва, <p> Самарканд SKD</p></p>
-
-                        <ul>
-                            <span class="price">Узбекистан</span>
-                            <span> 2,5 млн</span>
-
-                        </ul>
-                    </div>
-                </label>
-
-                <label>
-                    <input name="toggle" type="checkbox"/>
-                    <div>
-                        <p class="country">Ургенч, <p> Ургенч UGC</p></p>
-
-                        <ul>
-                            <span class="price">Узбекистан</span>
-                            <span> 2,5 млн</span>
-
+                            <span class="price">{{ location.country }}</span>
+                            <span> {{ location.price }}</span>
                         </ul>
                     </div>
                 </label>
@@ -82,18 +53,48 @@
 
     </div>
 </template>
-
 <script setup lang="ts">
-import {ref} from 'vue';
+import { ref, reactive, computed, toRefs } from 'vue';
 
 const visibility = ref({
     transfers: true,
-    baggage: true
+    baggage: true,
 });
 
 const toggleVisibility = (section: keyof typeof visibility.value) => {
     visibility.value[section] = !visibility.value[section];
 };
+
+const locations = [
+    { city: 'Москва', airport: 'Домодедово DME', country: 'Россия', price: '2,5 млн' },
+    { city: 'Москва', airport: 'Шереметьево SVO', country: 'Россия', price: '3,5 млн' },
+    { city: 'Москва', airport: 'Самарканд SKD', country: 'Узбекистан', price: '2,5 млн' },
+    { city: 'Ургенч', airport: 'Ургенч UGC', country: 'Узбекистан', price: '2,5 млн' },
+];
+
+const state = reactive({
+    selectedLocations: [] as typeof locations,
+});
+
+const selectAll = computed({
+    get: () => state.selectedLocations.length === locations.length,
+    set: (value: boolean) => {
+        state.selectedLocations = value ? [...locations] : [];
+    },
+});
+
+const toggleAll = (event: Event) => {
+    selectAll.value = (event.target as HTMLInputElement).checked;
+};
+
+const toggleLocation = (location: typeof locations[0]) => {
+    if (state.selectedLocations.includes(location)) {
+        state.selectedLocations = state.selectedLocations.filter((l) => l !== location);
+    } else {
+        state.selectedLocations.push(location);
+    }
+};
+const { selectedLocations } = toRefs(state);
 </script>
 
 <style scoped lang="scss">
@@ -101,7 +102,6 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
     display: flex;
     flex-direction: column;
     gap: 16px;
-
 
     hideButton.rotated {
         transform: rotate(180deg);
@@ -240,14 +240,12 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
         }
     }
 
-
     .group {
         display: flex;
         line-height: 28px;
         align-items: center;
         position: relative;
         max-width: 190px;
-
 
         .input {
             width: 245px;
