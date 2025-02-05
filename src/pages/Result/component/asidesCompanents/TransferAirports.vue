@@ -19,7 +19,7 @@
                     </svg>
                     <input class="input" type="search" placeholder="Search" />
                 </div>
-
+                
                 <label>
                     <input
                         name="toggle"
