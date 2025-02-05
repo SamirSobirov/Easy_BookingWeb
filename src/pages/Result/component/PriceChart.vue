@@ -29,6 +29,8 @@ const prices = ref([
     { date: "вс, 21 авг", price: "2 512 332", isLower: false },
     { date: "пн, 22 авг", price: "2 476 332", isLower: true },
     { date: "вт, 23 авг", price: "1 312 332", isLower: true },
+    { date: "пн, 22 авг", price: "2 476 332", isLower: true },
+    { date: "пн, 22 авг", price: "2 476 332", isLower: true },
 ]);
 
 const selectedIndex = ref(2);
