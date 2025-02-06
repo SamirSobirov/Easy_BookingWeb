@@ -500,7 +500,7 @@ export default {
 <style scoped>
 .search-box {
     transition: margin-top 0.3s ease;
-    padding: 20px 24px;
+    padding: 20px 20px;
 }
 
 .adjust-margin {
