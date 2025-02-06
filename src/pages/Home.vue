@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import HelpCenter from "../components/HelpCenter.vue";
 import Advantages from "../components/Advantages.vue";
 import Shop from "../components/Shop.vue";

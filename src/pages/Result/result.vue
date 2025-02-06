@@ -9,6 +9,11 @@
     </div>
 </template>
 
+<script setup lang="ts">
+import PriceChart from "./component/PriceChart.vue";
+import Ticket from "./component/Ticket.vue";
+</script>
+
 <style lang="scss">
 body {
     height: 100vh;
@@ -27,10 +32,3 @@ body {
     width: 1138px;
 }
 </style>
-
-
-<script setup lang="ts">
-import PriceChart from "./component/PriceChart.vue";
-import Ticket from "./component/Ticket.vue";
-
-</script>

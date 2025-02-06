@@ -9,7 +9,6 @@
 
 <script setup lang="ts"></script>
 
-
 <style>
 body {
     height: 100vh;
@@ -40,6 +39,5 @@ body {
             color: #6D7586;
         }
     }
-
 }
 </style>

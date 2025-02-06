@@ -13,7 +13,6 @@
                         <img src="/src/assets/icons/CardHeartOutline.svg" width="24" height="24" alt="heart-icon">
                     </button>
                     <DropDown>
-
                         <template #trigger="{ isOpen }">
                             <button class="icon-button" :class="{ active: isOpen }">
                                 <Icon icon="solar:share-outline" width="24" height="24"/>
@@ -45,8 +44,7 @@
                 <p>Тариф: <strong>Эконом Базовый</strong></p>
                 <DropDown>
                     <template #trigger>
-                        <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg"
-                                                                 alt="baggage-icon"></button>
+                        <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
                     </template>
                     <template #default="{ close }">
                         <div class="baggage-content">
@@ -70,13 +68,11 @@
                                 </div>
 
                                 <div class="baggage-card">
-
                                     <div class="baggage-card__details">
                                         <h3>Ручная кладь</h3>
                                         <p class="weight">Вес: 10 кг</p>
                                         <p class="size">50 x 60 x 20</p>
                                     </div>
-
                                     <div class="baggage-card__icon">
                                         <img src="/src/assets/images/baggage_dropdown2.svg" alt="Багаж">
                                     </div>

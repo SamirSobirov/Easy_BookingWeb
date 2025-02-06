@@ -40,7 +40,6 @@
             <hr>
             <Sort style="margin-bottom: 15px;"/>
         </div>
-
         <Footer/>
     </aside>
 </template>
