@@ -42,8 +42,8 @@
                     />
                     <label
                         class="floating-label"
-                        :class="{ 'floating-label-error': errors.toCity }"
-                    >Куда</label>
+                        :class="{ 'floating-label-error': errors.toCity }">Куда
+                    </label>
                     <div class="dropdown" id="dropdown-to"></div>
                 </div>
 
@@ -170,7 +170,6 @@
                         <span>Поиск</span>
                     </button>
                 </router-link>
-
             </form>
             <SearchFooter/>
         </div>

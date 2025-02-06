@@ -14,7 +14,6 @@
                         <button class="triggerBtn" style="border: 1px solid #C9D4E4;" @click="close">
                             <span class="close-icon">&times;</span>
                         </button>
-
                     </h1>
                     <div class="subscription-box">
                         <input type="email" placeholder="Электронная почта"/>
