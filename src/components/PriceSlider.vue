@@ -19,13 +19,11 @@
 import {ref, computed, defineProps} from "vue";
 import Slider from "@vueform/slider";
 import "@vueform/slider/themes/default.css";
-
 const props = defineProps<{
     initialPrice: number;
 }>();
 
 const priceValue = ref(props.initialPrice);
-
 const formattedPrice = computed(() => {
     return new Intl.NumberFormat('ru-RU', {
         style: 'decimal',
