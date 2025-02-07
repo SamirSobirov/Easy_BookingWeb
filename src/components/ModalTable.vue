@@ -142,5 +142,4 @@ defineProps<{
         color: #00B8D7;
     }
 }
-
 </style>

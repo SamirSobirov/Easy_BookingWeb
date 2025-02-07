@@ -96,7 +96,6 @@
                 </button>
             </nav>
         </div>
-
         <RegistrModal v-if="isRegisterModalVisible" @close="toggleRegisterModal" class="register-modal"/>
     </header>
 </template>

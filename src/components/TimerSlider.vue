@@ -20,7 +20,6 @@
 import {ref, computed, defineProps} from "vue";
 import Slider from "@vueform/slider";
 import "@vueform/slider/themes/default.css";
-
 const props = defineProps<{
     min: number;
     max: number;
@@ -28,7 +27,6 @@ const props = defineProps<{
 }>();
 
 const timeValue = ref(props.initialTime ?? props.min);
-
 const formattedMaxTime = computed(() => formatTime(timeValue.value));
 
 function formatTime(minutes: number): string {

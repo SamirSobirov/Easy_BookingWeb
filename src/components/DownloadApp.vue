@@ -6,7 +6,6 @@
                 <p style="text-align: left; font-family: sans-serif; font-size: 14px;">
                     Уведомления о лучших ценах, данные пассажиров и информация по заказам у вас под рукой
                 </p>
-
                 <div class="elem">
                     <div v-for="(item, index) in appStores" :key="index" class="item1">
                         <p>

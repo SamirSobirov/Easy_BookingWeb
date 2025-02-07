@@ -30,7 +30,6 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-
 const products = ref([
     {
         image: "/src/assets/images/Shop_bag.svg",

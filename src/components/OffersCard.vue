@@ -2,7 +2,6 @@
     <div class="offers-card">
         <div class="offers-card__header">
             <h1>Акции и предложения</h1>
-
             <div class="offers-card__header-buttons">
                 <button
                     v-for="(button, index) in buttons"
@@ -41,9 +40,7 @@
 
 <script setup lang="ts">
 import {ref} from "vue";
-
 const activeButton = ref("flights");
-
 const buttons = [
     {
         type: "flights",
@@ -64,7 +61,6 @@ const buttons = [
         alt: "Train",
     },
 ];
-
 const cards = [
     {
         image: "/src/assets/images/SharmELSheyx.svg",
@@ -88,11 +84,9 @@ const cards = [
         price: "7 844 000 UZS",
     },
 ];
-
 const setActiveButton = (type: string) => {
     activeButton.value = type;
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

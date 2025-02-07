@@ -23,7 +23,6 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-
 interface SliderItem {
   image: string;
 }

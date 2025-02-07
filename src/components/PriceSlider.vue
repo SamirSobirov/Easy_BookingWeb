@@ -24,7 +24,6 @@ const props = defineProps<{
     initialPrice: number;
 }>();
 
-
 const priceValue = ref(props.initialPrice);
 
 const formattedPrice = computed(() => {
@@ -53,5 +52,4 @@ const updatePrice = () => {
     display: flex;
     justify-content: space-between;
 }
-
 </style>

@@ -2,7 +2,6 @@
     <div class="reviews">
         <div class="reviews__header">
             <h1>Последние отзывы</h1>
-
             <button>
                 Все товары
                 <img src="/src/assets/icons/arrow-right.svg" alt="Arrow Right" />
@@ -37,7 +36,6 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-
 const reviews = ref([
     {
         cardClass: "cardFirst",

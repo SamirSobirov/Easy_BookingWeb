@@ -178,9 +178,9 @@
     </section>
 </template>
 <script lang="ts" setup>
-import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue";
+import {computed, onBeforeUnmount, onMounted, reactive, ref, watch} from "vue";
 import tabs from "./HeaderMainSearch/tabs.vue";
-import { useRoute, useRouter } from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import EasyTabs from "./HeaderMainSearch/EasyTabs.vue";
 import SearchFooter from "./HeaderMainSearch/SearchFooter.vue";
 import HeroContent from "./HeaderMainSearch/HeroContent.vue";
@@ -194,7 +194,7 @@ watch(
     (newPath) => {
         showTabs.value = newPath !== '/result';
     },
-    { immediate: true }
+    {immediate: true}
 );
 
 const fromCity = ref<string>("");
@@ -399,9 +399,7 @@ class CityInputDropdown {
                 console.error(`Failed to fetch data: ${response.statusText}`);
                 return [];
             }
-
             const data = await response.json();
-
             if (Array.isArray(data.data)) {
                 return data.data;
             } else {
@@ -501,28 +499,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.input-error {
-    transition: border-color 0.3s;
-    border: 1px solid red !important;
-    color: red !important;
-    border-radius: 12px;
-}
-</style>
-
-<style scoped>
-.search-box {
-    align-items: center;
-    justify-content: center;
-    transition: margin-top 0.3s ease;
-    padding: 20px 20px;
-}
-
-.adjust-margin {
-    margin-top: 60px;
-}
-
-.isHomepage {
-    margin-top: 100px !important;
-}
-</style>
+<style></style>

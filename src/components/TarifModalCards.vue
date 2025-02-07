@@ -1,19 +1,3 @@
-<script setup lang="ts">
-import {Swiper, SwiperSlide} from 'swiper/vue';
-import 'swiper/css';
-import {ref} from 'vue';
-
-const selectedCard = ref<number | null>(null);
-
-const toggleInput = (index: number) => {
-    if (selectedCard.value === index) {
-        selectedCard.value = null;
-    } else {
-        selectedCard.value = index;
-    }
-};
-</script>
-
 <template>
     <div class="plan_container">
         <Swiper
@@ -72,6 +56,21 @@ const toggleInput = (index: number) => {
         </Swiper>
     </div>
 </template>
+
+<script setup lang="ts">
+import {Swiper, SwiperSlide} from 'swiper/vue';
+import 'swiper/css';
+import {ref} from 'vue';
+
+const selectedCard = ref<number | null>(null);
+const toggleInput = (index: number) => {
+    if (selectedCard.value === index) {
+        selectedCard.value = null;
+    } else {
+        selectedCard.value = index;
+    }
+};
+</script>
 
 <style lang="scss">
 

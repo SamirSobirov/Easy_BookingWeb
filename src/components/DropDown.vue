@@ -1,10 +1,3 @@
-<script setup lang="ts">
-import {ref} from "vue";
-
-const isOpen = ref(false)
-const close = () => isOpen.value = false;
-</script>
-
 <template>
     <div class="container">
         <div @click="isOpen = !isOpen ">
@@ -16,6 +9,14 @@ const close = () => isOpen.value = false;
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+import {ref} from "vue";
+
+const isOpen = ref(false)
+const close = () => isOpen.value = false;
+</script>
+
 
 <style scoped lang="scss">
 .container {

@@ -8,7 +8,6 @@
                     экспертов <br />
                     EasyBooking Можно спокойно готовиться.
                 </p>
-
                 <div class="floating-label-input">
                     <div class="input-container">
                         <div class="input-wrapper">
@@ -46,10 +45,8 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-
 const email = ref("");
 const isFocused = ref(false);
-
 const subscribe = () => {
     if (email.value) {
         alert(`Спасибо за подписку, ${email.value}`);
