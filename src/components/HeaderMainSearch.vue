@@ -58,6 +58,7 @@
                         :enable-time-picker="false"
                         @update:model-value="handleDepartureDateSelection"
                         auto-apply
+                        :format="formatDate"
                     />
                 </div>
 
@@ -76,6 +77,7 @@
                         :disabled-dates="disableDepartureDates"
                         @update:model-value="handleReturnDateSelection"
                         auto-apply
+                        :format="formatDate"
                     />
                 </div>
 
@@ -176,9 +178,9 @@
     </section>
 </template>
 <script lang="ts" setup>
-import {computed, onBeforeUnmount, onMounted, reactive, ref, watch} from "vue";
+import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue";
 import tabs from "./HeaderMainSearch/tabs.vue";
-import {useRoute, useRouter} from 'vue-router';
+import { useRoute, useRouter } from "vue-router";
 import EasyTabs from "./HeaderMainSearch/EasyTabs.vue";
 import SearchFooter from "./HeaderMainSearch/SearchFooter.vue";
 import HeroContent from "./HeaderMainSearch/HeroContent.vue";
@@ -192,7 +194,7 @@ watch(
     (newPath) => {
         showTabs.value = newPath !== '/result';
     },
-    {immediate: true}
+    { immediate: true }
 );
 
 const fromCity = ref<string>("");
@@ -204,6 +206,14 @@ const errors = reactive({
     toCity: false,
     departureDate: false,
 });
+
+const formatDate = (date: Date | null): string => {
+    if (!date) return '';
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Oy 0 dan boshlanadi
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
+};
 
 const validateForm = () => {
     errors.fromCity = fromCity.value.trim() === "";
@@ -221,9 +231,13 @@ const handleSearch = () => {
     }
 };
 
-const handleDepartureDateSelection = (value: string | null) => {
-    departureDate.value = value;
-    errors.departureDate = !value;
+const handleDepartureDateSelection = (selectedDate: Date | null) => {
+    if (selectedDate) {
+        departureDate.value = formatDate(selectedDate);
+    } else {
+        departureDate.value = null;
+    }
+    errors.departureDate = !selectedDate;
 };
 
 const isDropdownOpen = ref(false);
