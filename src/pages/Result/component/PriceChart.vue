@@ -22,7 +22,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import "../style/PriceChart.scss";
-
 const prices = ref([
     { date: "чт, 17 авг", price: "2 476 332", isLower: true },
     { date: "пт, 18 авг", price: "2 676 332", isLower: false },
@@ -35,17 +34,14 @@ const prices = ref([
 
 const selectedIndex = ref(2);
 const priceList = ref<HTMLElement | null>(null);
-
 const selectItem = (index: number) => {
     selectedIndex.value = index;
 };
-
 const scrollLeft = () => {
     if (priceList.value) {
         priceList.value.scrollLeft -= 150;
     }
 };
-
 const scrollRight = () => {
     if (priceList.value) {
         priceList.value.scrollLeft += 150;

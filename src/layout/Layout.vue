@@ -1,3 +1,16 @@
+<template>
+    <AppBackground/>
+    <header>
+        <HeroSection msg="Welcome to EasyBooking!"/>
+        <BreadCrumb v-if="isResultPage"/>
+        <HeaderMainButtons/>
+        <HeaderMainSearch/>
+    </header>
+    <main>
+        <RouterView/>
+    </main>
+</template>
+
 <script setup lang="ts">
 import HeaderMainSearch from "../components/HeaderMainSearch.vue";
 import HeroSection from "../components/HeroSection.vue";
@@ -11,18 +24,6 @@ const route = useRoute();
 const isResultPage = computed(() => route.path === "/result");
 
 </script>
-<template>
-    <AppBackground/>
-    <header>
-        <HeroSection msg="Welcome to EasyBooking!"/>
-        <BreadCrumb v-if="isResultPage"/>
-        <HeaderMainButtons/>
-        <HeaderMainSearch/>
-    </header>
-    <main>
-        <RouterView/>
-    </main>
-</template>
 
 <style lang="scss">
 .full-width-header {

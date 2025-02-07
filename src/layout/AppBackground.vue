@@ -1,9 +1,20 @@
+<template>
+    <div class="dynamic-bg">
+        <TransitionGroup name="fade">
+            <div
+                v-for="el in elements"
+                :class="['sphere', el.className]"
+                :key="el.size"
+                :style="{ width: `${el.size}px`, height: `${el.size}px`, left: el.position[0], top: el.position[1] }"
+            ></div>
+        </TransitionGroup>
+    </div>
+</template>
+
 <script setup lang="ts">
 import {ref, onMounted, watch} from 'vue';
 import {useRoute} from 'vue-router';
-
 const route = useRoute();
-
 const colors: string[] = ['violet', 'transparent', 'green', 'pink', 'blue', 'transparent'];
 const minHeight: number = 125;
 const maxHeight: number = 660;
@@ -15,7 +26,6 @@ interface SphereElement {
 }
 
 const elements = ref<SphereElement[]>([]);
-
 function generateSphere(): void {
     elements.value = [];
     for (let i = 0; i < colors.length; i++) {
@@ -52,20 +62,6 @@ onMounted(() => {
     generateSphere();
 });
 </script>
-
-<template>
-    <div class="dynamic-bg">
-        <TransitionGroup name="fade">
-            <div
-                v-for="el in elements"
-                :class="['sphere', el.className]"
-                :key="el.size"
-                :style="{ width: `${el.size}px`, height: `${el.size}px`, left: el.position[0], top: el.position[1] }"
-            ></div>
-        </TransitionGroup>
-    </div>
-</template>
-
 
 <style scoped lang="scss">
 .dynamic-bg {

@@ -24,7 +24,6 @@ import router from "./pages/router";
 import App from './App.vue'
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
-
 import vClickOutside from "click-outside-vue3"
 
 const app = createApp(App);

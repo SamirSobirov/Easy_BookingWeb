@@ -9,12 +9,6 @@
 
 <script setup lang="ts"></script>
 
-<style>
-body {
-    height: 100vh;
-}
-</style>
-
 <style scoped lang="scss">
 .container {
     align-items: center;
