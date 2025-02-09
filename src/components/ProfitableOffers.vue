@@ -21,8 +21,6 @@
                                 class="input-field"
                             />
                         </div>
-
-
                         <button class="submit-button" @click="subscribe">
                             Подписаться
                         </button>
