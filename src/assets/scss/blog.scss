@@ -12,12 +12,14 @@
     justify-content: space-between;
 
     h1 {
+      font-family: Mulish, sans-serif;
       text-align: left;
       margin: 0;
       font-size: 28px;
     }
 
     button {
+      font-family: Mulish, sans-serif;
       background: rgba(255, 255, 255, 0.555);
       backdrop-filter: blur(10px);
       border: 2px solid #ffffffcc;
@@ -47,25 +49,26 @@
     .card {
       width: 365px;
       height: 338px;
-      background: rgba(255, 255, 255, 0.555);
+      background: rgba(255, 255, 255, 0.71);
       backdrop-filter: blur(10px);
       border-radius: 20px;
       border: 1px solid white;
       margin: 10px;
-      padding: 10px;
+      padding: 12px 12px 0 12px;
+
+
 
       .container {
-        padding: 12px 15px;
+        padding: 8px 12px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 5px;
         max-width: 100%;
-        overflow: hidden;
 
         p {
+          font-family: Mulish, sans-serif;
           color: #23282d;
-          font-family: sans-serif;
           font-weight: 600;
           font-size: 18px;
           white-space: nowrap;
@@ -77,7 +80,7 @@
         .span {
           color: #9399a8;
           font-size: 14px;
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: Mulish, sans-serif;
           align-items: center;
           text-align: left;
           justify-content: flex-start;
@@ -99,11 +102,11 @@
 
           span {
             border: none;
-            background-color: #edeff5;
+            background-color: #EDEFF5;
             padding: 4px 8px;
             border-radius: 8px;
             display: block;
-            color: #9399a8;
+            color: #6D7586;
             font-family: Mulish, sans-serif;
             font-size: 14px;
             font-weight: 200;
@@ -116,7 +119,8 @@
             font-weight: 200;
             font-size: 14px;
             border: none;
-            background-color: #ffffffaa;
+            color: #6D7586;
+            background-color: transparent;
           }
         }
       }
