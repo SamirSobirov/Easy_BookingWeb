@@ -61,7 +61,8 @@
                 <p>Тариф: <strong>Эконом Базовый</strong></p>
                 <DropDown>
                     <template #trigger>
-                        <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
+                        <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg"
+                                                                 alt="baggage-icon"></button>
                     </template>
                     <template #default="{ close }">
                         <div class="baggage-content">
@@ -137,11 +138,14 @@
                 <p v-if="showDetails">Класс: <strong style="padding-left: 3px;"> B</strong></p>
                 <button v-if="showDetails" class="baggage" style="text-decoration: none; white-space: nowrap">Самолет:
                     <strong style="font-weight: 400; color: #23282D; text-decoration: underline">Boeing 787-800</strong>
-                    <img style="padding-top: 1px; fill: black" src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon">
+                    <img style="padding-top: 1px; fill: black" src="/src/assets/icons/cardFareStop.svg"
+                         alt="baggage-icon">
                 </button>
-                <button v-if="showDetails" class="baggage">Погода: <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
+                <button v-if="showDetails" class="baggage">Погода: <img src="/src/assets/icons/cardFareStop.svg"
+                                                                        alt="baggage-icon"></button>
                 <p v-if="showDetails">Остаток мест: <strong style="padding-left: 3px;">4</strong></p>
-                <button v-if="showDetails" style="color: #00b8d7; font-family: Mulish, sans-serif">Правила тарифа</button>
+                <button v-if="showDetails" style="color: #00b8d7; font-family: Mulish, sans-serif">Правила тарифа
+                </button>
             </section>
 
             <footer class="price-info">
@@ -160,6 +164,8 @@
                                     <button class="trigger-btn" @click="close"><span class="close-icon">×</span>
                                     </button>
                                 </div>
+                                <TarifModalCards/>
+                                <TarifModalHeader/>
                                 <TarifModalCards/>
                                 <div class="ChoosePlanModal-summary">
                                     <div>Итого:</div>
