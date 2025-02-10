@@ -65,10 +65,11 @@
               border-radius: 12px;
               background-color: #ffffffa6;
               overflow: hidden;
-              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+              //box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
               transition: background-color 0.3s ease;
 
               .accordion-header {
+                font-family: Mulish, sans-serif;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -96,7 +97,7 @@
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease, padding 0.3s ease;
-                padding: 0 16px;
+                padding: 0 12px;
                 background-color: #fff;
 
                 p {
@@ -104,12 +105,12 @@
                   font-size: 16px;
                   line-height: 1.5;
                   color: #9399A8;
-                  font-family: "Roboto", Arial, sans-serif;
+                  font-family: Mulish, sans-serif;
                 }
 
                 &.active {
                   max-height: 500px;
-                  padding: 16px;
+                  padding: 16px 16px;
                   background-color: transparent;
                 }
               }
