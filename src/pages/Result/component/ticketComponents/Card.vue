@@ -65,8 +65,71 @@
                     </template>
                     <template #default="{ close }">
                         <div class="baggage-content">
-                            <h1>Разбивка багажа</h1>
-                            <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
+                            <h1>
+                                Разбивка багажа
+                                <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
+                            </h1>
+
+                            <div class="passenger-section">
+                                <h2>Взрослый</h2>
+                                <div class="baggage-card">
+                                    <div class="baggage-card__details">
+                                        <h3>Багаж</h3>
+                                        <p class="weight">Вес: 1 PC</p>
+                                        <p class="size">130 x 100 x 30</p>
+                                    </div>
+
+                                    <div class="baggage-card__icon">
+                                        <img src="/src/assets/images/baggage_dropdown.svg" alt="Багаж">
+                                    </div>
+                                </div>
+
+                                <div class="baggage-card">
+                                    <div class="baggage-card__details">
+                                        <h3>Ручная кладь</h3>
+                                        <p class="weight">Вес: 10 кг</p>
+                                        <p class="size">50 x 60 x 20</p>
+                                    </div>
+                                    <div class="baggage-card__icon">
+                                        <img src="/src/assets/images/baggage_dropdown2.svg" alt="Багаж">
+                                    </div>
+                                </div>
+
+                                <h2>Ребенок</h2>
+                                <div class="baggage-card">
+                                    <div class="baggage-card__details">
+                                        <h3>Багаж</h3>
+                                        <p class="weight">Вес: 1 PC</p>
+                                        <p class="size">130 x 100 x 30</p>
+                                    </div>
+                                    <div class="baggage-card__icon">
+                                        <img src="/src/assets/images/baggage_dropdown2.svg" alt="Багаж">
+                                    </div>
+                                </div>
+
+                                <div class="baggage-card">
+                                    <div class="baggage-card__details">
+                                        <h3>Багаж</h3>
+                                        <p class="weight">Вес: 1 PC</p>
+                                        <p class="size">130 x 100 x 30</p>
+                                    </div>
+                                    <div class="baggage-card__icon">
+                                        <img src="/src/assets/images/baggage_dropdown.svg" alt="Багаж">
+                                    </div>
+                                </div>
+
+                                <div class="baggage-card">
+                                    <div class="baggage-card__details">
+                                        <h3>Ручная кладь</h3>
+                                        <p class="weight">Вес: 8 кг</p>
+                                        <p class="size">50 x 60 x 20</p>
+                                    </div>
+
+                                    <div class="baggage-card__icon">
+                                        <img src="/src/assets/images/baggage_dropdown2.svg" alt="Багаж">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </template>
                 </DropDown>
@@ -114,7 +177,6 @@
             <img :src="showDetails ? '/icons/Cardarrow.svg' : '/icons/Cardarrow.svg'"
                  alt="arrow-icon">
         </button>
-
     </article>
 </template>
 
@@ -127,6 +189,7 @@ import RouteLine from "../../../../components/RouteLine.vue";
 import DateInfo from "../../../../components/DateInfo.vue";
 import TarifModalHeader from "../../../../components/TarifModalHeader.vue";
 import TarifModalCards from "../../../../components/TarifModalCards.vue";
+
 
 const showDetails = ref(false);
 
