@@ -70,11 +70,10 @@ button {
 
 .departure-arrival {
   display: flex;
-  align-items: center;
   gap: 10px;
   font-size: 10px;
   font-family: Mulish, sans-serif;
-
+align-items: start;
 }
 
 .details-link {
@@ -133,6 +132,7 @@ button {
   display: flex;
   align-items: center;
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   gap: 5px;
   font-size: 13px;
   cursor: pointer;

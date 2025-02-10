@@ -13,19 +13,18 @@
 
 <style scoped lang="scss">
 .route_line {
+    margin-top: 10px;
     div {
         display: flex;
         align-items: center;
+        justify-content: center;
+        text-align: center;
         gap: 10px;
-        margin-top: -15px;
     }
 
     .route {
-        flex-grow: 1;
         width: 165px;
         border-bottom: 2px dashed #838C97;
-        margin-top: 2px;
-        margin-bottom: 20px;
     }
 
     span {

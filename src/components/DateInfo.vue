@@ -4,6 +4,7 @@
         <span>{{ date }}</span>
         <span class="Cities">{{ city }}</span>
         <p v-if="showDetails" class="terminal">Класс: <span style="padding-left: 3px;"> B</span></p>
+        <p v-if="showDetails" class="terminal">Класс: <span style="padding-left: 3px;"> B</span></p>
     </div>
 </template>
 
