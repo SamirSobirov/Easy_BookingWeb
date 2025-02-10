@@ -65,7 +65,7 @@ button {
   justify-content: left;
   text-align: center;
   padding: 10px 16px;
-  gap: 18px;
+  gap: 15px;
 }
 
 .departure-arrival {
@@ -74,6 +74,7 @@ button {
   gap: 10px;
   font-size: 10px;
   font-family: Mulish, sans-serif;
+
 }
 
 .details-link {
@@ -104,7 +105,7 @@ button {
 
 .fare-details {
   max-width: 180px;
-  width: 165px;
+  width: 173px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -159,7 +160,6 @@ button {
   gap: 10px;
   padding-left: 10px;
   border-left: 1px solid #e3e5ed;
-
 
   .buy-btn {
     width: 191px ;

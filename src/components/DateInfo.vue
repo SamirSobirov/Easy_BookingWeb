@@ -3,20 +3,18 @@
         {{ time }}
         <span>{{ date }}</span>
         <span class="Cities">{{ city }}</span>
-        <p v-if="showDetails">Класс: <strong style="padding-left: 3px;"> B</strong></p>
+        <p v-if="showDetails" class="terminal">Класс: <span style="padding-left: 3px;"> B</span></p>
     </div>
 </template>
 
 <script setup lang="ts">
-import {ref} from "vue";
 
 defineProps<{
     time: string;
     date: string;
     city: string;
+    showDetails: boolean;
 }>();
-
-const showDetails = ref(false);
 
 </script>
 
@@ -36,6 +34,16 @@ const showDetails = ref(false);
         color: #9399A8;
         font-weight: 100;
         text-align: left;
+    }
+
+    .terminal {
+        font-size: 12px;
+        font-family: Mulish, sans-serif;
+        color: #81899A;
+
+        span {
+            color: black;
+        }
     }
 }
 </style>
