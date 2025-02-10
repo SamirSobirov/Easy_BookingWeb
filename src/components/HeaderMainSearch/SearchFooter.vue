@@ -8,7 +8,8 @@
         <div class="switch-container">
             <label class="switch">
                 <input type="checkbox"/>
-                <span class="slider"></span>
+                <span class="slider">
+                </span>
             </label>
             <button class="switch-btn">± 1 день</button>
         </div>
