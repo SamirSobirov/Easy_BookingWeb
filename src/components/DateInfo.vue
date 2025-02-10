@@ -3,7 +3,6 @@
         {{ time }}
         <span>{{ date }}</span>
         <span class="Cities">{{ city }}</span>
-
         <p v-if="showDetails" class="terminal">Класс: <span style="padding-left: 3px;">{{ terminal }}</span></p>
         <p v-if="showDetails" class="terminal">
             <img :src="imgSrc" alt="weather-icon" style="width: 20px; height: 20px;">
@@ -16,7 +15,6 @@
 import { computed } from 'vue';
 import cloudIcon from '/public/icons/cloudly.svg';
 
-// Деструктурируем пропсы через defineProps
 const props = defineProps<{
     time: string;
     date: string;

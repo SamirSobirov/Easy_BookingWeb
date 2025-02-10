@@ -111,7 +111,7 @@
         </section>
         <button class="details-link" @click="toggleDetails">
             {{ showDetails ? 'Скрыть детали' : 'Детали маршрута' }}
-            <img :src="showDetails ? '/src/assets/icons/Cardarrow.svg' : '/src/assets/icons/Cardarrow.svg'"
+            <img :src="showDetails ? '/icons/Cardarrow.svg' : '/icons/Cardarrow.svg'"
                  alt="arrow-icon">
         </button>
 
