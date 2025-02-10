@@ -43,7 +43,7 @@
                     city="Ташкент(TAS)"
                     terminal="A"
                     degrees="17°C"
-                    img="/src/assets/icons/sun.svg"
+                    img="/icons/sun.svg"
                 />
                 <RouteLine/>
                 <DateInfo
@@ -53,9 +53,8 @@
                     city="Москва (LED)"
                     terminal="B"
                     degrees="-12°C"
-                    img="/src/assets/icons/cloudly.svg"
+                    img="/icons/cloudly.svg"
                 />
-
             </div>
 
             <section class="fare-details">

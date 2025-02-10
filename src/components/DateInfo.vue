@@ -6,22 +6,28 @@
 
         <p v-if="showDetails" class="terminal">Класс: <span style="padding-left: 3px;">{{ terminal }}</span></p>
         <p v-if="showDetails" class="terminal">
-            <img :src="img" alt="weather-icon" style="width: 20px; height: 20px;">
-            <span style="padding-left:3px; color: #81899A"> {{ degrees }}</span>
+            <img :src="imgSrc" alt="weather-icon" style="width: 20px; height: 20px;">
+            <span style="padding-left: 3px; color: #81899A">{{ degrees }}</span>
         </p>
     </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue';
+import cloudIcon from '/public/icons/cloudly.svg';
+
+// Деструктурируем пропсы через defineProps
+const props = defineProps<{
     time: string;
     date: string;
     city: string;
     showDetails: boolean;
     terminal: string;
     degrees: string;
-    img: string;
+    img?: string;
 }>();
+
+const imgSrc = computed(() => props.img || cloudIcon);
 </script>
 
 <style scoped lang="scss">
