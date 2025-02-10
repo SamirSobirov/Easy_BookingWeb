@@ -309,7 +309,7 @@
 
     .custom-dropdown-button {
       background-color: #ffffff;
-      color: #666;
+      color: #9399A8;
       padding: 5px 10px;
       width: 182px;
       height: 48px;
@@ -328,6 +328,12 @@
         content: "▼";
         font-size: 12px;
         color: #aaa;
+      }
+
+      &::placeholder {
+        color: #9399A8;
+        font-size: 1rem;
+        font-family: Arial, sans-serif;
       }
     }
 
@@ -530,7 +536,6 @@
       background-color: #fff;
       border: none;
       border-radius: 12px;
-
       font-size: 14px;
       color: #333;
       outline: none;
@@ -543,7 +548,7 @@
       }
 
       &::placeholder {
-        color: #4c4c4c;
+        color: #9399A8;
         font-size: 1rem;
         font-family: Arial, sans-serif;
       }

@@ -339,7 +339,6 @@ onBeforeUnmount(() => {
 });
 </script>
 
-
 <script lang="ts">
 interface Airport {
     id: number;
