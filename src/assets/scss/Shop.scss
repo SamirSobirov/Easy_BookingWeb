@@ -61,7 +61,7 @@
       border-radius: 24px;
       border: 1px solid white;
       margin: 10px;
-      padding: 12px 0 0 0;
+      padding: 12px 12px;
 
       .container {
         padding: 12px 15px;
@@ -76,12 +76,11 @@
           gap: 6px;
 
           .price_ball {
+            font-family: Mulish, sans-serif;
             background-color: #ff3a3a1a;
             color: #eb5757;
             text-decoration: line-through;
             border-radius: 6px;
-            font-family: sans-serif;
-
             gap: 20px;
             font-size: 13px;
             padding: 0 10px;
@@ -109,7 +108,7 @@
         }
 
         span {
-          color: #9399a8;
+          color: #6D7586;
           font-size: 20px;
           align-items: center;
           text-align: center;
@@ -122,11 +121,13 @@
         }
 
         .price {
+          font-family: Mulish, sans-serif;
           color: #23282d;
           font-weight: 700;
           font-size: 18px;
           line-height: 24px;
         }
+
       }
     }
   }
