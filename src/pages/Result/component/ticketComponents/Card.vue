@@ -141,8 +141,7 @@
                     <img style="padding-top: 1px; fill: black" src="/src/assets/icons/cardFareStop.svg"
                          alt="baggage-icon">
                 </button>
-                <button v-if="showDetails" class="baggage">Погода: <img src="/src/assets/icons/cardFareStop.svg"
-                                                                        alt="baggage-icon"></button>
+                <button v-if="showDetails" class="baggage">Погода: <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
                 <p v-if="showDetails">Остаток мест: <strong style="padding-left: 3px;">4</strong></p>
                 <button v-if="showDetails" style="color: #00b8d7; font-family: Mulish, sans-serif">Правила тарифа
                 </button>
