@@ -5,7 +5,7 @@
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   font-family: Arial, sans-serif;
-  height: 240px;
+  height: 100%;
   gap: 16px;
 }
 
@@ -61,11 +61,11 @@ button {
 
 .flight-info {
   display: flex;
-  gap: 24px;
   align-items: start;
   justify-content: left;
   text-align: center;
   padding: 10px 16px;
+  gap: 18px;
 }
 
 .departure-arrival {
@@ -88,6 +88,8 @@ button {
   border: none;
   cursor: pointer;
   width: 150px;
+  margin-left: 16px;
+  padding-bottom: 16px;
 }
 
 .details-link img {
@@ -101,6 +103,8 @@ button {
 }
 
 .fare-details {
+  max-width: 180px;
+  width: 165px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -112,6 +116,8 @@ button {
   p {
     font-size: 12px;
     color: #9399A8;
+    display: flex;
+    align-items: center;
 
     strong {
       font-size: 12px;
@@ -153,6 +159,7 @@ button {
   gap: 10px;
   padding-left: 10px;
   border-left: 1px solid #e3e5ed;
+
 
   .buy-btn {
     width: 191px ;

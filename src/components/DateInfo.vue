@@ -3,15 +3,21 @@
         {{ time }}
         <span>{{ date }}</span>
         <span class="Cities">{{ city }}</span>
+        <p v-if="showDetails">Класс: <strong style="padding-left: 3px;"> B</strong></p>
     </div>
 </template>
 
 <script setup lang="ts">
+import {ref} from "vue";
+
 defineProps<{
     time: string;
     date: string;
     city: string;
 }>();
+
+const showDetails = ref(false);
+
 </script>
 
 <style scoped lang="scss">

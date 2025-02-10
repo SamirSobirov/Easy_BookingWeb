@@ -38,8 +38,10 @@
             <div class="departure-arrival">
                 <DateInfo time="20:10" date="25 мая, чт" city="Ташкент (TAS)"/>
                 <RouteLine/>
-                <DateInfo time="23:05" date="25 мая, чт" city="Ташкент (TAS)"/>
+                <DateInfo time="23:05" date="26 мая, пт" city="Москва (LED)"/>
+
             </div>
+
             <section class="fare-details">
                 <p>Тариф: <strong>Эконом Базовый</strong></p>
                 <DropDown>
@@ -48,75 +50,20 @@
                     </template>
                     <template #default="{ close }">
                         <div class="baggage-content">
-                            <h1>
-                                Разбивка багажа
-                                <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
-                            </h1>
-
-                            <div class="passenger-section">
-                                <h2>Взрослый</h2>
-                                <div class="baggage-card">
-                                    <div class="baggage-card__details">
-                                        <h3>Багаж</h3>
-                                        <p class="weight">Вес: 1 PC</p>
-                                        <p class="size">130 x 100 x 30</p>
-                                    </div>
-
-                                    <div class="baggage-card__icon">
-                                        <img src="/src/assets/images/baggage_dropdown.svg" alt="Багаж">
-                                    </div>
-                                </div>
-
-                                <div class="baggage-card">
-                                    <div class="baggage-card__details">
-                                        <h3>Ручная кладь</h3>
-                                        <p class="weight">Вес: 10 кг</p>
-                                        <p class="size">50 x 60 x 20</p>
-                                    </div>
-                                    <div class="baggage-card__icon">
-                                        <img src="/src/assets/images/baggage_dropdown2.svg" alt="Багаж">
-                                    </div>
-                                </div>
-
-                                <h2>Ребенок</h2>
-                                <div class="baggage-card">
-                                    <div class="baggage-card__details">
-                                        <h3>Багаж</h3>
-                                        <p class="weight">Вес: 1 PC</p>
-                                        <p class="size">130 x 100 x 30</p>
-                                    </div>
-                                    <div class="baggage-card__icon">
-                                        <img src="/src/assets/images/baggage_dropdown2.svg" alt="Багаж">
-                                    </div>
-                                </div>
-
-                                <div class="baggage-card">
-                                    <div class="baggage-card__details">
-                                        <h3>Багаж</h3>
-                                        <p class="weight">Вес: 1 PC</p>
-                                        <p class="size">130 x 100 x 30</p>
-                                    </div>
-                                    <div class="baggage-card__icon">
-                                        <img src="/src/assets/images/baggage_dropdown.svg" alt="Багаж">
-                                    </div>
-                                </div>
-
-                                <div class="baggage-card">
-                                    <div class="baggage-card__details">
-                                        <h3>Ручная кладь</h3>
-                                        <p class="weight">Вес: 8 кг</p>
-                                        <p class="size">50 x 60 x 20</p>
-                                    </div>
-
-                                    <div class="baggage-card__icon">
-                                        <img src="/src/assets/images/baggage_dropdown2.svg" alt="Багаж">
-                                    </div>
-                                </div>
-                            </div>
+                            <h1>Разбивка багажа</h1>
+                            <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
                         </div>
                     </template>
                 </DropDown>
                 <p class="return">Возвратный <img src="/src/assets/icons/CardCheckCircle.svg" alt="check-icon"></p>
+                <p v-if="showDetails">Класс: <strong style="padding-left: 3px;"> B</strong></p>
+                <button v-if="showDetails" class="baggage" style="text-decoration: none; white-space: nowrap">Самолет:
+                    <strong style="font-weight: 400; color: #23282D; text-decoration: underline">Boeing 787-800</strong>
+                    <img style="padding-top: 1px; fill: black" src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon">
+                </button>
+                <button v-if="showDetails" class="baggage">Погода: <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
+                <p v-if="showDetails">Остаток мест: <strong style="padding-left: 3px;">4</strong></p>
+                <button v-if="showDetails" style="color: #00b8d7; font-family: Mulish, sans-serif">Правила тарифа</button>
             </section>
 
             <footer class="price-info">
@@ -124,12 +71,10 @@
                 <div class="new-price">2 728 422 UZS</div>
                 <div class="button-container">
                     <button class="buy-btn">Купить</button>
-
                     <DropDown>
                         <template #trigger>
                             <button class="select-tariff">Выбрать тарифы</button>
                         </template>
-
                         <template #default="{ close }">
                             <div class="ChoosePlanModal">
                                 <div class="ChoosePlanModal-header">
@@ -138,13 +83,6 @@
                                     </button>
                                 </div>
                                 <TarifModalCards/>
-
-                                <div class="ChoosePlanModal-header">
-                                    <TarifModalHeader/>
-                                </div>
-
-                                <TarifModalCards/>
-
                                 <div class="ChoosePlanModal-summary">
                                     <div>Итого:</div>
                                     <div class="ChoosePlanModal-total">500 724 UZS</div>
@@ -156,30 +94,30 @@
                 </div>
             </footer>
         </section>
-        <DropDown>
-            <template #trigger>
-                <button class="details-link" style="margin: 5px 0 0 16px">
-                    Детали маршрута
-                    <img src="/src/assets/icons/Cardarrow.svg" alt="arrow-icon">
-                </button>
-            </template>
+        <button class="details-link" @click="toggleDetails">
+            {{ showDetails ? 'Скрыть детали' : 'Детали маршрута' }}
+            <img :src="showDetails ? '/src/assets/icons/Cardarrow.svg' : '/src/assets/icons/Cardarrow.svg'"
+                 alt="arrow-icon">
+        </button>
 
-            <template #default="{ close }">
-                <ModalTable :close="close"/>
-            </template>
-        </DropDown>
     </article>
 </template>
 
 <script setup lang="ts">
+import {ref} from 'vue';
 import {Icon} from '@iconify/vue';
 import DropDown from "../../../../components/DropDown.vue";
 import ShareTicket from "../../../../components/ShareTicket.vue";
 import RouteLine from "../../../../components/RouteLine.vue";
 import DateInfo from "../../../../components/DateInfo.vue";
-import ModalTable from "../../../../components/ModalTable.vue";
 import TarifModalHeader from "../../../../components/TarifModalHeader.vue";
 import TarifModalCards from "../../../../components/TarifModalCards.vue";
+
+const showDetails = ref(false);
+
+function toggleDetails() {
+    showDetails.value = !showDetails.value;
+}
 </script>
 
 <style scoped lang="scss">
