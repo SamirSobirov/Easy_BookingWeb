@@ -3,20 +3,25 @@
         {{ time }}
         <span>{{ date }}</span>
         <span class="Cities">{{ city }}</span>
-        <p v-if="showDetails" class="terminal">Класс: <span style="padding-left: 3px;"> B</span></p>
-        <p v-if="showDetails" class="terminal">Класс: <span style="padding-left: 3px;"> B</span></p>
+
+        <p v-if="showDetails" class="terminal">Класс: <span style="padding-left: 3px;">{{ terminal }}</span></p>
+        <p v-if="showDetails" class="terminal">
+            <img :src="img" alt="weather-icon" style="width: 20px; height: 20px;">
+            <span style="padding-left:3px; color: #81899A"> {{ degrees }}</span>
+        </p>
     </div>
 </template>
 
 <script setup lang="ts">
-
 defineProps<{
     time: string;
     date: string;
     city: string;
     showDetails: boolean;
+    terminal: string;
+    degrees: string;
+    img: string;
 }>();
-
 </script>
 
 <style scoped lang="scss">
@@ -38,9 +43,12 @@ defineProps<{
     }
 
     .terminal {
+        display: flex;
         font-size: 12px;
         font-family: Mulish, sans-serif;
         color: #81899A;
+        text-align: left;
+        align-items: center;
 
         span {
             color: black;

@@ -36,9 +36,25 @@
 
         <section class="flight-info">
             <div class="departure-arrival">
-                <DateInfo :show-details="showDetails" time="20:10" date="25 мая, чт" city="Ташкент (TAS)"/>
+                <DateInfo
+                    :show-details="showDetails"
+                    time="20:10"
+                    date="26 мая, чт"
+                    city="Ташкент(TAS)"
+                    terminal="A"
+                    degrees="17°C"
+                    img="/src/assets/icons/sun.svg"
+                />
                 <RouteLine/>
-                <DateInfo :show-details="showDetails" time="23:05" date="26 мая, пт" city="Москва (LED)"/>
+                <DateInfo
+                    :show-details="showDetails"
+                    time="23:05"
+                    date="26 мая, пт"
+                    city="Москва (LED)"
+                    terminal="B"
+                    degrees="-12°C"
+                    img="/src/assets/icons/cloudly.svg"
+                />
 
             </div>
 
