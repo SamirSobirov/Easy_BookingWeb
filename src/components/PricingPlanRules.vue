@@ -32,9 +32,82 @@
     </div>
 
     <hr>
+
+    <div class="help-center">
+        <div
+            class="accordion-item"
+            v-for="(item, index) in accordionItems"
+            :key="index"
+        >
+            <button
+                class="accordion-header"
+                @click="toggle(index)"
+                :aria-expanded="isActive(index)"
+                :aria-controls="`content-${index}`"
+                :id="`header-${index}`"
+            >
+                <span>{{ item.question }}</span>
+                <Icon
+                    :icon="isActive(index) ? expandedIcon : collapsedIcon"
+                    width="24"
+                    height="24"
+                    class="accordion-icon"
+                />
+            </button>
+            <div
+                class="accordion-content"
+                :id="`content-${index}`"
+                role="region"
+                :aria-labelledby="`header-${index}`"
+                :class="{ active: isActive(index) }"
+            >
+                <p>{{ item.answer }}</p>
+            </div>
+        </div>
+    </div>
 </template>
 
-<script setup lang="ts"></script>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import {Icon} from "@iconify/vue";
+
+interface AccordionItem {
+    question: string;
+    answer: string;
+}
+
+const accordionItems = ref<AccordionItem[]>([
+    {
+        question: "Можно ли взять чемодан в самолет?",
+        answer:
+            "Да, обычно пассажиры могут взять чемодан в салон самолета как ручную кладь. Однако существуют ограничения по размерам и весу ручной клади, которые зависят от авиакомпании и класса обслуживания.",
+    },
+    {
+        question: "Есть ли скидки на билеты для детей?",
+        answer:
+            "Да, многие авиакомпании предлагают скидки на билеты для детей. Условия и размер скидки могут различаться в зависимости от перевозчика.",
+    },
+    {
+        question: "Какие аэропорты России закрыты сейчас?",
+        answer: "На данный момент закрыты следующие аэропорты: ...",
+    },
+    {
+        question: "Как купить билет для багажа на кресле?",
+        answer:
+            "Для покупки билета на дополнительный багаж перейдите в раздел 'Багаж' на нашем сайте и следуйте инструкциям.",
+    },
+]);
+
+const activeIndex = ref<number>(0);
+const toggle = (index: number) => {
+    activeIndex.value = activeIndex.value === index ? -1 : index;
+};
+const isActive = (index: number) => activeIndex.value === index;
+
+const expandedIcon = "ep:arrow-up";
+const collapsedIcon = "ep:arrow-down";
+</script>
 
 <style scoped lang="scss">
 .route-container {
@@ -144,10 +217,88 @@
 
 hr {
     margin-top: 15px;
-    height: 0.6px;
+    height: 1px;
     background-color: #e3e3e3;
     border: none;
 }
 
+.help-center {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+
+    .accordion-item {
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 0.75);
+        overflow: hidden;
+        //box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+
+        .accordion-header {
+            font-family: Mulish, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 15px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            border: none;
+            background: none;
+            &:hover {
+                background-color: #ffffff;
+            }
+
+            .accordion-icon {
+                width: 20px;
+                height: 20px;
+                transition: transform 0.3s ease;
+            }
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 12px;
+            background-color: #fff;
+
+            p {
+                margin: 16px 0;
+                font-size: 16px;
+                line-height: 1.5;
+                color: #9399A8;
+                font-family: Mulish, sans-serif;
+            }
+
+            &.active {
+                max-height: 500px;
+                padding: 16px 16px;
+                background-color: transparent;
+            }
+        }
+    }
+
+    .accordion-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 14px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        gap: 10px;
+        background-color: #ffffff;
+        color: #80dbeb;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
 </style>
 
