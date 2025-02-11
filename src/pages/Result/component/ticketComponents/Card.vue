@@ -166,12 +166,12 @@
                 <div class="new-price">2 728 422 UZS</div>
                 <div class="button-container">
                     <button class="buy-btn">Купить</button>
-                    <DropDown>
+                    <Modal>
                         <template #trigger>
                             <button class="select-tariff">Выбрать тарифы</button>
                         </template>
                         <template #default="{ close }">
-                            <div class="ChoosePlanModal">
+                            <div class="ChoosePlanModal" style="background-color: #FFFFFFCC;">
                                 <div class="ChoosePlanModal-header">
                                     <TarifModalHeader/>
                                     <button class="trigger-btn" @click="close"><span class="close-icon">×</span>
@@ -187,7 +187,7 @@
                                 </div>
                             </div>
                         </template>
-                    </DropDown>
+                    </Modal>
                 </div>
             </footer>
         </section>

@@ -40,7 +40,6 @@ const close = () => (isOpen.value = false);
         right: -15px;
         width: 412px;
         height: 170px;
-        background-color: white;
         z-index: 10;
     }
 }
