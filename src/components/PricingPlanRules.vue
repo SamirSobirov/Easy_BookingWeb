@@ -86,7 +86,7 @@
             gap: 4px;
         }
 
-        span {;
+        span {
             color: black;
             font-size: 14px;
         }
