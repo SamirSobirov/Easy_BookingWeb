@@ -35,6 +35,10 @@ import {Icon} from "@iconify/vue";
                         <span>17°C</span>
                     </div>
                 </div>
+
+                <div class="weatherLastWeek">
+
+                </div>
             </div>
         </div>
         <div class="Card">
@@ -171,6 +175,10 @@ import {Icon} from "@iconify/vue";
                     color: #23282D;
                 }
             }
+        }
+
+        .weatherLastWeek {
+
         }
     }
 }
