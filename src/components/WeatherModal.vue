@@ -19,7 +19,14 @@ import {Icon} from "@iconify/vue";
                         21.12.2024
                     </p>
                 </div>
-                <div class="gradus"></div>
+                <div class="gradus">
+                    <div class="max">
+                        <p>Макс: <span>12°C</span></p>
+                    </div>
+                    <div class="max">
+                        <p>Мин: <span>2°C</span></p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="Card">
@@ -88,6 +95,38 @@ import {Icon} from "@iconify/vue";
                     letter-spacing: -1%;
                     display: flex;
                     gap: 3px;
+                }
+            }
+
+            .gradus {
+                margin-top: 8px;
+                display: flex;
+                gap: 6px;
+                align-items: center;
+
+                .max {
+                    width: 135px;
+                    text-align: left;
+                    padding: 8px 8px;
+                    background-color: white;
+                    border-radius: 8px;
+                    height: 31px;
+
+                    p{
+                        display: flex;
+                        gap: 4px;
+                        font-size: 12px;
+                        font-weight: 500;
+                        font-family: Mulish, sans-serif;
+                        line-height: 15px;
+
+                        span {
+                            font-size: 12px;
+                            font-weight: 500;
+                            font-family: Mulish, sans-serif;
+                            color: #23282D;
+                        }
+                    }
                 }
             }
         }
