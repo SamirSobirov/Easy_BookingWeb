@@ -27,6 +27,14 @@ import {Icon} from "@iconify/vue";
                         <p>Мин: <span>2°C</span></p>
                     </div>
                 </div>
+
+                <div class="slider">
+                    <div class="cardGradus">
+                        <p>Сейчас</p>
+                        <img src="/public/icons/sun.svg" alt="">
+                        <span>17°C</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="Card">
@@ -127,6 +135,40 @@ import {Icon} from "@iconify/vue";
                             color: #23282D;
                         }
                     }
+                }
+            }
+        }
+
+        .slider {
+            display: flex;
+
+            .cardGradus {
+                display: flex;
+                flex-direction: column;
+                width: 55px;
+                height: 81px;
+                border-radius: 8px;
+                background-color: white;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                gap: 4px;
+
+                p {
+                    font-size: 12px;
+                    font-family: Mulish, sans-serif;
+                    font-weight: 600;
+                    color: #6D7586;
+                }
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                span {
+                    font-size: 14px;
+                    color: #23282D;
                 }
             }
         }
