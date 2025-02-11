@@ -46,12 +46,15 @@
                 :aria-controls="`content-${index}`"
                 :id="`header-${index}`"
             >
-                <span>{{ item.question }}</span>
+                <span :class="{ activeText: isActive(index) }">
+                    {{ item.question }}
+                </span>
                 <Icon
                     :icon="isActive(index) ? expandedIcon : collapsedIcon"
                     width="24"
                     height="24"
                     class="accordion-icon"
+                    :class="{ activeIcon: isActive(index) }"
                 />
             </button>
             <div
@@ -107,7 +110,6 @@ const accordionItems = ref<AccordionItem[]>([
         answer:
             "Да, обычно пассажиры могут взять чемодан в салон самолета как ручную кладь. Однако существуют ограничения по размерам и весу ручной клади, которые зависят от авиакомпании и класса обслуживания.",
     },
-
 ]);
 
 const activeIndex = ref<number>(0);
@@ -292,7 +294,7 @@ hr {
                 margin: 16px 0;
                 font-size: 16px;
                 line-height: 1.5;
-                color: #9399A8;
+                color: black;
                 font-family: Mulish, sans-serif;
             }
 
@@ -321,6 +323,18 @@ hr {
         color: #80dbeb;
         margin: 0 auto;
         width: 100%;
+    }
+
+    .accordion-content.active {
+        display: block;
+    }
+
+    .activeText {
+        color: #00B8D7;
+    }
+
+    .activeIcon {
+        color: #00B8D7;
     }
 }
 </style>
