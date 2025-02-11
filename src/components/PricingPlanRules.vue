@@ -12,7 +12,24 @@
         <div class="line"></div>
     </div>
 
+    <div class="Tarifs_Header">
+        <div class="passenger">
+            <p>Пассажиры:</p>
 
+            <label class="radio_box">
+                <input type="radio" name="passenger" />
+                <span>Взрослый</span>
+            </label>
+
+            <label class="radio_box">
+                <input type="radio" name="passenger" />
+                <span>Ребенок</span>
+            </label>
+        </div>
+
+        <div class="tarifs">Код тарифа:</div>
+
+    </div>
 </template>
 
 <style scoped lang="scss">
@@ -22,33 +39,107 @@
     align-items: flex-start;
     width: 120px;
     flex-direction: column;
-}
 
-.box {
-    font-family: Mulish, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 17px;
-    width: 100%;
 
-    img {
-        width: 14px;
-        height: 14px;
+    .box {
+        font-family: Mulish, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17px;
+        width: 100%;
+
+        img {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    .line {
+        border-top-right-radius: 100px;
+        border-top-left-radius: 100px;
+        width: 100%;
+        height: 4px;
+        background-color: #00b8d7;
     }
 }
 
-.line {
-    border-top-right-radius: 100px;
-    border-top-left-radius: 100px;
-    width: 100%;
-    height: 4px;
-    background-color: #00b8d7;
+.Tarifs_Header {
+    margin-top: 19px;
+    display: flex;
+    justify-content: space-between;
+
+    .passenger {
+        display: flex;
+
+        p {
+            font-size: 14px;
+            font-family: Mulish, sans-serif;
+            color: #81899A;
+        }
+
+        .radio_box {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-left: 16px;
+
+            span {
+                color: #B5BBC9;
+                transition: color 0.2s;
+            }
+
+            input[type="radio"] {
+                appearance: none;
+                width: 13px;
+                height: 13px;
+                margin-right: 10px;
+                border: 1px solid #ccc;
+                border-radius: 50%;
+                background-color: white;
+                position: relative;
+                outline: none;
+                margin-left: auto;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background-color: transparent;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: background-color 0.2s, transform 0.2s;
+                }
+
+                &:checked {
+                    border: 1.5px solid #80dbeb;
+                    background-color: #80dbeb1d;
+
+                    &::before {
+                        background-color: #80dbeb;
+                        transform: translate(-50%, -50%) scale(1);
+                    }
+                }
+            }
+        }
+        .radio_box input[type="radio"]:checked + span {
+            color: black;
+        }
+    }
+
+
 }
+
 
 </style>
 
