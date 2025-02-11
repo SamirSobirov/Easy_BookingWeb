@@ -46,7 +46,9 @@
                             </div>
 
                             <div class="inputs">
-                                <a href="#">Подробно</a>
+
+                                <button>Подробно</button>
+
                             </div>
                         </div>
                         <p class="card_price"></p>
@@ -113,7 +115,7 @@ const toggleInput = (index: number) => {
                 display: flex;
                 gap: 11px;
 
-                a {
+                button {
                     color: #00B8D7;
                     font-size: 14px;
                 }

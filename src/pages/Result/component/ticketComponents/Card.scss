@@ -73,7 +73,7 @@ button {
   gap: 10px;
   font-size: 10px;
   font-family: Mulish, sans-serif;
-align-items: start;
+  align-items: start;
 }
 
 .details-link {
@@ -137,6 +137,7 @@ align-items: start;
   font-size: 13px;
   cursor: pointer;
   font-family: Mulish, sans-serif;
+
   img {
     padding-top: 3px;
   }
@@ -162,7 +163,7 @@ align-items: start;
   border-left: 1px solid #e3e5ed;
 
   .buy-btn {
-    width: 191px ;
+    width: 191px;
     font-family: Mulish, sans-serif;
   }
 }
@@ -203,6 +204,7 @@ align-items: start;
   cursor: pointer;
   width: 191px;
 }
+
 .ChoosePlanModal {
   font-family: Mulish, sans-serif;
   position: fixed;
@@ -377,10 +379,10 @@ align-items: start;
       padding: 8px 1px 12px 34px;
       gap: 20px;
       border-bottom: 1px solid #47556914;
+
       &__icon {
         padding: 4px 16px 4px 15px;
         border-left: 1px solid #47556914;
-
 
 
         img {
