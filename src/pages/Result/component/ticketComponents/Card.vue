@@ -148,10 +148,10 @@
                     <template #default="{ close }">
                         <div class="Weather-content">
                             <h1>
-                                Просмотр правил тарифа
+                                Погода
                                 <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
                             </h1>
-
+                        <WeatherModal />
                         </div>
                     </template>
                 </Modal>
@@ -223,6 +223,7 @@ import TarifModalHeader from "../../../../components/TarifModalHeader.vue";
 import TarifModalCards from "../../../../components/TarifModalCards.vue";
 import PricingPlanRules from "../../../../components/PricingPlanRules.vue";
 import Modal from "../../../../components/Modal.vue";
+import WeatherModal from "../../../../components/WeatherModal.vue";
 
 
 const showDetails = ref(false);
@@ -389,9 +390,10 @@ function toggleDetails() {
 .Weather-content {
     position: fixed;
     z-index: 11;
-    height: 606px;
-    padding: 20px;
-    background: #fff;
+    height: 620px;
+    padding: 24px 24px;
+    background: #FFFFFFCC;
+    backdrop-filter: blur(10px);
     border-radius: 28px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 674px;
@@ -407,7 +409,7 @@ function toggleDetails() {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 600;
         font-family: 'Mulish', sans-serif;
         color: black;
