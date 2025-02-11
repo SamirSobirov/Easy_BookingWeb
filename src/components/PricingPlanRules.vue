@@ -27,7 +27,13 @@
             </label>
         </div>
 
-        <div class="tarifs">Код тарифа:</div>
+        <div class="tarifs">
+            <div class="passenger">
+            <p>Код тарифа: <span style="color: black;">SRT</span></p>
+            <p>Тип класса: <span style="color: black;">Эконом</span></p>
+
+                </div>
+        </div>
 
     </div>
 </template>
@@ -52,6 +58,7 @@
         font-weight: 500;
         line-height: 17px;
         width: 100%;
+        cursor: pointer;
 
         img {
             width: 14px;
@@ -75,11 +82,14 @@
 
     .passenger {
         display: flex;
-
+        gap: 12px;
         p {
+            cursor: pointer;
             font-size: 14px;
             font-family: Mulish, sans-serif;
             color: #81899A;
+            display: flex;
+            gap: 4px;
         }
 
         .radio_box {
@@ -88,7 +98,6 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding-left: 16px;
 
             span {
                 color: #B5BBC9;
