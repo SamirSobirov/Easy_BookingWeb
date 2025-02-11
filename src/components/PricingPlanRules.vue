@@ -39,6 +39,7 @@
             v-for="(item, index) in accordionItems"
             :key="index"
         >
+            <hr v-if="index !== 0" />
             <button
                 class="accordion-header"
                 @click="toggle(index)"
@@ -104,12 +105,7 @@ const accordionItems = ref<AccordionItem[]>([
         question: "Как купить билет для багажа на кресле?",
         answer:
             "Для покупки билета на дополнительный багаж перейдите в раздел 'Багаж' на нашем сайте и следуйте инструкциям.",
-    },
-    {
-        question: "Можно ли взять чемодан в самолет?",
-        answer:
-            "Да, обычно пассажиры могут взять чемодан в салон самолета как ручную кладь. Однако существуют ограничения по размерам и весу ручной клади, которые зависят от авиакомпании и класса обслуживания.",
-    },
+    }
 ]);
 
 const activeIndex = ref<number>(0);
@@ -245,6 +241,7 @@ hr {
 }
 
 .help-center {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     gap: 8px;
