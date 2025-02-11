@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
     <div class="route-container">
         <div class="box">
@@ -17,26 +13,28 @@
             <p>Пассажиры:</p>
 
             <label class="radio_box">
-                <input type="radio" name="passenger" />
+                <input type="radio" name="passenger"/>
                 <span>Взрослый</span>
             </label>
 
             <label class="radio_box">
-                <input type="radio" name="passenger" />
+                <input type="radio" name="passenger"/>
                 <span>Ребенок</span>
             </label>
         </div>
 
         <div class="tarifs">
             <div class="passenger">
-            <p>Код тарифа: <span style="color: black;">SRT</span></p>
-            <p>Тип класса: <span style="color: black;">Эконом</span></p>
-
-                </div>
+                <p>Код тарифа: <span style="color: black;">SRT</span></p>
+                <p>Тип класса: <span style="color: black;">Эконом</span></p>
+            </div>
         </div>
-
     </div>
+
+    <hr>
 </template>
+
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .route-container {
@@ -45,8 +43,6 @@
     align-items: flex-start;
     width: 120px;
     flex-direction: column;
-
-
     .box {
         font-family: Mulish, sans-serif;
         display: flex;
@@ -59,7 +55,6 @@
         line-height: 17px;
         width: 100%;
         cursor: pointer;
-
         img {
             width: 14px;
             height: 14px;
@@ -79,7 +74,6 @@
     margin-top: 19px;
     display: flex;
     justify-content: space-between;
-
     .passenger {
         display: flex;
         gap: 12px;
@@ -98,12 +92,10 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-
             span {
                 color: #B5BBC9;
                 transition: color 0.2s;
             }
-
             input[type="radio"] {
                 appearance: none;
                 width: 13px;
@@ -115,7 +107,6 @@
                 position: relative;
                 outline: none;
                 margin-left: auto;
-
                 &::before {
                     content: "";
                     display: block;
@@ -133,7 +124,6 @@
                 &:checked {
                     border: 1.5px solid #80dbeb;
                     background-color: #80dbeb1d;
-
                     &::before {
                         background-color: #80dbeb;
                         transform: translate(-50%, -50%) scale(1);
@@ -145,8 +135,13 @@
             color: black;
         }
     }
+}
 
-
+hr {
+    margin-top: 15px;
+    height: 0.6px;
+    background-color: #e3e3e3;
+    border: none;
 }
 
 
