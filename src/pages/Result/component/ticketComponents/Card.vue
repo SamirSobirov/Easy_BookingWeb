@@ -141,10 +141,26 @@
                     <img style="padding-top: 1px; fill: black" src="/src/assets/icons/cardFareStop.svg"
                          alt="baggage-icon">
                 </button>
-                <button v-if="showDetails" class="baggage">Погода: <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
+                <button v-if="showDetails" class="baggage">Погода: <img src="/src/assets/icons/cardFareStop.svg"
+                                                                        alt="baggage-icon"></button>
                 <p v-if="showDetails">Остаток мест: <strong style="padding-left: 3px;">4</strong></p>
-                <button v-if="showDetails" style="color: #00b8d7; font-family: Mulish, sans-serif">Правила тарифа
-                </button>
+
+                <DropDown>
+                    <template #trigger>
+                        <button v-if="showDetails" style="color: #00b8d7; font-family: Mulish, sans-serif">Правила
+                            тарифа
+                        </button>
+                    </template>
+                    <template #default="{ close }">
+                        <div class="PricingPlanRules-content">
+                            <h1>
+                                Просмотр правил тарифа
+                                <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
+                            </h1>
+                            <PricingPlanRules/>
+                        </div>
+                    </template>
+                </DropDown>
             </section>
 
             <footer class="price-info">
@@ -194,6 +210,7 @@ import RouteLine from "../../../../components/RouteLine.vue";
 import DateInfo from "../../../../components/DateInfo.vue";
 import TarifModalHeader from "../../../../components/TarifModalHeader.vue";
 import TarifModalCards from "../../../../components/TarifModalCards.vue";
+import PricingPlanRules from "../../../../components/PricingPlanRules.vue";
 
 
 const showDetails = ref(false);
@@ -299,4 +316,56 @@ function toggleDetails() {
     }
 }
 
+.PricingPlanRules-content {
+    position: absolute;
+    z-index: 10;
+    height: 170px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 933px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    left: -80%;
+
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: 'Mulish', sans-serif;
+        color: black;
+        margin-bottom: 15px;
+
+        .trigger-btn {
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid #C9D4E4;
+            transition: background 0.3s ease, border 0.3s ease;
+
+            .close-icon {
+                font-size: 24px;
+                color: #475569;
+                transition: color 0.3s ease;
+            }
+
+            &:active, &.active {
+                border-color: #00B8D7;
+
+                .close-icon {
+                    color: #00B8D7;
+                }
+            }
+        }
+    }
+}
 </style>
