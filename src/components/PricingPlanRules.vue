@@ -25,8 +25,8 @@
 
         <div class="tarifs">
             <div class="passenger">
-                <p>Код тарифа: <span style="color: black;">SRT</span></p>
-                <p>Тип класса: <span style="color: black;">Эконом</span></p>
+                <p>Код тарифа: <span>SRT</span></p>
+                <p>Тип класса: <span>Эконом</span></p>
             </div>
         </div>
     </div>
@@ -86,6 +86,11 @@
             gap: 4px;
         }
 
+        span {;
+            color: black;
+            font-size: 14px;
+        }
+
         .radio_box {
             cursor: pointer;
             display: flex;
@@ -143,7 +148,6 @@ hr {
     background-color: #e3e3e3;
     border: none;
 }
-
 
 </style>
 
