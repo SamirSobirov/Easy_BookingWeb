@@ -318,7 +318,7 @@ function toggleDetails() {
 .PricingPlanRules-content {
     position: fixed;
     z-index: 11;
-    height: 660px;
+    height: 700px;
     padding: 20px;
     background: #fff;
     border-radius: 28px;

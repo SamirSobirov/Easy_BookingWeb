@@ -69,7 +69,7 @@
 
 
 <script setup lang="ts">
-import { ref } from "vue";
+import {ref} from "vue";
 import {Icon} from "@iconify/vue";
 
 interface AccordionItem {
@@ -97,6 +97,17 @@ const accordionItems = ref<AccordionItem[]>([
         answer:
             "Для покупки билета на дополнительный багаж перейдите в раздел 'Багаж' на нашем сайте и следуйте инструкциям.",
     },
+    {
+        question: "Как купить билет для багажа на кресле?",
+        answer:
+            "Для покупки билета на дополнительный багаж перейдите в раздел 'Багаж' на нашем сайте и следуйте инструкциям.",
+    },
+    {
+        question: "Можно ли взять чемодан в самолет?",
+        answer:
+            "Да, обычно пассажиры могут взять чемодан в салон самолета как ручную кладь. Однако существуют ограничения по размерам и весу ручной клади, которые зависят от авиакомпании и класса обслуживания.",
+    },
+
 ]);
 
 const activeIndex = ref<number>(0);
@@ -116,6 +127,7 @@ const collapsedIcon = "ep:arrow-down";
     align-items: flex-start;
     width: 120px;
     flex-direction: column;
+
     .box {
         font-family: Mulish, sans-serif;
         display: flex;
@@ -128,6 +140,7 @@ const collapsedIcon = "ep:arrow-down";
         line-height: 17px;
         width: 100%;
         cursor: pointer;
+
         img {
             width: 14px;
             height: 14px;
@@ -147,9 +160,11 @@ const collapsedIcon = "ep:arrow-down";
     margin-top: 19px;
     display: flex;
     justify-content: space-between;
+
     .passenger {
         display: flex;
         gap: 12px;
+
         p {
             cursor: pointer;
             font-size: 14px;
@@ -170,10 +185,12 @@ const collapsedIcon = "ep:arrow-down";
             align-items: center;
             justify-content: center;
             text-align: center;
+
             span {
                 color: #B5BBC9;
                 transition: color 0.2s;
             }
+
             input[type="radio"] {
                 appearance: none;
                 width: 13px;
@@ -185,6 +202,7 @@ const collapsedIcon = "ep:arrow-down";
                 position: relative;
                 outline: none;
                 margin-left: auto;
+
                 &::before {
                     content: "";
                     display: block;
@@ -202,6 +220,7 @@ const collapsedIcon = "ep:arrow-down";
                 &:checked {
                     border: 1.5px solid #80dbeb;
                     background-color: #80dbeb1d;
+
                     &::before {
                         background-color: #80dbeb;
                         transform: translate(-50%, -50%) scale(1);
@@ -209,6 +228,7 @@ const collapsedIcon = "ep:arrow-down";
                 }
             }
         }
+
         .radio_box input[type="radio"]:checked + span {
             color: black;
         }
@@ -248,6 +268,7 @@ hr {
             width: 100%;
             border: none;
             background: none;
+
             &:hover {
                 background-color: #ffffff;
             }
@@ -264,7 +285,8 @@ hr {
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
             padding: 0 12px;
-            background-color: #fff;
+            background-color: #E3E5ED;
+            text-align: left;
 
             p {
                 margin: 16px 0;
@@ -275,9 +297,10 @@ hr {
             }
 
             &.active {
+                border-radius: 12px;
+                background-color: #E3E5ED;
                 max-height: 500px;
                 padding: 16px 16px;
-                background-color: transparent;
             }
         }
     }
