@@ -141,8 +141,21 @@
                     <img style="padding-top: 1px; fill: black" src="/src/assets/icons/cardFareStop.svg"
                          alt="baggage-icon">
                 </button>
-                <button v-if="showDetails" class="baggage">Погода: <img src="/src/assets/icons/cardFareStop.svg"
-                                                                        alt="baggage-icon"></button>
+                <Modal>
+                    <template #trigger>
+                <button v-if="showDetails" class="baggage">Погода: <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
+                    </template>
+                    <template #default="{ close }">
+                        <div class="Weather-content">
+                            <h1>
+                                Просмотр правил тарифа
+                                <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
+                            </h1>
+
+                        </div>
+                    </template>
+                </Modal>
+
                 <p v-if="showDetails">Остаток мест: <strong style="padding-left: 3px;">4</strong></p>
 
                 <Modal>
@@ -324,6 +337,64 @@ function toggleDetails() {
     border-radius: 28px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 933px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: 'Mulish', sans-serif;
+        color: black;
+        margin-bottom: 15px;
+        line-height: 23px;
+
+        .trigger-btn {
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid #C9D4E4;
+            transition: background 0.3s ease, border 0.3s ease;
+
+            .close-icon {
+                font-size: 24px;
+                color: #81899A;
+                padding: 0 0 0 1px;
+                transition: color 0.3s ease;
+            }
+
+            &:active, &.active {
+                border-color: #00B8D7;
+
+                .close-icon {
+                    color: #00B8D7;
+                }
+            }
+        }
+    }
+}
+
+.Weather-content {
+    position: fixed;
+    z-index: 11;
+    height: 606px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 28px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 674px;
     text-align: center;
     display: flex;
     flex-direction: column;
