@@ -357,7 +357,8 @@ function toggleDetails() {
 
             .close-icon {
                 font-size: 24px;
-                color: #475569;
+                color: #81899A;
+                padding: 0 0 0 1px;
                 transition: color 0.3s ease;
             }
 
