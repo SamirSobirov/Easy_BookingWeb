@@ -145,11 +145,9 @@
                                                                         alt="baggage-icon"></button>
                 <p v-if="showDetails">Остаток мест: <strong style="padding-left: 3px;">4</strong></p>
 
-                <DropDown>
+                <Modal>
                     <template #trigger>
-                        <button v-if="showDetails" style="color: #00b8d7; font-family: Mulish, sans-serif">Правила
-                            тарифа
-                        </button>
+                        <button v-if="showDetails" style="color: #00b8d7; font-family: Mulish, sans-serif">Правила тарифа</button>
                     </template>
                     <template #default="{ close }">
                         <div class="PricingPlanRules-content">
@@ -160,7 +158,7 @@
                             <PricingPlanRules/>
                         </div>
                     </template>
-                </DropDown>
+                </Modal>
             </section>
 
             <footer class="price-info">
@@ -211,6 +209,7 @@ import DateInfo from "../../../../components/DateInfo.vue";
 import TarifModalHeader from "../../../../components/TarifModalHeader.vue";
 import TarifModalCards from "../../../../components/TarifModalCards.vue";
 import PricingPlanRules from "../../../../components/PricingPlanRules.vue";
+import Modal from "../../../../components/Modal.vue";
 
 
 const showDetails = ref(false);
