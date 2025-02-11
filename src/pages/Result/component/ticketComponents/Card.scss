@@ -203,24 +203,23 @@ align-items: start;
   cursor: pointer;
   width: 191px;
 }
-
 .ChoosePlanModal {
   font-family: Mulish, sans-serif;
-  position: absolute;
+  position: fixed;
   z-index: 10000;
-  left: -130%;
-  top: -150%;
   width: 850px;
   backdrop-filter: blur(80px);
-  background-color: rgba(237, 237, 237, 0.09);
   border-radius: 12px;
   border: 1px solid #FFFFFF26;
   box-shadow: 0 4px 10px 10px rgba(0, 0, 0, 0.1);
   padding: 16px 30px 10px 16px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  background-color: #FFFFFFCC;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   .ChoosePlanModal-header {
     display: flex;

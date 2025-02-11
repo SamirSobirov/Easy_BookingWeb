@@ -171,7 +171,7 @@
                             <button class="select-tariff">Выбрать тарифы</button>
                         </template>
                         <template #default="{ close }">
-                            <div class="ChoosePlanModal" style="background-color: #FFFFFFCC;">
+                            <div class="ChoosePlanModal">
                                 <div class="ChoosePlanModal-header">
                                     <TarifModalHeader/>
                                     <button class="trigger-btn" @click="close"><span class="close-icon">×</span>
@@ -316,8 +316,8 @@ function toggleDetails() {
 }
 
 .PricingPlanRules-content {
-    position: absolute;
-    z-index: 10;
+    position: fixed;
+    z-index: 11;
     height: 170px;
     padding: 20px;
     background: #fff;
@@ -327,7 +327,10 @@ function toggleDetails() {
     text-align: center;
     display: flex;
     flex-direction: column;
-    left: -80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 
     h1 {
         display: flex;
