@@ -29,9 +29,11 @@ const close = () => (isOpen.value = false);
         left: 0;
         width: 100vw;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background: #47556959;
+        backdrop-filter: blur(1px);
         z-index: 9;
     }
+
 
     .share-container {
         position: absolute;

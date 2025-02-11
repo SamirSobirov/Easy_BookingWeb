@@ -318,10 +318,10 @@ function toggleDetails() {
 .PricingPlanRules-content {
     position: fixed;
     z-index: 11;
-    height: 170px;
+    height: 660px;
     padding: 20px;
     background: #fff;
-    border-radius: 12px;
+    border-radius: 28px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 933px;
     text-align: center;
@@ -341,6 +341,7 @@ function toggleDetails() {
         font-family: 'Mulish', sans-serif;
         color: black;
         margin-bottom: 15px;
+        line-height: 23px;
 
         .trigger-btn {
             background: none;
