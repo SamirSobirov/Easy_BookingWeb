@@ -20,6 +20,7 @@ defineProps({
 
 <style scoped lang="scss">
 .cardGradus {
+    user-select: none;
     display: flex;
     flex-direction: column;
     width: 55px;
