@@ -166,6 +166,7 @@ aside {
     gap: 14px;
 
     .folowPrice {
+        user-select: none;
         cursor: pointer;
         backdrop-filter: blur(10px);
         padding: 16px;
@@ -185,6 +186,7 @@ aside {
     }
 
     .sidebar {
+        user-select: none;
         backdrop-filter: blur(10px);
         padding: 2px 15px 5px 15px;
         background-color: #FFFFFFA6;
