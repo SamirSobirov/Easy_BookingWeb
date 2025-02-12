@@ -156,12 +156,12 @@
                             </h1>
                             <div class="plane-section">
 
-                                <div class="box">
+                                <div class="boxPlane">
                                     <p>Расстояние между кресел:</p>
                                     <img style=" " src="/src/assets/images/planeChairs.svg" alt="">
                                 </div>
 
-                                <div class="box" style="margin-top: -10px;">
+                                <div class="boxPlane">
                                     <p>Схема кресел:</p>
                                     <img style="margin-top: 10px" src="/src/assets/images/schemeChairs.svg" alt="">
                                 </div>
