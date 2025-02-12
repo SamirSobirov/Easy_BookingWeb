@@ -479,7 +479,7 @@ button {
     align-items: flex-start;
     gap: 10px;
 
-    div {
+    .box {
       margin-top: 12px;
       padding: 0 16px;
       display: flex;
@@ -487,11 +487,16 @@ button {
       align-items: start;
       justify-content: left;
       text-align: left;
+      gap: 12px;
       p {
         font-family: Mulish, sans-serif;
         font-size: 14px;
         color: #23282D;
       }
+
+    img {
+      height: 131px;
+    }
 
     }
   }

@@ -155,12 +155,13 @@
                                 <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
                             </h1>
                             <div class="plane-section">
-                                <div>
+
+                                <div class="box">
                                     <p>Расстояние между кресел:</p>
-                                    <img src="/src/assets/images/planeChairs.svg" alt="">
+                                    <img src="/src/assets/images/schemeChairs.svg" alt="">
                                 </div>
 
-                                <div>
+                                <div class="box">
                                     <p>Схема кресел:</p>
                                     <img src="/src/assets/images/schemeChairs.svg" alt="">
                                 </div>
