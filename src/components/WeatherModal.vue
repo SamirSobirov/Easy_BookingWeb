@@ -1,6 +1,6 @@
 <template>
-    <div class="Cards">
-        <div v-for="(city, index) in cities" :key="index" class="Card">
+    <div class="CardsWeather">
+        <div v-for="(city, index) in cities" :key="index" class="WeatherGradusCard">
             <div class="weatherHeader">
                 <p>{{ city.name }}</p>
                 <h1>{{ city.temperature }}°C</h1>
