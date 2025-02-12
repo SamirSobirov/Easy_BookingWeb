@@ -158,12 +158,12 @@
 
                                 <div class="box">
                                     <p>Расстояние между кресел:</p>
-                                    <img src="/src/assets/images/schemeChairs.svg" alt="">
+                                    <img style=" " src="/src/assets/images/planeChairs.svg" alt="">
                                 </div>
 
                                 <div class="box">
                                     <p>Схема кресел:</p>
-                                    <img src="/src/assets/images/schemeChairs.svg" alt="">
+                                    <img style="margin-top: 10px" src="/src/assets/images/schemeChairs.svg" alt="">
                                 </div>
                             </div>
                         </div>
