@@ -61,6 +61,29 @@ const weatherData = ref([
                         <Icon icon="oui:token-date" width="18" height="18"/>
                         <span>Прогноз на 5 дней</span>
                     </div>
+                    <div class="weatherLastWeek__main">
+                        <p>Сегодня</p>
+                        <img src="/public/icons/cloudly.svg" alt="">
+                        <p class="gradus">10° <span style="color: #B5BBC9">/</span>  17°</p>
+                    </div>
+                    <hr>
+                    <div class="weatherLastWeek__main">
+                        <p>Сегодня</p>
+                        <img src="/public/icons/cloudly.svg" alt="">
+                        <p class="gradus">10° <span style="color: #B5BBC9">/</span>  17°</p>
+                    </div>
+                    <hr>
+                    <div class="weatherLastWeek__main">
+                        <p>Сегодня</p>
+                        <img src="/public/icons/cloudly.svg" alt="">
+                        <p class="gradus">10° <span style="color: #B5BBC9">/</span>  17°</p>
+                    </div>
+                    <hr>
+                    <div class="weatherLastWeek__main">
+                        <p>Сегодня</p>
+                        <img src="/public/icons/cloudly.svg" alt="">
+                        <p class="gradus">10° <span style="color: #B5BBC9">/</span>  17°</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,7 +101,7 @@ const weatherData = ref([
 
     .Card {
         width: 308px;
-        height: 518px;
+        height: 530px;
         background-color: rgba(255, 255, 255, 0.54);
         border-radius: 16px;
 
@@ -196,16 +219,16 @@ const weatherData = ref([
 
         }
 
-
-
         .weatherLastWeek {
             display: flex;
             flex-direction: column;
+            gap: 12px;
             width: 276px;
             text-align: left;
             background-color: #FFFFFF;
             border-radius: 8px;
             padding: 10px 8px;
+            height: 234px;
 
             &__header {
                 align-items: center;
@@ -217,6 +240,37 @@ const weatherData = ref([
                     font-size: 14px;
                     font-family: Mulish, sans-serif;
                 }
+            }
+
+            &__main {
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                align-items: center;
+
+                p {
+                    font-size: 14px;
+                    font-family: Mulish, sans-serif;
+                    color: #81899A;
+                    font-weight: 400;
+                }
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                .gradus {
+                    color: #23282D;
+                    font-size: 14px;
+                    font-family: Mulish, sans-serif;
+                }
+            }
+
+            hr {
+                margin-top: 0;
+                width: 100%;
+                border: 1px solid rgba(223, 225, 233, 0.19);
             }
         }
     }

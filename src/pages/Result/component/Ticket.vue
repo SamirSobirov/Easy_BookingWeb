@@ -27,6 +27,7 @@ import Asides from "./Asides.vue";
     gap: 20px;
 
     .containerFooter {
+        user-select: none;
         gap: 20px;
         display: flex;
         flex-direction: column;
