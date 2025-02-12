@@ -161,7 +161,7 @@
                                     <img style=" " src="/src/assets/images/planeChairs.svg" alt="">
                                 </div>
 
-                                <div class="box">
+                                <div class="box" style="margin-top: -10px;">
                                     <p>Схема кресел:</p>
                                     <img style="margin-top: 10px" src="/src/assets/images/schemeChairs.svg" alt="">
                                 </div>
