@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import {Icon} from "@iconify/vue";
-import {ref} from "vue";
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import { Navigation, Pagination } from 'swiper/modules';
+import { Icon } from "@iconify/vue";
+import { ref } from "vue";
 import WeatherCard from "./WeatherCard.vue";
 
 const weatherData = ref([
@@ -11,6 +14,7 @@ const weatherData = ref([
     {day: "16", icon: "/icons/cloudly.svg", temperature: 13},
     {day: "12", icon: "/icons/sun.svg", temperature: 19},
     {day: "13", icon: "/icons/cloudly.svg", temperature: 18},
+    {day: "12", icon: "/icons/sun.svg", temperature: 19},
 ]);
 </script>
 
@@ -39,12 +43,18 @@ const weatherData = ref([
                     </div>
                 </div>
 
-                        <div class="embla__container">
-                            <div class="embla__slide" v-for="(weather, index) in weatherData" :key="index">
-                                <WeatherCard :day="weather.day" :icon="weather.icon" :temperature="weather.temperature"/>
-                            </div>
-                        </div>
-
+                <swiper
+                    :modules="[Navigation, Pagination]"
+                    :slides-per-view="1"
+                    :space-between="10"
+                    :navigation="true"
+                    :pagination="{ clickable: false }"
+                    class="weather-swiper"
+                >
+                    <swiper-slide v-for="(weather, index) in weatherData" :key="index">
+                        <WeatherCard :day="weather.day" :icon="weather.icon" :temperature="weather.temperature"/>
+                    </swiper-slide>
+                </swiper>
 
                 <div class="weatherLastWeek">
 
@@ -58,11 +68,31 @@ const weatherData = ref([
 </template>
 
 <style lang="scss">
+.swiper {
+    overflow-x: scroll !important;
+    padding-bottom: 10px;
+}
 
-.embla__container{
-    display: flex;
-    gap: 10px;
-    overflow-x: scroll;
+.swiper::-webkit-scrollbar {
+    height: 4px;
+}
+
+.swiper::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.swiper::-webkit-scrollbar-thumb {
+    background: #c0c4cc;
+    border-radius: 10px;
+}
+
+.swiper-slide {
+    flex-shrink: 1;
+}
+.weather-swiper {
+    width: 100%;
+
 }
 .Cards {
     display: flex;
