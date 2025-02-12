@@ -390,10 +390,10 @@ function toggleDetails() {
 .Weather-content {
     position: fixed;
     z-index: 11;
-    height: 620px;
+    height: 640px;
     padding: 24px 24px;
     background: #FFFFFFCC;
-    backdrop-filter: blur(10px);
+
     border-radius: 28px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 674px;

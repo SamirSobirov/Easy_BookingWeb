@@ -1,29 +1,66 @@
 <script setup lang="ts">
-import {Swiper, SwiperSlide} from 'swiper/vue';
-import 'swiper/css';
-import {Navigation, Pagination} from 'swiper/modules';
-import {Icon} from "@iconify/vue";
 import {ref} from "vue";
+import {Swiper, SwiperSlide} from "swiper/vue";
+import "swiper/css";
+import {Navigation, Pagination} from "swiper/modules";
+import {Icon} from "@iconify/vue";
 import WeatherCard from "./WeatherCard.vue";
+
+const cities = ref([
+    {
+        name: "Ташкент",
+        temperature: 17,
+        date: "21.12.2024",
+        max: 12,
+        min: 2,
+        forecast: [
+            {day: "Сегодня", icon: "/public/icons/cloudly.svg", max: 17, min: 10},
+            {day: "Завтра", icon: "/public/icons/cloudly.svg", max: 16, min: 9},
+            {day: "Понедельник", icon: "/public/icons/cloudly.svg", max: 15, min: 8}
+        ]
+    },
+    {
+        name: "Стамбул",
+        temperature: 9,
+        date: "21.12.2024",
+        max: 12,
+        min: 2,
+        forecast: [
+            {day: "Сегодня", icon: "/public/icons/cloudly.svg", max: 17, min: 10},
+            {day: "Завтра", icon: "/public/icons/cloudly.svg", max: 16, min: 9},
+            {day: "Понедельник", icon: "/public/icons/cloudly.svg", max: 15, min: 8}
+        ]
+    },
+    {
+        name: "Самарканд",
+        temperature: 9,
+        date: "21.12.2024",
+        max: 12,
+        min: 2,
+        forecast: [
+            {day: "Сегодня", icon: "/public/icons/cloudly.svg", max: 17, min: 10},
+            {day: "Завтра", icon: "/public/icons/cloudly.svg", max: 16, min: 9},
+            {day: "Понедельник", icon: "/public/icons/cloudly.svg", max: 15, min: 8}
+        ]
+    }
+]);
+
 
 const weatherData = ref([
     {day: "Сейчас", icon: "/icons/sun.svg", temperature: 17},
     {day: "12", icon: "/icons/sun.svg", temperature: 19},
     {day: "13", icon: "/icons/cloudly.svg", temperature: 18},
     {day: "15", icon: "/icons/sun.svg", temperature: 12},
-    {day: "16", icon: "/icons/cloudly.svg", temperature: 13},
-    {day: "12", icon: "/icons/sun.svg", temperature: 19},
-    {day: "13", icon: "/icons/cloudly.svg", temperature: 18},
-    {day: "12", icon: "/icons/sun.svg", temperature: 19},
+    {day: "16", icon: "/icons/cloudly.svg", temperature: 13}
 ]);
 </script>
 
 <template>
     <div class="Cards">
-        <div class="Card">
+        <div v-for="(city, index) in cities" :key="index" class="Card">
             <div class="weatherHeader">
-                <p>Ташкент</p>
-                <h1>17°C</h1>
+                <p>{{ city.name }}</p>
+                <h1>{{ city.temperature }}°C</h1>
             </div>
 
             <div class="weatherGradus">
@@ -31,15 +68,15 @@ const weatherData = ref([
                     <p>Временами облачно</p>
                     <p class="date">
                         <Icon icon="oui:token-date" width="18" height="18"/>
-                        21.12.2024
+                        {{ city.date }}
                     </p>
                 </div>
                 <div class="gradus">
                     <div class="max">
-                        <p>Макс: <span>12°C</span></p>
+                        <p>Макс: <span>{{ city.max }}°C</span></p>
                     </div>
                     <div class="max">
-                        <p>Мин: <span>2°C</span></p>
+                        <p>Мин: <span>{{ city.min }}°C</span></p>
                     </div>
                 </div>
 
@@ -51,7 +88,7 @@ const weatherData = ref([
                     :pagination="{ clickable: false }"
                     class="weather-swiper"
                 >
-                    <swiper-slide v-for="(weather, index) in weatherData" :key="index">
+                    <swiper-slide v-for="(weather, i) in weatherData" :key="i">
                         <WeatherCard :day="weather.day" :icon="weather.icon" :temperature="weather.temperature"/>
                     </swiper-slide>
                 </swiper>
@@ -61,49 +98,49 @@ const weatherData = ref([
                         <Icon icon="oui:token-date" width="18" height="18"/>
                         <span>Прогноз на 5 дней</span>
                     </div>
-                    <div class="weatherLastWeek__main">
-                        <p>Сегодня</p>
-                        <img src="/public/icons/cloudly.svg" alt="">
-                        <p class="gradus">10° <span style="color: #B5BBC9">/</span>  17°</p>
-                    </div>
-                    <hr>
-                    <div class="weatherLastWeek__main">
-                        <p>Сегодня</p>
-                        <img src="/public/icons/cloudly.svg" alt="">
-                        <p class="gradus">10° <span style="color: #B5BBC9">/</span>  17°</p>
-                    </div>
-                    <hr>
-                    <div class="weatherLastWeek__main">
-                        <p>Сегодня</p>
-                        <img src="/public/icons/cloudly.svg" alt="">
-                        <p class="gradus">10° <span style="color: #B5BBC9">/</span>  17°</p>
-                    </div>
-                    <hr>
-                    <div class="weatherLastWeek__main">
-                        <p>Сегодня</p>
-                        <img src="/public/icons/cloudly.svg" alt="">
-                        <p class="gradus">10° <span style="color: #B5BBC9">/</span>  17°</p>
+                    <div v-for="(forecast, j) in city.forecast" :key="j">
+                        <div class="weatherLastWeek__main">
+                            <p>{{ forecast.day }}</p>
+                            <img :src="forecast.icon" alt="weather icon"/>
+                            <p class="gradus">{{ forecast.min }}° <span style="color: #B5BBC9">/</span> {{
+                                    forecast.max
+                                }}°</p>
+                        </div>
+                        <hr v-if="j < city.forecast.length - 1"/>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="Card">
-
         </div>
     </div>
 </template>
 
 <style lang="scss">
-
 .Cards {
     display: flex;
     gap: 14px;
+    overflow-x: scroll;
+    padding-bottom: 10px;
+
+    &::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f5f5f5;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #c0c4cc;
+        border-radius: 10px;
+    }
 
     .Card {
         width: 308px;
         height: 530px;
         background-color: rgba(255, 255, 255, 0.54);
         border-radius: 16px;
+
 
         .weatherHeader {
             margin-top: 12px;
