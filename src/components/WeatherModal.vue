@@ -1,13 +1,35 @@
 <script setup lang="ts">
 import {Icon} from "@iconify/vue";
+import { ref, onMounted } from "vue";
+import EmblaCarousel from "embla-carousel";
 import WeatherCard from "./WeatherCard.vue";
-const weatherData = [
+const weatherData = ref([
     { day: "Сейчас", icon: "/icons/sun.svg", temperature: 17 },
     { day: "12", icon: "/icons/sun.svg", temperature: 19 },
     { day: "13", icon: "/icons/cloudly.svg", temperature: 18 },
-    { day: "15", icon: "/icons/rain.svg", temperature: 12 },
+    { day: "15", icon: "/icons/sun.svg", temperature: 12 },
     { day: "16", icon: "/icons/cloudly.svg", temperature: 13 },
-];
+    { day: "12", icon: "/icons/sun.svg", temperature: 19 },
+    { day: "13", icon: "/icons/cloudly.svg", temperature: 18 },
+]);
+const emblaRef = ref<HTMLElement | null>(null);
+
+onMounted(() => {
+    if (emblaRef.value) {
+        const embla = EmblaCarousel(emblaRef.value, {
+            loop: false, // Отключить бесконечный цикл
+            dragFree: true, // Плавный скролл
+            align: 'start', // Выравнивание слайдов
+            skipSnaps: false, // Пропускать ли промежуточные слайды
+            inViewThreshold: 0.7, // Порог видимости слайда
+        });
+
+        // Опционально: Добавьте обработчики событий, если нужно
+        embla.on('select', () => {
+            console.log('Current slide:', embla.selectedScrollSnap());
+        });
+    }
+});
 </script>
 
 <template>
@@ -35,16 +57,13 @@ const weatherData = [
                     </div>
                 </div>
 
-
-                <div class="weather-slider">
-                    <div class="weather-cards">
-                        <WeatherCard
-                            v-for="(weather, index) in weatherData"
-                            :key="index"
-                            :day="weather.day"
-                            :icon="weather.icon"
-                            :temperature="weather.temperature"
-                        />
+                <div class="weather-slider embla" ref="emblaRef">
+                    <div class="embla__viewport">
+                        <div class="embla__container">
+                            <div class="embla__slide" v-for="(weather, index) in weatherData" :key="index">
+                                <WeatherCard :day="weather.day" :icon="weather.icon" :temperature="weather.temperature" />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -60,33 +79,36 @@ const weatherData = [
     </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .weather-slider {
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 10px;
 }
 
-.weather-cards {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-    min-width: max-content;
-    padding-bottom: 10px;
-}
-
 .weather-slider::-webkit-scrollbar {
-    height: 6px;
-}
-
-.weather-slider::-webkit-scrollbar-track {
-    background: transparent;
+    height: 4px;
 }
 
 .weather-slider::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 5px;
+    background-color: #D0D5DD;
+    border-radius: 24px;
 }
+
+.weather-slider::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+    border-radius: 24px;
+}
+
+.embla__container {
+    display: flex;
+    gap: 10px;
+}
+
+.embla__slide:active {
+    cursor: grabbing;
+}
+
 .Cards {
     display: flex;
     gap: 14px;
