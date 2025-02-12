@@ -61,8 +61,8 @@
                 <p>Тариф: <strong>Эконом Базовый</strong></p>
                 <DropDown>
                     <template #trigger>
-                        <button class="baggage">Багаж 23 кг <img src="/src/assets/icons/cardFareStop.svg"
-                                                                 alt="baggage-icon"></button>
+                        <button class="baggage">Багаж 23 кг
+                            <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
                     </template>
                     <template #default="{ close }">
                         <div class="baggage-content">
@@ -136,14 +136,44 @@
                 </DropDown>
                 <p class="return">Возвратный <img src="/src/assets/icons/CardCheckCircle.svg" alt="check-icon"></p>
                 <p v-if="showDetails">Класс: <strong style="padding-left: 3px;"> B</strong></p>
-                <button v-if="showDetails" class="baggage" style="text-decoration: none; white-space: nowrap">Самолет:
-                    <strong style="font-weight: 400; color: #23282D; text-decoration: underline">Boeing 787-800</strong>
-                    <img style="padding-top: 1px; fill: black" src="/src/assets/icons/cardFareStop.svg"
-                         alt="baggage-icon">
-                </button>
+
+
+                <DropDown>
+                    <template #trigger>
+                        <button v-if="showDetails" class="baggage" style="text-decoration: none; white-space: nowrap">
+                            Самолет:
+                            <strong style="font-weight: 400; color: #23282D; text-decoration: underline">Boeing
+                                787-800</strong>
+                            <img style="padding-top: 1px; fill: black" src="/src/assets/icons/cardFareStop.svg"
+                                 alt="baggage-icon">
+                        </button>
+                    </template>
+                    <template #default="{ close }">
+                        <div class="plane-content">
+                            <h1>
+                                Boeing 787-800
+                                <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
+                            </h1>
+                            <div class="plane-section">
+                                <div>
+                                    <p>Расстояние между кресел:</p>
+                                    <img src="/src/assets/images/planeChairs.svg" alt="">
+                                </div>
+
+                                <div>
+                                    <p>Схема кресел:</p>
+                                    <img src="/src/assets/images/planeChairs.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </DropDown>
+
+
                 <Modal>
                     <template #trigger>
-                <button v-if="showDetails" class="baggage">Погода: <img src="/src/assets/icons/cardFareStop.svg" alt="baggage-icon"></button>
+                        <button v-if="showDetails" class="baggage">Погода: <img src="/src/assets/icons/cardFareStop.svg"
+                                                                                alt="baggage-icon"></button>
                     </template>
                     <template #default="{ close }">
                         <div class="Weather-content">
@@ -151,7 +181,7 @@
                                 Погода
                                 <button class="trigger-btn" @click="close"><span class="close-icon">×</span></button>
                             </h1>
-                        <WeatherModal />
+                            <WeatherModal/>
                         </div>
                     </template>
                 </Modal>
@@ -160,7 +190,9 @@
 
                 <Modal>
                     <template #trigger>
-                        <button v-if="showDetails" style="color: #00b8d7; font-family: Mulish, sans-serif">Правила тарифа</button>
+                        <button v-if="showDetails" style="color: #00b8d7; font-family: Mulish, sans-serif">Правила
+                            тарифа
+                        </button>
                     </template>
                     <template #default="{ close }">
                         <div class="PricingPlanRules-content">
@@ -445,4 +477,6 @@ function toggleDetails() {
         }
     }
 }
+
+
 </style>
