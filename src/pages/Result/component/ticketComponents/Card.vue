@@ -162,7 +162,7 @@
 
                                 <div>
                                     <p>Схема кресел:</p>
-                                    <img src="/src/assets/images/planeChairs.svg" alt="">
+                                    <img src="/src/assets/images/schemeChairs.svg" alt="">
                                 </div>
                             </div>
                         </div>
