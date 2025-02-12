@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import {Swiper, SwiperSlide} from 'swiper/vue';
 import 'swiper/css';
-import { Navigation, Pagination } from 'swiper/modules';
-import { Icon } from "@iconify/vue";
-import { ref } from "vue";
+import {Navigation, Pagination} from 'swiper/modules';
+import {Icon} from "@iconify/vue";
+import {ref} from "vue";
 import WeatherCard from "./WeatherCard.vue";
 
 const weatherData = ref([
@@ -57,7 +57,10 @@ const weatherData = ref([
                 </swiper>
 
                 <div class="weatherLastWeek">
-
+                    <div class="weatherLastWeek__header">
+                        <Icon icon="oui:token-date" width="18" height="18"/>
+                        <span>Прогноз на 5 дней</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,32 +71,7 @@ const weatherData = ref([
 </template>
 
 <style lang="scss">
-.swiper {
-    overflow-x: scroll !important;
-    padding-bottom: 10px;
-}
 
-.swiper::-webkit-scrollbar {
-    height: 4px;
-}
-
-.swiper::-webkit-scrollbar-track {
-    background: #f5f5f5;
-    border-radius: 10px;
-}
-
-.swiper::-webkit-scrollbar-thumb {
-    background: #c0c4cc;
-    border-radius: 10px;
-}
-
-.swiper-slide {
-    flex-shrink: 1;
-}
-.weather-swiper {
-    width: 100%;
-
-}
 .Cards {
     display: flex;
     gap: 14px;
@@ -189,15 +167,58 @@ const weatherData = ref([
             }
         }
 
-        .slider {
-            display: flex;
-            gap: 6px;
+        .swiper {
+            margin-top: 10px;
+            overflow-x: scroll !important;
+            padding-bottom: 10px;
+        }
+
+        .swiper::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .swiper::-webkit-scrollbar-track {
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+
+        .swiper::-webkit-scrollbar-thumb {
+            background: #c0c4cc;
+            border-radius: 10px;
+        }
+
+        .swiper-slide {
+            flex-shrink: 1;
+        }
+
+        .weather-swiper {
+            width: 100%;
 
         }
-        //
-        //.weatherLastWeek {
-        //
-        //}
+
+
+
+        .weatherLastWeek {
+            display: flex;
+            flex-direction: column;
+            width: 276px;
+            text-align: left;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding: 10px 8px;
+
+            &__header {
+                align-items: center;
+                text-align: left;
+                display: flex;
+                gap: 6px;
+
+                span {
+                    font-size: 14px;
+                    font-family: Mulish, sans-serif;
+                }
+            }
+        }
     }
 }
 </style>
