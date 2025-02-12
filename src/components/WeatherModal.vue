@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import {Icon} from "@iconify/vue";
+import WeatherCard from "./WeatherCard.vue";
+const weatherData = [
+    { day: "Сейчас", icon: "/icons/sun.svg", temperature: 17 },
+    { day: "12", icon: "/icons/sun.svg", temperature: 19 },
+    { day: "13", icon: "/icons/cloudly.svg", temperature: 18 },
+    { day: "15", icon: "/icons/rain.svg", temperature: 12 },
+    { day: "16", icon: "/icons/cloudly.svg", temperature: 13 },
+];
 </script>
 
 <template>
@@ -27,13 +35,19 @@ import {Icon} from "@iconify/vue";
                     </div>
                 </div>
 
-                <div class="slider">
-                    <div class="cardGradus">
-                        <p>Сейчас</p>
-                        <img src="/public/icons/sun.svg" alt="">
-                        <span>17°C</span>
+
+                <div class="weather-slider">
+                    <div class="weather-cards">
+                        <WeatherCard
+                            v-for="(weather, index) in weatherData"
+                            :key="index"
+                            :day="weather.day"
+                            :icon="weather.icon"
+                            :temperature="weather.temperature"
+                        />
                     </div>
                 </div>
+
 
                 <div class="weatherLastWeek">
 
@@ -47,6 +61,32 @@ import {Icon} from "@iconify/vue";
 </template>
 
 <style scoped lang="scss">
+.weather-slider {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+}
+
+.weather-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    min-width: max-content;
+    padding-bottom: 10px;
+}
+
+.weather-slider::-webkit-scrollbar {
+    height: 6px;
+}
+
+.weather-slider::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.weather-slider::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 5px;
+}
 .Cards {
     display: flex;
     gap: 14px;
@@ -144,36 +184,8 @@ import {Icon} from "@iconify/vue";
 
         .slider {
             display: flex;
+            gap: 6px;
 
-            .cardGradus {
-                display: flex;
-                flex-direction: column;
-                width: 55px;
-                height: 81px;
-                border-radius: 8px;
-                background-color: white;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                gap: 4px;
-
-                p {
-                    font-size: 12px;
-                    font-family: Mulish, sans-serif;
-                    font-weight: 600;
-                    color: #6D7586;
-                }
-
-                img {
-                    width: 30px;
-                    height: 30px;
-                }
-
-                span {
-                    font-size: 14px;
-                    color: #23282D;
-                }
-            }
         }
 
         .weatherLastWeek {
