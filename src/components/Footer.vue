@@ -68,9 +68,9 @@
 
 <script setup lang="ts">
 const appStores = [
-    {icon: "/src/assets/icons/apple.svg", alt: "App Store", name: "App Store"},
-    {icon: "/src/assets/icons/GooglePlay.svg", alt: "Google Play", name: "Google Play"},
-    {icon: "/src/assets/icons/huawei.svg", alt: "App Gallery", name: "App Gallery"},
+    {icon: "/icons/apple.svg", alt: "App Store", name: "App Store"},
+    {icon: "/icons/GooglePlay.svg", alt: "Google Play", name: "Google Play"},
+    {icon: "/icons/huawei.svg", alt: "App Gallery", name: "App Gallery"},
 ];
 
 const companyLinks = [
@@ -85,15 +85,15 @@ const infoLinks = [
 ];
 
 const socialLinks = [
-    {href: "#", icon: "/src/assets/icons/telegram_icon.svg", alt: "Telegram"},
-    {href: "#", icon: "/src/assets/icons/instagram_icon.svg", alt: "Instagram"},
-    {href: "#", icon: "/src/assets/icons/facebook_icon.svg", alt: "Facebook"},
+    {href: "#", icon: "/icons/telegram_icon.svg", alt: "Telegram"},
+    {href: "#", icon: "/icons/instagram_icon.svg", alt: "Instagram"},
+    {href: "#", icon: "/icons/facebook_icon.svg", alt: "Facebook"},
 ];
 
 const footerLogos = [
-    {src: "/src/assets/icons/Iata.svg", alt: "IATA"},
-    {src: "/src/assets/icons/kp.svg", alt: "KP"},
-    {src: "/src/assets/icons/kp.svg", alt: "TURSAB"},
+    {src: "/icons/Iata.svg", alt: "IATA"},
+    {src: "/icons/kp.svg", alt: "KP"},
+    {src: "/icons/kp.svg", alt: "TURSAB"},
 ];
 </script>
 
