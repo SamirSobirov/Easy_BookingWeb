@@ -47,6 +47,7 @@
                     <div class="dropdown" id="dropdown-to"></div>
                 </div>
 
+
                 <div class="datepicker-wrapper">
                     <VueDatePicker
                         v-model="departureDate"
