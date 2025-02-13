@@ -45,39 +45,39 @@ const buttons = [
     {
         type: "flights",
         label: "Перелеты",
-        icon: "/public/icons/hotel_icon.svg",
+        icon: "/icons/hotel_icon.svg",
         alt: "Flights",
     },
     {
         type: "tours",
         label: "Туры",
-        icon: "/public/icons/tours_icon.svg",
+        icon: "/icons/tours_icon.svg",
         alt: "Tours",
     },
     {
         type: "train",
         label: "Ж/Д",
-        icon: "/public/icons/train_icon.svg",
+        icon: "/icons/train_icon.svg",
         alt: "Train",
     },
 ];
 const cards = [
     {
-        image: "/public/images/SharmELSheyx.svg",
+        image: "/images/SharmELSheyx.svg",
         alt: "Sharm El Sheikh",
         title: "Отдых в Шарм-эль-Шейхе",
         date: "12.01.2024 - 18.02.2024",
         price: "7 844 000 UZS",
     },
     {
-        image: "/public/images/Georgia.svg",
+        image: "/images/Georgia.svg",
         alt: "Georgia",
         title: "Чудеса Грузии",
         date: "12.01.2024 - 18.02.2024",
         price: "7 844 000 UZS",
     },
     {
-        image: "/public/images/Georgia2.svg",
+        image: "/images/Georgia2.svg",
         alt: "Georgia",
         title: "Чудеса Грузии",
         date: "12.01.2024 - 18.02.2024",
