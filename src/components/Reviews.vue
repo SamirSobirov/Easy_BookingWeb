@@ -39,11 +39,11 @@ import { ref } from "vue";
 const reviews = ref([
     {
         cardClass: "cardFirst",
-        icon: "/src/assets/icons/hotel_icon.svg",
+        icon: "/icons/hotel_icon.svg",
         category: "Отель",
         text: "Часто заказываем туры через EASYBOOKING, очень хорошее турагентство! Никаких проблем, всегда качественно проконсультируют, быстро оформляют документы. Вообще при заказе тура не переживаешь...",
         author: {
-            image: "/src/assets/images/person_dev.svg",
+            image: "/images/person_dev.svg",
             name: "Сарвар Тулаганов",
             position: "Программист",
         },
@@ -51,11 +51,11 @@ const reviews = ref([
     },
     {
         cardClass: "cardSecond",
-        icon: "/src/assets/icons/plane-Outline.svg",
+        icon: "/icons/plane-Outline.svg",
         category: "Перелёт",
         text: "Часто заказываем туры через EASYBOOKING, очень хорошее турагентство! Никаких проблем, всегда качественно проконсультируют, быстро оформляют документы. Вообще при заказе тура не переживаешь...",
         author: {
-            image: "/src/assets/images/per_dev2.svg",
+            image: "/images/per_dev2.svg",
             name: "Самир Собиров",
             position: "Программист",
         },
