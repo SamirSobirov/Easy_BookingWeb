@@ -6,7 +6,7 @@
         </button>
 
         <button :class="{ active: activeButton === 'tours' }" @click="activeButton = 'tours'">
-            <img src="/src/assets/icons/tours_icon.svg" alt="tours"/>
+            <img src="/icons/tours_icon.svg" alt="tours"/>
             <span>Туры</span>
         </button>
     </div>

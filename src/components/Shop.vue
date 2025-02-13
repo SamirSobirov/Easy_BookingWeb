@@ -32,14 +32,14 @@
 import { ref } from "vue";
 const products = ref([
     {
-        image: "/src/assets/images/Shop_bag.svg",
+        image: "/public/images/Shop_bag.svg",
         name: "Чехол на чемодан",
         price: "800 000 UZS",
         points: "400",
         hasPriceBall: false,
     },
     {
-        image: "/src/assets/images/Shop_pillow.svg",
+        image: "/public/images/Shop_pillow.svg",
         name: "Подушка для подголовника",
         price: "800 000 UZS",
         priceBall: "1 000 000 UZS",
@@ -47,7 +47,7 @@ const products = ref([
         hasPriceBall: false,
     },
     {
-        image: "/src/assets/images/Shop_Carryingbag.svg",
+        image: "/public/images/Shop_Carryingbag.svg",
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",

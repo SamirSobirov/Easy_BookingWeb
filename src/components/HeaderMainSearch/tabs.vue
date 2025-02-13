@@ -15,10 +15,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import planeIcon from "/src/assets/icons/plane_icon.svg";
-import hotelIcon from "/src/assets/icons/hotel_icon.svg";
-import trainIcon from "/src/assets/icons/train_icon.svg";
+import hotelIcon from "/public/icons/hotel_icon.svg";
+import trainIcon from "/public/icons/train_icon.svg";
 import transportIcon from "/src/assets/icons/transport.svg";
-import toursIcon from "/src/assets/icons/tours_icon.svg";
+import toursIcon from "/public/icons/tours_icon.svg";
 import insuranceIcon from "/src/assets/icons/insurance_icon.svg";
 
 const tabs = [
