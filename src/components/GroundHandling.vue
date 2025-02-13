@@ -16,27 +16,27 @@
 <script setup lang="ts">
 const services = [
     {
-        icon: "/public/icons/Profile.svg",
+        icon: "/icons/Profile.svg",
         alt: "Индивидуальные и групповые трансферы",
         description: "Индивидуальные и групповые трансферы",
     },
     {
-        icon: "/public/icons/Chat.svg",
+        icon: "/icons/Chat.svg",
         alt: "Экскурсии с русскоговорящими гидами",
         description: "Экскурсии с русскоговорящими гидами",
     },
     {
-        icon: "/public/icons/Security.svg",
+        icon: "/icons/Security.svg",
         alt: "Аренда автомобилей",
         description: "Аренда автомобилей",
     },
     {
-        icon: "/public/icons/Suitcase.svg",
+        icon: "/icons/Suitcase.svg",
         alt: "VIP-обслуживание в аэропортах",
         description: "VIP-обслуживание в аэропортах",
     },
     {
-        icon: "/public/icons/Locations.svg",
+        icon: "/icons/Locations.svg",
         alt: "Бронирование ресторанов и развлекательных мероприятий",
         description: "Бронирование ресторанов и развлекательных мероприятий",
     },

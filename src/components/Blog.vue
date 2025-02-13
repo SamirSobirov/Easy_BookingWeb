@@ -27,7 +27,7 @@
 <script setup lang="ts">
 const cards = [
     {
-        image: "/public/images/Hills.svg",
+        image: "/images/Hills.svg",
         alt: "Hills",
         title: "Город на холмах",
         description: "За несколько последних лет ОАЭ превратились из пустыни в место, где хочется проводить свой долгожданный отпуск вновь и вновь...",
@@ -35,7 +35,7 @@ const cards = [
         tag: "#Переплёты",
     },
     {
-        image: "/public/images/mountain.svg",
+        image: "/images/mountain.svg",
         alt: "Mountain",
         title: "Тайны наскальных рисунков",
         description: "За несколько последних лет ОАЭ превратились из пустыни в место, где хочется проводить свой долгожданный отпуск вновь и вновь...",
@@ -43,7 +43,7 @@ const cards = [
         tag: "#Отел",
     },
     {
-        image: "/public/images/meeting.svg",
+        image: "/images/meeting.svg",
         alt: "Meeting",
         title: "Город на холмах",
         description: "За несколько последних лет ОАЭ превратились из пустыни в место, где хочется проводить свой долгожданный отпуск вновь и вновь...",
