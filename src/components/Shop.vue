@@ -14,15 +14,14 @@
 
                 <div class="container">
                     <div v-if="product.points" class="ball">{{ product.points }} балл</div>
-
                     <div v-if="product.hasPriceBall" class="div">
                         <span class="price_ball">{{ product.priceBall }}</span>
                         <span class="ball">{{ product.points }}</span>
                     </div>
-
                     <span class="price">{{ product.price }}</span>
                     <span>{{ product.name }}</span>
                 </div>
+
             </div>
         </div>
     </div>

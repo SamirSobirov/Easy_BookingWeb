@@ -7,7 +7,6 @@
             </button>
         </toggle-section>
 
-
         <transition name="fade">
             <div class="item_box" v-if="visibility.baggage">
                 <label>
@@ -23,6 +22,20 @@
         </transition>
     </div>
 </template>
+
+<script setup lang="ts">
+import {ref} from 'vue';
+
+
+const visibility = ref({
+    transfers: true,
+    baggage: true
+});
+
+const toggleVisibility = (section: keyof typeof visibility.value) => {
+    visibility.value[section] = !visibility.value[section];
+};
+</script>
 
 <style scoped lang="scss">
 .sidebar_item {
@@ -65,15 +78,12 @@
                 left: 5px;
                 top: 1px;
                 transform: rotate(45deg);
-
             }
         }
-
 
         .slider-full {
             background: linear-gradient(to right, #00B8D7 100%, #E3E5ED 0%);
         }
-
     }
 
     img.rotated {
@@ -130,17 +140,3 @@
     }
 }
 </style>
-
-<script setup lang="ts">
-import {ref} from 'vue';
-
-
-const visibility = ref({
-    transfers: true,
-    baggage: true
-});
-
-const toggleVisibility = (section: keyof typeof visibility.value) => {
-    visibility.value[section] = !visibility.value[section];
-};
-</script>

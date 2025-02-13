@@ -98,9 +98,7 @@ const toggleInput = (index: number) => {
     background-color: #FFFFFF;
     text-align: center;
 
-
     .card_content {
-
         .card_main {
             justify-content: left;
             display: flex;
@@ -182,7 +180,6 @@ const toggleInput = (index: number) => {
                 left: 7px;
                 top: 3.5px;
                 transform: rotate(45deg);
-
             }
         }
     }

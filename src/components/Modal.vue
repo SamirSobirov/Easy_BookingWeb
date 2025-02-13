@@ -34,7 +34,6 @@ const close = () => (isOpen.value = false);
         z-index: 9;
     }
 
-
     .share-container {
         position: absolute;
         top: 38px;

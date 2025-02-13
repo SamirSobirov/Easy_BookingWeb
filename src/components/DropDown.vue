@@ -17,7 +17,6 @@ const isOpen = ref(false)
 const close = () => isOpen.value = false;
 </script>
 
-
 <style scoped lang="scss">
 .container {
     position: relative;
