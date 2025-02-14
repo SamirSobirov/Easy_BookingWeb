@@ -3,7 +3,7 @@
         <toggle-section @click="toggleVisibility('baggage')">
             <span class="label">Багаж</span>
             <button class="hideButton" @click.stop="toggleVisibility('baggage')">
-                <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg" alt="arrow_down" />
+                <img :class="{ rotated: !visibility.baggage }" src="/src/assets/icons/arrow_down.svg" alt="arrow_down"/>
             </button>
         </toggle-section>
 
@@ -16,16 +16,13 @@
                         <span class="price">цена</span>
                     </div>
                 </label>
-
             </div>
-
         </transition>
     </div>
 </template>
 
 <script setup lang="ts">
 import {ref} from 'vue';
-
 
 const visibility = ref({
     transfers: true,
@@ -115,7 +112,6 @@ const toggleVisibility = (section: keyof typeof visibility.value) => {
             height: 15px;
         }
     }
-
 
     label {
         display: flex;
