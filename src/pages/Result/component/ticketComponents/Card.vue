@@ -137,7 +137,6 @@
                 <p class="return">Возвратный <img src="/src/assets/icons/CardCheckCircle.svg" alt="check-icon"></p>
                 <p v-if="showDetails">Класс: <strong style="padding-left: 3px;"> B</strong></p>
 
-
                 <DropDown>
                     <template #trigger>
                         <button v-if="showDetails" class="baggage" style="text-decoration: none; white-space: nowrap">
@@ -169,7 +168,6 @@
                         </div>
                     </template>
                 </DropDown>
-
 
                 <Modal>
                     <template #trigger>
@@ -257,7 +255,6 @@ import TarifModalCards from "../../../../components/TarifModalCards.vue";
 import PricingPlanRules from "../../../../components/PricingPlanRules.vue";
 import Modal from "../../../../components/Modal.vue";
 import WeatherModal from "../../../../components/WeatherModal.vue";
-
 
 const showDetails = ref(false);
 
@@ -378,7 +375,6 @@ function toggleDetails() {
     left: 50%;
     transform: translate(-50%, -50%);
 
-
     h1 {
         display: flex;
         align-items: center;
@@ -477,6 +473,4 @@ function toggleDetails() {
         }
     }
 }
-
-
 </style>

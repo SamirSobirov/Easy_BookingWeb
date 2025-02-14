@@ -104,7 +104,6 @@ const cities = ref([
     }
 ]);
 
-
 const weatherData = ref([
     {day: "Сейчас", icon: "/icons/sun.svg", temperature: 17},
     {day: "12", icon: "/icons/sun.svg", temperature: 19},
@@ -113,6 +112,5 @@ const weatherData = ref([
     {day: "16", icon: "/icons/cloudly.svg", temperature: 13}
 ]);
 </script>
-
 
 <style lang="scss"></style>
