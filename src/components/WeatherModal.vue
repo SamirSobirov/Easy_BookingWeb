@@ -73,7 +73,7 @@ const cities = ref([
         max: 45,
         min: -45,
         forecast: [
-            {day: "Сегодня", icon: "/public/icons/cloudly.svg", max: 17, min: 10},
+            {day: "Сегодня", icon: "/icons/cloudly.svg", max: 17, min: 10},
             {day: "Завтра", icon: "/public/icons/cloudly.svg", max: 16, min: 9},
             {day: "Понедельник", icon: "/public/icons/cloudly.svg", max: 15, min: 8}
         ]
@@ -85,9 +85,9 @@ const cities = ref([
         max: 22,
         min: -2,
         forecast: [
-            {day: "Сегодня", icon: "/public/icons/cloudly.svg", max: 17, min: 10},
-            {day: "Завтра", icon: "/public/icons/cloudly.svg", max: 16, min: 9},
-            {day: "Понедельник", icon: "/public/icons/cloudly.svg", max: 15, min: 8}
+            {day: "Сегодня", icon: "/icons/cloudly.svg", max: 17, min: 10},
+            {day: "Завтра", icon: "/icons/cloudly.svg", max: 16, min: 9},
+            {day: "Понедельник", icon: "/icons/cloudly.svg", max: 15, min: 8}
         ]
     },
     {
@@ -97,9 +97,9 @@ const cities = ref([
         max: 12,
         min: 6,
         forecast: [
-            {day: "Сегодня", icon: "/public/icons/cloudly.svg", max: 27, min: 40},
-            {day: "Завтра", icon: "/public/icons/cloudly.svg", max: 6, min: 4},
-            {day: "Понедельник", icon: "/public/icons/cloudly.svg", max: 5, min: 18}
+            {day: "Сегодня", icon: "/icons/cloudly.svg", max: 27, min: 40},
+            {day: "Завтра", icon: "/icons/cloudly.svg", max: 6, min: 4},
+            {day: "Понедельник", icon: "/icons/cloudly.svg", max: 5, min: 18}
         ]
     }
 ]);
