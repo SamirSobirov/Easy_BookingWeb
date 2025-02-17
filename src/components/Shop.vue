@@ -35,6 +35,7 @@ const router = useRouter();
 const goToShop = () => {
     router.push("/shop");
 };
+
 const products = ref([
     {
         image: "/images/Shop_bag.svg",
