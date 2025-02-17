@@ -150,6 +150,7 @@ const setActiveButton = (type: string) => {
 <style scoped lang="scss">
 
 .header-buttons {
+    user-select: none;
     display: flex;
     justify-content: center;
     gap: 12px;
@@ -163,6 +164,7 @@ const setActiveButton = (type: string) => {
     padding: 5px 5px;
 
     button {
+        user-select: none;
         font-family: Mulish, sans-serif;
         display: flex;
         justify-content: center;
@@ -191,6 +193,7 @@ const setActiveButton = (type: string) => {
 }
 
 .ShopHeader {
+    user-select: none;
     padding: 24px 32px;
     margin: 100px auto;
     display: flex;
