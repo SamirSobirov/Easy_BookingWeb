@@ -12,14 +12,13 @@
 
     <div class="shop">
         <div class="shop__header">
-            <h1>EASYBOOKING Shop</h1>
-
+            <h1>Все товары</h1>
 
         </div>
 
         <div class="Cards">
             <div v-for="(product, index) in products" :key="index" class="card">
-                <img :src="product.image" :alt="product.name" />
+                <img :src="product.image" :alt="product.name"/>
 
                 <div class="container">
                     <div v-if="product.points" class="ball">{{ product.points }} балл</div>
@@ -32,9 +31,16 @@
                 </div>
             </div>
         </div>
+
+        <div class="cardFooter">
+            <button>
+                <img src="/src/assets/icons/ToKnow.svg" alt="To Know"/>
+                <span>Показать ещё</span>
+            </button>
+        </div>
     </div>
 
-    <Footer />
+    <Footer/>
 </template>
 
 <script setup lang="ts">
@@ -55,6 +61,49 @@ const products = ref([
         name: "Подушка для подголовника",
         price: "800 000 UZS",
         priceBall: "1 000 000 UZS",
+        points: "400",
+        hasPriceBall: false,
+    },
+    {
+        image: "/images/Shop_Carryingbag.svg",
+        name: "Сумка-переноска",
+        price: "800 000 UZS",
+        points: "400",
+        hasPriceBall: false,
+    },
+    {
+        image: "/images/Shop_Carryingbag.svg",
+        name: "Сумка-переноска",
+        price: "800 000 UZS",
+        points: "400",
+        hasPriceBall: false,
+    },
+    {
+        image: "/images/Shop_bag.svg",
+        name: "Чехол на чемодан",
+        price: "800 000 UZS",
+        points: "400",
+        hasPriceBall: false,
+    },
+    {
+        image: "/images/Shop_pillow.svg",
+        name: "Подушка для подголовника",
+        price: "800 000 UZS",
+        priceBall: "1 000 000 UZS",
+        points: "400",
+        hasPriceBall: false,
+    },
+    {
+        image: "/images/Shop_Carryingbag.svg",
+        name: "Сумка-переноска",
+        price: "800 000 UZS",
+        points: "400",
+        hasPriceBall: false,
+    },
+    {
+        image: "/images/Shop_Carryingbag.svg",
+        name: "Сумка-переноска",
+        price: "800 000 UZS",
         points: "400",
         hasPriceBall: false,
     },
@@ -87,7 +136,7 @@ const products = ref([
     border-radius: 20px;
 
     h1 {
-    color: #212121;
+        color: #212121;
         font-size: 32px;
         line-height: 40px;
 
@@ -99,5 +148,98 @@ const products = ref([
         line-height: 20px;
         color: #81899A;
     }
+
+
+}
+
+.Cards {
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 0fr);
+
+
+    .card {
+        width: 362px;
+        height: 375px;
+        background: rgba(255, 255, 255, 0.555);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid white;
+        margin: 10px;
+        padding: 10px;
+
+        .container {
+            padding: 12px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 5px;
+
+            p {
+                color: #23282d;
+                font-family: sans-serif;
+                font-size: 16px;
+            }
+
+            span {
+                padding-top: 5px;
+                color: #9399a8;
+                font-size: 13px;
+                font-weight: 300;
+                font-family: sans-serif;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                display: flex;
+                white-space: nowrap;
+                gap: 10px;
+            }
+
+            .price {
+                padding-top: 15px;
+                color: #23282d;
+                font-family: sans-serif;
+                font-weight: 550;
+                font-size: 18px;
+
+            }
+        }
+    }
+}
+
+.cardFooter {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    width: 1138px;
+    margin: 10px auto 10px -9.5px;
+
+    button {
+        border-radius: 12px;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.555);
+        backdrop-filter: blur(10px);
+        color: #80dbeb;
+        border: none;
+        margin-top: 20px;
+        width: 1138px;
+        height: 48px;
+        cursor: pointer;
+
+        span {
+            padding-left: 10px;
+        }
+    }
+}
+
+.shop {
+    margin-top: -30px;
 }
 </style>

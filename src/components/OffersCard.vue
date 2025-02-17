@@ -84,6 +84,7 @@ const cards = [
         date: "12.01.2024 - 18.02.2024",
         price: "7 844 000 UZS",
     },
+
 ];
 const setActiveButton = (type: string) => {
     activeButton.value = type;

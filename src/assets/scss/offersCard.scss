@@ -63,11 +63,13 @@
   }
 
   .Cards {
-    display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 30px;
     gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 0fr);
+
 
     .card {
       width: 362px;
