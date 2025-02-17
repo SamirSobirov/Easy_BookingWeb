@@ -14,6 +14,16 @@
         <div class="shop__header">
             <h1>Все товары</h1>
 
+            <div class="header-buttons">
+                <button
+                    v-for="(button, index) in buttons"
+                    :key="index"
+                    :class="['button', { active: activeButton === button.type }]"
+                    @click="setActiveButton(button.type)"
+                >
+                    {{ button.label }}
+                </button>
+            </div>
         </div>
 
         <div class="Cards">
@@ -47,6 +57,23 @@
 import BreadCrumb from "../../components/breadcrumbs/BreadCrumb.vue";
 import Footer from "../../components/Footer.vue";
 import {ref} from "vue";
+
+const activeButton = ref("flights");
+const buttons = [
+    {
+        type: "flights",
+        label: "Все товары",
+
+    },
+    {
+        type: "tours",
+        label: "Новые",
+    },
+    {
+        type: "train",
+        label: "Скидки",
+    },
+];
 
 const products = ref([
     {
@@ -115,9 +142,54 @@ const products = ref([
         hasPriceBall: false,
     },
 ]);
+const setActiveButton = (type: string) => {
+    activeButton.value = type;
+};
 </script>
 
 <style scoped lang="scss">
+
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    width: 370px;
+    height: 48px;
+    background-color: #FFFFFFA8;
+    border: 1px solid white;
+    border-radius: 12px;
+    margin-right: -5px;
+    padding: 5px 5px;
+
+    button {
+        font-family: Mulish, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: 120px;
+        height: 38px;
+        border-radius: 8px;
+        background: none;
+        backdrop-filter: blur(0);
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 5px 5px;
+        transition: background 0.3s;
+        color: #abb1bf;
+
+    }
+}
+
+.header-buttons .button.active {
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: #80dbeb;
+}
+
 .ShopHeader {
     padding: 24px 32px;
     margin: 100px auto;
