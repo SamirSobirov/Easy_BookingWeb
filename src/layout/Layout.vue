@@ -2,7 +2,7 @@
     <AppBackground/>
     <header>
         <HeroSection msg="Welcome to EasyBooking!"/>
-        <BreadCrumb v-if="isResultPage" current-page=""/>
+        <BreadCrumb v-if="isResultPage" current-page="Поиск"/>
         <HeaderMainButtons/>
         <HeaderMainSearch v-if="isHomePage || isResultPage"/> 
     </header>
