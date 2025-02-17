@@ -15,10 +15,6 @@
             </div>
         </div>
 
-
-
-
-
         <div class="Cards">
             <div v-for="(card, index) in cards" :key="index" class="card">
                 <img :src="card.image" :alt="card.alt"/>
