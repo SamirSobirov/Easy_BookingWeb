@@ -159,11 +159,12 @@ const products = ref([
     gap: 5px;
     display: grid;
     grid-template-columns: repeat(3, 0fr);
+    font-family: Mulish, sans-serif;
 
 
     .card {
         width: 362px;
-        height: 375px;
+        height: 358px;
         background: rgba(255, 255, 255, 0.555);
         backdrop-filter: blur(10px);
         border-radius: 20px;
@@ -171,7 +172,39 @@ const products = ref([
         margin: 10px;
         padding: 10px;
 
+        .container {
+            padding: 12px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 5px;
 
+            p {
+                color: #23282d;
+                font-family: sans-serif;
+                font-size: 16px;
+            }
+
+            span {
+                font-family: Mulish, sans-serif;
+                color: #9399a8;
+                font-size: 20px;
+                font-weight: 500;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                display: flex;
+                white-space: nowrap;
+            }
+
+            .price {
+                color: #23282d;
+                font-family: sans-serif;
+                font-weight: 550;
+                font-size: 18px;
+
+            }
+        }
     }
 }
 
