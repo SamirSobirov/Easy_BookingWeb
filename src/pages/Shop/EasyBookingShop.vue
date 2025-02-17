@@ -238,6 +238,6 @@ const products = ref([
 }
 
 .shop {
-    margin-top: -30px;
+    margin-top: -40px;
 }
 </style>
