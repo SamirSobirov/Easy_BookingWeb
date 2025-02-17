@@ -2,7 +2,7 @@
     <div class="shop">
         <div class="shop__header">
             <h1>EASYBOOKING Shop</h1>
-            <button>
+            <button @click="goToShop">
                 Все товары
                 <img src="/src/assets/icons/arrow-right.svg" alt="Arrow Right" />
             </button>
@@ -21,7 +21,6 @@
                     <span class="price">{{ product.price }}</span>
                     <span>{{ product.name }}</span>
                 </div>
-
             </div>
         </div>
     </div>
@@ -29,6 +28,13 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const goToShop = () => {
+    router.push("/shop");
+};
 const products = ref([
     {
         image: "/images/Shop_bag.svg",

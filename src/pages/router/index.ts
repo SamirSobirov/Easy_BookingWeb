@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import Result from '../Result/result.vue';
 import Home from "../Home.vue";
+import EasyBookingShop from "../Shop/EasyBookingShop.vue";
 
 const routes = [
     {
@@ -16,8 +17,12 @@ const routes = [
         path: '/:pathMatch(.*)*',
         name: 'NotFound',
         component: () => import('../NoResult.vue')
+    },
+    {
+        path: '/shop',
+        component: EasyBookingShop,
     }
-];
+    ];
 
 const router = createRouter({
     history: createWebHistory(),

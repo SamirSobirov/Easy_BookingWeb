@@ -2,12 +2,13 @@
     <AppBackground/>
     <header>
         <HeroSection msg="Welcome to EasyBooking!"/>
-        <BreadCrumb v-if="isResultPage"/>
+        <BreadCrumb v-if="isResultPage" current-page=""/>
         <HeaderMainButtons/>
-        <HeaderMainSearch/>
+        <HeaderMainSearch v-if="isHomePage || isResultPage"/> 
     </header>
     <main>
-        <RouterView/>
+        <Home v-if="isHomePage"/> 
+        <RouterView v-else />
     </main>
 </template>
 
@@ -16,14 +17,18 @@ import HeaderMainSearch from "../components/HeaderMainSearch.vue";
 import HeroSection from "../components/HeroSection.vue";
 import HeaderMainButtons from "../components/HeaderMainButtons.vue";
 import BreadCrumb from "../components/breadcrumbs/BreadCrumb.vue";
-import {computed} from "vue";
-import {useRoute} from "vue-router";
+import Home from "../pages/Home.vue";
+import { computed } from "vue";
+import { useRoute } from "vue-router";
 import AppBackground from "./AppBackground.vue";
 
 const route = useRoute();
-const isResultPage = computed(() => route.path === "/result");
 
+const isHomePage = computed(() => route.path === "/");
+
+const isResultPage = computed(() => route.path === "/result");
 </script>
+
 
 <style lang="scss">
 .full-width-header {
