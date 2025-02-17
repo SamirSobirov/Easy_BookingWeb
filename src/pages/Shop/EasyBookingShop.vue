@@ -171,42 +171,7 @@ const products = ref([
         margin: 10px;
         padding: 10px;
 
-        .container {
-            padding: 12px 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            gap: 5px;
 
-            p {
-                color: #23282d;
-                font-family: sans-serif;
-                font-size: 16px;
-            }
-
-            span {
-                padding-top: 5px;
-                color: #9399a8;
-                font-size: 13px;
-                font-weight: 300;
-                font-family: sans-serif;
-                align-items: center;
-                text-align: center;
-                justify-content: center;
-                display: flex;
-                white-space: nowrap;
-                gap: 10px;
-            }
-
-            .price {
-                padding-top: 15px;
-                color: #23282d;
-                font-family: sans-serif;
-                font-weight: 550;
-                font-size: 18px;
-
-            }
-        }
     }
 }
 
