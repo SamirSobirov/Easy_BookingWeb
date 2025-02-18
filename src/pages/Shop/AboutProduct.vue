@@ -3,7 +3,7 @@
     { label: 'Главная', path: '/' },
     { label: 'EASYBOOKING Shop', path: '/shop' },
     { label: 'О товаре' }
-]" />
+]"/>
     <div class="containerAboutShop">
 
         <div class="aboutShop_box1">
@@ -20,12 +20,12 @@
                 </div>
 
                 <hr style="width: 100%; border: 1px solid #F2F3F7">
-<!--            <p>ID товара: {{ id }}</p>-->
+                <!--            <p>ID товара: {{ id }}</p>-->
 
                 <div class="aboutShop_swiperContainer">
                     <div class="mainAboutShop_scroll">
                         <button class="scroll_btn" v-for="(image, index) in images" :key="index">
-                            <img :src="image" alt="Bag Image" />
+                            <img :src="image" alt="Bag Image"/>
                         </button>
                     </div>
 
@@ -37,14 +37,15 @@
                             navigation
                         >
                             <SwiperSlide v-for="(image, index) in images" :key="index">
-                                <img :src="image" alt="Product Image" class="swiper-image" />
+                                <img :src="image" alt="Product Image" class="swiper-image"/>
                             </SwiperSlide>
 
                             <button class="swiper-button prev" @click="prevSlide">
-                                <Icon icon="iconamoon:arrow-left-2-thin" width="24" height="24"  style="color: #bbb0b0" />
+                                <Icon icon="iconamoon:arrow-left-2-thin" width="24" height="24" style="color: #bbb0b0"/>
                             </button>
                             <button class="swiper-button next" @click="nextSlide">
-                                <Icon icon="iconamoon:arrow-right-2-thin" width="24" height="24"  style="color: #bbb0b0" />
+                                <Icon icon="iconamoon:arrow-right-2-thin" width="24" height="24"
+                                      style="color: #bbb0b0"/>
                             </button>
                         </Swiper>
                     </div>
@@ -56,16 +57,16 @@
         </div>
     </div>
 
-    <Footer />
+    <Footer/>
 </template>
 
 <script setup lang="ts">
 // import {useRoute} from 'vue-router';
 import BreadCrumb from "../../components/breadcrumbs/BreadCrumb.vue";
 import Footer from "../../components/Footer.vue";
-import { ref, onMounted } from "vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation } from "swiper/modules";
+import {ref, onMounted} from "vue";
+import {Swiper, SwiperSlide} from "swiper/vue";
+import {Navigation} from "swiper/modules";
 import "swiper/css";
 
 import "swiper/css";
@@ -101,7 +102,7 @@ const prevSlide = () => swiperInstance?.slidePrev();
     align-items: flex-start;
     justify-content: center;
 
-    .aboutShop_box1{
+    .aboutShop_box1 {
         width: 744px;
         height: 763px;
         background-color: #FFFFFF59;
@@ -149,7 +150,7 @@ const prevSlide = () => swiperInstance?.slidePrev();
                         background-color: #F3F5FA;
                         border-radius: 8px;
 
-                        
+
                     }
                 }
             }
@@ -166,7 +167,7 @@ const prevSlide = () => swiperInstance?.slidePrev();
                     display: flex;
                     flex-direction: column;
                     gap: 12px;
-                    overflow-y: auto ;
+                    overflow-y: auto;
                     border-radius: 8px;
                     padding-right: 4px;
                     -ms-overflow-style: none;
@@ -190,10 +191,10 @@ const prevSlide = () => swiperInstance?.slidePrev();
                         background-color: #FFFFFF;
                         border-radius: 8px;
 
-                    img {
-                        width: 75px;
-                        height: 74px;
-                    }
+                        img {
+                            width: 75px;
+                            height: 74px;
+                        }
                     }
                 }
 
@@ -220,16 +221,14 @@ const prevSlide = () => swiperInstance?.slidePrev();
 
                     .swiper-button {
                         width: 28px;
+                        height: 28px;
                         border: 1px solid #F2F3F7;
                         position: absolute;
                         top: 50%;
                         transform: translateY(-50%);
                         background: rgba(255, 255, 255, 0.8);
-                        padding: 10px;
+                        padding: 2px 2px;
                         border-radius: 50%;
-                        font-size: 20px;
-                        font-weight: 200;
-                        cursor: pointer;
                         transition: 0.3s;
                         z-index: 10;
 
@@ -250,7 +249,8 @@ const prevSlide = () => swiperInstance?.slidePrev();
             }
         }
     }
-    .aboutShop_box{
+
+    .aboutShop_box {
         width: 360px;
         height: 593px;
         background-color: #FFFFFF59;
