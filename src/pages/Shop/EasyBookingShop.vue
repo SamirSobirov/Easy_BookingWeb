@@ -86,15 +86,15 @@ const initialProducts = [
         hasPriceBall: false
     },
     {
-        image: "/images/Shop_Carryingbag.svg",
+        image: "/images/bagShop4.svg",
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
         hasPriceBall: false
     },
-    {image: "/images/Shop_bag.svg", name: "Чехол на чемодан", price: "800 000 UZS", points: "400", hasPriceBall: false},
+    {image: "/images/bagShop5.svg", name: "Чехол на чемодан", price: "800 000 UZS", points: "400", hasPriceBall: false},
     {
-        image: "/images/Shop_pillow.svg",
+        image: "/images/bagShop6.svg",
         name: "Подушка для подголовника",
         price: "800 000 UZS",
         priceBall: "1 000 000 UZS",
@@ -102,21 +102,21 @@ const initialProducts = [
         hasPriceBall: false
     },
     {
-        image: "/images/Shop_Carryingbag.svg",
+        image: "/images/bagShop7.svg",
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
         hasPriceBall: false
     },
     {
-        image: "/images/Shop_Carryingbag.svg",
+        image: "/images/bagShop8.svg",
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
         hasPriceBall: false
     },
     {
-        image: "/images/Shop_Carryingbag.svg",
+        image: "/images/bagShop9.svg",
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
@@ -126,7 +126,7 @@ const initialProducts = [
 
 const newProducts = [
     {
-        image: "/images/Shop_pillow.svg",
+        image: "/images/Shop_bag.svg",
         name: "Подушка для подголовника",
         price: "800 000 UZS",
         priceBall: "1 000 000 UZS",
@@ -134,7 +134,7 @@ const newProducts = [
         hasPriceBall: false
     },
     {
-        image: "/images/Shop_Carryingbag.svg",
+        image: "/images/bagShop5.svg",
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
@@ -148,7 +148,7 @@ const newProducts = [
         hasPriceBall: false
     },
     {
-        image: "/images/Shop_Carryingbag.svg",
+        image: "/images/Shop_pillow.svg",
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
