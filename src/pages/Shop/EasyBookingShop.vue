@@ -1,12 +1,11 @@
 <template>
     <BreadCrumb currentPage="EASYBOOKING Shop"/>
-
     <div class="ShopHeader">
         <div class="boxShop">
             <h1>EASYBOOKING Shop</h1>
         </div>
-        <div class="boxShop">Фундаментальные показатели для Акции и предложенияАкции и <br> предложенияАкции и
-            предложения
+        <div class="boxShop">
+            Фундаментальные показатели для Акции и предложенияАкции и <br> предложенияАкции и предложения
         </div>
     </div>
 
@@ -26,9 +25,10 @@
             </div>
         </div>
 
-        <hr style= "height: 1px; width: 100%; margin-top: 16px; border: 1px solid #DADEEE;">
+        <hr style="height: 1px; width: 100%; margin-top: 16px; border: 1px solid #DADEEE;">
+
         <div class="Cards">
-            <div v-for="(product, index) in products" :key="index" class="card">
+            <div v-for="(product, index) in displayedProducts" :key="index" class="card">
                 <img :src="product.image" :alt="product.name"/>
 
                 <div class="container">
@@ -44,112 +44,139 @@
         </div>
 
         <div class="cardFooter">
-            <button>
+            <button @click="toggleProducts">
                 <img src="/src/assets/icons/ToKnow.svg" alt="To Know"/>
-                <span>Показать ещё</span>
+                <span>{{ isExpanded ? "Скрыть" : "Показать ещё" }}</span>
             </button>
         </div>
     </div>
-
     <Footer/>
 </template>
 
 <script setup lang="ts">
 import BreadCrumb from "../../components/breadcrumbs/BreadCrumb.vue";
 import Footer from "../../components/Footer.vue";
-import {ref} from "vue";
+import {ref, computed} from "vue";
 
 const activeButton = ref("flights");
-const buttons = [
-    {
-        type: "flights",
-        label: "Все товары",
+const isExpanded = ref(false);
+const addedCount = ref(0);
 
+const buttons = [
+    {type: "flights", label: "Все товары"},
+    {type: "tours", label: "Новые"},
+    {type: "train", label: "Скидки"},
+];
+
+const initialProducts = [
+    {image: "/images/Shop_bag.svg", name: "Чехол на чемодан", price: "800 000 UZS", points: "400", hasPriceBall: false},
+    {
+        image: "/images/Shop_pillow.svg",
+        name: "Подушка для подголовника",
+        price: "800 000 UZS",
+        priceBall: "1 000 000 UZS",
+        points: "400",
+        hasPriceBall: false
     },
     {
-        type: "tours",
-        label: "Новые",
+        image: "/images/Shop_Carryingbag.svg",
+        name: "Сумка-переноска",
+        price: "800 000 UZS",
+        points: "400",
+        hasPriceBall: false
     },
     {
-        type: "train",
-        label: "Скидки",
+        image: "/images/Shop_Carryingbag.svg",
+        name: "Сумка-переноска",
+        price: "800 000 UZS",
+        points: "400",
+        hasPriceBall: false
+    },
+    {image: "/images/Shop_bag.svg", name: "Чехол на чемодан", price: "800 000 UZS", points: "400", hasPriceBall: false},
+    {
+        image: "/images/Shop_pillow.svg",
+        name: "Подушка для подголовника",
+        price: "800 000 UZS",
+        priceBall: "1 000 000 UZS",
+        points: "400",
+        hasPriceBall: false
+    },
+    {
+        image: "/images/Shop_Carryingbag.svg",
+        name: "Сумка-переноска",
+        price: "800 000 UZS",
+        points: "400",
+        hasPriceBall: false
+    },
+    {
+        image: "/images/Shop_Carryingbag.svg",
+        name: "Сумка-переноска",
+        price: "800 000 UZS",
+        points: "400",
+        hasPriceBall: false
+    },
+    {
+        image: "/images/Shop_Carryingbag.svg",
+        name: "Сумка-переноска",
+        price: "800 000 UZS",
+        points: "400",
+        hasPriceBall: false
     },
 ];
 
-const products = ref([
-    {
-        image: "/images/Shop_bag.svg",
-        name: "Чехол на чемодан",
-        price: "800 000 UZS",
-        points: "400",
-        hasPriceBall: false,
-    },
+const newProducts = [
     {
         image: "/images/Shop_pillow.svg",
         name: "Подушка для подголовника",
         price: "800 000 UZS",
         priceBall: "1 000 000 UZS",
         points: "400",
-        hasPriceBall: false,
+        hasPriceBall: false
     },
     {
         image: "/images/Shop_Carryingbag.svg",
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
-        hasPriceBall: false,
+        hasPriceBall: false
     },
     {
         image: "/images/Shop_Carryingbag.svg",
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
-        hasPriceBall: false,
-    },
-    {
-        image: "/images/Shop_bag.svg",
-        name: "Чехол на чемодан",
-        price: "800 000 UZS",
-        points: "400",
-        hasPriceBall: false,
-    },
-    {
-        image: "/images/Shop_pillow.svg",
-        name: "Подушка для подголовника",
-        price: "800 000 UZS",
-        priceBall: "1 000 000 UZS",
-        points: "400",
-        hasPriceBall: false,
+        hasPriceBall: false
     },
     {
         image: "/images/Shop_Carryingbag.svg",
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
-        hasPriceBall: false,
+        hasPriceBall: false
     },
-    {
-        image: "/images/Shop_Carryingbag.svg",
-        name: "Сумка-переноска",
-        price: "800 000 UZS",
-        points: "400",
-        hasPriceBall: false,
-    },
-    {
-        image: "/images/Shop_Carryingbag.svg",
-        name: "Сумка-переноска",
-        price: "800 000 UZS",
-        points: "400",
-        hasPriceBall: false,
-    },
-]);
+];
+
+const displayedProducts = computed(() => {
+    return isExpanded.value ? [...initialProducts, ...newProducts.slice(0, addedCount.value)] : initialProducts;
+});
+
+const toggleProducts = () => {
+    if (isExpanded.value) {
+        isExpanded.value = false;
+        addedCount.value = 0;
+    } else {
+        addedCount.value += 4;
+        if (addedCount.value >= newProducts.length) {
+            isExpanded.value = true;
+        }
+    }
+};
 const setActiveButton = (type: string) => {
     activeButton.value = type;
 };
 </script>
 
 <style scoped lang="scss">
-
 .header-buttons {
     user-select: none;
     display: flex;
@@ -183,7 +210,6 @@ const setActiveButton = (type: string) => {
         padding: 5px 5px;
         transition: background 0.3s;
         color: #abb1bf;
-
     }
 }
 
@@ -218,14 +244,11 @@ const setActiveButton = (type: string) => {
 
     }
 
-
     .boxShop {
         font-size: 14px;
         line-height: 20px;
         color: #81899A;
     }
-
-
 }
 
 .Cards {
@@ -236,7 +259,6 @@ const setActiveButton = (type: string) => {
     display: grid;
     grid-template-columns: repeat(3, 0fr);
     font-family: Mulish, sans-serif;
-
 
     .card {
         width: 362px;
@@ -278,7 +300,6 @@ const setActiveButton = (type: string) => {
                 font-family: sans-serif;
                 font-weight: 550;
                 font-size: 18px;
-
             }
         }
     }
