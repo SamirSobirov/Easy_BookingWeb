@@ -8,23 +8,36 @@
 
         <div class="aboutShop_box1">
             <div class="elem">
-            <p>ID товара: {{ id }}</p>
+                <div class="header_aboutShop">
+                    <div class="header_block">
+                        <h1>Подушка для подголовника</h1>
+                    </div>
 
+                    <div class="buttonsBlock">
+                        <button><img src="/src/assets/icons/Heart.svg" alt=""></button>
+                        <button><img src="/src/assets/icons/share.svg" alt=""></button>
+                    </div>
+                </div>
+
+                <hr style="width: 100%; border: 1px solid #F2F3F7">
+<!--            <p>ID товара: {{ id }}</p>-->
             </div>
         </div>
         <div class="aboutShop_box">
             <div class="elem"></div>
         </div>
-
     </div>
+
+    <Footer />
 </template>
 
 <script setup lang="ts">
-import {useRoute} from 'vue-router';
+// import {useRoute} from 'vue-router';
 import BreadCrumb from "../../components/breadcrumbs/BreadCrumb.vue";
-
-const route = useRoute();
-const id = route.params.id;
+import Footer from "../../components/Footer.vue";
+//
+// const route = useRoute();
+// const id = route.params.id;
 </script>
 
 <style scoped lang="scss">
@@ -53,8 +66,40 @@ const id = route.params.id;
             width: 720px;
             height: 739px;
             margin: 12px 12px;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-start;
+            padding: 20px 20px;
+
+            .header_aboutShop {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+                width: 100%;
+
+                .header_block {
+                    h1 {
+                        font-size: 24px;
+                        line-height: 32px;
+                        font-family: Mulish, sans-serif;
+                        color: #212121;
+                    }
+                }
+
+
+                .buttonsBlock {
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+
+                    button {
+                        padding: 8px 8px;
+                        background-color: #F3F5FA;
+                        border-radius: 8px;
+
+                        
+                    }
+                }
+            }
         }
     }
     .aboutShop_box{
@@ -80,6 +125,4 @@ const id = route.params.id;
         }
     }
 }
-
-
 </style>
