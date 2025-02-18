@@ -317,12 +317,10 @@ const setActiveButton = (type: string) => {
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-
     h1 {
         color: #212121;
         font-size: 32px;
         line-height: 40px;
-
     }
 
     .boxShop {
@@ -331,7 +329,6 @@ const setActiveButton = (type: string) => {
         color: #81899A;
     }
 }
-
 
 .cardFooter {
     align-items: center;
