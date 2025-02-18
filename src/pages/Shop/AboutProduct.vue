@@ -57,10 +57,24 @@
                         </Swiper>
                     </div>
                 </div>
+
+                <div class="coment">
+                    <p class="coment_header">Описание</p>
+                    <p class="coment_main">Опытные гиды и организаторы туров обеспечат вам комфортное и безопасное
+                        путешествие. Широкий выбор отелей и разнообразие экскурсий позволят подобрать программу отдыха,
+                        соответствующую вашим предпочтениям и бюджету. Возможность дополнительных услуг: SPA процедуры,
+                        вечерние шоу, участие в тематических мероприятиях и многое другое для создания неповторимого
+                        отдыха. <br>
+                        Опытные гиды и организаторы туров обеспечат вам комфортное и безопасное путешествие. Широкий
+                        выбор отелей и разнообразие экскурсий позволят подобрать программу отдыха, соответствующую вашим
+                        предпочтениям и бюджету. Возможность дополнительных услуг: SPA процедуры, вечерние шоу, участие
+                        в тематических мероприятиях и многое другое для создания неповторимого отдыха. <br>
+                        Не упустите шанс отправиться в увлекательное путешествие по Турции с нами!</p>
+                </div>
             </div>
         </div>
         <div class="aboutShop_box">
-            <div class="elem"></div>
+            <div class="elem">{{getProduct}}</div>
         </div>
     </div>
 
@@ -68,13 +82,21 @@
 </template>
 
 <script setup lang="ts">
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {Navigation} from "swiper/modules";
 import type {Swiper as SwiperClass} from "swiper/types";
 import "swiper/css";
 import {Icon} from "@iconify/vue";
 import BreadCrumb from "../../components/breadcrumbs/BreadCrumb.vue";
+import Footer from "../../components/Footer.vue";
+import {initialProducts} from "../../constants";
+import {useRoute} from "vue-router";
+
+const route = useRoute()
+const productId = Number(route.params.id);
+const getProduct = computed(() => initialProducts.filter(product => product.id === productId));
+
 
 const images = ref([
     "/images/bagAboutShop.svg",
@@ -255,7 +277,31 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                         right: 10px;
                     }
                 }
+            }
 
+            .coment {
+                margin-top: 20px;
+                gap: 8px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                width: 700px;
+                max-width: 700px;
+
+                .coment_header {
+                    font-size: 18px;
+                    font-weight: bold;
+                    //margin-bottom: 8px;
+                    padding-left: 0;
+                }
+
+                .coment_main {
+                    font-family: Mulish, sans-serif;
+                    line-height: 20px;
+                    font-size: 14px;
+                    color: #6D7586;
+                }
             }
         }
     }
