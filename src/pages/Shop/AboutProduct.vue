@@ -20,11 +20,16 @@
                 </div>
 
                 <hr style="width: 100%; border: 1px solid #F2F3F7">
-                <!--            <p>ID товара: {{ id }}</p>-->
 
                 <div class="aboutShop_swiperContainer">
                     <div class="mainAboutShop_scroll">
-                        <button class="scroll_btn" v-for="(image, index) in images" :key="index">
+                        <button
+                            class="scroll_btn"
+                            v-for="(image, index) in images"
+                            :key="index"
+                            :class="{ active: activeIndex === index }"
+                            @click="selectImage(index)"
+                        >
                             <img :src="image" alt="Bag Image"/>
                         </button>
                     </div>
@@ -36,6 +41,7 @@
                             :loop="true"
                             navigation
                             @swiper="onSwiper"
+                            :initial-slide="activeIndex"
                         >
                             <SwiperSlide v-for="(image, index) in images" :key="index">
                                 <img :src="image" alt="Product Image" class="swiper-image"/>
@@ -62,13 +68,10 @@
 </template>
 
 <script setup lang="ts">
-// import {useRoute} from 'vue-router';
-import { ref } from "vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation } from "swiper/modules";
-import type { Swiper as SwiperClass } from "swiper/types";
-import "swiper/css";
-
+import {ref} from "vue";
+import {Swiper, SwiperSlide} from "swiper/vue";
+import {Navigation} from "swiper/modules";
+import type {Swiper as SwiperClass} from "swiper/types";
 import "swiper/css";
 import {Icon} from "@iconify/vue";
 import BreadCrumb from "../../components/breadcrumbs/BreadCrumb.vue";
@@ -79,20 +82,24 @@ const images = ref([
     "/images/bagAboutShop.svg",
     "/images/bagAboutShop2.svg",
     "/images/bagAboutShop2.svg",
-    "/images/bagAboutShop.svg",
+    "/images/bagAboutShop.svg"
 ]);
 
 const swiperInstance = ref<SwiperClass | null>(null);
-
+const activeIndex = ref(0);
 const onSwiper = (swiper: SwiperClass) => {
     swiperInstance.value = swiper;
 };
 
+const selectImage = (index: number) => {
+    activeIndex.value = index;
+    swiperInstance.value?.slideTo(index);
+};
+
 const nextSlide = () => swiperInstance.value?.slideNext();
 const prevSlide = () => swiperInstance.value?.slidePrev();
-// const route = useRoute();
-// const id = route.params.id;
 </script>
+
 
 <style scoped lang="scss">
 .containerAboutShop {
@@ -146,7 +153,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                     align-items: center;
 
                     button {
-                        padding: 8px 8px;
+                        padding: 8px 8px 5px 8px;
                         background-color: #F3F5FA;
                         border-radius: 8px;
 
@@ -195,6 +202,10 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                             width: 75px;
                             height: 74px;
                         }
+                    }
+
+                    &.active {
+                        border-color: #42a5f5; // Голубой цвет при выборе
                     }
                 }
 
