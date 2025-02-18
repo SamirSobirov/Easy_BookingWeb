@@ -74,7 +74,50 @@
             </div>
         </div>
         <div class="aboutShop_box">
-            <div class="elem">{{getProduct}}</div>
+            <div class="elem">
+                <div class="container">
+                    <h1>Детали оплаты</h1>
+                    <div class="price-details">
+                        <p>Цена: <span>2 400 000 UZS</span></p>
+                        <p>Цена в ЕР: <span>800 000 ЕР</span></p>
+                    </div>
+
+                    <div class="color-selection">
+                        <label for="color">Выберите цвет:</label>
+                        <select id="color" name="color">
+                            <option value="red">Красный</option>
+                            <option value="blue">Синий</option>
+                            <option value="green">Зеленый</option>
+                        </select>
+                    </div>
+
+                    <div class="size-selection">
+                        <label>Выберите размер:</label>
+                        <div class="sizes">
+                            <button>40х80</button>
+                            <button>45х90</button>
+                            <button>50х100</button>
+                            <button>XXL</button>
+                        </div>
+                    </div>
+
+                    <div class="quantity-selection">
+                        <label>Количество:</label>
+                        <div class="quantity">
+                            <button>-</button>
+                            <span>2</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+
+                    <div class="total-price">
+                        <p>Общая цена: <span>4 800 000 UZS</span></p>
+                        <p>Общая цена в ЕР: <span>1 600 000 ЕР</span></p>
+                    </div>
+
+                    <button class="buy-button">Купить в один клик</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -95,9 +138,7 @@ import {useRoute} from "vue-router";
 
 const route = useRoute()
 const productId = Number(route.params.id);
-const getProduct = computed(() => initialProducts.filter(product => product.id === productId));
-
-
+computed(() => initialProducts.filter(product => product.id === productId));
 const images = ref([
     "/images/bagAboutShop.svg",
     "/images/bagAboutShop2.svg",
@@ -326,6 +367,81 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
             margin: 12px 12px;
             align-items: center;
             justify-content: center;
+
+
+            .container {
+                max-width: 600px;
+                height: 569px;
+                margin: 0 auto;
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                text-align: center;
+                color: #444;
+            }
+
+            .price-details, .total-price {
+                margin: 20px 0;
+                p {
+                    margin: 10px 0;
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .color-selection, .size-selection, .quantity-selection {
+                margin: 20px 0;
+                label {
+                    display: block;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                }
+                select, .sizes, .quantity {
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 4px;
+                    border: 1px solid #ddd;
+                }
+                .sizes, .quantity {
+                    display: flex;
+                    justify-content: space-between;
+                    button {
+                        padding: 10px 20px;
+                        border: none;
+                        background-color: #007bff;
+                        color: white;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: darken(#007bff, 10%);
+                        }
+                    }
+                }
+            }
+
+            .total-price {
+                text-align: center;
+                font-size: 1.2em;
+            }
+
+            .buy-button {
+                width: 100%;
+                padding: 15px;
+                background-color: #28a745;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                font-size: 1.1em;
+                cursor: pointer;
+                &:hover {
+                    background-color: darken(#28a745, 10%);
+                }
+            }
         }
     }
 }
