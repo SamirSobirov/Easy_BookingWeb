@@ -21,6 +21,34 @@
 
                 <hr style="width: 100%; border: 1px solid #F2F3F7">
 <!--            <p>ID товара: {{ id }}</p>-->
+
+                <div class="aboutShop_swiperContainer">
+                    <div class="mainAboutShop_scroll">
+                        <button class="scroll_btn" v-for="(image, index) in images" :key="index">
+                            <img :src="image" alt="Bag Image" />
+                        </button>
+                    </div>
+
+                    <div class="mainAboutShop_swiper">
+                        <Swiper
+                            :modules="[Navigation]"
+                            :slides-per-view="1"
+                            :loop="true"
+                            navigation
+                        >
+                            <SwiperSlide v-for="(image, index) in images" :key="index">
+                                <img :src="image" alt="Product Image" class="swiper-image" />
+                            </SwiperSlide>
+
+                            <button class="swiper-button prev" @click="prevSlide">
+                                <Icon icon="iconamoon:arrow-left-2-thin" width="24" height="24"  style="color: #bbb0b0" />
+                            </button>
+                            <button class="swiper-button next" @click="nextSlide">
+                                <Icon icon="iconamoon:arrow-right-2-thin" width="24" height="24"  style="color: #bbb0b0" />
+                            </button>
+                        </Swiper>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="aboutShop_box">
@@ -35,7 +63,32 @@
 // import {useRoute} from 'vue-router';
 import BreadCrumb from "../../components/breadcrumbs/BreadCrumb.vue";
 import Footer from "../../components/Footer.vue";
-//
+import { ref, onMounted } from "vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+
+import "swiper/css";
+import {Icon} from "@iconify/vue";
+
+const images = ref([
+    "/images/bagAboutShop.svg",
+    "/images/bagAboutShop2.svg",
+    "/images/bagAboutShop.svg",
+    "/images/bagAboutShop2.svg",
+    "/images/bagAboutShop2.svg",
+    "/images/bagAboutShop.svg",
+]);
+
+let swiperInstance: any = null;
+
+onMounted(() => {
+    swiperInstance = document.querySelector(".swiper")?.swiper;
+});
+
+
+const nextSlide = () => swiperInstance?.slideNext();
+const prevSlide = () => swiperInstance?.slidePrev();
 // const route = useRoute();
 // const id = route.params.id;
 </script>
@@ -99,6 +152,101 @@ import Footer from "../../components/Footer.vue";
                         
                     }
                 }
+            }
+
+            .aboutShop_swiperContainer {
+                display: flex;
+                gap: 16px;
+                width: 100%;
+                height: 355px;
+
+                .mainAboutShop_scroll {
+                    width: 140px;
+                    height: 355px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    overflow-y: auto ;
+                    border-radius: 8px;
+                    padding-right: 4px;
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: #ccc;
+                        border-radius: 4px;
+
+                    }
+
+                    .scroll_btn {
+                        width: 120px;
+                        height: 100px;
+                        border: 1px solid #F2F3F7;
+                        padding: 7px 27px 7px 20px;
+                        background-color: #FFFFFF;
+                        border-radius: 8px;
+
+                    img {
+                        width: 75px;
+                        height: 74px;
+                    }
+                    }
+                }
+
+                .mainAboutShop_swiper {
+                    position: relative;
+                    max-width: 600px;
+                    width: 544px;
+                    height: 100%;
+                    background-color: #FFFFFF;
+                    border-radius: 8px;
+                    border: 1px solid #F2F3F7;
+
+                    .swiper {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .swiper-image {
+                        width: 249px;
+                        padding-top: 53px;
+                        height: auto;
+                        border-radius: 10px;
+                    }
+
+                    .swiper-button {
+                        width: 28px;
+                        border: 1px solid #F2F3F7;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background: rgba(255, 255, 255, 0.8);
+                        padding: 10px;
+                        border-radius: 50%;
+                        font-size: 20px;
+                        font-weight: 200;
+                        cursor: pointer;
+                        transition: 0.3s;
+                        z-index: 10;
+
+                        &:hover {
+                            background: rgba(255, 255, 255, 1);
+                        }
+                    }
+
+                    .prev {
+                        left: 10px;
+                    }
+
+                    .next {
+                        right: 10px;
+                    }
+                }
+
             }
         }
     }
