@@ -28,9 +28,13 @@
         <hr style="height: 1px; width: 100%; margin-top: 16px; border: 1px solid #DADEEE;">
 
         <div class="Cards">
-            <div v-for="(product, index) in displayedProducts" :key="index" class="card">
+            <div
+                v-for="(product, index) in displayedProducts"
+                :key="index"
+                class="card"
+                @click="goToProduct(product.id)"
+            >
                 <img :src="product.image" :alt="product.name"/>
-
                 <div class="container">
                     <div v-if="product.points" class="ball">{{ product.points }} балл</div>
                     <div v-if="product.hasPriceBall" class="div">
@@ -57,6 +61,13 @@
 import BreadCrumb from "../../components/breadcrumbs/BreadCrumb.vue";
 import Footer from "../../components/Footer.vue";
 import {ref, computed} from "vue";
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const goToProduct = (id: number) => {
+    router.push({ name: 'AboutProduct', params: { id } });
+};
 
 const activeButton = ref("flights");
 const isExpanded = ref(false);
