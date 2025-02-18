@@ -7,9 +7,13 @@
             />
         </button>
         <nav class="breadcrumb-nav">
-            <button class="breadcrumb-item" @click="goToHome">Главная</button>
-            <span class="breadcrumb-separator">/</span>
-            <span class="breadcrumb-itemSearch active">{{ currentPage }}</span>
+            <template v-for="(item, index) in breadcrumbs" :key="index">
+                <button v-if="item.path" class="breadcrumb-item" @click="goTo(item.path)">
+                    {{ item.label }}
+                </button>
+                <span v-else class="breadcrumb-item active">{{ item.label }}</span>
+                <span v-if="index < breadcrumbs.length - 1" class="breadcrumb-separator">/</span>
+            </template>
         </nav>
     </div>
 </template>
@@ -21,10 +25,11 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 defineProps<{
-    currentPage: string;
+    breadcrumbs: { label: string; path?: string }[];
 }>();
-const goToHome = () => {
-    router.push('/');
+
+const goTo = (path: string) => {
+    router.push(path);
 };
 
 const goBack = () => {
@@ -32,4 +37,21 @@ const goBack = () => {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+
+.breadcrumb-item.active {
+    font-weight: 500;
+    font-family: Mulish, sans-serif;
+    color: #6D7586;
+
+    &::hover {
+        background-color: transparent;
+    }
+}
+
+.breadcrumb-separator {
+    margin: 0 5px;
+    color: #7a7a7a;
+
+}
+</style>

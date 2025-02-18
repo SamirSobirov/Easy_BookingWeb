@@ -2,13 +2,16 @@
     <AppBackground/>
     <header>
         <HeroSection msg="Welcome to EasyBooking!"/>
-        <BreadCrumb v-if="isResultPage" current-page="Поиск"/>
+        <BreadCrumb v-if="isResultPage" :breadcrumbs="[
+    { label: 'Главная', path: '/' },
+    { label: 'Поиск'},
+]"/>
         <HeaderMainButtons/>
-        <HeaderMainSearch v-if="isHomePage || isResultPage"/> 
+        <HeaderMainSearch v-if="isHomePage || isResultPage"/>
     </header>
     <main>
-        <Home v-if="isHomePage"/> 
-        <RouterView v-else />
+        <Home v-if="isHomePage"/>
+        <RouterView v-else/>
     </main>
 </template>
 
@@ -18,8 +21,8 @@ import HeroSection from "../components/HeroSection.vue";
 import HeaderMainButtons from "../components/HeaderMainButtons.vue";
 import BreadCrumb from "../components/breadcrumbs/BreadCrumb.vue";
 import Home from "../pages/Home.vue";
-import { computed } from "vue";
-import { useRoute } from "vue-router";
+import {computed} from "vue";
+import {useRoute} from "vue-router";
 import AppBackground from "./AppBackground.vue";
 
 const route = useRoute();
