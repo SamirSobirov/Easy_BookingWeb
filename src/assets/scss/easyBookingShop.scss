@@ -1,0 +1,65 @@
+.ShopHeader {
+  user-select: none;
+  padding: 24px 32px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  width: 1138px;
+  height: 144px;
+  background-color: rgba(255, 255, 255, 0.62);
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  gap: 12px;
+  font-family: Mulish, sans-serif;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+
+  h1 {
+    color: #212121;
+    font-size: 32px;
+    line-height: 40px;
+
+  }
+
+  .boxShop {
+    font-size: 14px;
+    line-height: 20px;
+    color: #81899A;
+  }
+}
+
+
+.cardFooter {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 1138px;
+  margin: 10px auto 10px -9.5px;
+
+  button {
+    border-radius: 12px;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.555);
+    backdrop-filter: blur(10px);
+    color: #80dbeb;
+    border: none;
+    margin-top: 20px;
+    width: 1138px;
+    height: 48px;
+    cursor: pointer;
+
+    span {
+      padding-left: 10px;
+    }
+  }
+}
+
+.shop {
+  margin-top: -50px;
+}
