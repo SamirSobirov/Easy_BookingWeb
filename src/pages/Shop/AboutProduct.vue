@@ -35,6 +35,7 @@
                             :slides-per-view="1"
                             :loop="true"
                             navigation
+                            @swiper="onSwiper"
                         >
                             <SwiperSlide v-for="(image, index) in images" :key="index">
                                 <img :src="image" alt="Product Image" class="swiper-image"/>
@@ -62,15 +63,15 @@
 
 <script setup lang="ts">
 // import {useRoute} from 'vue-router';
-import BreadCrumb from "../../components/breadcrumbs/BreadCrumb.vue";
-import Footer from "../../components/Footer.vue";
-import {ref, onMounted} from "vue";
-import {Swiper, SwiperSlide} from "swiper/vue";
-import {Navigation} from "swiper/modules";
+import { ref } from "vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation } from "swiper/modules";
+import type { Swiper as SwiperClass } from "swiper/types";
 import "swiper/css";
 
 import "swiper/css";
 import {Icon} from "@iconify/vue";
+import BreadCrumb from "../../components/breadcrumbs/BreadCrumb.vue";
 
 const images = ref([
     "/images/bagAboutShop.svg",
@@ -81,15 +82,14 @@ const images = ref([
     "/images/bagAboutShop.svg",
 ]);
 
-let swiperInstance: any = null;
+const swiperInstance = ref<SwiperClass | null>(null);
 
-onMounted(() => {
-    swiperInstance = document.querySelector(".swiper")?.swiper;
-});
+const onSwiper = (swiper: SwiperClass) => {
+    swiperInstance.value = swiper;
+};
 
-
-const nextSlide = () => swiperInstance?.slideNext();
-const prevSlide = () => swiperInstance?.slidePrev();
+const nextSlide = () => swiperInstance.value?.slideNext();
+const prevSlide = () => swiperInstance.value?.slidePrev();
 // const route = useRoute();
 // const id = route.params.id;
 </script>
