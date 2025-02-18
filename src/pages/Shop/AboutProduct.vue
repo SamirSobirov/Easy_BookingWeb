@@ -146,7 +146,6 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                     }
                 }
 
-
                 .buttonsBlock {
                     display: flex;
                     gap: 8px;
@@ -164,7 +163,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
 
             .aboutShop_swiperContainer {
                 display: flex;
-                gap: 16px;
+                gap: 15px;
                 width: 100%;
                 height: 355px;
 
@@ -202,10 +201,10 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                             width: 75px;
                             height: 74px;
                         }
-                    }
 
-                    &.active {
-                        border-color: #42a5f5; // Голубой цвет при выборе
+                        &.active {
+                            border-color: #00B8D7;
+                        }
                     }
                 }
 
