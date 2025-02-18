@@ -69,13 +69,14 @@ const buttons = [
 ];
 
 const initialProducts = [
-    {image: "/images/Shop_bag.svg", name: "Чехол на чемодан", price: "800 000 UZS", points: "400", hasPriceBall: false},
+    {image: "/images/Shop_bag.svg", name: "Чехол на чемодан", price: "800 000 UZS", points: "400", id: 1, hasPriceBall: false},
     {
         image: "/images/Shop_pillow.svg",
         name: "Подушка для подголовника",
         price: "800 000 UZS",
         priceBall: "1 000 000 UZS",
         points: "400",
+        id: 2,
         hasPriceBall: false
     },
     {
@@ -83,6 +84,7 @@ const initialProducts = [
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
+        id: 3,
         hasPriceBall: false
     },
     {
@@ -90,15 +92,17 @@ const initialProducts = [
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
+        id: 4,
         hasPriceBall: false
     },
-    {image: "/images/bagShop5.svg", name: "Чехол на чемодан", price: "800 000 UZS", points: "400", hasPriceBall: false},
+    {image: "/images/bagShop5.svg", name: "Чехол на чемодан", price: "800 000 UZS", points: "400",id: 5, hasPriceBall: false},
     {
         image: "/images/bagShop6.svg",
         name: "Подушка для подголовника",
         price: "800 000 UZS",
         priceBall: "1 000 000 UZS",
         points: "400",
+        id: 6,
         hasPriceBall: false
     },
     {
@@ -106,6 +110,7 @@ const initialProducts = [
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
+        id: 7,
         hasPriceBall: false
     },
     {
@@ -113,6 +118,7 @@ const initialProducts = [
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
+        id: 8,
         hasPriceBall: false
     },
     {
@@ -120,6 +126,7 @@ const initialProducts = [
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
+        id: 9,
         hasPriceBall: false
     },
 ];
@@ -131,6 +138,7 @@ const newProducts = [
         price: "800 000 UZS",
         priceBall: "1 000 000 UZS",
         points: "400",
+        id: 10,
         hasPriceBall: false
     },
     {
@@ -138,6 +146,7 @@ const newProducts = [
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
+        id: 11,
         hasPriceBall: false
     },
     {
@@ -145,6 +154,7 @@ const newProducts = [
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
+        id: 12,
         hasPriceBall: false
     },
     {
@@ -152,6 +162,7 @@ const newProducts = [
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
+        id: 13,
         hasPriceBall: false
     },
 ];
