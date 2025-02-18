@@ -214,8 +214,8 @@ const prevSlide = () => swiperInstance?.slidePrev();
 
                     .swiper-image {
                         width: 249px;
+                        height: 279px;
                         padding-top: 53px;
-                        height: auto;
                         border-radius: 10px;
                     }
 
