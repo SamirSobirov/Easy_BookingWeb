@@ -26,6 +26,7 @@
             </div>
         </div>
 
+        <hr style= "height: 1px; width: 100%; margin-top: 16px; border: 1px solid #DADEEE;">
         <div class="Cards">
             <div v-for="(product, index) in products" :key="index" class="card">
                 <img :src="product.image" :alt="product.name"/>
