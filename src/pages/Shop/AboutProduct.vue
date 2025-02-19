@@ -18,9 +18,9 @@
 
                         <DropDown>
                             <template #trigger="{ isOpen }">
-                        <button :class="{ active: isOpen }">
-                            <img src="/src/assets/icons/share.svg" alt="">
-                        </button>
+                                <button :class="{ active: isOpen }">
+                                    <img src="/src/assets/icons/share.svg" alt="">
+                                </button>
                             </template>
 
                             <template #default="{ close }">
@@ -43,7 +43,7 @@
                     <div class="mainAboutShop_scroll">
                         <button
                             class="scroll_btn"
-                            v-for="(image, index) in images"
+                            v-for="(image, index) in product[0] .images"
                             :key="index"
                             :class="{ active: activeIndex === index }"
                             @click="selectImage(index)"
@@ -61,7 +61,7 @@
                             @swiper="onSwiper"
                             :initial-slide="activeIndex"
                         >
-                            <SwiperSlide v-for="(image, index) in product?.value?.images" :key="index">
+                            <SwiperSlide v-for="(image, index) in product[0].images" :key="index">
                                 <img :src="image" alt="Product Image" class="swiper-image"/>
                             </SwiperSlide>
 
@@ -93,63 +93,62 @@
         </div>
         <div class="aboutShop_box">
 
-                <div class="container">
-                    <h1>Детали оплаты</h1>
-                    <div class="price-details">
-                        <p>Цена: <span>2 400 000 UZS</span></p>
-                        <span class="dashed-line"></span>
-                        <p>Цена в ЕР: <span style="color: #6A67F8">800 000 ЕР</span></p>
-                    </div>
-
-                    <div class="color-selection">
-                        <p>Выберите цвет:</p>
-                        <div class="box_color">
-                            <button
-                                v-for="(color, index) in colors"
-                                :key="index"
-                                class="custom-button"
-                                :class="{ active: selectedColorIndex === index }"
-                                @click="selectColor(index)"
-                            >
-                                <span class="inner-box" :style="{ backgroundColor: color }"></span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="size-selection">
-                        <p>Выберите размер:</p>
-                        <div class="sizes">
-                            <button
-                                v-for="(size, index) in sizes"
-                                :key="index"
-                                :class="{ active: selectedSizeIndex === index }"
-                                @click="selectSize(index)"
-                            >
-                                {{ size }}
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="quantity-selection">
-                        <p>Количество:</p>
-                        <div class="quantity">
-                            <button @click="decrease">-</button>
-                            <span>{{ quantity }}</span>
-                            <button @click="increase">+</button>
-                        </div>
-                    </div>
-
-                    <div class="price-details">
-                        <p>Общая цена: <span style="font-size: 18px">4 800 000 UZS</span></p>
-                        <span class="dashed-line"></span>
-                        <p>Общая цена в EP: <span  style="color: #6A67F8; font-size: 18px">1 600 000 EP</span></p>
-                    </div>
-
-                    <button class="buy-button">Купить в один клик</button>
+            <div class="container">
+                <h1>Детали оплаты</h1>
+                <div class="price-details">
+                    <p>Цена: <span>2 400 000 UZS</span></p>
+                    <span class="dashed-line"></span>
+                    <p>Цена в ЕР: <span style="color: #6A67F8">800 000 ЕР</span></p>
                 </div>
-            </div>
-    </div>
 
+                <div class="color-selection">
+                    <p>Выберите цвет:</p>
+                    <div class="box_color">
+                        <button
+                            v-for="(color, index) in colors"
+                            :key="index"
+                            class="custom-button"
+                            :class="{ active: selectedColorIndex === index }"
+                            @click="selectColor(index)"
+                        >
+                            <span class="inner-box" :style="{ backgroundColor: color }"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="size-selection">
+                    <p>Выберите размер:</p>
+                    <div class="sizes">
+                        <button
+                            v-for="(size, index) in sizes"
+                            :key="index"
+                            :class="{ active: selectedSizeIndex === index }"
+                            @click="selectSize(index)"
+                        >
+                            {{ size }}
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quantity-selection">
+                    <p>Количество:</p>
+                    <div class="quantity">
+                        <button @click="decrease">-</button>
+                        <span>{{ quantity }}</span>
+                        <button @click="increase">+</button>
+                    </div>
+                </div>
+
+                <div class="price-details">
+                    <p>Общая цена: <span style="font-size: 18px">4 800 000 UZS</span></p>
+                    <span class="dashed-line"></span>
+                    <p>Общая цена в EP: <span style="color: #6A67F8; font-size: 18px">1 600 000 EP</span></p>
+                </div>
+
+                <button class="buy-button">Купить в один клик</button>
+            </div>
+        </div>
+    </div>
     <Footer/>
 </template>
 
@@ -171,7 +170,7 @@ const route = useRoute()
 const quantity = ref(1);
 const productId = Number(route.params.id);
 const product = computed(() => initialProducts.filter(product => product.id === productId));
-
+console.log(product.value)
 const colors = ["#C2D8F2", "#C2F2D2", "#EED7D7", "#F2EAC2"];
 const sizes = ["40х80", "45х90", "50х100", "XXL"];
 const selectedColorIndex = ref<number | null>(null);
@@ -399,204 +398,205 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
         border: 1px solid #FFFFFFA8;
         border-radius: 24px;
 
-            .container {
-                max-width: 360px;
-                border-radius: 24px;
-                border: 1px solid #FFFFFFA8;
-                background-color: rgba(255, 255, 255, 0.89);
+        .container {
+            max-width: 360px;
+            border-radius: 24px;
+            border: 1px solid #FFFFFFA8;
+            background-color: rgba(255, 255, 255, 0.89);
+            display: flex;
+            flex-direction: column;
+            width: 345px;
+            height: 585px;
+            margin: 12px 12px;
+            align-items: flex-start;
+            padding: 15px 20px;
+
+        }
+
+        h1 {
+            text-align: left;
+            color: #23282D;
+            font-size: 16px;
+        }
+
+        .price-details, .total-price {
+            border-top: 1px solid #F2F3F7;
+            border-bottom: 1px solid #F2F3F7;
+            font-family: Mulish, sans-serif;
+            display: flex;
+            flex-direction: column;
+            margin: 15px 0;
+
+            .dashed-line {
+                flex-grow: 1;
+                width: 296px;
+                border-bottom: 1px dashed #DADEEE;
+                border-spacing: 5px;
+                margin: 8px 4px;
+            }
+
+            p {
+                color: #6D7586;
+                line-height: 18px;
                 display: flex;
-                flex-direction: column;
-                width: 345px;
-                height: 585px;
-                margin: 12px 12px;
-                align-items: flex-start;
-                padding: 15px 20px;
+                justify-content: space-between;
+                margin: 10px 0;
 
-            }
-
-            h1 {
-                text-align: left;
-                color: #23282D;
-                font-size: 16px;
-            }
-
-            .price-details, .total-price {
-                border-top: 1px solid #F2F3F7;
-                border-bottom: 1px solid #F2F3F7;
-                font-family: Mulish, sans-serif;
-                display: flex;
-                flex-direction: column;
-                margin: 15px 0;
-
-                .dashed-line {
-                    flex-grow: 1;
-                    width: 296px;
-                    border-bottom: 1px dashed #DADEEE;
-                    border-spacing: 5px;
-                    margin: 8px 4px;
-                }
-
-                p {
-                    color: #6D7586;
-                    line-height: 18px;
-                    display: flex;
-                    justify-content: space-between;
-                    margin: 10px 0;
-
-                    span {
-                        font-family: Mulish, sans-serif;
-                        color: #0D0D0D;
-                        font-size: 15px;
-                        font-weight: 700;
-                    }
-                }
-            }
-
-            .total-price {
-                margin: 20px 0;
-
-                p {
-                    margin: 10px 0;
-
-                    span {
-                        font-weight: bold;
-                    }
-                }
-            }
-
-            .color-selection {
-                display: flex;
-                flex-direction: column;
-                align-items: start;
-                justify-content: start;
-                text-align: left;
-                gap: 17px;
-
-                p {
-                    display: block;
-                    font-size: 16px;
+                span {
                     font-family: Mulish, sans-serif;
-                    font-weight: 600;
+                    color: #0D0D0D;
+                    font-size: 15px;
+                    font-weight: 700;
                 }
-
-                .box_color {
-                    display: flex;
-                    gap: 8px;
-
-                    .custom-button {
-                        width: 36px;
-                        height: 36px;
-                        border-radius: 8px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border: 1px solid #f2f3f7;
-                        cursor: pointer;
-                        transition: all 0.3s ease;
-
-                        &.active {
-                            border: 1px solid #00B8D7;
-                        }
-                    }
-
-                    .inner-box {
-                        width: 26px;
-                        height: 26px;
-                        border-radius: 4px;
-                    }
-                }
-            }
-
-            .size-selection {
-                margin: 16px 0;
-                align-items: start;
-                justify-content: start;
-                text-align: left;
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-
-                p {
-                    display: block;
-                    font-size: 16px;
-                    font-family: Mulish, sans-serif;
-                    font-weight: 600;
-                }
-
-                .sizes {
-                    width: 304px;
-                    display: flex;
-                    gap: 8px;
-
-                    button {
-                        padding: 8px 10px;
-                        border: 1px solid #f2f3f7;
-                        border-radius: 8px;
-                        font-size: 14px;
-                        font-family: Mulish, sans-serif;
-                        color: #23282d;
-                        cursor: pointer;
-                        transition: all 0.3s ease;
-
-                        &.active {
-                            border: 1px solid #00B8D7;
-                        }
-                    }
-                }
-            }
-
-            .quantity-selection {
-                align-items: start;
-                justify-content: start;
-                text-align: left;
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-
-                p {
-                    display: block;
-                    font-size: 16px;
-                    font-family: Mulish, sans-serif;
-                    font-weight: 600;
-                }
-
-                .quantity {
-                    display: flex;
-                    gap: 25px;
-                    align-items: center;
-
-                    button {
-                        width: 120px;
-                        height: 44px;
-                        border: 1px solid #F2F3F7;
-                        border-radius: 8px;
-                        font-size: 25px;
-                        font-family: Mulish, sans-serif;
-                        font-weight: normal;
-                    }
-                }
-            }
-
-            .total-price {
-                text-align: center;
-                font-size: 1.2em;
-            }
-
-            .buy-button {
-                margin-bottom: 20px;
-                width: 304px;
-                padding: 9px;
-                height: 40px;
-                font-family: Mulish, sans-serif;
-                background-color: #00B8D7;
-                color: white;
-                border: none;
-                border-radius: 10px;
-                font-size: 14px;
-                cursor: pointer;
             }
         }
+
+        .total-price {
+            margin: 20px 0;
+
+            p {
+                margin: 10px 0;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .color-selection {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            text-align: left;
+            gap: 17px;
+
+            p {
+                display: block;
+                font-size: 16px;
+                font-family: Mulish, sans-serif;
+                font-weight: 600;
+            }
+
+            .box_color {
+                display: flex;
+                gap: 8px;
+
+                .custom-button {
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid #f2f3f7;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &.active {
+                        border: 1px solid #00B8D7;
+                    }
+                }
+
+                .inner-box {
+                    width: 26px;
+                    height: 26px;
+                    border-radius: 4px;
+                }
+            }
+        }
+
+        .size-selection {
+            margin: 16px 0;
+            align-items: start;
+            justify-content: start;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            p {
+                display: block;
+                font-size: 16px;
+                font-family: Mulish, sans-serif;
+                font-weight: 600;
+            }
+
+            .sizes {
+                width: 304px;
+                display: flex;
+                gap: 8px;
+
+                button {
+                    padding: 8px 10px;
+                    border: 1px solid #f2f3f7;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    font-family: Mulish, sans-serif;
+                    color: #23282d;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &.active {
+                        border: 1px solid #00B8D7;
+                    }
+                }
+            }
+        }
+
+        .quantity-selection {
+            align-items: start;
+            justify-content: start;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            p {
+                display: block;
+                font-size: 16px;
+                font-family: Mulish, sans-serif;
+                font-weight: 600;
+            }
+
+            .quantity {
+                display: flex;
+                gap: 25px;
+                align-items: center;
+
+                button {
+                    width: 120px;
+                    height: 44px;
+                    border: 1px solid #F2F3F7;
+                    border-radius: 8px;
+                    font-size: 25px;
+                    font-family: Mulish, sans-serif;
+                    font-weight: normal;
+                }
+            }
+        }
+
+        .total-price {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .buy-button {
+            margin-bottom: 20px;
+            width: 304px;
+            padding: 9px;
+            height: 40px;
+            font-family: Mulish, sans-serif;
+            background-color: #00B8D7;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
     }
+}
+
 .dropdown-content {
     position: absolute;
     z-index: 10;
