@@ -84,12 +84,18 @@
                     </div>
 
                     <div class="color-selection">
-                        <label for="color">Выберите цвет:</label>
-                        <select id="color" name="color">
-                            <option value="red">Красный</option>
-                            <option value="blue">Синий</option>
-                            <option value="green">Зеленый</option>
-                        </select>
+                        <p>Выберите цвет:</p>
+                        <div class="box_color">
+                            <button
+                                v-for="(color, index) in colors"
+                                :key="index"
+                                class="custom-button"
+                                :class="{ active: selectedColorIndex === index }"
+                                @click="selectColor(index)"
+                            >
+                                <span class="inner-box" :style="{ backgroundColor: color }"></span>
+                            </button>
+                        </div>
                     </div>
 
                     <div class="size-selection">
@@ -140,6 +146,14 @@ import {useRoute} from "vue-router";
 const route = useRoute()
 const productId = Number(route.params.id);
 computed(() => initialProducts.filter(product => product.id === productId));
+
+const selectedColorIndex = ref<number | null>(null);
+
+const colors = ["#C2D8F2", "#C2F2D2", "#EED7D7", "#F2EAC2"];
+
+const selectColor = (index: number) => {
+    selectedColorIndex.value = index;
+};
 const images = ref([
     "/images/bagAboutShop.svg",
     "/images/bagAboutShop2.svg",
@@ -400,6 +414,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                     border-spacing: 5px;
                     margin: 8px 4px;
                 }
+
                 p {
                     color: #6D7586;
                     line-height: 18px;
@@ -418,7 +433,6 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
 
             .total-price {
                 margin: 20px 0;
-
                 p {
                     margin: 10px 0;
 
@@ -428,7 +442,42 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                 }
             }
 
-            .color-selection, .size-selection, .quantity-selection {
+            .color-selection {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: start;
+                text-align: left;
+                gap: 17px;
+
+                .box_color {
+                    display: flex;
+                    gap: 8px;
+
+                    .custom-button {
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 8px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid #f2f3f7;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+
+                        &.active {
+                            border: 1px solid #00B8D7;
+                        }
+                    }
+
+                    .inner-box {
+                        width: 26px;
+                        height: 26px;
+                        border-radius: 4px;
+                    }
+                }
+            }
+            .size-selection, .quantity-selection {
                 margin: 20px 0;
 
                 label {
