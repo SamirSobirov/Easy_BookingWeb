@@ -79,6 +79,7 @@
                     <h1>Детали оплаты</h1>
                     <div class="price-details">
                         <p>Цена: <span>2 400 000 UZS</span></p>
+                        <span class="dashed-line"></span>
                         <p>Цена в ЕР: <span>800 000 ЕР</span></p>
                     </div>
 
@@ -370,24 +371,57 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
 
 
             .container {
-                max-width: 600px;
+                max-width: 336px;
                 height: 569px;
                 margin: 0 auto;
-                background: #fff;
-                padding: 20px;
+                background: #FFFFFFA8;
+                padding: 16px;
                 border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
 
             h1 {
-                text-align: center;
-                color: #444;
+                text-align: left;
+                color: #23282D;
+                font-size: 16px;
             }
 
             .price-details, .total-price {
+                border-top: 1px solid #F2F3F7;
+                border-bottom: 1px solid #F2F3F7;
+                font-family: Mulish, sans-serif;
+                display: flex;
+                flex-direction: column;
+                margin: 15px 0;
+
+                .dashed-line {
+                    flex-grow: 1;
+                    width: 296px;
+                    border-bottom: 1px dashed #DADEEE;
+                    border-spacing: 5px;
+                    margin: 8px 4px;
+                }
+                p {
+                    color: #6D7586;
+                    line-height: 18px;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 10px 0;
+
+                    span {
+                        font-family: Mulish, sans-serif;
+                        color: #0D0D0D;
+                        font-size: 15px;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .total-price {
                 margin: 20px 0;
+
                 p {
                     margin: 10px 0;
+
                     span {
                         font-weight: bold;
                     }
@@ -396,20 +430,24 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
 
             .color-selection, .size-selection, .quantity-selection {
                 margin: 20px 0;
+
                 label {
                     display: block;
                     margin-bottom: 10px;
                     font-weight: bold;
                 }
+
                 select, .sizes, .quantity {
                     width: 100%;
                     padding: 10px;
                     border-radius: 4px;
                     border: 1px solid #ddd;
                 }
+
                 .sizes, .quantity {
                     display: flex;
                     justify-content: space-between;
+
                     button {
                         padding: 10px 20px;
                         border: none;
@@ -417,6 +455,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                         color: white;
                         border-radius: 4px;
                         cursor: pointer;
+
                         &:hover {
                             background-color: darken(#007bff, 10%);
                         }
@@ -438,6 +477,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                 border-radius: 4px;
                 font-size: 1.1em;
                 cursor: pointer;
+
                 &:hover {
                     background-color: darken(#28a745, 10%);
                 }
