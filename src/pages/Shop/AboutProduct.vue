@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="aboutShop_box">
-            <div class="elem">
+
                 <div class="container">
                     <h1>Детали оплаты</h1>
                     <div class="price-details">
@@ -113,23 +113,23 @@
                     </div>
 
                     <div class="quantity-selection">
-                        <label>Количество:</label>
+                        <p>Количество:</p>
                         <div class="quantity">
-                            <button>-</button>
-                            <span>2</span>
-                            <button>+</button>
+                            <button @click="decrease">-</button>
+                            <span>{{ quantity }}</span>
+                            <button @click="increase">+</button>
                         </div>
                     </div>
 
-                    <div class="total-price">
+                    <div class="price-details">
                         <p>Общая цена: <span>4 800 000 UZS</span></p>
-                        <p>Общая цена в ЕР: <span>1 600 000 ЕР</span></p>
+                        <span class="dashed-line"></span>
+                        <p>Общая цена в EP: <span style="color: #6A67F8">1 600 000 EP</span></p>
                     </div>
 
                     <button class="buy-button">Купить в один клик</button>
                 </div>
             </div>
-        </div>
     </div>
 
     <Footer/>
@@ -148,22 +148,28 @@ import {initialProducts} from "../../constants";
 import {useRoute} from "vue-router";
 
 const route = useRoute()
+const quantity = ref(1);
 const productId = Number(route.params.id);
 computed(() => initialProducts.filter(product => product.id === productId));
 
-const selectedColorIndex = ref<number | null>(null);
-
 const colors = ["#C2D8F2", "#C2F2D2", "#EED7D7", "#F2EAC2"];
+const sizes = ["40х80", "45х90", "50х100", "XXL"];
+const selectedColorIndex = ref<number | null>(null);
+const selectedSizeIndex = ref<number | null>(null);
 
 const selectColor = (index: number) => {
     selectedColorIndex.value = index;
 };
-const selectedSizeIndex = ref<number | null>(null);
-
-const sizes = ["40х80", "45х90", "50х100", "XXL"];
-
 const selectSize = (index: number) => {
     selectedSizeIndex.value = index;
+};
+const decrease = () => {
+    if (quantity.value > 1) {
+        quantity.value--;
+    }
+};
+const increase = () => {
+    quantity.value++;
 };
 const images = ref([
     "/images/bagAboutShop.svg",
@@ -381,26 +387,20 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
         border: 1px solid #FFFFFFA8;
         border-radius: 24px;
 
-        .elem {
-            border: 1px solid #FFFFFFA8;
-            background-color: #FFFFFFA6;
-            border-radius: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            width: 336px;
-            height: 569px;
-            margin: 12px 12px;
-            align-items: center;
-            justify-content: center;
 
             .container {
                 max-width: 336px;
+                border-radius: 24px;
+                border: 1px solid #FFFFFFA8;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                width: 340px;
                 height: 569px;
-                margin: 0 auto;
-                background: #FFFFFFA8;
-                padding: 16px;
-                border-radius: 8px;
+                margin: 12px 12px;
+                align-items: flex-start;
+                padding: 20px 20px;
+
             }
 
             h1 {
@@ -443,6 +443,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
 
             .total-price {
                 margin: 20px 0;
+
                 p {
                     margin: 10px 0;
 
@@ -460,7 +461,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                 text-align: left;
                 gap: 17px;
 
-                p{
+                p {
                     display: block;
                     font-size: 16px;
                     font-family: Mulish, sans-serif;
@@ -494,6 +495,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                     }
                 }
             }
+
             .size-selection {
                 margin: 16px 0;
                 align-items: start;
@@ -532,26 +534,56 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                 }
             }
 
+            .quantity-selection {
+                align-items: start;
+                justify-content: start;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                p {
+                    display: block;
+                    font-size: 16px;
+                    font-family: Mulish, sans-serif;
+                    font-weight: 600;
+                }
+
+                .quantity {
+                    display: flex;
+                    gap: 25px;
+                    align-items: center;
+
+                    button {
+                        width: 120px;
+                        height: 44px;
+                        border: 1px solid #F2F3F7;
+                        border-radius: 8px;
+                        font-size: 25px;
+                        font-family: Mulish, sans-serif;
+                        font-weight: normal;
+                    }
+                }
+            }
+
             .total-price {
                 text-align: center;
                 font-size: 1.2em;
             }
 
             .buy-button {
-                width: 100%;
-                padding: 15px;
-                background-color: #28a745;
+                width: 304px;
+                padding: 9px;
+                height: 40px;
+                font-family: Mulish, sans-serif;
+                background-color: #00B8D7;
                 color: white;
                 border: none;
-                border-radius: 4px;
-                font-size: 1.1em;
+                border-radius: 10px;
+                font-size: 14px;
                 cursor: pointer;
-
-                &:hover {
-                    background-color: darken(#28a745, 10%);
-                }
             }
         }
     }
-}
+
 </style>
