@@ -80,7 +80,7 @@
                     <div class="price-details">
                         <p>Цена: <span>2 400 000 UZS</span></p>
                         <span class="dashed-line"></span>
-                        <p>Цена в ЕР: <span>800 000 ЕР</span></p>
+                        <p>Цена в ЕР: <span style="color: #6A67F8">800 000 ЕР</span></p>
                     </div>
 
                     <div class="color-selection">
@@ -99,7 +99,7 @@
                     </div>
 
                     <div class="size-selection">
-                        <label>Выберите размер:</label>
+                        <p>Выберите размер:</p>
                         <div class="sizes">
                             <button>40х80</button>
                             <button>45х90</button>
@@ -383,7 +383,6 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
             align-items: center;
             justify-content: center;
 
-
             .container {
                 max-width: 336px;
                 height: 569px;
@@ -450,6 +449,13 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                 text-align: left;
                 gap: 17px;
 
+                p{
+                    display: block;
+                    font-size: 16px;
+                    font-family: Mulish, sans-serif;
+                    font-weight: 600;
+                }
+
                 .box_color {
                     display: flex;
                     gap: 8px;
@@ -478,36 +484,37 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                 }
             }
             .size-selection, .quantity-selection {
-                margin: 20px 0;
+                margin: 16px 0;
+                align-items: start;
+                justify-content: start;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
 
-                label {
+                p {
                     display: block;
-                    margin-bottom: 10px;
-                    font-weight: bold;
+                    font-size: 16px;
+                    font-family: Mulish, sans-serif;
+                    font-weight: 600;
                 }
 
                 select, .sizes, .quantity {
-                    width: 100%;
-                    padding: 10px;
-                    border-radius: 4px;
-                    border: 1px solid #ddd;
+                    width: 304px;
+
                 }
 
                 .sizes, .quantity {
                     display: flex;
-                    justify-content: space-between;
+                    gap: 8px;
 
                     button {
-                        padding: 10px 20px;
-                        border: none;
-                        background-color: #007bff;
-                        color: white;
-                        border-radius: 4px;
-                        cursor: pointer;
-
-                        &:hover {
-                            background-color: darken(#007bff, 10%);
-                        }
+                        padding: 8px 10px;
+                        border: 1px solid #F2F3F7;
+                        border-radius: 8px;
+                        font-size: 14px;
+                        font-family: Mulish, sans-serif;
+                        color: #23282D;
                     }
                 }
             }
