@@ -32,7 +32,7 @@
 
     <div class="Cards">
       <div
-        v-for="(product, index) in displayedProducts"
+        v-for="(product) in displayedProducts"
         :key="product.id"
         class="card"
         @click="goToProduct(product.id)"
@@ -218,6 +218,7 @@ const setActiveButton = (type: string) => {
     font-size: 14px;
     line-height: 20px;
     color: #81899A;
+    user-select: none;
   }
 }
 

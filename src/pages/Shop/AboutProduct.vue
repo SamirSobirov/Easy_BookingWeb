@@ -214,6 +214,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
   gap: 24px;
   align-items: flex-start;
   justify-content: center;
+  user-select: none;
 
   .aboutShop_box1 {
     width: 744px;
