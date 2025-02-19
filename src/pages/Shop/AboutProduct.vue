@@ -278,7 +278,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
 
             .aboutShop_swiperContainer {
                 display: flex;
-                gap: 15px;
+                gap: 14px;
                 width: 100%;
                 height: 355px;
 
