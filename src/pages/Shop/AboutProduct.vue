@@ -61,7 +61,7 @@
                             @swiper="onSwiper"
                             :initial-slide="activeIndex"
                         >
-                            <SwiperSlide v-for="(image, index) in images" :key="index">
+                            <SwiperSlide v-for="(image, index) in product?.value?.images" :key="index">
                                 <img :src="image" alt="Product Image" class="swiper-image"/>
                             </SwiperSlide>
 
@@ -170,7 +170,7 @@ import ShareTicket from "../../components/ShareTicket.vue";
 const route = useRoute()
 const quantity = ref(1);
 const productId = Number(route.params.id);
-computed(() => initialProducts.filter(product => product.id === productId));
+const product = computed(() => initialProducts.filter(product => product.id === productId));
 
 const colors = ["#C2D8F2", "#C2F2D2", "#EED7D7", "#F2EAC2"];
 const sizes = ["40х80", "45х90", "50х100", "XXL"];
@@ -191,14 +191,6 @@ const decrease = () => {
 const increase = () => {
     quantity.value++;
 };
-const images = ref([
-    "/images/bagAboutShop.svg",
-    "/images/bagAboutShop2.svg",
-    "/images/bagAboutShop.svg",
-    "/images/bagAboutShop2.svg",
-    "/images/bagAboutShop2.svg",
-    "/images/bagAboutShop.svg"
-]);
 
 const swiperInstance = ref<SwiperClass | null>(null);
 const activeIndex = ref(0);

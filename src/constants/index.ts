@@ -8,6 +8,14 @@ export const buttons = [
 export const initialProducts = [
     {image: "/images/Shop_bag.svg", name: "Чехол на чемодан", price: "800 000 UZS", points: "400", id: 1, hasPriceBall: false},
     {
+        images: [
+            "/images/bagAboutShop.svg",
+            "/images/bagAboutShop2.svg",
+            "/images/bagAboutShop.svg",
+            "/images/bagAboutShop2.svg",
+            "/images/bagAboutShop2.svg",
+            "/images/bagAboutShop.svg"
+        ],
         image: "/images/Shop_pillow.svg",
         name: "Подушка для подголовника",
         price: "800 000 UZS",
