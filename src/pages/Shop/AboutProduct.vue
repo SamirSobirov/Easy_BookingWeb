@@ -101,10 +101,14 @@
                     <div class="size-selection">
                         <p>Выберите размер:</p>
                         <div class="sizes">
-                            <button>40х80</button>
-                            <button>45х90</button>
-                            <button>50х100</button>
-                            <button>XXL</button>
+                            <button
+                                v-for="(size, index) in sizes"
+                                :key="index"
+                                :class="{ active: selectedSizeIndex === index }"
+                                @click="selectSize(index)"
+                            >
+                                {{ size }}
+                            </button>
                         </div>
                     </div>
 
@@ -153,6 +157,13 @@ const colors = ["#C2D8F2", "#C2F2D2", "#EED7D7", "#F2EAC2"];
 
 const selectColor = (index: number) => {
     selectedColorIndex.value = index;
+};
+const selectedSizeIndex = ref<number | null>(null);
+
+const sizes = ["40х80", "45х90", "50х100", "XXL"];
+
+const selectSize = (index: number) => {
+    selectedSizeIndex.value = index;
 };
 const images = ref([
     "/images/bagAboutShop.svg",
@@ -483,7 +494,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                     }
                 }
             }
-            .size-selection, .quantity-selection {
+            .size-selection {
                 margin: 16px 0;
                 align-items: start;
                 justify-content: start;
@@ -499,22 +510,24 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                     font-weight: 600;
                 }
 
-                select, .sizes, .quantity {
+                .sizes {
                     width: 304px;
-
-                }
-
-                .sizes, .quantity {
                     display: flex;
                     gap: 8px;
 
                     button {
                         padding: 8px 10px;
-                        border: 1px solid #F2F3F7;
+                        border: 1px solid #f2f3f7;
                         border-radius: 8px;
                         font-size: 14px;
                         font-family: Mulish, sans-serif;
-                        color: #23282D;
+                        color: #23282d;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+
+                        &.active {
+                            border: 1px solid #00B8D7;
+                        }
                     }
                 }
             }
