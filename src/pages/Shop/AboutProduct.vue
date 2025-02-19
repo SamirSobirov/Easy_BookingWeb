@@ -122,9 +122,9 @@
                     </div>
 
                     <div class="price-details">
-                        <p>Общая цена: <span>4 800 000 UZS</span></p>
+                        <p>Общая цена: <span style="font-size: 18px">4 800 000 UZS</span></p>
                         <span class="dashed-line"></span>
-                        <p>Общая цена в EP: <span style="color: #6A67F8">1 600 000 EP</span></p>
+                        <p>Общая цена в EP: <span  style="color: #6A67F8; font-size: 18px">1 600 000 EP</span></p>
                     </div>
 
                     <button class="buy-button">Купить в один клик</button>
@@ -380,8 +380,8 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
     }
 
     .aboutShop_box {
-        width: 360px;
-        height: 593px;
+        width: 369px;
+        height: 610px;
         background-color: #FFFFFF59;
         backdrop-filter: blur(16px);
         border: 1px solid #FFFFFFA8;
@@ -389,17 +389,17 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
 
 
             .container {
-                max-width: 336px;
+                max-width: 360px;
                 border-radius: 24px;
                 border: 1px solid #FFFFFFA8;
-                background-color: white;
+                background-color: rgba(255, 255, 255, 0.89);
                 display: flex;
                 flex-direction: column;
-                width: 340px;
-                height: 569px;
+                width: 345px;
+                height: 585px;
                 margin: 12px 12px;
                 align-items: flex-start;
-                padding: 20px 20px;
+                padding: 15px 20px;
 
             }
 
@@ -572,6 +572,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
             }
 
             .buy-button {
+                margin-bottom: 20px;
                 width: 304px;
                 padding: 9px;
                 height: 40px;
