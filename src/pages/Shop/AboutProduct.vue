@@ -15,7 +15,25 @@
 
                     <div class="buttonsBlock">
                         <button><img src="/src/assets/icons/Heart.svg" alt=""></button>
-                        <button><img src="/src/assets/icons/share.svg" alt=""></button>
+
+                        <DropDown>
+                            <template #trigger="{ isOpen }">
+                        <button :class="{ active: isOpen }">
+                            <img src="/src/assets/icons/share.svg" alt="">
+                        </button>
+                            </template>
+
+                            <template #default="{ close }">
+                                <div class="dropdown-content">
+                                    <h1>
+                                        Поделиться билетом
+                                        <button class="trigger-btn" @click="close"><span class="close-icon">×</span>
+                                        </button>
+                                    </h1>
+                                    <ShareTicket/>
+                                </div>
+                            </template>
+                        </DropDown>
                     </div>
                 </div>
 
@@ -146,6 +164,8 @@ import BreadCrumb from "../../components/breadcrumbs/BreadCrumb.vue";
 import Footer from "../../components/Footer.vue";
 import {initialProducts} from "../../constants";
 import {useRoute} from "vue-router";
+import DropDown from "../../components/DropDown.vue";
+import ShareTicket from "../../components/ShareTicket.vue";
 
 const route = useRoute()
 const quantity = ref(1);
@@ -387,7 +407,6 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
         border: 1px solid #FFFFFFA8;
         border-radius: 24px;
 
-
             .container {
                 max-width: 360px;
                 border-radius: 24px;
@@ -586,5 +605,57 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
             }
         }
     }
+.dropdown-content {
+    position: absolute;
+    z-index: 10;
+    height: 170px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: 'Mulish', sans-serif;
+        color: black;
+        margin-bottom: 15px;
+
+        .trigger-btn {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            background-color: #FFFFFF !important;
+            height: 32px;
+            border-radius: 50% !important;
+            border: 1px solid #C9D4E4;
+            transition: background 0.3s ease, border 0.3s ease;
+
+            .close-icon {
+                font-size: 24px;
+                padding-bottom: 3px;
+                color: #475569;
+                transition: color 0.3s ease;
+            }
+
+            &:active, &.active {
+                border-color: #00B8D7;
+
+                .close-icon {
+                    color: #00B8D7;
+                }
+            }
+        }
+    }
+}
 
 </style>
