@@ -51,14 +51,14 @@ export const initialProducts = [
     },
     {
         images: [
-            "/images/bagSHOP4.svg",
-            "/images/bagSHOP4.svg",
-            "/images/bagSHOP4.svg",
-            "/images/bagSHOP4.svg",
-            "/images/bagSHOP4.svg",
-            "/images/bagSHOP4.svg"
+            "/images/bagShop9.svg",
+            "/images/bagShop9.svg",
+            "/images/bagShop9.svg",
+            "/images/bagShop9.svg",
+            "/images/bagShop9.svg",
+            "/images/bagShop9.svg"
         ],
-        image: "/images/bagShop4.svg",
+        image: "/images/bagShop9.svg",
         name: "Сумка-переноска",
         price: "800 000 UZS",
         points: "400",
@@ -66,14 +66,14 @@ export const initialProducts = [
         hasPriceBall: false
     },
     {  images: [
-            "/images/bagSHOP5.svg",
-            "/images/bagSHOP5.svg",
-            "/images/bagSHOP5.svg",
-            "/images/bagSHOP5.svg",
-            "/images/bagSHOP5.svg",
-            "/images/bagSHOP5.svg"
+            "/images/bagShop7.svg",
+            "/images/bagShop7.svg",
+            "/images/bagShop7.svg",
+            "/images/bagShop7.svg",
+            "/images/bagShop7.svg",
+            "/images/bagShop7.svg"
         ],
-        image: "/images/bagShop5.svg", name: "Чехол на чемодан", price: "800 000 UZS", points: "400",id: 5, hasPriceBall: false},
+        image: "/images/bagShop7.svg", name: "Чехол на чемодан", price: "800 000 UZS", points: "400",id: 5, hasPriceBall: false},
     {
         images: [
             "/images/bagShop6.svg",

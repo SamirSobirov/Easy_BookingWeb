@@ -329,7 +329,7 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
                     }
 
                     .swiper-image {
-                        width: 249px;
+                        width: 449px;
                         height: 279px;
                         padding-top: 53px;
                         border-radius: 10px;
