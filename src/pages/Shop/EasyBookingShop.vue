@@ -15,7 +15,6 @@
   <div class="shop">
     <div class="shop__header">
       <h1>Все товары</h1>
-
       <div class="header-buttons">
         <button
           v-for="(button, index) in buttons"
@@ -56,7 +55,6 @@
         <span>{{ showMoreProducts ? "Скрыть" : "Показать ещё" }}</span>
       </button>
     </div>
-
   </div>
   <Footer/>
 </template>
@@ -134,7 +132,6 @@ const setActiveButton = (type: string) => {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   color: #80dbeb;
 }
-
 
 .Cards {
   align-items: center;
