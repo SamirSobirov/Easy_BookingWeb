@@ -14,7 +14,6 @@
 
 <script setup lang="ts">
 import {ref} from "vue";
-
 const activeButton = ref('avia');
 </script>
 
