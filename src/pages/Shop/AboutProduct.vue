@@ -5,7 +5,6 @@
     { label: 'О товаре' }
 ]"/>
   <div class="containerAboutShop">
-
     <div class="aboutShop_box1">
       <div class="elem">
         <div class="header_aboutShop">
@@ -15,7 +14,6 @@
 
           <div class="buttonsBlock">
             <button><img src="/src/assets/icons/Heart.svg" alt=""></button>
-
             <DropDown>
               <template #trigger="{ isOpen }">
                 <button :class="{ active: isOpen }">
@@ -91,8 +89,8 @@
         </div>
       </div>
     </div>
-    <div class="aboutShop_box">
 
+    <div class="aboutShop_box">
       <div class="container">
         <h1>Детали оплаты</h1>
         <div class="price-details">
@@ -206,7 +204,6 @@ const nextSlide = () => swiperInstance.value?.slideNext();
 const prevSlide = () => swiperInstance.value?.slidePrev();
 </script>
 
-
 <style scoped lang="scss">
 .containerAboutShop {
   margin-top: 100px;
@@ -262,8 +259,6 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
             padding: 8px 8px 5px 8px;
             background-color: #F3F5FA;
             border-radius: 8px;
-
-
           }
         }
       }
@@ -293,7 +288,6 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
           &::-webkit-scrollbar-thumb {
             background-color: #ccc;
             border-radius: 4px;
-
           }
 
           .scroll_btn {
@@ -650,5 +644,4 @@ const prevSlide = () => swiperInstance.value?.slidePrev();
     }
   }
 }
-
 </style>
