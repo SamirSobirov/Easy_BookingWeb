@@ -77,7 +77,7 @@ const goToProduct = (id: number) => {
 const activeButton = ref("flights");
 
 const showMoreProducts = ref(false);
-const initialCount = 9; // Сколько товаров показывать изначально
+const initialCount = 9;
 
 const displayedProducts = computed(() =>
   showMoreProducts.value ? initialProducts : initialProducts.slice(0, initialCount)
